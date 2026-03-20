@@ -1,37 +1,39 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amber Atlas — Nowoczesna energia dla biznesu</title>
-  <meta name="description" content="Amber Atlas projektuje i realizuje instalacje fotowoltaiczne, systemy klimatyzacji i rozwiązania energetyczne dla sektora B2B." />
+  <meta name="description" content="Amber Atlas projektuje i realizuje instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla sektora B2B." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg: #0b0a0c;
-      --bg-soft: #151217;
+      --bg-2: #121014;
+      --bg-3: #1a1512;
       --text: #f4efe8;
       --muted: #b8ada2;
-      --amber: #ffb51e;
-      --amber-2: #ffcf57;
-      --amber-3: #ffdf91;
-      --card-border: rgba(255,191,63,0.16);
+      --amber-1: #ffd98a;
+      --amber-2: #ffbf3f;
+      --amber-3: #ff9f1c;
+      --amber-4: #d67900;
+      --card-border: rgba(255,191,63,.16);
+      --card-bg: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
       --shadow: 0 24px 60px rgba(0,0,0,.45);
       --radius: 22px;
-      --max: 1200px;
+      --max: 1240px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       color: var(--text);
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background:
         radial-gradient(circle at 50% 0%, rgba(255,196,83,.09), transparent 28%),
         radial-gradient(circle at 85% 20%, rgba(255,150,25,.05), transparent 22%),
@@ -54,8 +56,12 @@
       mix-blend-mode: soft-light;
     }
 
+    body.lang-ar {
+      font-family: 'Cairo', 'Montserrat', sans-serif;
+    }
+
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    img { display: block; max-width: 100%; }
 
     .container {
       width: min(var(--max), calc(100% - 32px));
@@ -67,7 +73,7 @@
       top: 0;
       z-index: 50;
       backdrop-filter: blur(14px);
-      background: rgba(10,9,11,.72);
+      background: rgba(10,9,11,.75);
       border-bottom: 1px solid rgba(255,191,63,.08);
     }
 
@@ -76,7 +82,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 16px 0;
+      padding: 14px 0;
     }
 
     .brand {
@@ -94,6 +100,7 @@
       border-radius: 14px;
       box-shadow: 0 12px 32px rgba(0,0,0,.35);
       background: #111;
+      flex: 0 0 auto;
     }
 
     .brand-title {
@@ -101,21 +108,54 @@
       font-weight: 800;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: #ffbf3f;
-      text-shadow: 0 0 18px rgba(255,181,30,.15);
+      color: var(--amber-2);
       white-space: nowrap;
+      text-shadow: 0 0 18px rgba(255,181,30,.14);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
       color: var(--muted);
       font-size: .95rem;
+      flex-wrap: wrap;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover { color: var(--text); }
+
+    .lang-switcher {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .lang-btn {
+      border: 1px solid rgba(255,191,63,.16);
+      background: rgba(255,255,255,.03);
       color: var(--text);
+      border-radius: 999px;
+      min-height: 40px;
+      padding: 0 14px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active {
+      background: linear-gradient(180deg, var(--amber-1), var(--amber-2));
+      color: #241300;
+      border-color: transparent;
     }
 
     .btn {
@@ -131,16 +171,17 @@
       cursor: pointer;
       border: 1px solid transparent;
       box-shadow: var(--shadow);
+      font: inherit;
     }
 
     .btn-primary {
-      background: linear-gradient(180deg, var(--amber-2), var(--amber));
+      background: linear-gradient(180deg, var(--amber-1), var(--amber-2) 45%, var(--amber-3));
       color: #211100;
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      filter: saturate(1.05) brightness(1.02);
+      filter: saturate(1.05) brightness(1.03);
     }
 
     .btn-secondary {
@@ -157,13 +198,12 @@
 
     .hero {
       padding: 78px 0 44px;
-      position: relative;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 30px;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 34px;
       align-items: center;
     }
 
@@ -183,21 +223,35 @@
 
     h1 {
       margin: 0 0 16px;
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      line-height: .98;
+      font-size: clamp(2.1rem, 5vw, 4.6rem);
+      line-height: 1.02;
       font-weight: 800;
-      letter-spacing: .03em;
+      letter-spacing: .02em;
+      max-width: 10.5ch;
+      text-wrap: balance;
       text-transform: uppercase;
-      color: #ffbf3f;
-      text-shadow:
-        0 3px 0 rgba(124,69,0,.6),
-        0 0 26px rgba(255,173,20,.08);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.55) 0 5%, transparent 6%),
+        radial-gradient(circle at 35% 55%, rgba(255,230,180,.45) 0 6%, transparent 7%),
+        radial-gradient(circle at 60% 30%, rgba(255,220,160,.35) 0 5%, transparent 6%),
+        radial-gradient(circle at 72% 70%, rgba(255,210,130,.25) 0 5%, transparent 6%),
+        linear-gradient(180deg, #fff0c5 0%, #ffd98a 18%, #ffbf3f 42%, #ff9f1c 68%, #cc6e00 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 3px 0 rgba(124,69,0,.45));
+    }
+
+    [dir="rtl"] h1 {
+      max-width: 12ch;
+      line-height: 1.15;
+      text-transform: none;
     }
 
     .lead {
-      max-width: 700px;
-      font-size: 1.08rem;
-      line-height: 1.75;
+      max-width: 760px;
+      font-size: 1.06rem;
+      line-height: 1.82;
       color: var(--muted);
       margin-bottom: 28px;
     }
@@ -226,14 +280,15 @@
     .stat strong {
       display: block;
       font-size: 1.6rem;
-      color: #ffbf3f;
+      color: var(--amber-2);
       margin-bottom: 7px;
     }
 
     .stat span {
       color: var(--muted);
       font-size: .93rem;
-      line-height: 1.5;
+      line-height: 1.55;
+      display: block;
     }
 
     .hero-card {
@@ -261,7 +316,7 @@
     }
 
     .hero-logo {
-      width: min(100%, 520px);
+      width: min(100%, 560px);
       filter: drop-shadow(0 18px 38px rgba(0,0,0,.45));
       border-radius: 28px;
       position: relative;
@@ -288,13 +343,22 @@
     h2 {
       margin: 0 0 10px;
       font-size: clamp(1.8rem, 3vw, 3rem);
-      line-height: 1.05;
+      line-height: 1.1;
+    }
+
+    .single-line-title {
+      font-size: clamp(1.1rem, 2vw, 1.8rem);
+      white-space: nowrap;
+    }
+
+    [dir="rtl"] .single-line-title {
+      white-space: normal;
     }
 
     .section-sub {
-      max-width: 740px;
+      max-width: 900px;
       color: var(--muted);
-      line-height: 1.75;
+      line-height: 1.85;
     }
 
     .grid-4 {
@@ -304,7 +368,7 @@
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
+      background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
       padding: 24px;
@@ -333,13 +397,14 @@
 
     .card h3 {
       margin: 0 0 10px;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
+      line-height: 1.35;
     }
 
     .card p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.75;
       font-size: .96rem;
     }
 
@@ -360,7 +425,7 @@
       align-items: flex-start;
       gap: 12px;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     .check {
@@ -378,45 +443,43 @@
 
     .showcase {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
-    .showcase .card {
+    .showcase-card {
       padding: 0;
       overflow: hidden;
     }
 
-    .project-visual {
-      height: 220px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
-        radial-gradient(circle at 50% 0%, rgba(255,191,63,.24), transparent 38%),
-        linear-gradient(135deg, #201507, #0f0c0d 60%);
+    .project-image-wrap {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
       border-bottom: 1px solid rgba(255,191,63,.12);
-      position: relative;
+      background: linear-gradient(135deg, #201507, #0f0c0d 60%);
     }
 
-    .project-visual::before {
-      content: "";
-      position: absolute;
-      inset: 28px;
-      border-radius: 20px;
-      border: 1px solid rgba(255,191,63,.16);
-      background:
-        linear-gradient(180deg, rgba(255,181,30,.15), rgba(255,181,30,.03)),
-        radial-gradient(circle at 70% 30%, rgba(255,220,120,.5), transparent 18%);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .project-body {
       padding: 22px;
     }
 
+    .project-body h3 {
+      margin: 0 0 10px;
+      line-height: 1.35;
+      font-size: 1.06rem;
+    }
+
     .project-body p {
       color: var(--muted);
-      margin: 10px 0 0;
-      line-height: 1.7;
+      margin: 0;
+      line-height: 1.78;
       font-size: .95rem;
     }
 
@@ -432,22 +495,22 @@
       padding: 34px;
       box-shadow: var(--shadow);
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1.2fr .8fr;
       gap: 24px;
       align-items: center;
     }
 
     .cta-box h3 {
-      margin: 0 0 10px;
-      font-size: clamp(1.6rem, 3vw, 2.6rem);
-      line-height: 1.08;
+      margin: 0 0 12px;
+      font-size: clamp(1.35rem, 2.5vw, 2.2rem);
+      line-height: 1.3;
     }
 
     .cta-box p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.8;
-      max-width: 640px;
+      line-height: 1.85;
+      max-width: 760px;
     }
 
     .contact-card {
@@ -469,7 +532,7 @@
       gap: 14px;
     }
 
-    input, textarea {
+    input, textarea, select {
       width: 100%;
       border: 1px solid rgba(255,191,63,.14);
       background: rgba(255,255,255,.03);
@@ -481,7 +544,7 @@
       transition: .2s ease;
     }
 
-    input:focus, textarea:focus {
+    input:focus, textarea:focus, select:focus {
       border-color: rgba(255,191,63,.4);
       box-shadow: 0 0 0 4px rgba(255,191,63,.08);
     }
@@ -491,9 +554,16 @@
       resize: vertical;
     }
 
+    .hidden-field {
+      position: absolute !important;
+      left: -5000px !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
     .form-note {
       color: var(--muted);
-      font-size: .88rem;
+      font-size: .92rem;
       line-height: 1.6;
     }
 
@@ -511,13 +581,18 @@
       padding-top: 22px;
     }
 
+    @media (max-width: 1180px) {
+      .grid-4,
+      .showcase {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 1080px) {
       .hero-grid,
       .split,
-      .cta-box,
-      .grid-4,
-      .showcase {
-        grid-template-columns: 1fr 1fr;
+      .cta-box {
+        grid-template-columns: 1fr;
       }
 
       .hero-card {
@@ -527,6 +602,10 @@
       .stats {
         grid-template-columns: 1fr;
       }
+
+      .single-line-title {
+        white-space: normal;
+      }
     }
 
     @media (max-width: 760px) {
@@ -535,8 +614,11 @@
         align-items: stretch;
       }
 
+      .nav-right {
+        justify-content: flex-start;
+      }
+
       .nav-links {
-        flex-wrap: wrap;
         gap: 14px;
       }
 
@@ -544,9 +626,6 @@
         padding-top: 42px;
       }
 
-      .hero-grid,
-      .split,
-      .cta-box,
       .grid-4,
       .showcase,
       .form-grid {
@@ -576,7 +655,7 @@
     }
   </style>
 </head>
-<body>
+<body class="lang-pl">
   <div class="nav-wrap">
     <div class="container nav">
       <a class="brand" href="#top">
@@ -584,11 +663,20 @@
         <div class="brand-title">Amber Atlas</div>
       </a>
 
-      <div class="nav-links">
-        <a href="#oferta">Oferta</a>
-        <a href="#branze">Branże</a>
-        <a href="#realizacje">Realizacje</a>
-        <a href="#kontakt" class="btn btn-secondary">Kontakt</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#oferta" data-i18n="nav_offer">Oferta</a>
+          <a href="#branze" data-i18n="nav_industries">Branże</a>
+          <a href="#realizacje" data-i18n="nav_projects">Realizacje</a>
+          <a href="#kontakt" data-i18n="nav_contact">Kontakt</a>
+        </div>
+
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="pl">PL</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="ar">AR</button>
+        </div>
       </div>
     </div>
   </div>
@@ -597,31 +685,31 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Energia dla biznesu • Premium B2B</div>
-          <h1>Nowoczesna energia dla firm</h1>
-          <p class="lead">
-            Projektujemy i realizujemy instalacje fotowoltaiczne, systemy klimatyzacji i rozwiązania energetyczne
-            dla hoteli, magazynów, fabryk oraz obiektów komercyjnych. Styl premium, lokalna obsługa i realizacje
-            dopasowane do realnych potrzeb biznesu.
+          <div class="eyebrow" data-i18n="hero_eyebrow">Energia dla biznesu • Premium B2B</div>
+
+          <h1 data-i18n="hero_title">Nowoczesna energia dla firm</h1>
+
+          <p class="lead" data-i18n="hero_text">
+            Projektujemy i realizujemy instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla hoteli, magazynów, fabryk, gospodarstw rolnych oraz innych obiektów komercyjnych. Fotowoltaika i Magazyny Energii AMBER ATLAS to lokalna obsługa i realizacje dopasowane do realnych potrzeb biznesu.
           </p>
 
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#kontakt">Bezpłatna wycena</a>
-            <a class="btn btn-secondary" href="#realizacje">Zobacz realizacje</a>
+            <a class="btn btn-primary" href="#kontakt" data-i18n="hero_cta_1">Bezpłatna wycena</a>
+            <a class="btn btn-secondary" href="#realizacje" data-i18n="hero_cta_2">Zobacz realizacje</a>
           </div>
 
           <div class="stats">
             <div class="stat">
-              <strong>15+ lat</strong>
-              <span>doświadczenia na rynkach europejskich</span>
+              <strong data-i18n="stat_1_title">15+ lat</strong>
+              <span data-i18n="stat_1_text">doświadczenia na rynkach europejskich</span>
             </div>
             <div class="stat">
-              <strong>2000+</strong>
-              <span>realizacji dla klientów biznesowych</span>
+              <strong data-i18n="stat_2_title">2000+</strong>
+              <span data-i18n="stat_2_text">realizacji dla klientów biznesowych</span>
             </div>
             <div class="stat">
-              <strong>100%</strong>
-              <span>lokalnej obsługi klienta i indywidualnego podejścia</span>
+              <strong data-i18n="stat_3_title">100%</strong>
+              <span data-i18n="stat_3_text">lokalnej obsługi klienta i indywidualnego podejścia</span>
             </div>
           </div>
         </div>
@@ -635,37 +723,34 @@
     <section id="oferta">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Oferta</div>
-          <h2>Kompleksowe rozwiązania energetyczne</h2>
-          <div class="section-sub">
-            Łączymy design premium z biznesową funkcjonalnością. Projekt, dobór technologii, montaż,
-            uruchomienie i opieka posprzedażowa — wszystko w jednym miejscu.
-          </div>
+          <div class="section-kicker" data-i18n="offer_kicker">Oferta</div>
+          <h2 class="single-line-title" data-i18n="offer_title">Kompleksowe rozwiązania energetyczne - Fotowoltaika i Magazyny Energii klasy premium</h2>
+          <div class="section-sub"></div>
         </div>
 
         <div class="grid-4">
           <article class="card">
             <div class="icon">☀</div>
-            <h3>Fotowoltaika dla firm</h3>
-            <p>Instalacje PV dla hoteli, magazynów, biurowców, gospodarstw i zakładów przemysłowych.</p>
+            <h3 data-i18n="offer_1_title">Fotowoltaika dla firm</h3>
+            <p data-i18n="offer_1_text">Instalacje PV dla hoteli, magazynów, biurowców, gospodarstw i zakładów przemysłowych itp.</p>
           </article>
 
           <article class="card">
-            <div class="icon">❄</div>
-            <h3>Klimatyzacja</h3>
-            <p>Nowoczesne systemy chłodzenia i komfortu pracy dla obiektów komercyjnych i przemysłowych.</p>
+            <div class="icon">🔋</div>
+            <h3 data-i18n="offer_2_title">Magazyny Energii</h3>
+            <p data-i18n="offer_2_text">Nowoczesne systemy gwarantujące niezależność energetyczną i zabezpieczenie przed brakami dostaw prądu.</p>
           </article>
 
           <article class="card">
             <div class="icon">◌</div>
-            <h3>Kolektory słoneczne</h3>
-            <p>Wydajne systemy wspierające redukcję kosztów energii i podnoszące efektywność obiektu.</p>
+            <h3 data-i18n="offer_3_title">Kolektory słoneczne</h3>
+            <p data-i18n="offer_3_text">Wydajne systemy wspierające redukcję kosztów energii i podnoszące efektywność obiektu.</p>
           </article>
 
           <article class="card">
             <div class="icon">⬢</div>
-            <h3>Doradztwo i projektowanie</h3>
-            <p>Analiza opłacalności, koncepcja inwestycji i dobór rozwiązania szytego pod model biznesowy klienta.</p>
+            <h3 data-i18n="offer_4_title">Doradztwo i projektowanie</h3>
+            <p data-i18n="offer_4_text">Analiza opłacalności, koncepcja inwestycji i dobór rozwiązania szytego pod model biznesowy klienta.</p>
           </article>
         </div>
       </div>
@@ -674,11 +759,10 @@
     <section id="branze">
       <div class="container split">
         <div class="card">
-          <div class="section-kicker">Dla kogo</div>
-          <h2>Branże, które obsługujemy</h2>
-          <p class="section-sub">
-            Tworzymy rozwiązania dla firm, które potrzebują stabilnych kosztów energii, wysokiej estetyki wykonania
-            i partnera, który rozumie inwestycje B2B.
+          <div class="section-kicker" data-i18n="industries_kicker">Dla kogo</div>
+          <h2 data-i18n="industries_title">Branże, które obsługujemy</h2>
+          <p class="section-sub" data-i18n="industries_text">
+            Tworzymy rozwiązania dla firm, które potrzebują stabilnych kosztów energii, wysokiej estetyki wykonania i partnera, który rozumie inwestycje B2B. Fotowoltaika i Magazyny energii w Maroko to rozwiązania wykorzystujące maksymalny potencjał regionu dzięki któremu zielona energia jest darmowym paliwem w postaci energii słonecznej. Oprócz takich miast jak Rabat, Agadir czy Marrakesz obsługujemy region całego kraju.
           </p>
         </div>
 
@@ -686,22 +770,19 @@
           <div class="feature-list">
             <div class="feature">
               <div class="check">✓</div>
-              <div><strong>Hotele i obiekty noclegowe</strong><br>obniżenie kosztów energii, klimatyzacja i niezawodność działania przez cały sezon.</div>
+              <div data-i18n="industry_1"><strong>Hotele i obiekty noclegowe</strong><br>obniżenie kosztów energii, klimatyzacja i niezawodność działania przez cały sezon.</div>
             </div>
-
             <div class="feature">
               <div class="check">✓</div>
-              <div><strong>Magazyny i logistyka</strong><br>duże dachy, wysoka skala zużycia energii i opłacalność instalacji PV.</div>
+              <div data-i18n="industry_2"><strong>Magazyny i logistyka</strong><br>duże dachy, wysoka skala zużycia energii i opłacalność instalacji PV.</div>
             </div>
-
             <div class="feature">
               <div class="check">✓</div>
-              <div><strong>Fabryki i przemysł</strong><br>projekty uwzględniające ciągłość pracy zakładu i bezpieczeństwo inwestycji.</div>
+              <div data-i18n="industry_3"><strong>Fabryki i przemysł</strong><br>projekty uwzględniające ciągłość pracy zakładu i bezpieczeństwo inwestycji.</div>
             </div>
-
             <div class="feature">
               <div class="check">✓</div>
-              <div><strong>Gospodarstwa rolne i obiekty komercyjne</strong><br>energetyka dopasowana do sezonowości i specyfiki działalności.</div>
+              <div data-i18n="industry_4"><strong>Gospodarstwa rolne i obiekty komercyjne</strong><br>energetyka dopasowana do sezonowości i specyfiki działalności.</div>
             </div>
           </div>
         </div>
@@ -711,35 +792,48 @@
     <section id="realizacje">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Realizacje</div>
-          <h2>Przykładowe wdrożenia B2B</h2>
-          <div class="section-sub">
-            Te bloki możesz później podmienić na prawdziwe case studies, zdjęcia inwestycji i dane techniczne.
-          </div>
+          <div class="section-kicker" data-i18n="projects_kicker">Realizacje</div>
+          <h2 data-i18n="projects_title">Przykładowe wdrożenia B2B</h2>
         </div>
 
         <div class="showcase">
-          <article class="card">
-            <div class="project-visual"></div>
+          <article class="card showcase-card">
+            <div class="project-image-wrap">
+              <img class="project-image" src="hotel.jpg" alt="Hotele i resorty" />
+            </div>
             <div class="project-body">
-              <h3>Hotel & resort</h3>
-              <p>Instalacja PV i system klimatyzacji zwiększające niezależność energetyczną obiektu premium.</p>
+              <h3 data-i18n="project_1_title">Hotele & Resorty</h3>
+              <p data-i18n="project_1_text">Instalacja PV i System Magazynów Energii dla Hoteli i Resortów to nie tylko oszczędności ale także zabezpieczenie dostaw energii.</p>
             </div>
           </article>
 
-          <article class="card">
-            <div class="project-visual"></div>
+          <article class="card showcase-card">
+            <div class="project-image-wrap">
+              <img class="project-image" src="mag.jpg" alt="Magazyny logistyczne" />
+            </div>
             <div class="project-body">
-              <h3>Magazyn logistyczny</h3>
-              <p>Rozwiązanie projektowane pod dużą powierzchnię dachu, przewidywalne koszty i szybki zwrot inwestycji.</p>
+              <h3 data-i18n="project_2_title">Magazyny logistyczne</h3>
+              <p data-i18n="project_2_text">Rozwiązanie projektowane pod dużą powierzchnię dachu to przewidywalne koszty i szybki zwrot inwestycji z produkcji energii na własne potrzeby</p>
             </div>
           </article>
 
-          <article class="card">
-            <div class="project-visual"></div>
+          <article class="card showcase-card">
+            <div class="project-image-wrap">
+              <img class="project-image" src="wiat.jpg" alt="Wiaty parkingowe" />
+            </div>
             <div class="project-body">
-              <h3>Zakład przemysłowy</h3>
-              <p>Energia dla produkcji, redukcja kosztów operacyjnych i wdrożenie bez zakłócania pracy obiektu.</p>
+              <h3 data-i18n="project_3_title">Wiaty Parkingowe</h3>
+              <p data-i18n="project_3_text">System wiat to ochrona pojazdów przed promieniowaniem słonecznym które zamieniane jest w energię elektryczną możliwą do wykorzystania w firmie lub do ładowania aut elektrycznych</p>
+            </div>
+          </article>
+
+          <article class="card showcase-card">
+            <div class="project-image-wrap">
+              <img class="project-image" src="grunt.jpg" alt="Instalacje na gruncie" />
+            </div>
+            <div class="project-body">
+              <h3 data-i18n="project_4_title">Instalacje na Gruncie</h3>
+              <p data-i18n="project_4_text">Instalacje gruntowe to rozwiązania dla gospodarstw rolnych i innych podmiotów, które nie mają możliwości budowy instalacji na dachach budynków.</p>
             </div>
           </article>
         </div>
@@ -749,17 +843,12 @@
     <section>
       <div class="container cta-box">
         <div>
-          <h3>Projekt, który wygląda premium i pracuje na leady</h3>
-          <p>
-            Ta wersja strony została zbudowana w spójności z logo Amber Atlas — ciemne, eleganckie tło,
-            bursztynowe akcenty i mocna typografia. Kolejny krok to podmiana tekstów, dodanie prawdziwych zdjęć,
-            numeru telefonu, maila i finalne dopracowanie treści sprzedażowych.
-          </p>
+          <h3 data-i18n="cta_title">Wszystkie nasze instalacje wykonujemy w standardzie premium zachowując przy tym koszty inwestycji na poziomie gwarantującym najszybszą stopę zwrotu.</h3>
+          <p data-i18n="cta_text">Instalacje Fotowoltaiczne i Magazyny Energii od Amber Atlas to idealny stosunek zastosowanej technologii do kosztów inwestycji - dzięki temu nasze systemy fotowoltaiczne gwarantują stopę zwrotu od 10 do 20 procent rocznie.</p>
         </div>
 
         <div>
-          <a class="btn btn-primary" href="#kontakt" style="width:100%; margin-bottom:12px;">Umów bezpłatną wycenę</a>
-          <a class="btn btn-secondary" href="mailto:kontakt@amberatlas.eco" style="width:100%;">kontakt@amberatlas.eco</a>
+          <a class="btn btn-primary" href="#kontakt" style="width:100%;" data-i18n="cta_button">Umów bezpłatną wycenę</a>
         </div>
       </div>
     </section>
@@ -767,41 +856,42 @@
     <section id="kontakt">
       <div class="container split">
         <div class="card">
-          <div class="section-kicker">Kontakt</div>
-          <h2>Porozmawiajmy o Twojej inwestycji</h2>
-          <p class="section-sub">
-            Formularz jest przygotowany pod Netlify Forms, więc po wrzuceniu tej wersji do GitHuba i odświeżeniu
-            deploya w Netlify możesz zacząć odbierać zgłoszenia bez osobnego backendu.
+          <div class="section-kicker" data-i18n="contact_kicker">Kontakt</div>
+          <h2 data-i18n="contact_title">Porozmawiajmy o Twojej inwestycji</h2>
+          <p class="section-sub" data-i18n="contact_text">
+            Opisz w kilku zdaniach do jakiego obiektu potrzebujesz rozwiązania a nasi specjaliści na pewno się z Tobą skontaktują!
           </p>
 
           <div class="feature-list" style="margin-top:22px;">
-            <div class="feature"><div class="check">✓</div><div>spójny design oparty o logo i kolorystykę marki</div></div>
-            <div class="feature"><div class="check">✓</div><div>responsywna wersja mobilna</div></div>
-            <div class="feature"><div class="check">✓</div><div>sekcje przygotowane pod dalszą rozbudowę</div></div>
+            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b1">pełna obsługa procesu od początku do końca</div></div>
+            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b2">elastyczność na każdym etapie realizacji</div></div>
+            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b3">instalacje fotowoltaiczne i magazyny energii na miarę</div></div>
           </div>
         </div>
 
         <div class="contact-card">
-          <form name="kontakt" method="POST" data-netlify="true">
+          <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="kontakt" />
 
-            <div class="form-grid">
-              <input type="text" name="imie_firma" placeholder="Imię / firma" required />
-              <input type="email" name="email" placeholder="Adres e-mail" required />
-            </div>
+            <p class="hidden-field">
+              <label>Don’t fill this out: <input name="bot-field" /></label>
+            </p>
 
             <div class="form-grid">
-              <input type="tel" name="telefon" placeholder="Telefon" />
-              <input type="text" name="miasto" placeholder="Miasto / lokalizacja" />
+              <input type="text" name="imie_firma" data-i18n-placeholder="form_name" placeholder="Imię / firma" required />
+              <input type="email" name="email" data-i18n-placeholder="form_email" placeholder="Adres e-mail" required />
             </div>
 
-            <textarea name="wiadomosc" placeholder="Opisz krótko inwestycję lub zapytanie"></textarea>
-
-            <button class="btn btn-primary" type="submit">Wyślij zapytanie</button>
-
-            <div class="form-note">
-              Po wdrożeniu możesz dodać numer telefonu, adres, social media, mapę i prawdziwe zdjęcia realizacji.
+            <div class="form-grid">
+              <input type="tel" name="telefon" data-i18n-placeholder="form_phone" placeholder="Telefon" />
+              <input type="text" name="miasto" data-i18n-placeholder="form_city" placeholder="Miasto / lokalizacja" />
             </div>
+
+            <textarea name="wiadomosc" data-i18n-placeholder="form_message" placeholder="Opisz krótko inwestycję lub zapytanie"></textarea>
+
+            <button class="btn btn-primary" type="submit" data-i18n="form_submit">Wyślij zapytanie</button>
+
+            <div class="form-note" data-i18n="form_note">skontaktuj się z nami</div>
           </form>
         </div>
       </div>
@@ -810,9 +900,339 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© Amber Atlas — nowoczesna energia dla biznesu</div>
-      <div>Design spójny z identyfikacją marki</div>
+      <div>© Amber Atlas</div>
+      <div data-i18n="footer_right">copyright 2026</div>
     </div>
   </footer>
+
+  <script>
+    const translations = {
+      pl: {
+        nav_offer: "Oferta",
+        nav_industries: "Branże",
+        nav_projects: "Realizacje",
+        nav_contact: "Kontakt",
+
+        hero_eyebrow: "Energia dla biznesu • Premium B2B",
+        hero_title: "Nowoczesna energia dla firm",
+        hero_text: "Projektujemy i realizujemy instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla hoteli, magazynów, fabryk, gospodarstw rolnych oraz innych obiektów komercyjnych. Fotowoltaika i Magazyny Energii AMBER ATLAS to lokalna obsługa i realizacje dopasowane do realnych potrzeb biznesu.",
+        hero_cta_1: "Bezpłatna wycena",
+        hero_cta_2: "Zobacz realizacje",
+
+        stat_1_title: "15+ lat",
+        stat_1_text: "doświadczenia na rynkach europejskich",
+        stat_2_title: "2000+",
+        stat_2_text: "realizacji dla klientów biznesowych",
+        stat_3_title: "100%",
+        stat_3_text: "lokalnej obsługi klienta i indywidualnego podejścia",
+
+        offer_kicker: "Oferta",
+        offer_title: "Kompleksowe rozwiązania energetyczne - Fotowoltaika i Magazyny Energii klasy premium",
+        offer_1_title: "Fotowoltaika dla firm",
+        offer_1_text: "Instalacje PV dla hoteli, magazynów, biurowców, gospodarstw i zakładów przemysłowych itp.",
+        offer_2_title: "Magazyny Energii",
+        offer_2_text: "Nowoczesne systemy gwarantujące niezależność energetyczną i zabezpieczenie przed brakami dostaw prądu.",
+        offer_3_title: "Kolektory słoneczne",
+        offer_3_text: "Wydajne systemy wspierające redukcję kosztów energii i podnoszące efektywność obiektu.",
+        offer_4_title: "Doradztwo i projektowanie",
+        offer_4_text: "Analiza opłacalności, koncepcja inwestycji i dobór rozwiązania szytego pod model biznesowy klienta.",
+
+        industries_kicker: "Dla kogo",
+        industries_title: "Branże, które obsługujemy",
+        industries_text: "Tworzymy rozwiązania dla firm, które potrzebują stabilnych kosztów energii, wysokiej estetyki wykonania i partnera, który rozumie inwestycje B2B. Fotowoltaika i Magazyny energii w Maroko to rozwiązania wykorzystujące maksymalny potencjał regionu dzięki któremu zielona energia jest darmowym paliwem w postaci energii słonecznej. Oprócz takich miast jak Rabat, Agadir czy Marrakesz obsługujemy region całego kraju.",
+        industry_1: "<strong>Hotele i obiekty noclegowe</strong><br>obniżenie kosztów energii i niezawodność działania przez cały sezon.",
+        industry_2: "<strong>Magazyny i logistyka</strong><br>duże dachy, wysoka skala zużycia energii i opłacalność instalacji PV.",
+        industry_3: "<strong>Fabryki i przemysł</strong><br>projekty uwzględniające ciągłość pracy zakładu i bezpieczeństwo inwestycji.",
+        industry_4: "<strong>Gospodarstwa rolne i obiekty komercyjne</strong><br>energetyka dopasowana do sezonowości i specyfiki działalności.",
+
+        projects_kicker: "Realizacje",
+        projects_title: "Przykładowe wdrożenia B2B",
+        project_1_title: "Hotele & Resorty",
+        project_1_text: "Instalacja PV i System Magazynów Energii dla Hoteli i Resortów to nie tylko oszczędności ale także zabezpieczenie dostaw energii.",
+        project_2_title: "Magazyny logistyczne",
+        project_2_text: "Rozwiązanie projektowane pod dużą powierzchnię dachu to przewidywalne koszty i szybki zwrot inwestycji z produkcji energii na własne potrzeby",
+        project_3_title: "Wiaty Parkingowe",
+        project_3_text: "System wiat to ochrona pojazdów przed promieniowaniem słonecznym które zamieniane jest w energię elektryczną możliwą do wykorzystania w firmie lub do ładowania aut elektrycznych",
+        project_4_title: "Instalacje na Gruncie",
+        project_4_text: "Instalacje gruntowe to rozwiązania dla gospodarstw rolnych i innych podmiotów, które nie mają możliwości budowy instalacji na dachach budynków.",
+
+        cta_title: "Wszystkie nasze instalacje wykonujemy w standardzie premium zachowując przy tym koszty inwestycji na poziomie gwarantującym najszybszą stopę zwrotu.",
+        cta_text: "Instalacje Fotowoltaiczne i Magazyny Energii od Amber Atlas to idealny stosunek zastosowanej technologii do kosztów inwestycji - dzięki temu nasze systemy fotowoltaiczne gwarantują stopę zwrotu od 10 do 20 procent rocznie.",
+        cta_button: "Umów bezpłatną wycenę",
+
+        contact_kicker: "Kontakt",
+        contact_title: "Porozmawiajmy o Twojej inwestycji",
+        contact_text: "Opisz w kilku zdaniach do jakiego obiektu potrzebujesz rozwiązania a nasi specjaliści na pewno się z Tobą skontaktują!",
+        contact_b1: "pełna obsługa procesu od początku do końca",
+        contact_b2: "elastyczność na każdym etapie realizacji",
+        contact_b3: "instalacje fotowoltaiczne i magazyny energii na miarę",
+
+        form_name: "Imię / firma",
+        form_email: "Adres e-mail",
+        form_phone: "Telefon",
+        form_city: "Miasto / lokalizacja",
+        form_message: "Opisz krótko inwestycję lub zapytanie",
+        form_submit: "Wyślij zapytanie",
+        form_note: "skontaktuj się z nami",
+
+        footer_right: "copyright 2026"
+      },
+
+      en: {
+        nav_offer: "Offer",
+        nav_industries: "Industries",
+        nav_projects: "Projects",
+        nav_contact: "Contact",
+
+        hero_eyebrow: "Energy for business • Premium B2B",
+        hero_title: "Modern energy for companies",
+        hero_text: "We design and deliver photovoltaic installations, energy storage systems and energy solutions for hotels, warehouses, factories, farms and other commercial facilities. AMBER ATLAS photovoltaic and energy storage solutions mean local support and projects tailored to real business needs.",
+        hero_cta_1: "Free quote",
+        hero_cta_2: "View projects",
+
+        stat_1_title: "15+ years",
+        stat_1_text: "of experience on European markets",
+        stat_2_title: "2000+",
+        stat_2_text: "projects for business clients",
+        stat_3_title: "100%",
+        stat_3_text: "local customer service and individual approach",
+
+        offer_kicker: "Offer",
+        offer_title: "Comprehensive energy solutions - Premium photovoltaic and energy storage systems",
+        offer_1_title: "Photovoltaics for companies",
+        offer_1_text: "PV installations for hotels, warehouses, office buildings, farms and industrial facilities, etc.",
+        offer_2_title: "Energy Storage",
+        offer_2_text: "Modern systems ensuring energy independence and protection against power supply shortages.",
+        offer_3_title: "Solar collectors",
+        offer_3_text: "Efficient systems supporting lower energy costs and improving facility performance.",
+        offer_4_title: "Consulting and design",
+        offer_4_text: "Profitability analysis, investment concept and a solution tailored to the client's business model.",
+
+        industries_kicker: "Who we serve",
+        industries_title: "Industries we support",
+        industries_text: "We create solutions for businesses that need stable energy costs, high-quality execution and a partner who understands B2B investments. Photovoltaics and energy storage in Morocco make full use of the region’s potential, where green energy becomes free fuel in the form of solar power. In addition to cities such as Rabat, Agadir and Marrakech, we serve the entire country.",
+        industry_1: "<strong>Hotels and hospitality facilities</strong><br>lower energy costs and reliable operation throughout the season.",
+        industry_2: "<strong>Warehouses and logistics</strong><br>large roofs, high energy demand and profitable PV installations.",
+        industry_3: "<strong>Factories and industry</strong><br>projects designed with operational continuity and investment safety in mind.",
+        industry_4: "<strong>Farms and commercial properties</strong><br>energy solutions tailored to seasonality and business specifics.",
+
+        projects_kicker: "Projects",
+        projects_title: "Selected B2B implementations",
+        project_1_title: "Hotels & Resorts",
+        project_1_text: "A PV installation and energy storage system for hotels and resorts means not only savings but also secured energy supply.",
+        project_2_title: "Logistics warehouses",
+        project_2_text: "A solution designed for large roof areas means predictable costs and a fast return on investment through self-generated power.",
+        project_3_title: "Parking canopies",
+        project_3_text: "Canopy systems protect vehicles from solar radiation while converting sunlight into electricity for company use or EV charging.",
+        project_4_title: "Ground-mounted systems",
+        project_4_text: "Ground installations are ideal for farms and other entities that cannot build systems on rooftops.",
+
+        cta_title: "All our installations are delivered in a premium standard while keeping investment costs at a level that ensures the fastest return.",
+        cta_text: "Amber Atlas photovoltaic installations and energy storage systems offer an ideal balance between applied technology and investment costs - thanks to this, our photovoltaic systems can provide an annual return of 10 to 20 percent.",
+        cta_button: "Request a free quote",
+
+        contact_kicker: "Contact",
+        contact_title: "Let’s talk about your investment",
+        contact_text: "Describe in a few sentences what kind of facility needs a solution and our specialists will definitely get in touch with you.",
+        contact_b1: "full process support from start to finish",
+        contact_b2: "flexibility at every stage of implementation",
+        contact_b3: "tailor-made photovoltaic and energy storage systems",
+
+        form_name: "Name / company",
+        form_email: "Email address",
+        form_phone: "Phone",
+        form_city: "City / location",
+        form_message: "Briefly describe the investment or inquiry",
+        form_submit: "Send inquiry",
+        form_note: "contact us",
+
+        footer_right: "copyright 2026"
+      },
+
+      fr: {
+        nav_offer: "Offre",
+        nav_industries: "Secteurs",
+        nav_projects: "Réalisations",
+        nav_contact: "Contact",
+
+        hero_eyebrow: "Énergie pour les entreprises • Premium B2B",
+        hero_title: "Énergie moderne pour les entreprises",
+        hero_text: "Nous concevons et réalisons des installations photovoltaïques, des systèmes de stockage d’énergie et des solutions énergétiques pour les hôtels, entrepôts, usines, exploitations agricoles et autres sites commerciaux. Les solutions photovoltaïques et de stockage d’énergie AMBER ATLAS signifient un service local et des réalisations adaptées aux besoins réels des entreprises.",
+        hero_cta_1: "Devis gratuit",
+        hero_cta_2: "Voir les réalisations",
+
+        stat_1_title: "15+ ans",
+        stat_1_text: "d’expérience sur les marchés européens",
+        stat_2_title: "2000+",
+        stat_2_text: "réalisations pour des clients professionnels",
+        stat_3_title: "100%",
+        stat_3_text: "service client local et approche individuelle",
+
+        offer_kicker: "Offre",
+        offer_title: "Solutions énergétiques complètes - Photovoltaïque et stockage d’énergie premium",
+        offer_1_title: "Photovoltaïque pour les entreprises",
+        offer_1_text: "Installations PV pour hôtels, entrepôts, immeubles de bureaux, exploitations agricoles et sites industriels, etc.",
+        offer_2_title: "Stockage d’énergie",
+        offer_2_text: "Systèmes modernes garantissant l’indépendance énergétique et la protection contre les coupures d’électricité.",
+        offer_3_title: "Capteurs solaires",
+        offer_3_text: "Systèmes efficaces permettant de réduire les coûts énergétiques et d’améliorer la performance du site.",
+        offer_4_title: "Conseil et conception",
+        offer_4_text: "Analyse de rentabilité, concept d’investissement et solution adaptée au modèle économique du client.",
+
+        industries_kicker: "Pour qui",
+        industries_title: "Secteurs que nous accompagnons",
+        industries_text: "Nous créons des solutions pour les entreprises qui ont besoin de coûts énergétiques stables, d’une exécution haut de gamme et d’un partenaire qui comprend les investissements B2B. Le photovoltaïque et le stockage d’énergie au Maroc exploitent au maximum le potentiel de la région, où l’énergie verte devient un carburant gratuit sous forme d’énergie solaire. Outre des villes comme Rabat, Agadir ou Marrakech, nous intervenons dans tout le pays.",
+        industry_1: "<strong>Hôtels et hébergements</strong><br>réduction des coûts énergétiques et fonctionnement fiable pendant toute la saison.",
+        industry_2: "<strong>Entrepôts et logistique</strong><br>grandes toitures, forte consommation d’énergie et rentabilité des installations PV.",
+        industry_3: "<strong>Usines et industrie</strong><br>projets conçus avec continuité d’activité et sécurité de l’investissement.",
+        industry_4: "<strong>Exploitations agricoles et bâtiments commerciaux</strong><br>solutions énergétiques adaptées à la saisonnalité et à l’activité.",
+
+        projects_kicker: "Réalisations",
+        projects_title: "Exemples de réalisations B2B",
+        project_1_title: "Hôtels & Resorts",
+        project_1_text: "Une installation PV et un système de stockage d’énergie pour hôtels et resorts apportent non seulement des économies, mais aussi une sécurisation de l’alimentation électrique.",
+        project_2_title: "Entrepôts logistiques",
+        project_2_text: "Une solution conçue pour de grandes surfaces de toiture permet des coûts prévisibles et un retour sur investissement rapide grâce à l’autoproduction.",
+        project_3_title: "Ombrières de parking",
+        project_3_text: "Les systèmes d’ombrières protègent les véhicules du rayonnement solaire tout en transformant le soleil en électricité pour l’entreprise ou la recharge des véhicules électriques.",
+        project_4_title: "Installations au sol",
+        project_4_text: "Les installations au sol sont idéales pour les exploitations agricoles et les autres structures qui ne peuvent pas construire sur les toitures.",
+
+        cta_title: "Toutes nos installations sont réalisées selon un standard premium tout en maintenant les coûts d’investissement à un niveau garantissant le retour le plus rapide.",
+        cta_text: "Les installations photovoltaïques et systèmes de stockage d’énergie Amber Atlas offrent un équilibre idéal entre technologie appliquée et coût d’investissement - grâce à cela, nos systèmes photovoltaïques peuvent garantir un rendement annuel de 10 à 20 pour cent.",
+        cta_button: "Demander un devis gratuit",
+
+        contact_kicker: "Contact",
+        contact_title: "Parlons de votre investissement",
+        contact_text: "Décrivez en quelques phrases le type de site pour lequel vous avez besoin d’une solution et nos spécialistes vous contacteront rapidement.",
+        contact_b1: "prise en charge complète du processus du début à la fin",
+        contact_b2: "flexibilité à chaque étape de la réalisation",
+        contact_b3: "installations photovoltaïques et stockage d’énergie sur mesure",
+
+        form_name: "Nom / entreprise",
+        form_email: "Adresse e-mail",
+        form_phone: "Téléphone",
+        form_city: "Ville / localisation",
+        form_message: "Décrivez brièvement votre projet ou votre demande",
+        form_submit: "Envoyer la demande",
+        form_note: "contactez-nous",
+
+        footer_right: "copyright 2026"
+      },
+
+      ar: {
+        nav_offer: "العرض",
+        nav_industries: "القطاعات",
+        nav_projects: "المشاريع",
+        nav_contact: "اتصل بنا",
+
+        hero_eyebrow: "طاقة للأعمال • حلول فاخرة B2B",
+        hero_title: "طاقة حديثة للشركات",
+        hero_text: "نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية. حلول الطاقة الشمسية وتخزين الطاقة من AMBER ATLAS تعني خدمة محلية ومشاريع مصممة وفق الاحتياجات الحقيقية للأعمال.",
+        hero_cta_1: "عرض سعر مجاني",
+        hero_cta_2: "عرض المشاريع",
+
+        stat_1_title: "أكثر من 15 سنة",
+        stat_1_text: "من الخبرة في الأسواق الأوروبية",
+        stat_2_title: "+2000",
+        stat_2_text: "مشروع لعملاء الأعمال",
+        stat_3_title: "100%",
+        stat_3_text: "خدمة محلية ونهج فردي لكل عميل",
+
+        offer_kicker: "العرض",
+        offer_title: "حلول طاقة متكاملة - أنظمة شمسية وتخزين طاقة بمستوى فاخر",
+        offer_1_title: "الطاقة الشمسية للشركات",
+        offer_1_text: "تركيبات شمسية للفنادق والمخازن والمكاتب والمزارع والمنشآت الصناعية وغيرها.",
+        offer_2_title: "أنظمة تخزين الطاقة",
+        offer_2_text: "أنظمة حديثة تضمن الاستقلال الطاقي والحماية من انقطاع إمدادات الكهرباء.",
+        offer_3_title: "المجمّعات الشمسية",
+        offer_3_text: "أنظمة فعالة تساعد على خفض تكاليف الطاقة ورفع كفاءة المنشأة.",
+        offer_4_title: "الاستشارات والتصميم",
+        offer_4_text: "تحليل الجدوى ووضع تصور الاستثمار واختيار الحل المناسب لنموذج عمل العميل.",
+
+        industries_kicker: "لمن",
+        industries_title: "القطاعات التي نخدمها",
+        industries_text: "نطوّر حلولاً للشركات التي تحتاج إلى تكاليف طاقة مستقرة وجودة تنفيذ عالية وشريك يفهم استثمارات B2B. الطاقة الشمسية وتخزين الطاقة في المغرب حلول تستفيد إلى أقصى حد من إمكانات المنطقة حيث تصبح الطاقة الخضراء وقوداً مجانياً في شكل طاقة شمسية. إضافة إلى مدن مثل الرباط وأكادير ومراكش فإننا نخدم مختلف مناطق البلاد.",
+        industry_1: "<strong>الفنادق ومنشآت الضيافة</strong><br>خفض تكاليف الطاقة وضمان التشغيل الموثوق طوال الموسم.",
+        industry_2: "<strong>المخازن واللوجستيات</strong><br>أسطح كبيرة واستهلاك مرتفع للطاقة وجدوى ممتازة للأنظمة الشمسية.",
+        industry_3: "<strong>المصانع والصناعة</strong><br>مشاريع تراعي استمرارية العمل وأمان الاستثمار.",
+        industry_4: "<strong>المزارع والمنشآت التجارية</strong><br>حلول طاقية ملائمة للموسمية وطبيعة النشاط.",
+
+        projects_kicker: "المشاريع",
+        projects_title: "نماذج من مشاريع B2B",
+        project_1_title: "فنادق ومنتجعات",
+        project_1_text: "تركيب نظام شمسي مع نظام تخزين طاقة للفنادق والمنتجعات لا يوفّر التكاليف فقط بل يضمن أيضاً استمرارية تزويد الطاقة.",
+        project_2_title: "مخازن لوجستية",
+        project_2_text: "حل مصمم لمساحات أسطح كبيرة يوفّر تكاليف متوقعة وعائداً سريعاً من إنتاج الطاقة للاستهلاك الذاتي.",
+        project_3_title: "مظلات مواقف السيارات",
+        project_3_text: "أنظمة المظلات تحمي المركبات من أشعة الشمس وتحوّلها إلى طاقة كهربائية يمكن استخدامها في الشركة أو لشحن السيارات الكهربائية.",
+        project_4_title: "أنظمة أرضية",
+        project_4_text: "الأنظمة الأرضية مناسبة للمزارع والجهات الأخرى التي لا يمكنها إنشاء أنظمة على أسطح المباني.",
+
+        cta_title: "ننفذ جميع منشآتنا بمعيار فاخر مع الحفاظ على تكاليف الاستثمار عند مستوى يضمن أسرع عائد ممكن.",
+        cta_text: "توفر أنظمة الطاقة الشمسية وتخزين الطاقة من Amber Atlas توازناً مثالياً بين التكنولوجيا المستخدمة وتكلفة الاستثمار، ولذلك يمكن لأنظمتنا الشمسية تحقيق عائد سنوي من 10 إلى 20 بالمئة.",
+        cta_button: "اطلب عرض سعر مجاني",
+
+        contact_kicker: "اتصل بنا",
+        contact_title: "لنتحدث عن استثمارك",
+        contact_text: "اكتب في بضع جمل نوع المنشأة التي تحتاج إلى حل لها، وسيتواصل معك مختصونا بالتأكيد.",
+        contact_b1: "إدارة كاملة للعملية من البداية إلى النهاية",
+        contact_b2: "مرونة في كل مرحلة من مراحل التنفيذ",
+        contact_b3: "أنظمة شمسية وتخزين طاقة مصممة حسب الحاجة",
+
+        form_name: "الاسم / الشركة",
+        form_email: "البريد الإلكتروني",
+        form_phone: "الهاتف",
+        form_city: "المدينة / الموقع",
+        form_message: "صف بإيجاز المشروع أو الاستفسار",
+        form_submit: "إرسال الطلب",
+        form_note: "تواصل معنا",
+
+        footer_right: "حقوق النشر 2026"
+      }
+    };
+
+    function setLanguage(lang) {
+      const dict = translations[lang] || translations.pl;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.body.classList.remove('lang-pl', 'lang-en', 'lang-fr', 'lang-ar');
+      document.body.classList.add(`lang-${lang}`);
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key] !== undefined) {
+          el.placeholder = dict[key];
+        }
+      });
+
+      document.title = {
+        pl: "Amber Atlas — Nowoczesna energia dla biznesu",
+        en: "Amber Atlas — Modern energy for business",
+        fr: "Amber Atlas — Énergie moderne pour les entreprises",
+        ar: "Amber Atlas — طاقة حديثة للأعمال"
+      }[lang] || "Amber Atlas";
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      localStorage.setItem('amberatlas_lang', lang);
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    const savedLang = localStorage.getItem('amberatlas_lang') || 'pl';
+    setLanguage(savedLang);
+  </script>
 </body>
 </html>
