@@ -1,65 +1,818 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amber Atlas</title>
-<style>
-body {margin:0; font-family:Arial; background:#0b0b0b; color:#fff;}
-header {padding:80px 20px; text-align:center; background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1509395176047-4a66953fd231'); background-size:cover;}
-h1 {font-size:48px; margin-bottom:20px;}
-p {max-width:700px; margin:0 auto 20px;}
-.btn {background:#d4af37; color:#000; padding:15px 30px; text-decoration:none; border-radius:5px; margin:5px; display:inline-block;}
-.section {padding:60px 20px; text-align:center;}
-.cards {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
-.card {background:#1a1a1a; padding:20px; width:250px; border-radius:10px;}
-footer {padding:40px; text-align:center; background:#000;}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amber Atlas — Nowoczesna energia dla biznesu</title>
+  <meta name="description" content="Amber Atlas projektuje i realizuje instalacje fotowoltaiczne, systemy klimatyzacji i rozwiązania energetyczne dla sektora B2B." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0a0c;
+      --bg-soft: #151217;
+      --text: #f4efe8;
+      --muted: #b8ada2;
+      --amber: #ffb51e;
+      --amber-2: #ffcf57;
+      --amber-3: #ffdf91;
+      --card-border: rgba(255,191,63,0.16);
+      --shadow: 0 24px 60px rgba(0,0,0,.45);
+      --radius: 22px;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,196,83,.09), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(255,150,25,.05), transparent 22%),
+        radial-gradient(circle at 15% 10%, rgba(255,150,25,.04), transparent 18%),
+        linear-gradient(180deg, #161316 0%, #0d0b0d 35%, #090809 100%);
+      min-height: 100vh;
+      letter-spacing: .01em;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image: radial-gradient(rgba(255,255,255,.08) .5px, transparent .7px);
+      background-size: 5px 5px;
+      mix-blend-mode: soft-light;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(10,9,11,.72);
+      border-bottom: 1px solid rgba(255,191,63,.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(0,0,0,.35);
+      background: #111;
+    }
+
+    .brand-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #ffbf3f;
+      text-shadow: 0 0 18px rgba(255,181,30,.15);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: .22s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--amber-2), var(--amber));
+      color: #211100;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: saturate(1.05) brightness(1.02);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.03);
+      border-color: rgba(255,191,63,.18);
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,191,63,.35);
+    }
+
+    .hero {
+      padding: 78px 0 44px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255,191,63,.08);
+      color: #ffd788;
+      border: 1px solid rgba(255,191,63,.16);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: .98;
+      font-weight: 800;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      color: #ffbf3f;
+      text-shadow:
+        0 3px 0 rgba(124,69,0,.6),
+        0 0 26px rgba(255,173,20,.08);
+    }
+
+    .lead {
+      max-width: 700px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,191,63,.12);
+      border-radius: 18px;
+      padding: 20px 18px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      color: #ffbf3f;
+      margin-bottom: 7px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .93rem;
+      line-height: 1.5;
+    }
+
+    .hero-card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,191,63,.12);
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(255,191,63,.16), transparent 25%),
+        linear-gradient(180deg, rgba(255,191,63,.05), transparent 45%);
+      pointer-events: none;
+    }
+
+    .hero-logo {
+      width: min(100%, 520px);
+      filter: drop-shadow(0 18px 38px rgba(0,0,0,.45));
+      border-radius: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      padding: 44px 0;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      color: #ffd788;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .82rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.05;
+    }
+
+    .section-sub {
+      max-width: 740px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      min-height: 100%;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,191,63,.28);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: inline-grid;
+      place-items: center;
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      background: linear-gradient(180deg, rgba(255,207,87,.18), rgba(255,181,30,.07));
+      border: 1px solid rgba(255,191,63,.16);
+      color: #ffca52;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: .96rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .check {
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,191,63,.12);
+      color: #ffca52;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .showcase .card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .project-visual {
+      height: 220px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
+        radial-gradient(circle at 50% 0%, rgba(255,191,63,.24), transparent 38%),
+        linear-gradient(135deg, #201507, #0f0c0d 60%);
+      border-bottom: 1px solid rgba(255,191,63,.12);
+      position: relative;
+    }
+
+    .project-visual::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,191,63,.16);
+      background:
+        linear-gradient(180deg, rgba(255,181,30,.15), rgba(255,181,30,.03)),
+        radial-gradient(circle at 70% 30%, rgba(255,220,120,.5), transparent 18%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+    }
+
+    .project-body {
+      padding: 22px;
+    }
+
+    .project-body p {
+      color: var(--muted);
+      margin: 10px 0 0;
+      line-height: 1.7;
+      font-size: .95rem;
+    }
+
+    .cta-box {
+      margin-top: 8px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(255,191,63,.2), transparent 24%),
+        linear-gradient(135deg, rgba(255,191,63,.11), rgba(255,255,255,.025));
+      border: 1px solid rgba(255,191,63,.18);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-box h3 {
+      margin: 0 0 10px;
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      line-height: 1.08;
+    }
+
+    .cta-box p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 640px;
+    }
+
+    .contact-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,191,63,.16);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,191,63,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      border-radius: 16px;
+      padding: 16px 18px;
+      font: inherit;
+      outline: none;
+      transition: .2s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: rgba(255,191,63,.4);
+      box-shadow: 0 0 0 4px rgba(255,191,63,.08);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      color: #9f9386;
+      font-size: .92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border-top: 1px solid rgba(255,191,63,.08);
+      padding-top: 22px;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .split,
+      .cta-box,
+      .grid-4,
+      .showcase {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-card {
+        min-height: 420px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-grid,
+      .split,
+      .cta-box,
+      .grid-4,
+      .showcase,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: auto;
+      }
+
+      .brand-title {
+        font-size: .94rem;
+        letter-spacing: .13em;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 11vw, 3.3rem);
+      }
+
+      .cta-box {
+        padding: 26px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <img src="logo.png" alt="Amber Atlas logo" />
+        <div class="brand-title">Amber Atlas</div>
+      </a>
 
-<header>
-<h1>Nowoczesna energia dla biznesu</h1>
-<p>Projektujemy i realizujemy instalacje PV, klimatyzację i rozwiązania energetyczne dla firm</p>
-<a class="btn">Bezpłatna wycena</a>
-<a class="btn">Zobacz realizacje</a>
-</header>
+      <div class="nav-links">
+        <a href="#oferta">Oferta</a>
+        <a href="#branze">Branże</a>
+        <a href="#realizacje">Realizacje</a>
+        <a href="#kontakt" class="btn btn-secondary">Kontakt</a>
+      </div>
+    </div>
+  </div>
 
-<div class="section">
-<h2>O nas</h2>
-<p>Amber Atlas to firma specjalizująca się w kompleksowych rozwiązaniach energetycznych dla biznesu. Realizujemy projekty na rynkach europejskich.</p>
-</div>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Energia dla biznesu • Premium B2B</div>
+          <h1>Nowoczesna energia dla firm</h1>
+          <p class="lead">
+            Projektujemy i realizujemy instalacje fotowoltaiczne, systemy klimatyzacji i rozwiązania energetyczne
+            dla hoteli, magazynów, fabryk oraz obiektów komercyjnych. Styl premium, lokalna obsługa i realizacje
+            dopasowane do realnych potrzeb biznesu.
+          </p>
 
-<div class="section">
-<h2>Oferta</h2>
-<div class="cards">
-<div class="card">Fotowoltaika</div>
-<div class="card">Klimatyzacja</div>
-<div class="card">Kolektory słoneczne</div>
-<div class="card">Doradztwo</div>
-</div>
-</div>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#kontakt">Bezpłatna wycena</a>
+            <a class="btn btn-secondary" href="#realizacje">Zobacz realizacje</a>
+          </div>
 
-<div class="section">
-<h2>Dla kogo</h2>
-<div class="cards">
-<div class="card">Hotele</div>
-<div class="card">Magazyny</div>
-<div class="card">Fabryki</div>
-<div class="card">Gospodarstwa</div>
-</div>
-</div>
+          <div class="stats">
+            <div class="stat">
+              <strong>15+ lat</strong>
+              <span>doświadczenia na rynkach europejskich</span>
+            </div>
+            <div class="stat">
+              <strong>2000+</strong>
+              <span>realizacji dla klientów biznesowych</span>
+            </div>
+            <div class="stat">
+              <strong>100%</strong>
+              <span>lokalnej obsługi klienta i indywidualnego podejścia</span>
+            </div>
+          </div>
+        </div>
 
-<div class="section">
-<h2>Kontakt</h2>
-<p>Skontaktuj się z nami i otrzymaj bezpłatną wycenę</p>
-<a class="btn">Kontakt</a>
-</div>
+        <div class="hero-card">
+          <img class="hero-logo" src="logo.png" alt="Amber Atlas" />
+        </div>
+      </div>
+    </section>
 
-<footer>
-<p>© Amber Atlas</p>
-</footer>
+    <section id="oferta">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Oferta</div>
+          <h2>Kompleksowe rozwiązania energetyczne</h2>
+          <div class="section-sub">
+            Łączymy design premium z biznesową funkcjonalnością. Projekt, dobór technologii, montaż,
+            uruchomienie i opieka posprzedażowa — wszystko w jednym miejscu.
+          </div>
+        </div>
 
+        <div class="grid-4">
+          <article class="card">
+            <div class="icon">☀</div>
+            <h3>Fotowoltaika dla firm</h3>
+            <p>Instalacje PV dla hoteli, magazynów, biurowców, gospodarstw i zakładów przemysłowych.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">❄</div>
+            <h3>Klimatyzacja</h3>
+            <p>Nowoczesne systemy chłodzenia i komfortu pracy dla obiektów komercyjnych i przemysłowych.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">◌</div>
+            <h3>Kolektory słoneczne</h3>
+            <p>Wydajne systemy wspierające redukcję kosztów energii i podnoszące efektywność obiektu.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">⬢</div>
+            <h3>Doradztwo i projektowanie</h3>
+            <p>Analiza opłacalności, koncepcja inwestycji i dobór rozwiązania szytego pod model biznesowy klienta.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="branze">
+      <div class="container split">
+        <div class="card">
+          <div class="section-kicker">Dla kogo</div>
+          <h2>Branże, które obsługujemy</h2>
+          <p class="section-sub">
+            Tworzymy rozwiązania dla firm, które potrzebują stabilnych kosztów energii, wysokiej estetyki wykonania
+            i partnera, który rozumie inwestycje B2B.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="feature-list">
+            <div class="feature">
+              <div class="check">✓</div>
+              <div><strong>Hotele i obiekty noclegowe</strong><br>obniżenie kosztów energii, klimatyzacja i niezawodność działania przez cały sezon.</div>
+            </div>
+
+            <div class="feature">
+              <div class="check">✓</div>
+              <div><strong>Magazyny i logistyka</strong><br>duże dachy, wysoka skala zużycia energii i opłacalność instalacji PV.</div>
+            </div>
+
+            <div class="feature">
+              <div class="check">✓</div>
+              <div><strong>Fabryki i przemysł</strong><br>projekty uwzględniające ciągłość pracy zakładu i bezpieczeństwo inwestycji.</div>
+            </div>
+
+            <div class="feature">
+              <div class="check">✓</div>
+              <div><strong>Gospodarstwa rolne i obiekty komercyjne</strong><br>energetyka dopasowana do sezonowości i specyfiki działalności.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="realizacje">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Realizacje</div>
+          <h2>Przykładowe wdrożenia B2B</h2>
+          <div class="section-sub">
+            Te bloki możesz później podmienić na prawdziwe case studies, zdjęcia inwestycji i dane techniczne.
+          </div>
+        </div>
+
+        <div class="showcase">
+          <article class="card">
+            <div class="project-visual"></div>
+            <div class="project-body">
+              <h3>Hotel & resort</h3>
+              <p>Instalacja PV i system klimatyzacji zwiększające niezależność energetyczną obiektu premium.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="project-visual"></div>
+            <div class="project-body">
+              <h3>Magazyn logistyczny</h3>
+              <p>Rozwiązanie projektowane pod dużą powierzchnię dachu, przewidywalne koszty i szybki zwrot inwestycji.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="project-visual"></div>
+            <div class="project-body">
+              <h3>Zakład przemysłowy</h3>
+              <p>Energia dla produkcji, redukcja kosztów operacyjnych i wdrożenie bez zakłócania pracy obiektu.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container cta-box">
+        <div>
+          <h3>Projekt, który wygląda premium i pracuje na leady</h3>
+          <p>
+            Ta wersja strony została zbudowana w spójności z logo Amber Atlas — ciemne, eleganckie tło,
+            bursztynowe akcenty i mocna typografia. Kolejny krok to podmiana tekstów, dodanie prawdziwych zdjęć,
+            numeru telefonu, maila i finalne dopracowanie treści sprzedażowych.
+          </p>
+        </div>
+
+        <div>
+          <a class="btn btn-primary" href="#kontakt" style="width:100%; margin-bottom:12px;">Umów bezpłatną wycenę</a>
+          <a class="btn btn-secondary" href="mailto:kontakt@amberatlas.eco" style="width:100%;">kontakt@amberatlas.eco</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container split">
+        <div class="card">
+          <div class="section-kicker">Kontakt</div>
+          <h2>Porozmawiajmy o Twojej inwestycji</h2>
+          <p class="section-sub">
+            Formularz jest przygotowany pod Netlify Forms, więc po wrzuceniu tej wersji do GitHuba i odświeżeniu
+            deploya w Netlify możesz zacząć odbierać zgłoszenia bez osobnego backendu.
+          </p>
+
+          <div class="feature-list" style="margin-top:22px;">
+            <div class="feature"><div class="check">✓</div><div>spójny design oparty o logo i kolorystykę marki</div></div>
+            <div class="feature"><div class="check">✓</div><div>responsywna wersja mobilna</div></div>
+            <div class="feature"><div class="check">✓</div><div>sekcje przygotowane pod dalszą rozbudowę</div></div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <form name="kontakt" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="kontakt" />
+
+            <div class="form-grid">
+              <input type="text" name="imie_firma" placeholder="Imię / firma" required />
+              <input type="email" name="email" placeholder="Adres e-mail" required />
+            </div>
+
+            <div class="form-grid">
+              <input type="tel" name="telefon" placeholder="Telefon" />
+              <input type="text" name="miasto" placeholder="Miasto / lokalizacja" />
+            </div>
+
+            <textarea name="wiadomosc" placeholder="Opisz krótko inwestycję lub zapytanie"></textarea>
+
+            <button class="btn btn-primary" type="submit">Wyślij zapytanie</button>
+
+            <div class="form-note">
+              Po wdrożeniu możesz dodać numer telefonu, adres, social media, mapę i prawdziwe zdjęcia realizacji.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© Amber Atlas — nowoczesna energia dla biznesu</div>
+      <div>Design spójny z identyfikacją marki</div>
+    </div>
+  </footer>
 </body>
 </html>
