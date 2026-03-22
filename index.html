@@ -931,12 +931,13 @@
           <form
             name="kontakt"
             method="POST"
-            action="/"
+            action="https://amberatlas.solar/"
             data-netlify="true"
             data-netlify-recaptcha="true"
             netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="kontakt" />
+            <input type="hidden" name="subject" value="Nowe zapytanie ze strony Amber Atlas" />
 
             <p class="hidden-field">
               <label>Don’t fill this out: <input name="bot-field" /></label>
@@ -982,13 +983,13 @@
     </div>
   </footer>
 
-  <!-- Hidden fallback for Netlify form detection -->
   <form name="kontakt" data-netlify="true" hidden>
     <input type="text" name="imie_firma" />
     <input type="email" name="email" />
     <input type="tel" name="telefon" />
     <input type="text" name="miasto" />
     <textarea name="wiadomosc"></textarea>
+    <input type="hidden" name="subject" />
   </form>
 
   <script>
