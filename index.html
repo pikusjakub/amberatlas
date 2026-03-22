@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amber Atlas — Nowoczesna energia dla biznesu</title>
+  <title>Amber Atlas — طاقة حديثة للأعمال</title>
   <meta name="description" content="Amber Atlas projektuje i realizuje instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla sektora B2B." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
       --bg-3: #1a1512;
       --text: #f4efe8;
       --muted: #b8ada2;
-      --amber-1: #ffd98a;
+      --amber-1: #ffe7b0;
       --amber-2: #ffbf3f;
       --amber-3: #ff9f1c;
       --amber-4: #d67900;
@@ -224,28 +224,31 @@
     h1 {
       margin: 0 0 16px;
       font-size: clamp(2.1rem, 5vw, 4.6rem);
-      line-height: 1.02;
+      line-height: 1.04;
       font-weight: 800;
-      letter-spacing: .02em;
-      max-width: 10.5ch;
+      letter-spacing: .01em;
+      max-width: 11ch;
       text-wrap: balance;
-      text-transform: uppercase;
       background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.55) 0 5%, transparent 6%),
-        radial-gradient(circle at 35% 55%, rgba(255,230,180,.45) 0 6%, transparent 7%),
-        radial-gradient(circle at 60% 30%, rgba(255,220,160,.35) 0 5%, transparent 6%),
-        radial-gradient(circle at 72% 70%, rgba(255,210,130,.25) 0 5%, transparent 6%),
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.30) 0 4%, transparent 5%),
+        radial-gradient(circle at 35% 55%, rgba(255,230,180,.25) 0 5%, transparent 6%),
+        radial-gradient(circle at 60% 30%, rgba(255,220,160,.18) 0 4%, transparent 5%),
+        radial-gradient(circle at 72% 70%, rgba(255,210,130,.15) 0 4%, transparent 5%),
         linear-gradient(180deg, #fff0c5 0%, #ffd98a 18%, #ffbf3f 42%, #ff9f1c 68%, #cc6e00 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      filter: drop-shadow(0 3px 0 rgba(124,69,0,.45));
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      padding-inline-end: .08em;
     }
 
     [dir="rtl"] h1 {
       max-width: 12ch;
       line-height: 1.15;
       text-transform: none;
+      padding-inline-start: .08em;
+      padding-inline-end: 0;
     }
 
     .lead {
@@ -655,7 +658,7 @@
     }
   </style>
 </head>
-<body class="lang-pl">
+<body class="lang-ar">
   <div class="nav-wrap">
     <div class="container nav">
       <a class="brand" href="#top">
@@ -665,17 +668,17 @@
 
       <div class="nav-right">
         <div class="nav-links">
-          <a href="#oferta" data-i18n="nav_offer">Oferta</a>
-          <a href="#branze" data-i18n="nav_industries">Branże</a>
-          <a href="#realizacje" data-i18n="nav_projects">Realizacje</a>
-          <a href="#kontakt" data-i18n="nav_contact">Kontakt</a>
+          <a href="#oferta" data-i18n="nav_offer">العرض</a>
+          <a href="#branze" data-i18n="nav_industries">القطاعات</a>
+          <a href="#realizacje" data-i18n="nav_projects">المشاريع</a>
+          <a href="#kontakt" data-i18n="nav_contact">اتصل بنا</a>
         </div>
 
         <div class="lang-switcher">
-          <button class="lang-btn active" data-lang="pl">PL</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn active" data-lang="ar">AR</button>
           <button class="lang-btn" data-lang="fr">FR</button>
-          <button class="lang-btn" data-lang="ar">AR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pl">PL</button>
         </div>
       </div>
     </div>
@@ -685,31 +688,31 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow" data-i18n="hero_eyebrow">Energia dla biznesu • Premium B2B</div>
+          <div class="eyebrow" data-i18n="hero_eyebrow">طاقة للأعمال • حلول فاخرة B2B</div>
 
-          <h1 data-i18n="hero_title">Nowoczesna energia dla firm</h1>
+          <h1 data-i18n="hero_title">طاقة حديثة للشركات</h1>
 
           <p class="lead" data-i18n="hero_text">
-            Projektujemy i realizujemy instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla hoteli, magazynów, fabryk, gospodarstw rolnych oraz innych obiektów komercyjnych. Fotowoltaika i Magazyny Energii AMBER ATLAS to lokalna obsługa i realizacje dopasowane do realnych potrzeb biznesu.
+            نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية. حلول الطاقة الشمسية وتخزين الطاقة من AMBER ATLAS تعني خدمة محلية ومشاريع مصممة وفق الاحتياجات الحقيقية للأعمال.
           </p>
 
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#kontakt" data-i18n="hero_cta_1">Bezpłatna wycena</a>
-            <a class="btn btn-secondary" href="#realizacje" data-i18n="hero_cta_2">Zobacz realizacje</a>
+            <a class="btn btn-primary" href="#kontakt" data-i18n="hero_cta_1">عرض سعر مجاني</a>
+            <a class="btn btn-secondary" href="#realizacje" data-i18n="hero_cta_2">عرض المشاريع</a>
           </div>
 
           <div class="stats">
             <div class="stat">
-              <strong data-i18n="stat_1_title">15+ lat</strong>
-              <span data-i18n="stat_1_text">doświadczenia na rynkach europejskich</span>
+              <strong data-i18n="stat_1_title">أكثر من 15 سنة</strong>
+              <span data-i18n="stat_1_text">من الخبرة في الأسواق الأوروبية</span>
             </div>
             <div class="stat">
-              <strong data-i18n="stat_2_title">2000+</strong>
-              <span data-i18n="stat_2_text">realizacji dla klientów biznesowych</span>
+              <strong data-i18n="stat_2_title">+2000</strong>
+              <span data-i18n="stat_2_text">مشروع لعملاء الأعمال</span>
             </div>
             <div class="stat">
               <strong data-i18n="stat_3_title">100%</strong>
-              <span data-i18n="stat_3_text">lokalnej obsługi klienta i indywidualnego podejścia</span>
+              <span data-i18n="stat_3_text">خدمة محلية ونهج فردي لكل عميل</span>
             </div>
           </div>
         </div>
@@ -723,34 +726,34 @@
     <section id="oferta">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker" data-i18n="offer_kicker">Oferta</div>
-          <h2 class="single-line-title" data-i18n="offer_title">Kompleksowe rozwiązania energetyczne - Fotowoltaika i Magazyny Energii klasy premium</h2>
+          <div class="section-kicker" data-i18n="offer_kicker">العرض</div>
+          <h2 class="single-line-title" data-i18n="offer_title">حلول طاقة متكاملة - أنظمة شمسية وتخزين طاقة بمستوى فاخر</h2>
           <div class="section-sub"></div>
         </div>
 
         <div class="grid-4">
           <article class="card">
             <div class="icon">☀</div>
-            <h3 data-i18n="offer_1_title">Fotowoltaika dla firm</h3>
-            <p data-i18n="offer_1_text">Instalacje PV dla hoteli, magazynów, biurowców, gospodarstw i zakładów przemysłowych itp.</p>
+            <h3 data-i18n="offer_1_title">الطاقة الشمسية للشركات</h3>
+            <p data-i18n="offer_1_text">تركيبات شمسية للفنادق والمخازن والمكاتب والمزارع والمنشآت الصناعية وغيرها.</p>
           </article>
 
           <article class="card">
             <div class="icon">🔋</div>
-            <h3 data-i18n="offer_2_title">Magazyny Energii</h3>
-            <p data-i18n="offer_2_text">Nowoczesne systemy gwarantujące niezależność energetyczną i zabezpieczenie przed brakami dostaw prądu.</p>
+            <h3 data-i18n="offer_2_title">أنظمة تخزين الطاقة</h3>
+            <p data-i18n="offer_2_text">أنظمة حديثة تضمن الاستقلال الطاقي والحماية من انقطاع إمدادات الكهرباء.</p>
           </article>
 
           <article class="card">
             <div class="icon">◌</div>
-            <h3 data-i18n="offer_3_title">Kolektory słoneczne</h3>
-            <p data-i18n="offer_3_text">Wydajne systemy wspierające redukcję kosztów energii i podnoszące efektywność obiektu.</p>
+            <h3 data-i18n="offer_3_title">المجمّعات الشمسية</h3>
+            <p data-i18n="offer_3_text">أنظمة فعالة تساعد على خفض تكاليف الطاقة ورفع كفاءة المنشأة.</p>
           </article>
 
           <article class="card">
             <div class="icon">⬢</div>
-            <h3 data-i18n="offer_4_title">Doradztwo i projektowanie</h3>
-            <p data-i18n="offer_4_text">Analiza opłacalności, koncepcja inwestycji i dobór rozwiązania szytego pod model biznesowy klienta.</p>
+            <h3 data-i18n="offer_4_title">الاستشارات والتصميم</h3>
+            <p data-i18n="offer_4_text">تحليل الجدوى ووضع تصور الاستثمار واختيار الحل المناسب لنموذج عمل العميل.</p>
           </article>
         </div>
       </div>
@@ -759,10 +762,10 @@
     <section id="branze">
       <div class="container split">
         <div class="card">
-          <div class="section-kicker" data-i18n="industries_kicker">Dla kogo</div>
-          <h2 data-i18n="industries_title">Branże, które obsługujemy</h2>
+          <div class="section-kicker" data-i18n="industries_kicker">لمن</div>
+          <h2 data-i18n="industries_title">القطاعات التي نخدمها</h2>
           <p class="section-sub" data-i18n="industries_text">
-            Tworzymy rozwiązania dla firm, które potrzebują stabilnych kosztów energii, wysokiej estetyki wykonania i partnera, który rozumie inwestycje B2B. Fotowoltaika i Magazyny energii w Maroko to rozwiązania wykorzystujące maksymalny potencjał regionu dzięki któremu zielona energia jest darmowym paliwem w postaci energii słonecznej. Oprócz takich miast jak Rabat, Agadir czy Marrakesz obsługujemy region całego kraju.
+            نطوّر حلولاً للشركات التي تحتاج إلى تكاليف طاقة مستقرة وجودة تنفيذ عالية وشريك يفهم استثمارات B2B. الطاقة الشمسية وتخزين الطاقة في المغرب حلول تستفيد إلى أقصى حد من إمكانات المنطقة حيث تصبح الطاقة الخضراء وقوداً مجانياً في شكل طاقة شمسية. إضافة إلى مدن مثل الرباط وأكادير ومراكش فإننا نخدم مختلف مناطق البلاد.
           </p>
         </div>
 
@@ -770,19 +773,19 @@
           <div class="feature-list">
             <div class="feature">
               <div class="check">✓</div>
-              <div data-i18n="industry_1"><strong>Hotele i obiekty noclegowe</strong><br>obniżenie kosztów energii, klimatyzacja i niezawodność działania przez cały sezon.</div>
+              <div data-i18n="industry_1"><strong>الفنادق ومنشآت الضيافة</strong><br>خفض تكاليف الطاقة وضمان التشغيل الموثوق طوال الموسم.</div>
             </div>
             <div class="feature">
               <div class="check">✓</div>
-              <div data-i18n="industry_2"><strong>Magazyny i logistyka</strong><br>duże dachy, wysoka skala zużycia energii i opłacalność instalacji PV.</div>
+              <div data-i18n="industry_2"><strong>المخازن واللوجستيات</strong><br>أسطح كبيرة واستهلاك مرتفع للطاقة وجدوى ممتازة للأنظمة الشمسية.</div>
             </div>
             <div class="feature">
               <div class="check">✓</div>
-              <div data-i18n="industry_3"><strong>Fabryki i przemysł</strong><br>projekty uwzględniające ciągłość pracy zakładu i bezpieczeństwo inwestycji.</div>
+              <div data-i18n="industry_3"><strong>المصانع والصناعة</strong><br>مشاريع تراعي استمرارية العمل وأمان الاستثمار.</div>
             </div>
             <div class="feature">
               <div class="check">✓</div>
-              <div data-i18n="industry_4"><strong>Gospodarstwa rolne i obiekty komercyjne</strong><br>energetyka dopasowana do sezonowości i specyfiki działalności.</div>
+              <div data-i18n="industry_4"><strong>المزارع والمنشآت التجارية</strong><br>حلول طاقية ملائمة للموسمية وطبيعة النشاط.</div>
             </div>
           </div>
         </div>
@@ -792,8 +795,8 @@
     <section id="realizacje">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker" data-i18n="projects_kicker">Realizacje</div>
-          <h2 data-i18n="projects_title">Przykładowe wdrożenia B2B</h2>
+          <div class="section-kicker" data-i18n="projects_kicker">المشاريع</div>
+          <h2 data-i18n="projects_title">نماذج من مشاريع B2B</h2>
         </div>
 
         <div class="showcase">
@@ -802,8 +805,8 @@
               <img class="project-image" src="hotel.jpg" alt="Hotele i resorty" />
             </div>
             <div class="project-body">
-              <h3 data-i18n="project_1_title">Hotele & Resorty</h3>
-              <p data-i18n="project_1_text">Instalacja PV i System Magazynów Energii dla Hoteli i Resortów to nie tylko oszczędności ale także zabezpieczenie dostaw energii.</p>
+              <h3 data-i18n="project_1_title">فنادق ومنتجعات</h3>
+              <p data-i18n="project_1_text">تركيب نظام شمسي مع نظام تخزين طاقة للفنادق والمنتجعات لا يوفّر التكاليف فقط بل يضمن أيضاً استمرارية تزويد الطاقة.</p>
             </div>
           </article>
 
@@ -812,8 +815,8 @@
               <img class="project-image" src="mag.jpg" alt="Magazyny logistyczne" />
             </div>
             <div class="project-body">
-              <h3 data-i18n="project_2_title">Magazyny logistyczne</h3>
-              <p data-i18n="project_2_text">Rozwiązanie projektowane pod dużą powierzchnię dachu to przewidywalne koszty i szybki zwrot inwestycji z produkcji energii na własne potrzeby</p>
+              <h3 data-i18n="project_2_title">مخازن لوجستية</h3>
+              <p data-i18n="project_2_text">حل مصمم لمساحات أسطح كبيرة يوفّر تكاليف متوقعة وعائداً سريعاً من إنتاج الطاقة للاستهلاك الذاتي.</p>
             </div>
           </article>
 
@@ -822,8 +825,8 @@
               <img class="project-image" src="wiat.jpg" alt="Wiaty parkingowe" />
             </div>
             <div class="project-body">
-              <h3 data-i18n="project_3_title">Wiaty Parkingowe</h3>
-              <p data-i18n="project_3_text">System wiat to ochrona pojazdów przed promieniowaniem słonecznym które zamieniane jest w energię elektryczną możliwą do wykorzystania w firmie lub do ładowania aut elektrycznych</p>
+              <h3 data-i18n="project_3_title">مظلات مواقف السيارات</h3>
+              <p data-i18n="project_3_text">أنظمة المظلات تحمي المركبات من أشعة الشمس وتحوّلها إلى طاقة كهربائية يمكن استخدامها في الشركة أو لشحن السيارات الكهربائية.</p>
             </div>
           </article>
 
@@ -832,8 +835,8 @@
               <img class="project-image" src="grunt.jpg" alt="Instalacje na gruncie" />
             </div>
             <div class="project-body">
-              <h3 data-i18n="project_4_title">Instalacje na Gruncie</h3>
-              <p data-i18n="project_4_text">Instalacje gruntowe to rozwiązania dla gospodarstw rolnych i innych podmiotów, które nie mają możliwości budowy instalacji na dachach budynków.</p>
+              <h3 data-i18n="project_4_title">أنظمة أرضية</h3>
+              <p data-i18n="project_4_text">الأنظمة الأرضية مناسبة للمزارع والجهات الأخرى التي لا يمكنها إنشاء أنظمة على أسطح المباني.</p>
             </div>
           </article>
         </div>
@@ -843,12 +846,12 @@
     <section>
       <div class="container cta-box">
         <div>
-          <h3 data-i18n="cta_title">Wszystkie nasze instalacje wykonujemy w standardzie premium zachowując przy tym koszty inwestycji na poziomie gwarantującym najszybszą stopę zwrotu.</h3>
-          <p data-i18n="cta_text">Instalacje Fotowoltaiczne i Magazyny Energii od Amber Atlas to idealny stosunek zastosowanej technologii do kosztów inwestycji - dzięki temu nasze systemy fotowoltaiczne gwarantują stopę zwrotu od 10 do 20 procent rocznie.</p>
+          <h3 data-i18n="cta_title">ننفذ جميع منشآتنا بمعيار فاخر مع الحفاظ على تكاليف الاستثمار عند مستوى يضمن أسرع عائد ممكن.</h3>
+          <p data-i18n="cta_text">توفر أنظمة الطاقة الشمسية وتخزين الطاقة من Amber Atlas توازناً مثالياً بين التكنولوجيا المستخدمة وتكلفة الاستثمار، ولذلك يمكن لأنظمتنا الشمسية تحقيق عائد سنوي من 10 إلى 20 بالمئة.</p>
         </div>
 
         <div>
-          <a class="btn btn-primary" href="#kontakt" style="width:100%;" data-i18n="cta_button">Umów bezpłatną wycenę</a>
+          <a class="btn btn-primary" href="#kontakt" style="width:100%;" data-i18n="cta_button">اطلب عرض سعر مجاني</a>
         </div>
       </div>
     </section>
@@ -856,16 +859,16 @@
     <section id="kontakt">
       <div class="container split">
         <div class="card">
-          <div class="section-kicker" data-i18n="contact_kicker">Kontakt</div>
-          <h2 data-i18n="contact_title">Porozmawiajmy o Twojej inwestycji</h2>
+          <div class="section-kicker" data-i18n="contact_kicker">اتصل بنا</div>
+          <h2 data-i18n="contact_title">لنتحدث عن استثمارك</h2>
           <p class="section-sub" data-i18n="contact_text">
-            Opisz w kilku zdaniach do jakiego obiektu potrzebujesz rozwiązania a nasi specjaliści na pewno się z Tobą skontaktują!
+            اكتب في بضع جمل نوع المنشأة التي تحتاج إلى حل لها، وسيتواصل معك مختصونا بالتأكيد.
           </p>
 
           <div class="feature-list" style="margin-top:22px;">
-            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b1">pełna obsługa procesu od początku do końca</div></div>
-            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b2">elastyczność na każdym etapie realizacji</div></div>
-            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b3">instalacje fotowoltaiczne i magazyny energii na miarę</div></div>
+            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b1">إدارة كاملة للعملية من البداية إلى النهاية</div></div>
+            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b2">مرونة في كل مرحلة من مراحل التنفيذ</div></div>
+            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b3">أنظمة شمسية وتخزين طاقة مصممة حسب الحاجة</div></div>
           </div>
         </div>
 
@@ -878,20 +881,20 @@
             </p>
 
             <div class="form-grid">
-              <input type="text" name="imie_firma" data-i18n-placeholder="form_name" placeholder="Imię / firma" required />
-              <input type="email" name="email" data-i18n-placeholder="form_email" placeholder="Adres e-mail" required />
+              <input type="text" name="imie_firma" data-i18n-placeholder="form_name" placeholder="الاسم / الشركة" required />
+              <input type="email" name="email" data-i18n-placeholder="form_email" placeholder="البريد الإلكتروني" required />
             </div>
 
             <div class="form-grid">
-              <input type="tel" name="telefon" data-i18n-placeholder="form_phone" placeholder="Telefon" />
-              <input type="text" name="miasto" data-i18n-placeholder="form_city" placeholder="Miasto / lokalizacja" />
+              <input type="tel" name="telefon" data-i18n-placeholder="form_phone" placeholder="الهاتف" />
+              <input type="text" name="miasto" data-i18n-placeholder="form_city" placeholder="المدينة / الموقع" />
             </div>
 
-            <textarea name="wiadomosc" data-i18n-placeholder="form_message" placeholder="Opisz krótko inwestycję lub zapytanie"></textarea>
+            <textarea name="wiadomosc" data-i18n-placeholder="form_message" placeholder="صف بإيجاز المشروع أو الاستفسار"></textarea>
 
-            <button class="btn btn-primary" type="submit" data-i18n="form_submit">Wyślij zapytanie</button>
+            <button class="btn btn-primary" type="submit" data-i18n="form_submit">إرسال الطلب</button>
 
-            <div class="form-note" data-i18n="form_note">skontaktuj się z nami</div>
+            <div class="form-note" data-i18n="form_note">تواصل معنا</div>
           </form>
         </div>
       </div>
@@ -901,79 +904,150 @@
   <footer>
     <div class="container footer-inner">
       <div>© Amber Atlas</div>
-      <div data-i18n="footer_right">copyright 2026</div>
+      <div data-i18n="footer_right">حقوق النشر 2026</div>
     </div>
   </footer>
 
   <script>
     const translations = {
-      pl: {
-        nav_offer: "Oferta",
-        nav_industries: "Branże",
-        nav_projects: "Realizacje",
-        nav_contact: "Kontakt",
+      ar: {
+        nav_offer: "العرض",
+        nav_industries: "القطاعات",
+        nav_projects: "المشاريع",
+        nav_contact: "اتصل بنا",
 
-        hero_eyebrow: "Energia dla biznesu • Premium B2B",
-        hero_title: "Nowoczesna energia dla firm",
-        hero_text: "Projektujemy i realizujemy instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla hoteli, magazynów, fabryk, gospodarstw rolnych oraz innych obiektów komercyjnych. Fotowoltaika i Magazyny Energii AMBER ATLAS to lokalna obsługa i realizacje dopasowane do realnych potrzeb biznesu.",
-        hero_cta_1: "Bezpłatna wycena",
-        hero_cta_2: "Zobacz realizacje",
+        hero_eyebrow: "طاقة للأعمال • حلول فاخرة B2B",
+        hero_title: "طاقة حديثة للشركات",
+        hero_text: "نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية. حلول الطاقة الشمسية وتخزين الطاقة من AMBER ATLAS تعني خدمة محلية ومشاريع مصممة وفق الاحتياجات الحقيقية للأعمال.",
+        hero_cta_1: "عرض سعر مجاني",
+        hero_cta_2: "عرض المشاريع",
 
-        stat_1_title: "15+ lat",
-        stat_1_text: "doświadczenia na rynkach europejskich",
-        stat_2_title: "2000+",
-        stat_2_text: "realizacji dla klientów biznesowych",
+        stat_1_title: "أكثر من 15 سنة",
+        stat_1_text: "من الخبرة في الأسواق الأوروبية",
+        stat_2_title: "+2000",
+        stat_2_text: "مشروع لعملاء الأعمال",
         stat_3_title: "100%",
-        stat_3_text: "lokalnej obsługi klienta i indywidualnego podejścia",
+        stat_3_text: "خدمة محلية ونهج فردي لكل عميل",
 
-        offer_kicker: "Oferta",
-        offer_title: "Kompleksowe rozwiązania energetyczne - Fotowoltaika i Magazyny Energii klasy premium",
-        offer_1_title: "Fotowoltaika dla firm",
-        offer_1_text: "Instalacje PV dla hoteli, magazynów, biurowców, gospodarstw i zakładów przemysłowych itp.",
-        offer_2_title: "Magazyny Energii",
-        offer_2_text: "Nowoczesne systemy gwarantujące niezależność energetyczną i zabezpieczenie przed brakami dostaw prądu.",
-        offer_3_title: "Kolektory słoneczne",
-        offer_3_text: "Wydajne systemy wspierające redukcję kosztów energii i podnoszące efektywność obiektu.",
-        offer_4_title: "Doradztwo i projektowanie",
-        offer_4_text: "Analiza opłacalności, koncepcja inwestycji i dobór rozwiązania szytego pod model biznesowy klienta.",
+        offer_kicker: "العرض",
+        offer_title: "حلول طاقة متكاملة - أنظمة شمسية وتخزين طاقة بمستوى فاخر",
+        offer_1_title: "الطاقة الشمسية للشركات",
+        offer_1_text: "تركيبات شمسية للفنادق والمخازن والمكاتب والمزارع والمنشآت الصناعية وغيرها.",
+        offer_2_title: "أنظمة تخزين الطاقة",
+        offer_2_text: "أنظمة حديثة تضمن الاستقلال الطاقي والحماية من انقطاع إمدادات الكهرباء.",
+        offer_3_title: "المجمّعات الشمسية",
+        offer_3_text: "أنظمة فعالة تساعد على خفض تكاليف الطاقة ورفع كفاءة المنشأة.",
+        offer_4_title: "الاستشارات والتصميم",
+        offer_4_text: "تحليل الجدوى ووضع تصور الاستثمار واختيار الحل المناسب لنموذج عمل العميل.",
 
-        industries_kicker: "Dla kogo",
-        industries_title: "Branże, które obsługujemy",
-        industries_text: "Tworzymy rozwiązania dla firm, które potrzebują stabilnych kosztów energii, wysokiej estetyki wykonania i partnera, który rozumie inwestycje B2B. Fotowoltaika i Magazyny energii w Maroko to rozwiązania wykorzystujące maksymalny potencjał regionu dzięki któremu zielona energia jest darmowym paliwem w postaci energii słonecznej. Oprócz takich miast jak Rabat, Agadir czy Marrakesz obsługujemy region całego kraju.",
-        industry_1: "<strong>Hotele i obiekty noclegowe</strong><br>obniżenie kosztów energii i niezawodność działania przez cały sezon.",
-        industry_2: "<strong>Magazyny i logistyka</strong><br>duże dachy, wysoka skala zużycia energii i opłacalność instalacji PV.",
-        industry_3: "<strong>Fabryki i przemysł</strong><br>projekty uwzględniające ciągłość pracy zakładu i bezpieczeństwo inwestycji.",
-        industry_4: "<strong>Gospodarstwa rolne i obiekty komercyjne</strong><br>energetyka dopasowana do sezonowości i specyfiki działalności.",
+        industries_kicker: "لمن",
+        industries_title: "القطاعات التي نخدمها",
+        industries_text: "نطوّر حلولاً للشركات التي تحتاج إلى تكاليف طاقة مستقرة وجودة تنفيذ عالية وشريك يفهم استثمارات B2B. الطاقة الشمسية وتخزين الطاقة في المغرب حلول تستفيد إلى أقصى حد من إمكانات المنطقة حيث تصبح الطاقة الخضراء وقوداً مجانياً في شكل طاقة شمسية. إضافة إلى مدن مثل الرباط وأكادير ومراكش فإننا نخدم مختلف مناطق البلاد.",
+        industry_1: "<strong>الفنادق ومنشآت الضيافة</strong><br>خفض تكاليف الطاقة وضمان التشغيل الموثوق طوال الموسم.",
+        industry_2: "<strong>المخازن واللوجستيات</strong><br>أسطح كبيرة واستهلاك مرتفع للطاقة وجدوى ممتازة للأنظمة الشمسية.",
+        industry_3: "<strong>المصانع والصناعة</strong><br>مشاريع تراعي استمرارية العمل وأمان الاستثمار.",
+        industry_4: "<strong>المزارع والمنشآت التجارية</strong><br>حلول طاقية ملائمة للموسمية وطبيعة النشاط.",
 
-        projects_kicker: "Realizacje",
-        projects_title: "Przykładowe wdrożenia B2B",
-        project_1_title: "Hotele & Resorty",
-        project_1_text: "Instalacja PV i System Magazynów Energii dla Hoteli i Resortów to nie tylko oszczędności ale także zabezpieczenie dostaw energii.",
-        project_2_title: "Magazyny logistyczne",
-        project_2_text: "Rozwiązanie projektowane pod dużą powierzchnię dachu to przewidywalne koszty i szybki zwrot inwestycji z produkcji energii na własne potrzeby",
-        project_3_title: "Wiaty Parkingowe",
-        project_3_text: "System wiat to ochrona pojazdów przed promieniowaniem słonecznym które zamieniane jest w energię elektryczną możliwą do wykorzystania w firmie lub do ładowania aut elektrycznych",
-        project_4_title: "Instalacje na Gruncie",
-        project_4_text: "Instalacje gruntowe to rozwiązania dla gospodarstw rolnych i innych podmiotów, które nie mają możliwości budowy instalacji na dachach budynków.",
+        projects_kicker: "المشاريع",
+        projects_title: "نماذج من مشاريع B2B",
+        project_1_title: "فنادق ومنتجعات",
+        project_1_text: "تركيب نظام شمسي مع نظام تخزين طاقة للفنادق والمنتجعات لا يوفّر التكاليف فقط بل يضمن أيضاً استمرارية تزويد الطاقة.",
+        project_2_title: "مخازن لوجستية",
+        project_2_text: "حل مصمم لمساحات أسطح كبيرة يوفّر تكاليف متوقعة وعائداً سريعاً من إنتاج الطاقة للاستهلاك الذاتي.",
+        project_3_title: "مظلات مواقف السيارات",
+        project_3_text: "أنظمة المظلات تحمي المركبات من أشعة الشمس وتحوّلها إلى طاقة كهربائية يمكن استخدامها في الشركة أو لشحن السيارات الكهربائية.",
+        project_4_title: "أنظمة أرضية",
+        project_4_text: "الأنظمة الأرضية مناسبة للمزارع والجهات الأخرى التي لا يمكنها إنشاء أنظمة على أسطح المباني.",
 
-        cta_title: "Wszystkie nasze instalacje wykonujemy w standardzie premium zachowując przy tym koszty inwestycji na poziomie gwarantującym najszybszą stopę zwrotu.",
-        cta_text: "Instalacje Fotowoltaiczne i Magazyny Energii od Amber Atlas to idealny stosunek zastosowanej technologii do kosztów inwestycji - dzięki temu nasze systemy fotowoltaiczne gwarantują stopę zwrotu od 10 do 20 procent rocznie.",
-        cta_button: "Umów bezpłatną wycenę",
+        cta_title: "ننفذ جميع منشآتنا بمعيار فاخر مع الحفاظ على تكاليف الاستثمار عند مستوى يضمن أسرع عائد ممكن.",
+        cta_text: "توفر أنظمة الطاقة الشمسية وتخزين الطاقة من Amber Atlas توازناً مثالياً بين التكنولوجيا المستخدمة وتكلفة الاستثمار، ولذلك يمكن لأنظمتنا الشمسية تحقيق عائد سنوي من 10 إلى 20 بالمئة.",
+        cta_button: "اطلب عرض سعر مجاني",
 
-        contact_kicker: "Kontakt",
-        contact_title: "Porozmawiajmy o Twojej inwestycji",
-        contact_text: "Opisz w kilku zdaniach do jakiego obiektu potrzebujesz rozwiązania a nasi specjaliści na pewno się z Tobą skontaktują!",
-        contact_b1: "pełna obsługa procesu od początku do końca",
-        contact_b2: "elastyczność na każdym etapie realizacji",
-        contact_b3: "instalacje fotowoltaiczne i magazyny energii na miarę",
+        contact_kicker: "اتصل بنا",
+        contact_title: "لنتحدث عن استثمارك",
+        contact_text: "اكتب في بضع جمل نوع المنشأة التي تحتاج إلى حل لها، وسيتواصل معك مختصونا بالتأكيد.",
+        contact_b1: "إدارة كاملة للعملية من البداية إلى النهاية",
+        contact_b2: "مرونة في كل مرحلة من مراحل التنفيذ",
+        contact_b3: "أنظمة شمسية وتخزين طاقة مصممة حسب الحاجة",
 
-        form_name: "Imię / firma",
-        form_email: "Adres e-mail",
-        form_phone: "Telefon",
-        form_city: "Miasto / lokalizacja",
-        form_message: "Opisz krótko inwestycję lub zapytanie",
-        form_submit: "Wyślij zapytanie",
-        form_note: "skontaktuj się z nami",
+        form_name: "الاسم / الشركة",
+        form_email: "البريد الإلكتروني",
+        form_phone: "الهاتف",
+        form_city: "المدينة / الموقع",
+        form_message: "صف بإيجاز المشروع أو الاستفسار",
+        form_submit: "إرسال الطلب",
+        form_note: "تواصل معنا",
+
+        footer_right: "حقوق النشر 2026"
+      },
+
+      fr: {
+        nav_offer: "Offre",
+        nav_industries: "Secteurs",
+        nav_projects: "Réalisations",
+        nav_contact: "Contact",
+
+        hero_eyebrow: "Énergie pour les entreprises • Premium B2B",
+        hero_title: "Énergie moderne pour les entreprises",
+        hero_text: "Nous concevons et réalisons des installations photovoltaïques, des systèmes de stockage d’énergie et des solutions énergétiques pour les hôtels, entrepôts, usines, exploitations agricoles et autres sites commerciaux. Les solutions photovoltaïques et de stockage d’énergie AMBER ATLAS signifient un service local et des réalisations adaptées aux besoins réels des entreprises.",
+        hero_cta_1: "Devis gratuit",
+        hero_cta_2: "Voir les réalisations",
+
+        stat_1_title: "15+ ans",
+        stat_1_text: "d’expérience sur les marchés européens",
+        stat_2_title: "2000+",
+        stat_2_text: "réalisations pour des clients professionnels",
+        stat_3_title: "100%",
+        stat_3_text: "service client local et approche individuelle",
+
+        offer_kicker: "Offre",
+        offer_title: "Solutions énergétiques complètes - Photovoltaïque et stockage d’énergie premium",
+        offer_1_title: "Photovoltaïque pour les entreprises",
+        offer_1_text: "Installations PV pour hôtels, entrepôts, immeubles de bureaux, exploitations agricoles et sites industriels, etc.",
+        offer_2_title: "Stockage d’énergie",
+        offer_2_text: "Systèmes modernes garantissant l’indépendance énergétique et la protection contre les coupures d’électricité.",
+        offer_3_title: "Capteurs solaires",
+        offer_3_text: "Systèmes efficaces permettant de réduire les coûts énergétiques et d’améliorer la performance du site.",
+        offer_4_title: "Conseil et conception",
+        offer_4_text: "Analyse de rentabilité, concept d’investissement et solution adaptée au modèle économique du client.",
+
+        industries_kicker: "Pour qui",
+        industries_title: "Secteurs que nous accompagnons",
+        industries_text: "Nous créons des solutions pour les entreprises qui ont besoin de coûts énergétiques stables, d’une exécution haut de gamme et d’un partenaire qui comprend les investissements B2B. Le photovoltaïque et le stockage d’énergie au Maroc exploitent au maximum le potentiel de la région, où l’énergie verte devient un carburant gratuit sous forme d’énergie solaire. Outre des villes comme Rabat, Agadir ou Marrakech, nous intervenons dans tout le pays.",
+        industry_1: "<strong>Hôtels et hébergements</strong><br>réduction des coûts énergétiques et fonctionnement fiable pendant toute la saison.",
+        industry_2: "<strong>Entrepôts et logistique</strong><br>grandes toitures, forte consommation d’énergie et rentabilité des installations PV.",
+        industry_3: "<strong>Usines et industrie</strong><br>projets conçus avec continuité d’activité et sécurité de l’investissement.",
+        industry_4: "<strong>Exploitations agricoles et bâtiments commerciaux</strong><br>solutions énergétiques adaptées à la saisonnalité et à l’activité.",
+
+        projects_kicker: "Réalisations",
+        projects_title: "Exemples de réalisations B2B",
+        project_1_title: "Hôtels & Resorts",
+        project_1_text: "Une installation PV et un système de stockage d’énergie pour hôtels et resorts apportent non seulement des économies, mais aussi une sécurisation de l’alimentation électrique.",
+        project_2_title: "Entrepôts logistiques",
+        project_2_text: "Une solution conçue pour de grandes surfaces de toiture permet des coûts prévisibles et un retour sur investissement rapide grâce à l’autoproduction.",
+        project_3_title: "Ombrières de parking",
+        project_3_text: "Les systèmes d’ombrières protègent les véhicules du rayonnement solaire tout en transformant le soleil en électricité pour l’entreprise ou la recharge des véhicules électriques.",
+        project_4_title: "Installations au sol",
+        project_4_text: "Les installations au sol sont idéales pour les exploitations agricoles et les autres structures qui ne peuvent pas construire sur les toitures.",
+
+        cta_title: "Toutes nos installations sont réalisées selon un standard premium tout en maintenant les coûts d’investissement à un niveau garantissant le retour le plus rapide.",
+        cta_text: "Les installations photovoltaïques et systèmes de stockage d’énergie Amber Atlas offrent un équilibre idéal entre technologie appliquée et coût d’investissement - grâce à cela, nos systèmes photovoltaïques peuvent garantir un rendement annuel de 10 à 20 pour cent.",
+        cta_button: "Demander un devis gratuit",
+
+        contact_kicker: "Contact",
+        contact_title: "Parlons de votre investissement",
+        contact_text: "Décrivez en quelques phrases le type de site pour lequel vous avez besoin d’une solution et nos spécialistes vous contacteront rapidement.",
+        contact_b1: "prise en charge complète du processus du début à la fin",
+        contact_b2: "flexibilité à chaque étape de la réalisation",
+        contact_b3: "installations photovoltaïques et stockage d’énergie sur mesure",
+
+        form_name: "Nom / entreprise",
+        form_email: "Adresse e-mail",
+        form_phone: "Téléphone",
+        form_city: "Ville / localisation",
+        form_message: "Décrivez brièvement votre projet ou votre demande",
+        form_submit: "Envoyer la demande",
+        form_note: "contactez-nous",
 
         footer_right: "copyright 2026"
       },
@@ -1049,151 +1123,80 @@
         footer_right: "copyright 2026"
       },
 
-      fr: {
-        nav_offer: "Offre",
-        nav_industries: "Secteurs",
-        nav_projects: "Réalisations",
-        nav_contact: "Contact",
+      pl: {
+        nav_offer: "Oferta",
+        nav_industries: "Branże",
+        nav_projects: "Realizacje",
+        nav_contact: "Kontakt",
 
-        hero_eyebrow: "Énergie pour les entreprises • Premium B2B",
-        hero_title: "Énergie moderne pour les entreprises",
-        hero_text: "Nous concevons et réalisons des installations photovoltaïques, des systèmes de stockage d’énergie et des solutions énergétiques pour les hôtels, entrepôts, usines, exploitations agricoles et autres sites commerciaux. Les solutions photovoltaïques et de stockage d’énergie AMBER ATLAS signifient un service local et des réalisations adaptées aux besoins réels des entreprises.",
-        hero_cta_1: "Devis gratuit",
-        hero_cta_2: "Voir les réalisations",
+        hero_eyebrow: "Energia dla biznesu • Premium B2B",
+        hero_title: "Nowoczesna energia dla firm",
+        hero_text: "Projektujemy i realizujemy instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla hoteli, magazynów, fabryk, gospodarstw rolnych oraz innych obiektów komercyjnych. Fotowoltaika i Magazyny Energii AMBER ATLAS to lokalna obsługa i realizacje dopasowane do realnych potrzeb biznesu.",
+        hero_cta_1: "Bezpłatna wycena",
+        hero_cta_2: "Zobacz realizacje",
 
-        stat_1_title: "15+ ans",
-        stat_1_text: "d’expérience sur les marchés européens",
+        stat_1_title: "15+ lat",
+        stat_1_text: "doświadczenia na rynkach europejskich",
         stat_2_title: "2000+",
-        stat_2_text: "réalisations pour des clients professionnels",
+        stat_2_text: "realizacji dla klientów biznesowych",
         stat_3_title: "100%",
-        stat_3_text: "service client local et approche individuelle",
+        stat_3_text: "lokalnej obsługi klienta i indywidualnego podejścia",
 
-        offer_kicker: "Offre",
-        offer_title: "Solutions énergétiques complètes - Photovoltaïque et stockage d’énergie premium",
-        offer_1_title: "Photovoltaïque pour les entreprises",
-        offer_1_text: "Installations PV pour hôtels, entrepôts, immeubles de bureaux, exploitations agricoles et sites industriels, etc.",
-        offer_2_title: "Stockage d’énergie",
-        offer_2_text: "Systèmes modernes garantissant l’indépendance énergétique et la protection contre les coupures d’électricité.",
-        offer_3_title: "Capteurs solaires",
-        offer_3_text: "Systèmes efficaces permettant de réduire les coûts énergétiques et d’améliorer la performance du site.",
-        offer_4_title: "Conseil et conception",
-        offer_4_text: "Analyse de rentabilité, concept d’investissement et solution adaptée au modèle économique du client.",
+        offer_kicker: "Oferta",
+        offer_title: "Kompleksowe rozwiązania energetyczne - Fotowoltaika i Magazyny Energii klasy premium",
+        offer_1_title: "Fotowoltaika dla firm",
+        offer_1_text: "Instalacje PV dla hoteli, magazynów, biurowców, gospodarstw i zakładów przemysłowych itp.",
+        offer_2_title: "Magazyny Energii",
+        offer_2_text: "Nowoczesne systemy gwarantujące niezależność energetyczną i zabezpieczenie przed brakami dostaw prądu.",
+        offer_3_title: "Kolektory słoneczne",
+        offer_3_text: "Wydajne systemy wspierające redukcję kosztów energii i podnoszące efektywność obiektu.",
+        offer_4_title: "Doradztwo i projektowanie",
+        offer_4_text: "Analiza opłacalności, koncepcja inwestycji i dobór rozwiązania szytego pod model biznesowy klienta.",
 
-        industries_kicker: "Pour qui",
-        industries_title: "Secteurs que nous accompagnons",
-        industries_text: "Nous créons des solutions pour les entreprises qui ont besoin de coûts énergétiques stables, d’une exécution haut de gamme et d’un partenaire qui comprend les investissements B2B. Le photovoltaïque et le stockage d’énergie au Maroc exploitent au maximum le potentiel de la région, où l’énergie verte devient un carburant gratuit sous forme d’énergie solaire. Outre des villes comme Rabat, Agadir ou Marrakech, nous intervenons dans tout le pays.",
-        industry_1: "<strong>Hôtels et hébergements</strong><br>réduction des coûts énergétiques et fonctionnement fiable pendant toute la saison.",
-        industry_2: "<strong>Entrepôts et logistique</strong><br>grandes toitures, forte consommation d’énergie et rentabilité des installations PV.",
-        industry_3: "<strong>Usines et industrie</strong><br>projets conçus avec continuité d’activité et sécurité de l’investissement.",
-        industry_4: "<strong>Exploitations agricoles et bâtiments commerciaux</strong><br>solutions énergétiques adaptées à la saisonnalité et à l’activité.",
+        industries_kicker: "Dla kogo",
+        industries_title: "Branże, które obsługujemy",
+        industries_text: "Tworzymy rozwiązania dla firm, które potrzebują stabilnych kosztów energii, wysokiej estetyki wykonania i partnera, który rozumie inwestycje B2B. Fotowoltaika i Magazyny energii w Maroko to rozwiązania wykorzystujące maksymalny potencjał regionu dzięki któremu zielona energia jest darmowym paliwem w postaci energii słonecznej. Oprócz takich miast jak Rabat, Agadir czy Marrakesz obsługujemy region całego kraju.",
+        industry_1: "<strong>Hotele i obiekty noclegowe</strong><br>obniżenie kosztów energii i niezawodność działania przez cały sezon.",
+        industry_2: "<strong>Magazyny i logistyka</strong><br>duże dachy, wysoka skala zużycia energii i opłacalność instalacji PV.",
+        industry_3: "<strong>Fabryki i przemysł</strong><br>projekty uwzględniające ciągłość pracy zakładu i bezpieczeństwo inwestycji.",
+        industry_4: "<strong>Gospodarstwa rolne i obiekty komercyjne</strong><br>energetyka dopasowana do sezonowości i specyfiki działalności.",
 
-        projects_kicker: "Réalisations",
-        projects_title: "Exemples de réalisations B2B",
-        project_1_title: "Hôtels & Resorts",
-        project_1_text: "Une installation PV et un système de stockage d’énergie pour hôtels et resorts apportent non seulement des économies, mais aussi une sécurisation de l’alimentation électrique.",
-        project_2_title: "Entrepôts logistiques",
-        project_2_text: "Une solution conçue pour de grandes surfaces de toiture permet des coûts prévisibles et un retour sur investissement rapide grâce à l’autoproduction.",
-        project_3_title: "Ombrières de parking",
-        project_3_text: "Les systèmes d’ombrières protègent les véhicules du rayonnement solaire tout en transformant le soleil en électricité pour l’entreprise ou la recharge des véhicules électriques.",
-        project_4_title: "Installations au sol",
-        project_4_text: "Les installations au sol sont idéales pour les exploitations agricoles et les autres structures qui ne peuvent pas construire sur les toitures.",
+        projects_kicker: "Realizacje",
+        projects_title: "Przykładowe wdrożenia B2B",
+        project_1_title: "Hotele & Resorty",
+        project_1_text: "Instalacja PV i System Magazynów Energii dla Hoteli i Resortów to nie tylko oszczędności ale także zabezpieczenie dostaw energii.",
+        project_2_title: "Magazyny logistyczne",
+        project_2_text: "Rozwiązanie projektowane pod dużą powierzchnię dachu to przewidywalne koszty i szybki zwrot inwestycji z produkcji energii na własne potrzeby",
+        project_3_title: "Wiaty Parkingowe",
+        project_3_text: "System wiat to ochrona pojazdów przed promieniowaniem słonecznym które zamieniane jest w energię elektryczną możliwą do wykorzystania w firmie lub do ładowania aut elektrycznych",
+        project_4_title: "Instalacje na Gruncie",
+        project_4_text: "Instalacje gruntowe to rozwiązania dla gospodarstw rolnych i innych podmiotów, które nie mają możliwości budowy instalacji na dachach budynków.",
 
-        cta_title: "Toutes nos installations sont réalisées selon un standard premium tout en maintenant les coûts d’investissement à un niveau garantissant le retour le plus rapide.",
-        cta_text: "Les installations photovoltaïques et systèmes de stockage d’énergie Amber Atlas offrent un équilibre idéal entre technologie appliquée et coût d’investissement - grâce à cela, nos systèmes photovoltaïques peuvent garantir un rendement annuel de 10 à 20 pour cent.",
-        cta_button: "Demander un devis gratuit",
+        cta_title: "Wszystkie nasze instalacje wykonujemy w standardzie premium zachowując przy tym koszty inwestycji na poziomie gwarantującym najszybszą stopę zwrotu.",
+        cta_text: "Instalacje Fotowoltaiczne i Magazyny Energii od Amber Atlas to idealny stosunek zastosowanej technologii do kosztów inwestycji - dzięki temu nasze systemy fotowoltaiczne gwarantują stopę zwrotu od 10 do 20 procent rocznie.",
+        cta_button: "Umów bezpłatną wycenę",
 
-        contact_kicker: "Contact",
-        contact_title: "Parlons de votre investissement",
-        contact_text: "Décrivez en quelques phrases le type de site pour lequel vous avez besoin d’une solution et nos spécialistes vous contacteront rapidement.",
-        contact_b1: "prise en charge complète du processus du début à la fin",
-        contact_b2: "flexibilité à chaque étape de la réalisation",
-        contact_b3: "installations photovoltaïques et stockage d’énergie sur mesure",
+        contact_kicker: "Kontakt",
+        contact_title: "Porozmawiajmy o Twojej inwestycji",
+        contact_text: "Opisz w kilku zdaniach do jakiego obiektu potrzebujesz rozwiązania a nasi specjaliści na pewno się z Tobą skontaktują!",
+        contact_b1: "pełna obsługa procesu od początku do końca",
+        contact_b2: "elastyczność na każdym etapie realizacji",
+        contact_b3: "instalacje fotowoltaiczne i magazyny energii na miarę",
 
-        form_name: "Nom / entreprise",
-        form_email: "Adresse e-mail",
-        form_phone: "Téléphone",
-        form_city: "Ville / localisation",
-        form_message: "Décrivez brièvement votre projet ou votre demande",
-        form_submit: "Envoyer la demande",
-        form_note: "contactez-nous",
+        form_name: "Imię / firma",
+        form_email: "Adres e-mail",
+        form_phone: "Telefon",
+        form_city: "Miasto / lokalizacja",
+        form_message: "Opisz krótko inwestycję lub zapytanie",
+        form_submit: "Wyślij zapytanie",
+        form_note: "skontaktuj się z nami",
 
         footer_right: "copyright 2026"
-      },
-
-      ar: {
-        nav_offer: "العرض",
-        nav_industries: "القطاعات",
-        nav_projects: "المشاريع",
-        nav_contact: "اتصل بنا",
-
-        hero_eyebrow: "طاقة للأعمال • حلول فاخرة B2B",
-        hero_title: "طاقة حديثة للشركات",
-        hero_text: "نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية. حلول الطاقة الشمسية وتخزين الطاقة من AMBER ATLAS تعني خدمة محلية ومشاريع مصممة وفق الاحتياجات الحقيقية للأعمال.",
-        hero_cta_1: "عرض سعر مجاني",
-        hero_cta_2: "عرض المشاريع",
-
-        stat_1_title: "أكثر من 15 سنة",
-        stat_1_text: "من الخبرة في الأسواق الأوروبية",
-        stat_2_title: "+2000",
-        stat_2_text: "مشروع لعملاء الأعمال",
-        stat_3_title: "100%",
-        stat_3_text: "خدمة محلية ونهج فردي لكل عميل",
-
-        offer_kicker: "العرض",
-        offer_title: "حلول طاقة متكاملة - أنظمة شمسية وتخزين طاقة بمستوى فاخر",
-        offer_1_title: "الطاقة الشمسية للشركات",
-        offer_1_text: "تركيبات شمسية للفنادق والمخازن والمكاتب والمزارع والمنشآت الصناعية وغيرها.",
-        offer_2_title: "أنظمة تخزين الطاقة",
-        offer_2_text: "أنظمة حديثة تضمن الاستقلال الطاقي والحماية من انقطاع إمدادات الكهرباء.",
-        offer_3_title: "المجمّعات الشمسية",
-        offer_3_text: "أنظمة فعالة تساعد على خفض تكاليف الطاقة ورفع كفاءة المنشأة.",
-        offer_4_title: "الاستشارات والتصميم",
-        offer_4_text: "تحليل الجدوى ووضع تصور الاستثمار واختيار الحل المناسب لنموذج عمل العميل.",
-
-        industries_kicker: "لمن",
-        industries_title: "القطاعات التي نخدمها",
-        industries_text: "نطوّر حلولاً للشركات التي تحتاج إلى تكاليف طاقة مستقرة وجودة تنفيذ عالية وشريك يفهم استثمارات B2B. الطاقة الشمسية وتخزين الطاقة في المغرب حلول تستفيد إلى أقصى حد من إمكانات المنطقة حيث تصبح الطاقة الخضراء وقوداً مجانياً في شكل طاقة شمسية. إضافة إلى مدن مثل الرباط وأكادير ومراكش فإننا نخدم مختلف مناطق البلاد.",
-        industry_1: "<strong>الفنادق ومنشآت الضيافة</strong><br>خفض تكاليف الطاقة وضمان التشغيل الموثوق طوال الموسم.",
-        industry_2: "<strong>المخازن واللوجستيات</strong><br>أسطح كبيرة واستهلاك مرتفع للطاقة وجدوى ممتازة للأنظمة الشمسية.",
-        industry_3: "<strong>المصانع والصناعة</strong><br>مشاريع تراعي استمرارية العمل وأمان الاستثمار.",
-        industry_4: "<strong>المزارع والمنشآت التجارية</strong><br>حلول طاقية ملائمة للموسمية وطبيعة النشاط.",
-
-        projects_kicker: "المشاريع",
-        projects_title: "نماذج من مشاريع B2B",
-        project_1_title: "فنادق ومنتجعات",
-        project_1_text: "تركيب نظام شمسي مع نظام تخزين طاقة للفنادق والمنتجعات لا يوفّر التكاليف فقط بل يضمن أيضاً استمرارية تزويد الطاقة.",
-        project_2_title: "مخازن لوجستية",
-        project_2_text: "حل مصمم لمساحات أسطح كبيرة يوفّر تكاليف متوقعة وعائداً سريعاً من إنتاج الطاقة للاستهلاك الذاتي.",
-        project_3_title: "مظلات مواقف السيارات",
-        project_3_text: "أنظمة المظلات تحمي المركبات من أشعة الشمس وتحوّلها إلى طاقة كهربائية يمكن استخدامها في الشركة أو لشحن السيارات الكهربائية.",
-        project_4_title: "أنظمة أرضية",
-        project_4_text: "الأنظمة الأرضية مناسبة للمزارع والجهات الأخرى التي لا يمكنها إنشاء أنظمة على أسطح المباني.",
-
-        cta_title: "ننفذ جميع منشآتنا بمعيار فاخر مع الحفاظ على تكاليف الاستثمار عند مستوى يضمن أسرع عائد ممكن.",
-        cta_text: "توفر أنظمة الطاقة الشمسية وتخزين الطاقة من Amber Atlas توازناً مثالياً بين التكنولوجيا المستخدمة وتكلفة الاستثمار، ولذلك يمكن لأنظمتنا الشمسية تحقيق عائد سنوي من 10 إلى 20 بالمئة.",
-        cta_button: "اطلب عرض سعر مجاني",
-
-        contact_kicker: "اتصل بنا",
-        contact_title: "لنتحدث عن استثمارك",
-        contact_text: "اكتب في بضع جمل نوع المنشأة التي تحتاج إلى حل لها، وسيتواصل معك مختصونا بالتأكيد.",
-        contact_b1: "إدارة كاملة للعملية من البداية إلى النهاية",
-        contact_b2: "مرونة في كل مرحلة من مراحل التنفيذ",
-        contact_b3: "أنظمة شمسية وتخزين طاقة مصممة حسب الحاجة",
-
-        form_name: "الاسم / الشركة",
-        form_email: "البريد الإلكتروني",
-        form_phone: "الهاتف",
-        form_city: "المدينة / الموقع",
-        form_message: "صف بإيجاز المشروع أو الاستفسار",
-        form_submit: "إرسال الطلب",
-        form_note: "تواصل معنا",
-
-        footer_right: "حقوق النشر 2026"
       }
     };
 
     function setLanguage(lang) {
-      const dict = translations[lang] || translations.pl;
+      const dict = translations[lang] || translations.ar;
       document.documentElement.lang = lang;
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
       document.body.classList.remove('lang-pl', 'lang-en', 'lang-fr', 'lang-ar');
@@ -1214,10 +1217,10 @@
       });
 
       document.title = {
-        pl: "Amber Atlas — Nowoczesna energia dla biznesu",
-        en: "Amber Atlas — Modern energy for business",
+        ar: "Amber Atlas — طاقة حديثة للأعمال",
         fr: "Amber Atlas — Énergie moderne pour les entreprises",
-        ar: "Amber Atlas — طاقة حديثة للأعمال"
+        en: "Amber Atlas — Modern energy for business",
+        pl: "Amber Atlas — Nowoczesna energia dla biznesu"
       }[lang] || "Amber Atlas";
 
       document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -1231,7 +1234,7 @@
       btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
     });
 
-    const savedLang = localStorage.getItem('amberatlas_lang') || 'pl';
+    const savedLang = localStorage.getItem('amberatlas_lang') || 'ar';
     setLanguage(savedLang);
   </script>
 </body>
