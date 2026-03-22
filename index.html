@@ -25,6 +25,8 @@
       --shadow: 0 24px 60px rgba(0,0,0,.45);
       --radius: 22px;
       --max: 1240px;
+      --success: #9fe29f;
+      --error: #ff9b9b;
     }
 
     * { box-sizing: border-box; }
@@ -184,6 +186,13 @@
       filter: saturate(1.05) brightness(1.03);
     }
 
+    .btn-primary:disabled {
+      opacity: .7;
+      cursor: not-allowed;
+      transform: none;
+      filter: none;
+    }
+
     .btn-secondary {
       background: rgba(255,255,255,.03);
       border-color: rgba(255,191,63,.18);
@@ -202,35 +211,22 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, .96fr) minmax(320px, .88fr);
-      gap: 40px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      gap: 34px;
       align-items: center;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      max-width: 100%;
-      padding: 9px 14px;
-      border-radius: 999px;
-      background: rgba(255,191,63,.08);
-      color: #ffd788;
-      border: 1px solid rgba(255,191,63,.16);
-      font-size: .74rem;
-      font-weight: 700;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      line-height: 1.35;
-      white-space: normal;
+    .hero-copy {
+      min-width: 0;
     }
 
     h1 {
       margin: 0 0 16px;
-      font-size: clamp(1.25rem, 2.8vw, 2.55rem);
-      line-height: 1.02;
+      font-size: clamp(1.55rem, 3.2vw, 3rem);
+      line-height: 1.05;
       font-weight: 800;
-      letter-spacing: -.01em;
-      max-width: 13.5ch;
+      letter-spacing: .005em;
+      max-width: 100%;
       text-wrap: balance;
       background:
         radial-gradient(circle at 20% 20%, rgba(255,255,255,.30) 0 4%, transparent 5%),
@@ -243,40 +239,44 @@
       color: transparent;
       -webkit-text-fill-color: transparent;
       text-shadow: none;
-      padding-inline-end: .04em;
       overflow: visible;
+      position: relative;
+      z-index: 2;
     }
 
     h1 .line {
       display: block;
-      white-space: nowrap;
-    }
-
-    h1 .line-1 {
-      font-size: 1em;
-    }
-
-    h1 .line-2 {
-      font-size: .9em;
-      margin-top: .08em;
-    }
-
-    [dir="rtl"] h1 {
-      max-width: 15ch;
-      line-height: 1.14;
-      text-transform: none;
-      padding-inline-start: .04em;
-      padding-inline-end: 0;
-    }
-
-    [dir="rtl"] h1 .line {
       white-space: normal;
     }
 
+    body.lang-pl h1 {
+      font-size: clamp(1.45rem, 2.95vw, 2.8rem);
+      line-height: 1.03;
+      letter-spacing: -.01em;
+    }
+
+    body.lang-pl h1 .line:first-child {
+      white-space: nowrap;
+    }
+
+    body.lang-en h1,
+    body.lang-fr h1 {
+      font-size: clamp(1.45rem, 2.9vw, 2.85rem);
+    }
+
+    body.lang-ar h1 {
+      font-size: clamp(1.55rem, 3vw, 2.9rem);
+      line-height: 1.16;
+    }
+
+    [dir="rtl"] h1 {
+      text-transform: none;
+    }
+
     .lead {
-      max-width: 700px;
-      font-size: 1.02rem;
-      line-height: 1.78;
+      max-width: 760px;
+      font-size: 1.06rem;
+      line-height: 1.82;
       color: var(--muted);
       margin-bottom: 28px;
     }
@@ -324,7 +324,7 @@
       padding: 26px;
       box-shadow: var(--shadow);
       overflow: hidden;
-      min-height: 540px;
+      min-height: 580px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -341,7 +341,7 @@
     }
 
     .hero-logo {
-      width: min(100%, 520px);
+      width: min(100%, 560px);
       filter: drop-shadow(0 18px 38px rgba(0,0,0,.45));
       border-radius: 28px;
       position: relative;
@@ -574,6 +574,11 @@
       box-shadow: 0 0 0 4px rgba(255,191,63,.08);
     }
 
+    input.invalid, textarea.invalid {
+      border-color: rgba(255,120,120,.75);
+      box-shadow: 0 0 0 4px rgba(255,120,120,.10);
+    }
+
     textarea {
       min-height: 140px;
       resize: vertical;
@@ -586,9 +591,8 @@
       pointer-events: none !important;
     }
 
-    .recaptcha-wrap {
-      margin-top: 4px;
-      padding: 10px 0 2px;
+    .captcha-wrap {
+      padding-top: 4px;
     }
 
     .form-note {
@@ -597,8 +601,41 @@
       line-height: 1.6;
     }
 
+    .form-status {
+      min-height: 24px;
+      font-size: .92rem;
+      line-height: 1.5;
+      font-weight: 600;
+      display: none;
+    }
+
+    .form-status.show {
+      display: block;
+    }
+
+    .form-status.success {
+      color: var(--success);
+    }
+
+    .form-status.error {
+      color: var(--error);
+    }
+
+    .bottom-service-text-wrap {
+      padding: 10px 0 8px;
+    }
+
+    .bottom-service-text {
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.9;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
     footer {
-      padding: 28px 0 42px;
+      padding: 20px 0 42px;
       color: #9f9386;
       font-size: .92rem;
     }
@@ -616,20 +653,17 @@
       .showcase {
         grid-template-columns: repeat(2, 1fr);
       }
+    }
 
-      .hero-grid {
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .split,
+      .cta-box {
         grid-template-columns: 1fr;
       }
 
       .hero-card {
         min-height: 420px;
-      }
-    }
-
-    @media (max-width: 1080px) {
-      .split,
-      .cta-box {
-        grid-template-columns: 1fr;
       }
 
       .stats {
@@ -637,6 +671,19 @@
       }
 
       .single-line-title {
+        white-space: normal;
+      }
+
+      h1,
+      body.lang-pl h1,
+      body.lang-en h1,
+      body.lang-fr h1,
+      body.lang-ar h1 {
+        max-width: 100%;
+        font-size: clamp(1.6rem, 6vw, 2.7rem);
+      }
+
+      body.lang-pl h1 .line:first-child {
         white-space: normal;
       }
     }
@@ -674,23 +721,18 @@
         letter-spacing: .13em;
       }
 
-      .eyebrow {
-        font-size: .68rem;
-        padding: 8px 12px;
-      }
-
-      h1 {
-        font-size: clamp(1.15rem, 7.2vw, 2rem);
-        max-width: 100%;
-        line-height: 1.06;
-      }
-
-      h1 .line {
-        white-space: normal;
+      h1,
+      body.lang-pl h1,
+      body.lang-en h1,
+      body.lang-fr h1,
+      body.lang-ar h1 {
+        font-size: clamp(1.45rem, 8vw, 2.35rem);
+        line-height: 1.08;
       }
 
       .lead {
-        font-size: .98rem;
+        font-size: 1rem;
+        line-height: 1.72;
       }
 
       .cta-box {
@@ -699,6 +741,10 @@
 
       .footer-inner {
         flex-direction: column;
+      }
+
+      .bottom-service-text {
+        text-align: center;
       }
     }
   </style>
@@ -732,13 +778,8 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <div class="eyebrow" data-i18n="hero_eyebrow">الطاقة الشمسية وتخزين الطاقة • أكادير • مراكش • الدار البيضاء • الرباط • فاس • طنجة ومدن أخرى في المغرب</div>
-
-          <h1 data-i18n="hero_title">
-            <span class="line line-1">مصادر الطاقة المتجددة</span>
-            <span class="line line-2">من الفئة المتميزة</span>
-          </h1>
+        <div class="hero-copy">
+          <h1 data-i18n="hero_title"><span class="line">مصادر الطاقة المتجددة</span><span class="line">من الفئة المتميزة</span></h1>
 
           <p class="lead" data-i18n="hero_text">
             نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية. حلول الطاقة الشمسية وتخزين الطاقة من AMBER ATLAS تعني خدمة محلية ومشاريع مصممة وفق الاحتياجات الحقيقية للأعمال.
@@ -922,12 +963,13 @@
 
         <div class="contact-card">
           <form
+            id="contactForm"
             name="kontakt"
             method="POST"
-            action="/thank-you/"
+            action="/"
             data-netlify="true"
-            netlify-honeypot="bot-field"
             data-netlify-recaptcha="true"
+            netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="kontakt" />
 
@@ -941,20 +983,29 @@
             </div>
 
             <div class="form-grid">
-              <input type="tel" name="telefon" data-i18n-placeholder="form_phone" placeholder="الهاتف" />
-              <input type="text" name="miasto" data-i18n-placeholder="form_city" placeholder="المدينة / الموقع" />
+              <input type="tel" name="telefon" data-i18n-placeholder="form_phone" placeholder="الهاتف" required />
+              <input type="text" name="miasto" data-i18n-placeholder="form_city" placeholder="المدينة / الموقع" required />
             </div>
 
             <textarea name="wiadomosc" data-i18n-placeholder="form_message" placeholder="صف بإيجاز المشروع أو الاستفسار" required></textarea>
 
-            <div class="recaptcha-wrap">
+            <div class="captcha-wrap">
               <div data-netlify-recaptcha="true"></div>
             </div>
 
-            <button class="btn btn-primary" type="submit" data-i18n="form_submit">إرسال الطلب</button>
+            <button id="submitBtn" class="btn btn-primary" type="submit" data-i18n="form_submit">إرسال الطلب</button>
 
             <div class="form-note" data-i18n="form_note">تواصل معنا</div>
+            <div id="formStatus" class="form-status" aria-live="polite"></div>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-service-text-wrap">
+      <div class="container">
+        <div class="bottom-service-text" data-i18n="bottom_service_text">
+          Jako AMBER ATLAS kompleksowo dostarczamy usługi montażu Instalacji Fotowoltaicznych i Magazynów Energii w takich miastach jak: Agadir, Marrakesz, Casablanca, Rabat, Fez, Tanger oraz innych regionach w Maroku. Nasze systemy budowane są w oparciu o wieloletnie doświadczenie zdobyte na rynkach europejskich. Nasz zespół od 2012 roku zajmuje się odnawialnymi źródłami energii i z sukcesami buduje portfolio inwestycji w najwyższej jakości. Jesteśmy liderem w branży.
         </div>
       </div>
     </section>
@@ -975,8 +1026,7 @@
         nav_projects: "المشاريع",
         nav_contact: "اتصل بنا",
 
-        hero_eyebrow: "الطاقة الشمسية وتخزين الطاقة • أكادير • مراكش • الدار البيضاء • الرباط • فاس • طنجة ومدن أخرى في المغرب",
-        hero_title: "<span class='line line-1'>مصادر الطاقة المتجددة</span><span class='line line-2'>من الفئة المتميزة</span>",
+        hero_title: "<span class='line'>مصادر الطاقة المتجددة</span><span class='line'>من الفئة المتميزة</span>",
         hero_text: "نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية. حلول الطاقة الشمسية وتخزين الطاقة من AMBER ATLAS تعني خدمة محلية ومشاريع مصممة وفق الاحتياجات الحقيقية للأعمال.",
         hero_cta_1: "عرض سعر مجاني",
         hero_cta_2: "عرض المشاريع",
@@ -1035,7 +1085,14 @@
         form_city: "المدينة / الموقع",
         form_message: "صف بإيجاز المشروع أو الاستفسار",
         form_submit: "إرسال الطلب",
-        form_note: "تواصل معنا",
+        form_note: "جميع الحقول مطلوبة. أكمل نموذج التحقق قبل الإرسال.",
+        form_required_error: "يرجى ملء جميع الحقول المطلوبة.",
+        form_sending: "جارٍ إرسال الرسالة...",
+        form_success: "تم إرسال الرسالة بنجاح.",
+        form_error: "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.",
+        form_captcha_error: "أكمل التحقق الأمني قبل إرسال النموذج.",
+
+        bottom_service_text: "بصفتنا AMBER ATLAS نقدم بشكل شامل خدمات تركيب الأنظمة الكهروضوئية وأنظمة تخزين الطاقة في مدن مثل أكادير ومراكش والدار البيضاء والرباط وفاس وطنجة وكذلك في مناطق أخرى من المغرب. تُبنى أنظمتنا على أساس خبرة طويلة اكتسبناها في الأسواق الأوروبية. يعمل فريقنا منذ عام 2012 في قطاع مصادر الطاقة المتجددة ونجح في بناء محفظة من الاستثمارات عالية الجودة. نحن من رواد هذا القطاع.",
 
         footer_right: "حقوق النشر 2026"
       },
@@ -1046,8 +1103,7 @@
         nav_projects: "Réalisations",
         nav_contact: "Contact",
 
-        hero_eyebrow: "Photovoltaïque et stockage d’énergie • Agadir • Marrakech • Casablanca • Rabat • Fès • Tanger et autres villes du Maroc",
-        hero_title: "<span class='line line-1'>Énergies renouvelables</span><span class='line line-2'>de classe premium</span>",
+        hero_title: "<span class='line'>Énergies renouvelables</span><span class='line'>de classe premium</span>",
         hero_text: "Nous concevons et réalisons des installations photovoltaïques, des systèmes de stockage d’énergie et des solutions énergétiques pour les hôtels, entrepôts, usines, exploitations agricoles et autres sites commerciaux. Les solutions photovoltaïques et de stockage d’énergie AMBER ATLAS signifient un service local et des réalisations adaptées aux besoins réels des entreprises.",
         hero_cta_1: "Devis gratuit",
         hero_cta_2: "Voir les réalisations",
@@ -1106,7 +1162,14 @@
         form_city: "Ville / localisation",
         form_message: "Décrivez brièvement votre projet ou votre demande",
         form_submit: "Envoyer la demande",
-        form_note: "contactez-nous",
+        form_note: "Tous les champs sont obligatoires. Complétez la vérification avant l’envoi.",
+        form_required_error: "Veuillez remplir tous les champs obligatoires.",
+        form_sending: "Envoi du message...",
+        form_success: "Le message a été envoyé avec succès.",
+        form_error: "Une erreur s’est produite pendant l’envoi. Veuillez réessayer.",
+        form_captcha_error: "Complétez la vérification de sécurité avant d’envoyer le formulaire.",
+
+        bottom_service_text: "En tant que AMBER ATLAS, nous fournissons de manière complète des services d’installation de systèmes photovoltaïques et de stockage d’énergie dans des villes telles qu’Agadir, Marrakech, Casablanca, Rabat, Fès, Tanger ainsi que dans d’autres régions du Maroc. Nos systèmes sont conçus sur la base d’une longue expérience acquise sur les marchés européens. Depuis 2012, notre équipe travaille dans le domaine des énergies renouvelables et construit avec succès un portefeuille d’investissements de la plus haute qualité. Nous sommes un leader du secteur.",
 
         footer_right: "copyright 2026"
       },
@@ -1117,8 +1180,7 @@
         nav_projects: "Projects",
         nav_contact: "Contact",
 
-        hero_eyebrow: "Photovoltaics and Energy Storage • Agadir • Marrakech • Casablanca • Rabat • Fez • Tangier and other cities in Morocco",
-        hero_title: "<span class='line line-1'>Renewable Energy</span><span class='line line-2'>Premium Class</span>",
+        hero_title: "<span class='line'>Renewable Energy</span><span class='line'>Premium Class</span>",
         hero_text: "We design and deliver photovoltaic installations, energy storage systems and energy solutions for hotels, warehouses, factories, farms and other commercial facilities. AMBER ATLAS photovoltaic and energy storage solutions mean local support and projects tailored to real business needs.",
         hero_cta_1: "Free quote",
         hero_cta_2: "View projects",
@@ -1177,7 +1239,14 @@
         form_city: "City / location",
         form_message: "Briefly describe the investment or inquiry",
         form_submit: "Send inquiry",
-        form_note: "contact us",
+        form_note: "All fields are required. Complete the verification before submitting.",
+        form_required_error: "Please fill in all required fields.",
+        form_sending: "Sending message...",
+        form_success: "Your message has been sent successfully.",
+        form_error: "There was an error while sending the form. Please try again.",
+        form_captcha_error: "Complete the security verification before submitting the form.",
+
+        bottom_service_text: "As AMBER ATLAS, we provide comprehensive photovoltaic installation and energy storage services in cities such as Agadir, Marrakech, Casablanca, Rabat, Fez, Tangier and other regions across Morocco. Our systems are built on many years of experience gained in European markets. Since 2012, our team has been active in renewable energy and has successfully built a portfolio of top-quality investments. We are a leader in the industry.",
 
         footer_right: "copyright 2026"
       },
@@ -1188,8 +1257,7 @@
         nav_projects: "Realizacje",
         nav_contact: "Kontakt",
 
-        hero_eyebrow: "Fotowoltaika i Magazyny Energii • Agadir • Marrakesz • Casablanca • Rabat • Fez • Tanger i inne miasta w Maroku",
-        hero_title: "<span class='line line-1'>Odnawialne Źródła Energii</span><span class='line line-2'>Klasy Premium</span>",
+        hero_title: "<span class='line'>Odnawialne Źródła Energii</span><span class='line'>Klasy Premium</span>",
         hero_text: "Projektujemy i realizujemy instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla hoteli, magazynów, fabryk, gospodarstw rolnych oraz innych obiektów komercyjnych. Fotowoltaika i Magazyny Energii AMBER ATLAS to lokalna obsługa i realizacje dopasowane do realnych potrzeb biznesu.",
         hero_cta_1: "Bezpłatna wycena",
         hero_cta_2: "Zobacz realizacje",
@@ -1248,7 +1316,14 @@
         form_city: "Miasto / lokalizacja",
         form_message: "Opisz krótko inwestycję lub zapytanie",
         form_submit: "Wyślij zapytanie",
-        form_note: "skontaktuj się z nami",
+        form_note: "Wszystkie pola są wymagane. Uzupełnij weryfikację przed wysłaniem.",
+        form_required_error: "Uzupełnij wszystkie wymagane pola.",
+        form_sending: "Wysyłanie wiadomości...",
+        form_success: "Wiadomość została wysłana poprawnie.",
+        form_error: "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie.",
+        form_captcha_error: "Uzupełnij weryfikację bezpieczeństwa przed wysłaniem formularza.",
+
+        bottom_service_text: "Jako AMBER ATLAS kompleksowo dostarczamy usługi montażu Instalacji Fotowoltaicznych i Magazynów Energii w takich miastach jak: Agadir, Marrakesz, Casablanca, Rabat, Fez, Tanger oraz innych regionach w Maroku. Nasze systemy budowane są w oparciu o wieloletnie doświadczenie zdobyte na rynkach europejskich. Nasz zespół od 2012 roku zajmuje się odnawialnymi źródłami energii i z sukcesami buduje portfolio inwestycji w najwyższej jakości. Jesteśmy liderem w branży.",
 
         footer_right: "copyright 2026"
       }
@@ -1289,8 +1364,102 @@
       localStorage.setItem('amberatlas_lang', lang);
     }
 
+    const form = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function currentLang() {
+      return localStorage.getItem('amberatlas_lang') || 'ar';
+    }
+
+    function currentDict() {
+      return translations[currentLang()] || translations.ar;
+    }
+
+    function showStatus(type, message) {
+      formStatus.className = `form-status show ${type}`;
+      formStatus.textContent = message;
+    }
+
+    function clearInvalidStates() {
+      form.querySelectorAll('input, textarea').forEach(el => el.classList.remove('invalid'));
+    }
+
+    function validateForm() {
+      clearInvalidStates();
+      let valid = true;
+
+      const requiredFields = form.querySelectorAll('input[required], textarea[required]');
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          field.classList.add('invalid');
+          valid = false;
+        }
+      });
+
+      const recaptchaResponse = form.querySelector('[name="g-recaptcha-response"]');
+      const captchaPresent = recaptchaResponse && recaptchaResponse.value.trim().length > 0;
+
+      return { valid, captchaPresent };
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const dict = currentDict();
+      const { valid, captchaPresent } = validateForm();
+
+      if (!valid) {
+        showStatus('error', dict.form_required_error);
+        return;
+      }
+
+      if (!captchaPresent) {
+        showStatus('error', dict.form_captcha_error);
+        return;
+      }
+
+      submitBtn.disabled = true;
+      showStatus('success', dict.form_sending);
+
+      try {
+        const formData = new FormData(form);
+
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        if (response.ok) {
+          form.reset();
+          clearInvalidStates();
+          showStatus('success', dict.form_success);
+        } else {
+          showStatus('error', dict.form_error);
+        }
+      } catch (error) {
+        showStatus('error', dict.form_error);
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+
+    form.querySelectorAll('input, textarea').forEach(field => {
+      field.addEventListener('input', () => {
+        if (field.value.trim()) {
+          field.classList.remove('invalid');
+        }
+      });
+    });
+
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+      btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.lang);
+        if (formStatus.classList.contains('show')) {
+          formStatus.classList.remove('show', 'success', 'error');
+          formStatus.textContent = '';
+        }
+      });
     });
 
     const savedLang = localStorage.getItem('amberatlas_lang') || 'ar';
