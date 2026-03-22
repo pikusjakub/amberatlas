@@ -25,8 +25,6 @@
       --shadow: 0 24px 60px rgba(0,0,0,.45);
       --radius: 22px;
       --max: 1240px;
-      --success: #9fe29f;
-      --error: #ff9b9b;
     }
 
     * { box-sizing: border-box; }
@@ -184,13 +182,6 @@
     .btn-primary:hover {
       transform: translateY(-2px);
       filter: saturate(1.05) brightness(1.03);
-    }
-
-    .btn-primary:disabled {
-      opacity: .7;
-      cursor: not-allowed;
-      transform: none;
-      filter: none;
     }
 
     .btn-secondary {
@@ -574,11 +565,6 @@
       box-shadow: 0 0 0 4px rgba(255,191,63,.08);
     }
 
-    input.invalid, textarea.invalid {
-      border-color: rgba(255,120,120,.75);
-      box-shadow: 0 0 0 4px rgba(255,120,120,.10);
-    }
-
     textarea {
       min-height: 140px;
       resize: vertical;
@@ -599,26 +585,6 @@
       color: var(--muted);
       font-size: .92rem;
       line-height: 1.6;
-    }
-
-    .form-status {
-      min-height: 24px;
-      font-size: .92rem;
-      line-height: 1.5;
-      font-weight: 600;
-      display: none;
-    }
-
-    .form-status.show {
-      display: block;
-    }
-
-    .form-status.success {
-      color: var(--success);
-    }
-
-    .form-status.error {
-      color: var(--error);
     }
 
     .bottom-service-text-wrap {
@@ -963,10 +929,9 @@
 
         <div class="contact-card">
           <form
-            id="contactForm"
             name="kontakt"
             method="POST"
-            action="/"
+            action="/success.html"
             data-netlify="true"
             data-netlify-recaptcha="true"
             netlify-honeypot="bot-field"
@@ -993,10 +958,9 @@
               <div data-netlify-recaptcha="true"></div>
             </div>
 
-            <button id="submitBtn" class="btn btn-primary" type="submit" data-i18n="form_submit">إرسال الطلب</button>
+            <button class="btn btn-primary" type="submit" data-i18n="form_submit">إرسال الطلب</button>
 
-            <div class="form-note" data-i18n="form_note">تواصل معنا</div>
-            <div id="formStatus" class="form-status" aria-live="polite"></div>
+            <div class="form-note" data-i18n="form_note">جميع الحقول مطلوبة. أكمل التحقق قبل الإرسال.</div>
           </form>
         </div>
       </div>
@@ -1017,6 +981,15 @@
       <div data-i18n="footer_right">حقوق النشر 2026</div>
     </div>
   </footer>
+
+  <!-- Hidden fallback for Netlify form detection -->
+  <form name="kontakt" data-netlify="true" hidden>
+    <input type="text" name="imie_firma" />
+    <input type="email" name="email" />
+    <input type="tel" name="telefon" />
+    <input type="text" name="miasto" />
+    <textarea name="wiadomosc"></textarea>
+  </form>
 
   <script>
     const translations = {
@@ -1085,12 +1058,7 @@
         form_city: "المدينة / الموقع",
         form_message: "صف بإيجاز المشروع أو الاستفسار",
         form_submit: "إرسال الطلب",
-        form_note: "جميع الحقول مطلوبة. أكمل نموذج التحقق قبل الإرسال.",
-        form_required_error: "يرجى ملء جميع الحقول المطلوبة.",
-        form_sending: "جارٍ إرسال الرسالة...",
-        form_success: "تم إرسال الرسالة بنجاح.",
-        form_error: "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.",
-        form_captcha_error: "أكمل التحقق الأمني قبل إرسال النموذج.",
+        form_note: "جميع الحقول مطلوبة. أكمل التحقق قبل الإرسال.",
 
         bottom_service_text: "بصفتنا AMBER ATLAS نقدم بشكل شامل خدمات تركيب الأنظمة الكهروضوئية وأنظمة تخزين الطاقة في مدن مثل أكادير ومراكش والدار البيضاء والرباط وفاس وطنجة وكذلك في مناطق أخرى من المغرب. تُبنى أنظمتنا على أساس خبرة طويلة اكتسبناها في الأسواق الأوروبية. يعمل فريقنا منذ عام 2012 في قطاع مصادر الطاقة المتجددة ونجح في بناء محفظة من الاستثمارات عالية الجودة. نحن من رواد هذا القطاع.",
 
@@ -1163,11 +1131,6 @@
         form_message: "Décrivez brièvement votre projet ou votre demande",
         form_submit: "Envoyer la demande",
         form_note: "Tous les champs sont obligatoires. Complétez la vérification avant l’envoi.",
-        form_required_error: "Veuillez remplir tous les champs obligatoires.",
-        form_sending: "Envoi du message...",
-        form_success: "Le message a été envoyé avec succès.",
-        form_error: "Une erreur s’est produite pendant l’envoi. Veuillez réessayer.",
-        form_captcha_error: "Complétez la vérification de sécurité avant d’envoyer le formulaire.",
 
         bottom_service_text: "En tant que AMBER ATLAS, nous fournissons de manière complète des services d’installation de systèmes photovoltaïques et de stockage d’énergie dans des villes telles qu’Agadir, Marrakech, Casablanca, Rabat, Fès, Tanger ainsi que dans d’autres régions du Maroc. Nos systèmes sont conçus sur la base d’une longue expérience acquise sur les marchés européens. Depuis 2012, notre équipe travaille dans le domaine des énergies renouvelables et construit avec succès un portefeuille d’investissements de la plus haute qualité. Nous sommes un leader du secteur.",
 
@@ -1240,11 +1203,6 @@
         form_message: "Briefly describe the investment or inquiry",
         form_submit: "Send inquiry",
         form_note: "All fields are required. Complete the verification before submitting.",
-        form_required_error: "Please fill in all required fields.",
-        form_sending: "Sending message...",
-        form_success: "Your message has been sent successfully.",
-        form_error: "There was an error while sending the form. Please try again.",
-        form_captcha_error: "Complete the security verification before submitting the form.",
 
         bottom_service_text: "As AMBER ATLAS, we provide comprehensive photovoltaic installation and energy storage services in cities such as Agadir, Marrakech, Casablanca, Rabat, Fez, Tangier and other regions across Morocco. Our systems are built on many years of experience gained in European markets. Since 2012, our team has been active in renewable energy and has successfully built a portfolio of top-quality investments. We are a leader in the industry.",
 
@@ -1317,11 +1275,6 @@
         form_message: "Opisz krótko inwestycję lub zapytanie",
         form_submit: "Wyślij zapytanie",
         form_note: "Wszystkie pola są wymagane. Uzupełnij weryfikację przed wysłaniem.",
-        form_required_error: "Uzupełnij wszystkie wymagane pola.",
-        form_sending: "Wysyłanie wiadomości...",
-        form_success: "Wiadomość została wysłana poprawnie.",
-        form_error: "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie.",
-        form_captcha_error: "Uzupełnij weryfikację bezpieczeństwa przed wysłaniem formularza.",
 
         bottom_service_text: "Jako AMBER ATLAS kompleksowo dostarczamy usługi montażu Instalacji Fotowoltaicznych i Magazynów Energii w takich miastach jak: Agadir, Marrakesz, Casablanca, Rabat, Fez, Tanger oraz innych regionach w Maroku. Nasze systemy budowane są w oparciu o wieloletnie doświadczenie zdobyte na rynkach europejskich. Nasz zespół od 2012 roku zajmuje się odnawialnymi źródłami energii i z sukcesami buduje portfolio inwestycji w najwyższej jakości. Jesteśmy liderem w branży.",
 
@@ -1364,102 +1317,8 @@
       localStorage.setItem('amberatlas_lang', lang);
     }
 
-    const form = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-    const submitBtn = document.getElementById('submitBtn');
-
-    function currentLang() {
-      return localStorage.getItem('amberatlas_lang') || 'ar';
-    }
-
-    function currentDict() {
-      return translations[currentLang()] || translations.ar;
-    }
-
-    function showStatus(type, message) {
-      formStatus.className = `form-status show ${type}`;
-      formStatus.textContent = message;
-    }
-
-    function clearInvalidStates() {
-      form.querySelectorAll('input, textarea').forEach(el => el.classList.remove('invalid'));
-    }
-
-    function validateForm() {
-      clearInvalidStates();
-      let valid = true;
-
-      const requiredFields = form.querySelectorAll('input[required], textarea[required]');
-      requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-          field.classList.add('invalid');
-          valid = false;
-        }
-      });
-
-      const recaptchaResponse = form.querySelector('[name="g-recaptcha-response"]');
-      const captchaPresent = recaptchaResponse && recaptchaResponse.value.trim().length > 0;
-
-      return { valid, captchaPresent };
-    }
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const dict = currentDict();
-      const { valid, captchaPresent } = validateForm();
-
-      if (!valid) {
-        showStatus('error', dict.form_required_error);
-        return;
-      }
-
-      if (!captchaPresent) {
-        showStatus('error', dict.form_captcha_error);
-        return;
-      }
-
-      submitBtn.disabled = true;
-      showStatus('success', dict.form_sending);
-
-      try {
-        const formData = new FormData(form);
-
-        const response = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        });
-
-        if (response.ok) {
-          form.reset();
-          clearInvalidStates();
-          showStatus('success', dict.form_success);
-        } else {
-          showStatus('error', dict.form_error);
-        }
-      } catch (error) {
-        showStatus('error', dict.form_error);
-      } finally {
-        submitBtn.disabled = false;
-      }
-    });
-
-    form.querySelectorAll('input, textarea').forEach(field => {
-      field.addEventListener('input', () => {
-        if (field.value.trim()) {
-          field.classList.remove('invalid');
-        }
-      });
-    });
-
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        setLanguage(btn.dataset.lang);
-        if (formStatus.classList.contains('show')) {
-          formStatus.classList.remove('show', 'success', 'error');
-          formStatus.textContent = '';
-        }
-      });
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
     });
 
     const savedLang = localStorage.getItem('amberatlas_lang') || 'ar';
