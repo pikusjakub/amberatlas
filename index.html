@@ -202,22 +202,35 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
-      gap: 34px;
+      grid-template-columns: minmax(0, .96fr) minmax(320px, .88fr);
+      gap: 40px;
       align-items: center;
     }
 
-    .hero-copy {
-      min-width: 0;
+    .eyebrow {
+      display: inline-flex;
+      max-width: 100%;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255,191,63,.08);
+      color: #ffd788;
+      border: 1px solid rgba(255,191,63,.16);
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      line-height: 1.35;
+      white-space: normal;
     }
 
     h1 {
       margin: 0 0 16px;
-      font-size: clamp(1.55rem, 3.2vw, 3rem);
-      line-height: 1.05;
+      font-size: clamp(1.25rem, 2.8vw, 2.55rem);
+      line-height: 1.02;
       font-weight: 800;
-      letter-spacing: .005em;
-      max-width: 100%;
+      letter-spacing: -.01em;
+      max-width: 13.5ch;
       text-wrap: balance;
       background:
         radial-gradient(circle at 20% 20%, rgba(255,255,255,.30) 0 4%, transparent 5%),
@@ -230,44 +243,40 @@
       color: transparent;
       -webkit-text-fill-color: transparent;
       text-shadow: none;
+      padding-inline-end: .04em;
       overflow: visible;
-      position: relative;
-      z-index: 2;
     }
 
     h1 .line {
       display: block;
-      white-space: normal;
-    }
-
-    body.lang-pl h1 {
-      font-size: clamp(1.45rem, 2.95vw, 2.8rem);
-      line-height: 1.03;
-      letter-spacing: -.01em;
-    }
-
-    body.lang-pl h1 .line:first-child {
       white-space: nowrap;
     }
 
-    body.lang-en h1,
-    body.lang-fr h1 {
-      font-size: clamp(1.45rem, 2.9vw, 2.85rem);
+    h1 .line-1 {
+      font-size: 1em;
     }
 
-    body.lang-ar h1 {
-      font-size: clamp(1.55rem, 3vw, 2.9rem);
-      line-height: 1.16;
+    h1 .line-2 {
+      font-size: .9em;
+      margin-top: .08em;
     }
 
     [dir="rtl"] h1 {
+      max-width: 15ch;
+      line-height: 1.14;
       text-transform: none;
+      padding-inline-start: .04em;
+      padding-inline-end: 0;
+    }
+
+    [dir="rtl"] h1 .line {
+      white-space: normal;
     }
 
     .lead {
-      max-width: 760px;
-      font-size: 1.06rem;
-      line-height: 1.82;
+      max-width: 700px;
+      font-size: 1.02rem;
+      line-height: 1.78;
       color: var(--muted);
       margin-bottom: 28px;
     }
@@ -315,7 +324,7 @@
       padding: 26px;
       box-shadow: var(--shadow);
       overflow: hidden;
-      min-height: 580px;
+      min-height: 540px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -332,7 +341,7 @@
     }
 
     .hero-logo {
-      width: min(100%, 560px);
+      width: min(100%, 520px);
       filter: drop-shadow(0 18px 38px rgba(0,0,0,.45));
       border-radius: 28px;
       position: relative;
@@ -577,27 +586,19 @@
       pointer-events: none !important;
     }
 
+    .recaptcha-wrap {
+      margin-top: 4px;
+      padding: 10px 0 2px;
+    }
+
     .form-note {
       color: var(--muted);
       font-size: .92rem;
       line-height: 1.6;
     }
 
-    .bottom-service-text-wrap {
-      padding: 10px 0 8px;
-    }
-
-    .bottom-service-text {
-      color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.9;
-      max-width: 980px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
     footer {
-      padding: 20px 0 42px;
+      padding: 28px 0 42px;
       color: #9f9386;
       font-size: .92rem;
     }
@@ -615,17 +616,20 @@
       .showcase {
         grid-template-columns: repeat(2, 1fr);
       }
-    }
 
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .split,
-      .cta-box {
+      .hero-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-card {
         min-height: 420px;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .split,
+      .cta-box {
+        grid-template-columns: 1fr;
       }
 
       .stats {
@@ -633,19 +637,6 @@
       }
 
       .single-line-title {
-        white-space: normal;
-      }
-
-      h1,
-      body.lang-pl h1,
-      body.lang-en h1,
-      body.lang-fr h1,
-      body.lang-ar h1 {
-        max-width: 100%;
-        font-size: clamp(1.6rem, 6vw, 2.7rem);
-      }
-
-      body.lang-pl h1 .line:first-child {
         white-space: normal;
       }
     }
@@ -683,18 +674,23 @@
         letter-spacing: .13em;
       }
 
-      h1,
-      body.lang-pl h1,
-      body.lang-en h1,
-      body.lang-fr h1,
-      body.lang-ar h1 {
-        font-size: clamp(1.45rem, 8vw, 2.35rem);
-        line-height: 1.08;
+      .eyebrow {
+        font-size: .68rem;
+        padding: 8px 12px;
+      }
+
+      h1 {
+        font-size: clamp(1.15rem, 7.2vw, 2rem);
+        max-width: 100%;
+        line-height: 1.06;
+      }
+
+      h1 .line {
+        white-space: normal;
       }
 
       .lead {
-        font-size: 1rem;
-        line-height: 1.72;
+        font-size: .98rem;
       }
 
       .cta-box {
@@ -703,10 +699,6 @@
 
       .footer-inner {
         flex-direction: column;
-      }
-
-      .bottom-service-text {
-        text-align: center;
       }
     }
   </style>
@@ -740,8 +732,13 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <h1 data-i18n="hero_title"><span class="line">مصادر الطاقة المتجددة</span><span class="line">من الفئة المتميزة</span></h1>
+        <div>
+          <div class="eyebrow" data-i18n="hero_eyebrow">الطاقة الشمسية وتخزين الطاقة • أكادير • مراكش • الدار البيضاء • الرباط • فاس • طنجة ومدن أخرى في المغرب</div>
+
+          <h1 data-i18n="hero_title">
+            <span class="line line-1">مصادر الطاقة المتجددة</span>
+            <span class="line line-2">من الفئة المتميزة</span>
+          </h1>
 
           <p class="lead" data-i18n="hero_text">
             نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية. حلول الطاقة الشمسية وتخزين الطاقة من AMBER ATLAS تعني خدمة محلية ومشاريع مصممة وفق الاحتياجات الحقيقية للأعمال.
@@ -924,7 +921,14 @@
         </div>
 
         <div class="contact-card">
-          <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <form
+            name="kontakt"
+            method="POST"
+            action="/thank-you/"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true"
+          >
             <input type="hidden" name="form-name" value="kontakt" />
 
             <p class="hidden-field">
@@ -941,20 +945,16 @@
               <input type="text" name="miasto" data-i18n-placeholder="form_city" placeholder="المدينة / الموقع" />
             </div>
 
-            <textarea name="wiadomosc" data-i18n-placeholder="form_message" placeholder="صف بإيجاز المشروع أو الاستفسار"></textarea>
+            <textarea name="wiadomosc" data-i18n-placeholder="form_message" placeholder="صف بإيجاز المشروع أو الاستفسار" required></textarea>
+
+            <div class="recaptcha-wrap">
+              <div data-netlify-recaptcha="true"></div>
+            </div>
 
             <button class="btn btn-primary" type="submit" data-i18n="form_submit">إرسال الطلب</button>
 
             <div class="form-note" data-i18n="form_note">تواصل معنا</div>
           </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="bottom-service-text-wrap">
-      <div class="container">
-        <div class="bottom-service-text" data-i18n="bottom_service_text">
-          Jako AMBER ATLAS kompleksowo dostarczamy usługi montażu Instalacji Fotowoltaicznych i Magazynów Energii w takich miastach jak: Agadir, Marrakesz, Casablanca, Rabat, Fez, Tanger oraz innych regionach w Maroku. Nasze systemy budowane są w oparciu o wieloletnie doświadczenie zdobyte na rynkach europejskich. Nasz zespół od 2012 roku zajmuje się odnawialnymi źródłami energii i z sukcesami buduje portfolio inwestycji w najwyższej jakości. Jesteśmy liderem w branży.
         </div>
       </div>
     </section>
@@ -975,7 +975,8 @@
         nav_projects: "المشاريع",
         nav_contact: "اتصل بنا",
 
-        hero_title: "<span class='line'>مصادر الطاقة المتجددة</span><span class='line'>من الفئة المتميزة</span>",
+        hero_eyebrow: "الطاقة الشمسية وتخزين الطاقة • أكادير • مراكش • الدار البيضاء • الرباط • فاس • طنجة ومدن أخرى في المغرب",
+        hero_title: "<span class='line line-1'>مصادر الطاقة المتجددة</span><span class='line line-2'>من الفئة المتميزة</span>",
         hero_text: "نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية. حلول الطاقة الشمسية وتخزين الطاقة من AMBER ATLAS تعني خدمة محلية ومشاريع مصممة وفق الاحتياجات الحقيقية للأعمال.",
         hero_cta_1: "عرض سعر مجاني",
         hero_cta_2: "عرض المشاريع",
@@ -1036,8 +1037,6 @@
         form_submit: "إرسال الطلب",
         form_note: "تواصل معنا",
 
-        bottom_service_text: "بصفتنا AMBER ATLAS نقدم بشكل شامل خدمات تركيب الأنظمة الكهروضوئية وأنظمة تخزين الطاقة في مدن مثل أكادير ومراكش والدار البيضاء والرباط وفاس وطنجة وكذلك في مناطق أخرى من المغرب. تُبنى أنظمتنا على أساس خبرة طويلة اكتسبناها في الأسواق الأوروبية. يعمل فريقنا منذ عام 2012 في قطاع مصادر الطاقة المتجددة ونجح في بناء محفظة من الاستثمارات عالية الجودة. نحن من رواد هذا القطاع.",
-
         footer_right: "حقوق النشر 2026"
       },
 
@@ -1047,7 +1046,8 @@
         nav_projects: "Réalisations",
         nav_contact: "Contact",
 
-        hero_title: "<span class='line'>Énergies renouvelables</span><span class='line'>de classe premium</span>",
+        hero_eyebrow: "Photovoltaïque et stockage d’énergie • Agadir • Marrakech • Casablanca • Rabat • Fès • Tanger et autres villes du Maroc",
+        hero_title: "<span class='line line-1'>Énergies renouvelables</span><span class='line line-2'>de classe premium</span>",
         hero_text: "Nous concevons et réalisons des installations photovoltaïques, des systèmes de stockage d’énergie et des solutions énergétiques pour les hôtels, entrepôts, usines, exploitations agricoles et autres sites commerciaux. Les solutions photovoltaïques et de stockage d’énergie AMBER ATLAS signifient un service local et des réalisations adaptées aux besoins réels des entreprises.",
         hero_cta_1: "Devis gratuit",
         hero_cta_2: "Voir les réalisations",
@@ -1108,8 +1108,6 @@
         form_submit: "Envoyer la demande",
         form_note: "contactez-nous",
 
-        bottom_service_text: "En tant que AMBER ATLAS, nous fournissons de manière complète des services d’installation de systèmes photovoltaïques et de stockage d’énergie dans des villes telles qu’Agadir, Marrakech, Casablanca, Rabat, Fès, Tanger ainsi que dans d’autres régions du Maroc. Nos systèmes sont conçus sur la base d’une longue expérience acquise sur les marchés européens. Depuis 2012, notre équipe travaille dans le domaine des énergies renouvelables et construit avec succès un portefeuille d’investissements de la plus haute qualité. Nous sommes un leader du secteur.",
-
         footer_right: "copyright 2026"
       },
 
@@ -1119,7 +1117,8 @@
         nav_projects: "Projects",
         nav_contact: "Contact",
 
-        hero_title: "<span class='line'>Renewable Energy</span><span class='line'>Premium Class</span>",
+        hero_eyebrow: "Photovoltaics and Energy Storage • Agadir • Marrakech • Casablanca • Rabat • Fez • Tangier and other cities in Morocco",
+        hero_title: "<span class='line line-1'>Renewable Energy</span><span class='line line-2'>Premium Class</span>",
         hero_text: "We design and deliver photovoltaic installations, energy storage systems and energy solutions for hotels, warehouses, factories, farms and other commercial facilities. AMBER ATLAS photovoltaic and energy storage solutions mean local support and projects tailored to real business needs.",
         hero_cta_1: "Free quote",
         hero_cta_2: "View projects",
@@ -1180,8 +1179,6 @@
         form_submit: "Send inquiry",
         form_note: "contact us",
 
-        bottom_service_text: "As AMBER ATLAS, we provide comprehensive photovoltaic installation and energy storage services in cities such as Agadir, Marrakech, Casablanca, Rabat, Fez, Tangier and other regions across Morocco. Our systems are built on many years of experience gained in European markets. Since 2012, our team has been active in renewable energy and has successfully built a portfolio of top-quality investments. We are a leader in the industry.",
-
         footer_right: "copyright 2026"
       },
 
@@ -1191,7 +1188,8 @@
         nav_projects: "Realizacje",
         nav_contact: "Kontakt",
 
-        hero_title: "<span class='line'>Odnawialne Źródła Energii</span><span class='line'>Klasy Premium</span>",
+        hero_eyebrow: "Fotowoltaika i Magazyny Energii • Agadir • Marrakesz • Casablanca • Rabat • Fez • Tanger i inne miasta w Maroku",
+        hero_title: "<span class='line line-1'>Odnawialne Źródła Energii</span><span class='line line-2'>Klasy Premium</span>",
         hero_text: "Projektujemy i realizujemy instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla hoteli, magazynów, fabryk, gospodarstw rolnych oraz innych obiektów komercyjnych. Fotowoltaika i Magazyny Energii AMBER ATLAS to lokalna obsługa i realizacje dopasowane do realnych potrzeb biznesu.",
         hero_cta_1: "Bezpłatna wycena",
         hero_cta_2: "Zobacz realizacje",
@@ -1251,8 +1249,6 @@
         form_message: "Opisz krótko inwestycję lub zapytanie",
         form_submit: "Wyślij zapytanie",
         form_note: "skontaktuj się z nami",
-
-        bottom_service_text: "Jako AMBER ATLAS kompleksowo dostarczamy usługi montażu Instalacji Fotowoltaicznych i Magazynów Energii w takich miastach jak: Agadir, Marrakesz, Casablanca, Rabat, Fez, Tanger oraz innych regionach w Maroku. Nasze systemy budowane są w oparciu o wieloletnie doświadczenie zdobyte na rynkach europejskich. Nasz zespół od 2012 roku zajmuje się odnawialnymi źródłami energii i z sukcesami buduje portfolio inwestycji w najwyższej jakości. Jesteśmy liderem w branży.",
 
         footer_right: "copyright 2026"
       }
