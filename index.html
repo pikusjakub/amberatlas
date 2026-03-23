@@ -3,11 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amber Atlas — طاقة حديثة للأعمال</title>
-  <meta name="description" content="Amber Atlas projektuje i realizuje instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla sektora B2B." />
+
+  <title>Amber Atlas — Modern energy for business</title>
+  <meta name="description" content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco." />
+
+  <!-- Favicon / ikony -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <meta name="theme-color" content="#0d0b0d" />
+
+  <!-- Open Graph / preview linku -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Amber Atlas" />
+  <meta property="og:title" content="Amber Atlas — Modern energy for business" />
+  <meta property="og:description" content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco." />
+  <meta property="og:url" content="https://amberatlas.solar/" />
+  <meta property="og:image" content="https://amberatlas.solar/logo.png" />
+  <meta property="og:image:secure_url" content="https://amberatlas.solar/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / część komunikatorów -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amber Atlas — Modern energy for business" />
+  <meta name="twitter:description" content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco." />
+  <meta name="twitter:image" content="https://amberatlas.solar/logo.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CAPTCHA zawsze po angielsku -->
+  <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
 
   <style>
     :root {
@@ -69,6 +99,7 @@
     }
 
     a { color: inherit; text-decoration: none; }
+
     img {
       display: block;
       max-width: 100%;
@@ -153,7 +184,9 @@
       overflow-wrap: anywhere;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover {
+      color: var(--text);
+    }
 
     .lang-switcher {
       display: flex;
@@ -828,10 +861,6 @@
         width: min(var(--max), calc(100% - 24px));
       }
 
-      .hero-cta {
-        grid-template-columns: 1fr;
-      }
-
       .brand {
         flex-direction: column;
         gap: 10px;
@@ -1461,8 +1490,58 @@
       }
     };
 
+    const metaContent = {
+      ar: {
+        title: "Amber Atlas — طاقة حديثة للأعمال",
+        description: "Amber Atlas projektuje i realizuje instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla sektora B2B.",
+        ogTitle: "Amber Atlas — طاقة حديثة للأعمال",
+        ogDescription: "حلول متميزة للطاقة الشمسية وأنظمة تخزين الطاقة للشركات في المغرب.",
+        locale: "ar_AR"
+      },
+      fr: {
+        title: "Amber Atlas — Énergie moderne pour les entreprises",
+        description: "Amber Atlas conçoit et réalise des installations photovoltaïques, des systèmes de stockage d’énergie et des solutions énergétiques pour le secteur B2B.",
+        ogTitle: "Amber Atlas — Énergie moderne pour les entreprises",
+        ogDescription: "Solutions photovoltaïques premium et systèmes de stockage d’énergie pour les entreprises au Maroc.",
+        locale: "fr_FR"
+      },
+      en: {
+        title: "Amber Atlas — Modern energy for business",
+        description: "Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco.",
+        ogTitle: "Amber Atlas — Modern energy for business",
+        ogDescription: "Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco.",
+        locale: "en_US"
+      },
+      pl: {
+        title: "Amber Atlas — Nowoczesna energia dla biznesu",
+        description: "Amber Atlas projektuje i realizuje instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla sektora B2B.",
+        ogTitle: "Amber Atlas — Nowoczesna energia dla biznesu",
+        ogDescription: "Fotowoltaika i magazyny energii klasy premium dla biznesu w Maroku.",
+        locale: "pl_PL"
+      }
+    };
+
+    function updateMeta(lang) {
+      const meta = metaContent[lang] || metaContent.en;
+
+      document.title = meta.title;
+
+      const setMeta = (selector, value, attr = "content") => {
+        const el = document.querySelector(selector);
+        if (el) el.setAttribute(attr, value);
+      };
+
+      setMeta('meta[name="description"]', meta.description);
+      setMeta('meta[property="og:title"]', meta.ogTitle);
+      setMeta('meta[property="og:description"]', meta.ogDescription);
+      setMeta('meta[property="og:locale"]', meta.locale);
+      setMeta('meta[name="twitter:title"]', meta.ogTitle);
+      setMeta('meta[name="twitter:description"]', meta.ogDescription);
+    }
+
     function setLanguage(lang) {
       const dict = translations[lang] || translations.ar;
+
       document.documentElement.lang = lang;
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
       document.body.classList.remove('lang-pl', 'lang-en', 'lang-fr', 'lang-ar');
@@ -1482,17 +1561,11 @@
         }
       });
 
-      document.title = {
-        ar: "Amber Atlas — طاقة حديثة للأعمال",
-        fr: "Amber Atlas — Énergie moderne pour les entreprises",
-        en: "Amber Atlas — Modern energy for business",
-        pl: "Amber Atlas — Nowoczesna energia dla biznesu"
-      }[lang] || "Amber Atlas";
-
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
       });
 
+      updateMeta(lang);
       localStorage.setItem('amberatlas_lang', lang);
     }
 
