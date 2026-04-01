@@ -34,17 +34,17 @@
   <style>
     :root {
       --bg: #09080a;
-      --bg-2: #100d10;
-      --bg-3: #171116;
       --text: #f6f0e8;
       --muted: #c1b6aa;
 
-      --gold-1: #fffce9;
-      --gold-2: #ffeeb8;
-      --gold-3: #f4cd63;
-      --gold-4: #cf932b;
-      --gold-5: #935813;
-      --gold-6: #4f2500;
+      --gold-top: #fff6d7;
+      --gold-mid-1: #ffe08b;
+      --gold-mid-2: #f4ba4b;
+      --gold-mid-3: #d98b20;
+      --gold-deep: #9a5410;
+      --gold-dark: #5e2c00;
+
+      --button-text-dark: #1e1204;
 
       --card-border: rgba(255,193,94,.16);
       --card-border-strong: rgba(255,193,94,.26);
@@ -52,6 +52,17 @@
       --card-bg-strong: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
       --radius: 24px;
       --max: 1240px;
+
+      --gold-surface:
+        linear-gradient(
+          180deg,
+          var(--gold-top) 0%,
+          var(--gold-mid-1) 15%,
+          var(--gold-mid-2) 36%,
+          var(--gold-mid-3) 58%,
+          var(--gold-deep) 80%,
+          var(--gold-dark) 100%
+        );
 
       --font-system:
         "Segoe UI",
@@ -146,6 +157,7 @@
     a:visited {
       color: inherit;
       text-decoration: none !important;
+      border: 0 !important;
       border-bottom: 0 !important;
       box-shadow: none !important;
       outline: none !important;
@@ -216,27 +228,16 @@
       display: inline-block;
       color: transparent;
       -webkit-text-fill-color: transparent;
-      background:
-        linear-gradient(
-          180deg,
-          #fffef2 0%,
-          #fff4d0 8%,
-          #f6d677 18%,
-          #c98a25 33%,
-          #f8dc88 46%,
-          #b46f18 62%,
-          #83480c 80%,
-          #4a2200 100%
-        );
+      background: var(--gold-surface);
       -webkit-background-clip: text;
       background-clip: text;
       text-shadow:
         0 1px 0 rgba(255,255,255,.28),
-        0 2px 0 rgba(207,144,41,.18),
-        0 3px 0 rgba(144,83,16,.22),
-        0 4px 0 rgba(77,36,0,.22),
+        0 2px 0 rgba(217,139,32,.18),
+        0 3px 0 rgba(154,84,16,.22),
+        0 4px 0 rgba(94,44,0,.22),
         0 9px 16px rgba(0,0,0,.26);
-      letter-spacing: .035em;
+      letter-spacing: .03em;
       transform: perspective(800px) translateZ(0);
     }
 
@@ -253,8 +254,8 @@
           100deg,
           transparent 0%,
           transparent 25%,
-          rgba(255,255,255,.92) 35%,
-          rgba(255,255,255,.2) 42%,
+          rgba(255,255,255,.90) 35%,
+          rgba(255,255,255,.22) 42%,
           transparent 50%,
           transparent 100%
         );
@@ -306,21 +307,6 @@
       font-weight: 800;
       letter-spacing: .02em;
       text-transform: none;
-      background:
-        linear-gradient(
-          180deg,
-          #fffbe8 0%,
-          #ffeeb8 15%,
-          #e1b051 40%,
-          #b06d1d 70%,
-          #5a2b00 100%
-        );
-      -webkit-background-clip: text;
-      background-clip: text;
-      text-shadow:
-        0 1px 0 rgba(255,255,255,.18),
-        0 2px 0 rgba(155,96,23,.16),
-        0 7px 14px rgba(0,0,0,.20);
     }
 
     .nav-right {
@@ -347,11 +333,11 @@
       position: relative;
       overflow-wrap: anywhere;
       transition: color .22s ease, transform .22s ease;
+      background: none !important;
       text-decoration: none !important;
-      border-bottom: 0 !important;
+      border: 0 !important;
       box-shadow: none !important;
       outline: none !important;
-      background: none !important;
     }
 
     .nav-links a::before,
@@ -373,8 +359,8 @@
     }
 
     .lang-btn {
-      border: 1px solid rgba(255,193,94,.16);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,193,94,.16) !important;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)) !important;
       color: var(--text);
       border-radius: 999px;
       min-height: 40px;
@@ -384,30 +370,32 @@
       cursor: pointer;
       transition: .2s ease;
       flex: 0 0 auto;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
-      text-decoration: none;
-      outline: none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04) !important;
+      text-decoration: none !important;
+      outline: none !important;
+      -webkit-appearance: none;
+      appearance: none;
+      background-clip: padding-box;
+    }
+
+    .lang-btn::before,
+    .lang-btn::after {
+      content: none !important;
+      display: none !important;
     }
 
     .lang-btn:hover,
     .lang-btn.active {
-      background:
-        linear-gradient(
-          180deg,
-          #fffbe6 0%,
-          #ffeeb6 16%,
-          #f8cb5f 36%,
-          #d6952b 58%,
-          #995a14 80%,
-          #5a2b00 100%
-        );
-      color: #231200;
-      border-color: rgba(255,221,170,.2);
+      background: var(--gold-surface) !important;
+      color: var(--button-text-dark) !important;
+      border: 1px solid rgba(255,221,170,.2) !important;
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,.35),
-        0 8px 18px rgba(255,169,45,.18);
+        0 8px 18px rgba(255,169,45,.18) !important;
       text-shadow: 0 1px 0 rgba(255,255,255,.18);
       font-weight: 800;
+      text-decoration: none !important;
+      border-bottom: 1px solid rgba(255,221,170,.2) !important;
     }
 
     .btn {
@@ -454,18 +442,8 @@
     }
 
     .btn-primary {
-      background:
-        linear-gradient(
-          180deg,
-          #fffef1 0%,
-          #fff3cb 12%,
-          #f5d26f 31%,
-          #cd8d27 52%,
-          #ab6918 72%,
-          #7a430b 88%,
-          #492200 100%
-        );
-      color: #241300;
+      background: var(--gold-surface);
+      color: var(--button-text-dark) !important;
       border: 1px solid rgba(255,225,170,.16);
       box-shadow: 0 10px 18px rgba(0,0,0,.22);
       text-shadow: 0 1px 0 rgba(255,255,255,.16);
@@ -476,6 +454,7 @@
     .btn-primary:hover {
       transform: translateY(-2px);
       filter: saturate(1.04) brightness(1.02);
+      color: var(--button-text-dark) !important;
     }
 
     .btn-secondary {
@@ -497,22 +476,22 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, .95fr) minmax(340px, .85fr);
+      grid-template-columns: minmax(0, .98fr) minmax(340px, .82fr);
       gap: 58px;
       align-items: center;
     }
 
     .hero-copy {
       min-width: 0;
-      max-width: 690px;
+      max-width: 760px;
       position: relative;
       z-index: 2;
     }
 
     h1 {
       margin: 0 0 18px;
-      font-size: clamp(1.35rem, 2.5vw, 2.45rem);
-      line-height: .98;
+      font-size: clamp(1.65rem, 3.05vw, 3rem);
+      line-height: .96;
       letter-spacing: .025em;
       max-width: 100%;
       overflow-wrap: anywhere;
@@ -526,10 +505,10 @@
     }
 
     body.lang-pl h1 {
-      font-size: clamp(1.22rem, 2.25vw, 2.12rem);
-      line-height: .98;
-      letter-spacing: .018em;
-      max-width: 640px;
+      font-size: clamp(1.55rem, 2.85vw, 2.85rem);
+      line-height: .95;
+      letter-spacing: .015em;
+      max-width: 760px;
     }
 
     body.lang-pl h1 .line:first-child,
@@ -539,14 +518,14 @@
 
     body.lang-en h1,
     body.lang-fr h1 {
-      font-size: clamp(1.24rem, 2.28vw, 2.18rem);
-      max-width: 640px;
+      font-size: clamp(1.5rem, 2.65vw, 2.65rem);
+      max-width: 720px;
     }
 
     body.lang-ar h1 {
-      font-size: clamp(1.45rem, 2.65vw, 2.55rem);
-      line-height: 1.14;
-      max-width: 670px;
+      font-size: clamp(1.65rem, 2.95vw, 2.9rem);
+      line-height: 1.1;
+      max-width: 760px;
     }
 
     [dir="rtl"] h1 {
@@ -1098,7 +1077,7 @@
       body.lang-fr h1,
       body.lang-ar h1 {
         max-width: 100%;
-        font-size: clamp(1.55rem, 5.6vw, 2.6rem);
+        font-size: clamp(1.7rem, 5.8vw, 2.9rem);
       }
 
       body.lang-pl h1 .line:first-child,
@@ -1164,8 +1143,8 @@
       body.lang-en h1,
       body.lang-fr h1,
       body.lang-ar h1 {
-        font-size: clamp(1.42rem, 7vw, 2.2rem);
-        line-height: 1.06;
+        font-size: clamp(1.55rem, 7.6vw, 2.45rem);
+        line-height: 1.02;
       }
 
       .lead {
