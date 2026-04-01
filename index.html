@@ -29,10 +29,6 @@
   <meta name="twitter:description" content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco." />
   <meta name="twitter:image" content="https://amberatlas.solar/logo.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-
   <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
 
   <style>
@@ -49,11 +45,12 @@
       --amber-deep: #da8e1f;
       --amber-dark: #8a4b00;
 
-      --gold-1: #fffaf0;
-      --gold-2: #ffeab5;
-      --gold-3: #ffc85b;
-      --gold-4: #e59223;
-      --gold-5: #8f4a06;
+      --gold-1: #fffdf8;
+      --gold-2: #ffefbe;
+      --gold-3: #ffd66f;
+      --gold-4: #efa22f;
+      --gold-5: #9a570c;
+      --gold-6: #5f2b00;
 
       --card-border: rgba(255,193,94,.16);
       --card-border-strong: rgba(255,193,94,.26);
@@ -62,6 +59,31 @@
       --shadow: 0 24px 60px rgba(0,0,0,.45);
       --radius: 24px;
       --max: 1240px;
+
+      --font-system:
+        "Segoe UI",
+        "Segoe UI Variable",
+        "Arial",
+        "Helvetica Neue",
+        Helvetica,
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+      --font-system-ar:
+        Tahoma,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      --font-premium:
+        "Arial Black",
+        "Segoe UI Black",
+        "Segoe UI Semibold",
+        "Segoe UI",
+        Arial,
+        sans-serif;
     }
 
     * {
@@ -77,7 +99,7 @@
     body {
       margin: 0;
       color: var(--text);
-      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: var(--font-system);
       background:
         linear-gradient(180deg, rgba(8,7,9,.72), rgba(8,7,9,.9)),
         radial-gradient(circle at 50% 0%, rgba(255,196,83,.08), transparent 28%),
@@ -90,6 +112,9 @@
       overflow-x: clip;
       position: relative;
       width: 100%;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body::before {
@@ -118,7 +143,7 @@
     }
 
     body.lang-ar {
-      font-family: 'Cairo', 'Montserrat', sans-serif;
+      font-family: var(--font-system-ar);
     }
 
     a {
@@ -181,57 +206,108 @@
       border: 1px solid rgba(255,193,94,.12);
     }
 
-    .brand-title {
-      font-size: 1.02rem;
-      font-weight: 800;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      min-width: 0;
-      overflow-wrap: anywhere;
+    .gold-text,
+    .brand-title,
+    h1,
+    .section-kicker,
+    .stat strong,
+    .btn-primary,
+    .lang-btn.active,
+    .lang-btn:hover {
+      font-family: var(--font-premium);
+    }
+
+    .brand-title,
+    h1,
+    .section-kicker,
+    .stat strong {
       position: relative;
       color: transparent;
       -webkit-text-fill-color: transparent;
       background:
-        repeating-linear-gradient(
-          100deg,
-          rgba(255,255,255,.24) 0px,
-          rgba(255,255,255,.24) 1px,
-          rgba(255,223,156,.05) 1px,
-          rgba(255,223,156,.05) 5px
-        ),
-        linear-gradient(
-          180deg,
-          #fffefb 0%,
-          #fff6dd 8%,
-          #ffe9b1 18%,
-          #ffd169 33%,
-          #ffbb42 48%,
-          #ef9825 62%,
-          #be6d11 78%,
-          #7d3f00 100%
-        );
+        linear-gradient(180deg,
+          rgba(255,255,255,.9) 0%,
+          rgba(255,255,255,.16) 6%,
+          rgba(255,248,225,.98) 10%,
+          rgba(255,237,183,.98) 20%,
+          rgba(255,214,112,.98) 34%,
+          rgba(241,163,47,.98) 52%,
+          rgba(176,94,12,.98) 72%,
+          rgba(92,43,0,.98) 100%);
       -webkit-background-clip: text;
       background-clip: text;
+      filter: saturate(1.12) contrast(1.06);
       text-shadow:
-        0 1px 0 rgba(255,255,255,.18),
-        0 2px 0 rgba(201,118,18,.26),
-        0 3px 0 rgba(134,72,3,.28),
-        0 4px 0 rgba(84,41,0,.28),
-        0 14px 24px rgba(255,170,40,.12);
-      filter: saturate(1.08) contrast(1.03);
+        0 1px 0 rgba(255,255,255,.22),
+        0 2px 0 rgba(236,177,72,.26),
+        0 3px 0 rgba(194,121,24,.26),
+        0 4px 0 rgba(132,71,6,.28),
+        0 5px 0 rgba(83,39,0,.28),
+        0 14px 22px rgba(255,170,40,.12),
+        0 22px 36px rgba(0,0,0,.22);
+      transform: perspective(900px) rotateX(6deg);
+      transform-origin: center bottom;
     }
 
-    .brand-title::after {
+    .brand-title::before,
+    h1::before,
+    .section-kicker::before,
+    .stat strong::before {
       content: "";
       position: absolute;
       inset: 0;
       pointer-events: none;
       background:
-        linear-gradient(115deg, transparent 20%, rgba(255,255,255,.42) 33%, rgba(255,255,255,.10) 42%, transparent 56%);
+        linear-gradient(180deg,
+          rgba(255,255,255,.38) 0%,
+          rgba(255,255,255,.18) 18%,
+          transparent 38%,
+          transparent 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      mix-blend-mode: screen;
+      opacity: .95;
+    }
+
+    .brand-title::after,
+    h1::after,
+    .section-kicker::after,
+    .stat strong::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(112deg,
+          transparent 18%,
+          rgba(255,255,255,.78) 34%,
+          rgba(255,255,255,.18) 40%,
+          transparent 50%,
+          transparent 100%);
       -webkit-background-clip: text;
       background-clip: text;
       mix-blend-mode: screen;
       opacity: .85;
+    }
+
+    .brand-title {
+      font-size: 1.02rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      line-height: 1;
+    }
+
+    body.lang-ar .brand-title,
+    [dir="rtl"] .section-kicker,
+    [dir="rtl"] h1,
+    body.lang-ar .stat strong {
+      font-family: var(--font-system-ar);
+      font-weight: 800;
+      transform: none;
+      letter-spacing: .02em;
     }
 
     .nav-right {
@@ -304,19 +380,23 @@
     .lang-btn:hover,
     .lang-btn.active {
       background:
-        repeating-linear-gradient(
-          100deg,
-          rgba(255,255,255,.18) 0px,
-          rgba(255,255,255,.18) 1px,
-          rgba(255,220,145,.06) 1px,
-          rgba(255,220,145,.06) 5px
-        ),
-        linear-gradient(180deg, #fff7de 0%, #ffd98c 26%, #ffc356 52%, #e39021 78%, #8f4c06 100%);
-      color: #221100;
+        linear-gradient(180deg,
+          #fffef9 0%,
+          #fff0c4 16%,
+          #ffd874 36%,
+          #f0a030 58%,
+          #9b570f 82%,
+          #5e2d00 100%);
+      color: #231200;
       border-color: rgba(255,221,170,.2);
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.35),
-        0 10px 22px rgba(255,169,45,.18);
+        inset 0 1px 0 rgba(255,255,255,.45),
+        inset 0 -2px 0 rgba(119,61,0,.22),
+        0 8px 18px rgba(255,169,45,.18);
+      text-shadow:
+        0 1px 0 rgba(255,255,255,.28),
+        0 1px 0 rgba(110,61,0,.18);
+      font-weight: 900;
     }
 
     .btn {
@@ -351,27 +431,30 @@
 
     .btn-primary {
       background:
-        repeating-linear-gradient(
-          100deg,
-          rgba(255,255,255,.18) 0px,
-          rgba(255,255,255,.18) 1px,
-          rgba(255,220,145,.05) 1px,
-          rgba(255,220,145,.05) 5px
-        ),
-        linear-gradient(180deg, #fff9e8 0%, #ffe8b7 12%, #ffcb65 34%, #f4a027 58%, #9a5108 100%);
+        linear-gradient(180deg,
+          #fffefb 0%,
+          #fff0c8 14%,
+          #ffd870 32%,
+          #f1a132 54%,
+          #b46411 76%,
+          #5d2d00 100%);
       color: #241300;
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.45),
-        inset 0 -2px 0 rgba(118,58,0,.22),
-        0 3px 0 rgba(91,46,0,.32),
+        inset 0 1px 0 rgba(255,255,255,.46),
+        inset 0 -2px 0 rgba(118,58,0,.24),
+        0 3px 0 rgba(91,46,0,.34),
         0 10px 20px rgba(0,0,0,.24),
         0 14px 30px rgba(255,169,45,.18);
       border-color: rgba(255,228,184,.18);
+      text-shadow:
+        0 1px 0 rgba(255,255,255,.22);
+      font-weight: 900;
+      letter-spacing: .03em;
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      filter: saturate(1.06) brightness(1.03);
+      filter: saturate(1.08) brightness(1.04);
     }
 
     .btn-secondary {
@@ -406,57 +489,13 @@
     h1 {
       margin: 0 0 18px;
       font-size: clamp(1.55rem, 3.2vw, 3rem);
-      line-height: 1.04;
-      font-weight: 800;
-      letter-spacing: .005em;
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: .03em;
       max-width: 100%;
-      position: relative;
       overflow-wrap: anywhere;
       word-break: normal;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      background:
-        repeating-linear-gradient(
-          100deg,
-          rgba(255,255,255,.24) 0px,
-          rgba(255,255,255,.24) 1px,
-          rgba(255,216,125,.06) 1px,
-          rgba(255,216,125,.06) 6px
-        ),
-        linear-gradient(
-          180deg,
-          #fffefb 0%,
-          #fff7e0 8%,
-          #ffe8a8 18%,
-          #ffd165 30%,
-          #ffbc43 43%,
-          #f39d24 56%,
-          #c46d10 74%,
-          #7a3e00 100%
-        );
-      -webkit-background-clip: text;
-      background-clip: text;
-      text-shadow:
-        0 1px 0 rgba(255,255,255,.22),
-        0 2px 0 rgba(230,152,31,.22),
-        0 3px 0 rgba(175,97,9,.24),
-        0 4px 0 rgba(117,57,0,.28),
-        0 5px 0 rgba(77,36,0,.28),
-        0 16px 28px rgba(255,164,34,.10);
-      filter: saturate(1.08) contrast(1.03);
-    }
-
-    h1::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(115deg, transparent 18%, rgba(255,255,255,.44) 34%, rgba(255,255,255,.12) 42%, transparent 56%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      mix-blend-mode: screen;
-      opacity: .88;
+      text-transform: uppercase;
     }
 
     h1 .line {
@@ -465,9 +504,9 @@
     }
 
     body.lang-pl h1 {
-      font-size: clamp(1.45rem, 2.95vw, 2.8rem);
+      font-size: clamp(1.42rem, 2.95vw, 2.8rem);
       line-height: 1.03;
-      letter-spacing: -.01em;
+      letter-spacing: .015em;
     }
 
     body.lang-pl h1 .line:first-child {
@@ -476,12 +515,13 @@
 
     body.lang-en h1,
     body.lang-fr h1 {
-      font-size: clamp(1.45rem, 2.9vw, 2.85rem);
+      font-size: clamp(1.42rem, 2.9vw, 2.85rem);
     }
 
     body.lang-ar h1 {
       font-size: clamp(1.55rem, 3vw, 2.9rem);
       line-height: 1.16;
+      text-transform: none;
     }
 
     [dir="rtl"] h1 {
@@ -530,24 +570,9 @@
       font-size: 1.6rem;
       margin-bottom: 7px;
       overflow-wrap: anywhere;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      background:
-        repeating-linear-gradient(
-          100deg,
-          rgba(255,255,255,.20) 0px,
-          rgba(255,255,255,.20) 1px,
-          rgba(255,220,145,.05) 1px,
-          rgba(255,220,145,.05) 5px
-        ),
-        linear-gradient(180deg, #fff7df 0%, #ffd889 28%, #ffbf4e 52%, #e28d1e 76%, #935006 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      text-shadow:
-        0 1px 0 rgba(255,255,255,.18),
-        0 2px 0 rgba(193,116,21,.24),
-        0 3px 0 rgba(105,52,0,.24),
-        0 10px 16px rgba(255,164,34,.08);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .035em;
     }
 
     .stat span {
@@ -617,29 +642,14 @@
     }
 
     .section-kicker {
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      background:
-        repeating-linear-gradient(
-          100deg,
-          rgba(255,255,255,.18) 0px,
-          rgba(255,255,255,.18) 1px,
-          rgba(255,220,145,.05) 1px,
-          rgba(255,220,145,.05) 5px
-        ),
-        linear-gradient(180deg, #fff4d3 0%, #ffd98f 35%, #f1a734 72%, #955108 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
       text-transform: uppercase;
-      letter-spacing: .13em;
-      font-size: .82rem;
-      font-weight: 800;
+      letter-spacing: .16em;
+      font-size: .84rem;
+      font-weight: 900;
       margin-bottom: 10px;
       overflow-wrap: anywhere;
-      text-shadow:
-        0 1px 0 rgba(255,255,255,.16),
-        0 2px 0 rgba(155,88,8,.20),
-        0 3px 0 rgba(92,46,0,.22);
+      display: inline-block;
+      line-height: 1;
     }
 
     h2 {
@@ -649,6 +659,13 @@
       overflow-wrap: anywhere;
       color: #fbf4ea;
       text-shadow: 0 1px 0 rgba(0,0,0,.18);
+      font-family: var(--font-system);
+      font-weight: 800;
+      letter-spacing: .01em;
+    }
+
+    body.lang-ar h2 {
+      font-family: var(--font-system-ar);
     }
 
     .single-line-title {
@@ -729,6 +746,13 @@
       line-height: 1.35;
       overflow-wrap: anywhere;
       color: #fff4e5;
+      font-family: var(--font-system);
+      font-weight: 800;
+      letter-spacing: .01em;
+    }
+
+    body.lang-ar .card h3 {
+      font-family: var(--font-system-ar);
     }
 
     .card p {
@@ -833,6 +857,12 @@
       font-size: 1.06rem;
       overflow-wrap: anywhere;
       color: #fff4e5;
+      font-family: var(--font-system);
+      font-weight: 800;
+    }
+
+    body.lang-ar .project-body h3 {
+      font-family: var(--font-system-ar);
     }
 
     .project-body p {
@@ -878,6 +908,12 @@
       line-height: 1.3;
       overflow-wrap: anywhere;
       color: #fff6eb;
+      font-family: var(--font-system);
+      font-weight: 800;
+    }
+
+    body.lang-ar .cta-box h3 {
+      font-family: var(--font-system-ar);
     }
 
     .cta-box p {
@@ -939,6 +975,13 @@
       transition: .2s ease;
       min-width: 0;
       box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+      font-family: var(--font-system);
+    }
+
+    body.lang-ar input,
+    body.lang-ar textarea,
+    body.lang-ar select {
+      font-family: var(--font-system-ar);
     }
 
     input::placeholder,
@@ -1000,6 +1043,11 @@
       margin: 0 auto;
       text-align: center;
       overflow-wrap: anywhere;
+      font-family: var(--font-system);
+    }
+
+    body.lang-ar .bottom-service-text {
+      font-family: var(--font-system-ar);
     }
 
     footer {
@@ -1101,7 +1149,7 @@
 
       .brand-title {
         font-size: .94rem;
-        letter-spacing: .13em;
+        letter-spacing: .12em;
       }
 
       h1,
