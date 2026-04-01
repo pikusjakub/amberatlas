@@ -39,24 +39,17 @@
       --text: #f6f0e8;
       --muted: #c1b6aa;
 
-      --amber-light: #fff4d6;
-      --amber-soft: #ffd992;
-      --amber-main: #f7b74c;
-      --amber-deep: #da8e1f;
-      --amber-dark: #8a4b00;
-
-      --gold-1: #fff9e3;
-      --gold-2: #ffe8ab;
-      --gold-3: #f7c95a;
-      --gold-4: #d59a32;
-      --gold-5: #9a5d14;
-      --gold-6: #5a2b00;
+      --gold-1: #fffce9;
+      --gold-2: #ffeeb8;
+      --gold-3: #f4cd63;
+      --gold-4: #cf932b;
+      --gold-5: #935813;
+      --gold-6: #4f2500;
 
       --card-border: rgba(255,193,94,.16);
       --card-border-strong: rgba(255,193,94,.26);
       --card-bg: linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.025));
       --card-bg-strong: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      --shadow: 0 24px 60px rgba(0,0,0,.45);
       --radius: 24px;
       --max: 1240px;
 
@@ -78,11 +71,11 @@
         sans-serif;
 
       --font-premium:
+        Impact,
+        Haettenschweiler,
+        "Arial Narrow Bold",
         "Arial Black",
         "Segoe UI Black",
-        Impact,
-        "Segoe UI",
-        Arial,
         sans-serif;
     }
 
@@ -153,9 +146,9 @@
     a:visited {
       color: inherit;
       text-decoration: none !important;
-      -webkit-text-decoration: none !important;
-      box-shadow: none;
-      outline: none;
+      border-bottom: 0 !important;
+      box-shadow: none !important;
+      outline: none !important;
     }
 
     img {
@@ -226,24 +219,25 @@
       background:
         linear-gradient(
           180deg,
-          #fffbe8 0%,
-          #fff2c8 8%,
-          #f6d980 18%,
-          #cf9f3b 34%,
-          #f9d16a 46%,
-          #b67821 60%,
-          #8a4f0d 76%,
-          #4f2400 100%
+          #fffef2 0%,
+          #fff4d0 8%,
+          #f6d677 18%,
+          #c98a25 33%,
+          #f8dc88 46%,
+          #b46f18 62%,
+          #83480c 80%,
+          #4a2200 100%
         );
       -webkit-background-clip: text;
       background-clip: text;
       text-shadow:
-        0 1px 0 rgba(255,255,255,.24),
-        0 2px 0 rgba(214,161,68,.18),
-        0 3px 0 rgba(136,80,16,.22),
-        0 4px 0 rgba(84,40,0,.24),
-        0 10px 18px rgba(0,0,0,.24);
-      filter: contrast(1.08) saturate(1.12);
+        0 1px 0 rgba(255,255,255,.28),
+        0 2px 0 rgba(207,144,41,.18),
+        0 3px 0 rgba(144,83,16,.22),
+        0 4px 0 rgba(77,36,0,.22),
+        0 9px 16px rgba(0,0,0,.26);
+      letter-spacing: .035em;
+      transform: perspective(800px) translateZ(0);
     }
 
     .brand-title::before,
@@ -256,11 +250,11 @@
       pointer-events: none;
       background:
         linear-gradient(
-          102deg,
+          100deg,
           transparent 0%,
-          transparent 24%,
-          rgba(255,255,255,.85) 34%,
-          rgba(255,255,255,.22) 41%,
+          transparent 25%,
+          rgba(255,255,255,.92) 35%,
+          rgba(255,255,255,.2) 42%,
           transparent 50%,
           transparent 100%
         );
@@ -281,8 +275,8 @@
       background:
         linear-gradient(
           180deg,
-          rgba(255,255,255,.28) 0%,
-          rgba(255,255,255,.12) 14%,
+          rgba(255,255,255,.26) 0%,
+          rgba(255,255,255,.12) 12%,
           transparent 26%,
           transparent 100%
         );
@@ -294,7 +288,6 @@
     .brand-title {
       font-size: 1.02rem;
       line-height: 1;
-      font-weight: 900;
       letter-spacing: .16em;
       text-transform: uppercase;
       min-width: 0;
@@ -355,9 +348,10 @@
       overflow-wrap: anywhere;
       transition: color .22s ease, transform .22s ease;
       text-decoration: none !important;
-      border: 0 !important;
+      border-bottom: 0 !important;
       box-shadow: none !important;
       outline: none !important;
+      background: none !important;
     }
 
     .nav-links a::before,
@@ -436,10 +430,21 @@
       overflow: hidden;
       text-decoration: none !important;
       outline: none !important;
-      box-shadow: none;
       -webkit-appearance: none;
       appearance: none;
-      background-clip: padding-box;
+    }
+
+    .btn,
+    .btn:hover,
+    .btn:focus,
+    .btn:active,
+    button.btn,
+    button.btn:hover,
+    button.btn:focus,
+    button.btn:active {
+      text-decoration: none !important;
+      border-bottom: 0 !important;
+      outline: none !important;
     }
 
     .btn::before,
@@ -452,43 +457,37 @@
       background:
         linear-gradient(
           180deg,
-          #fffbe8 0%,
-          #fff1c5 12%,
-          #f4d06c 30%,
-          #d0952f 50%,
-          #b7741b 68%,
-          #8a4f0d 84%,
-          #542700 100%
+          #fffef1 0%,
+          #fff3cb 12%,
+          #f5d26f 31%,
+          #cd8d27 52%,
+          #ab6918 72%,
+          #7a430b 88%,
+          #492200 100%
         );
       color: #241300;
-      border: 1px solid rgba(255,226,170,.18);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.28),
-        0 8px 18px rgba(0,0,0,.20) !important;
-      text-shadow: 0 1px 0 rgba(255,255,255,.18);
+      border: 1px solid rgba(255,225,170,.16);
+      box-shadow: 0 10px 18px rgba(0,0,0,.22);
+      text-shadow: 0 1px 0 rgba(255,255,255,.16);
       font-weight: 800;
-      text-decoration: none !important;
-      border-bottom: 1px solid rgba(255,226,170,.18) !important;
+      background-clip: padding-box;
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      filter: saturate(1.06) brightness(1.03);
-      text-decoration: none !important;
+      filter: saturate(1.04) brightness(1.02);
     }
 
     .btn-secondary {
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
       border-color: rgba(255,193,94,.18);
       color: var(--text);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.04) !important;
-      text-decoration: none !important;
+      box-shadow: 0 8px 16px rgba(0,0,0,.12);
     }
 
     .btn-secondary:hover {
       background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
       border-color: rgba(255,193,94,.32);
-      text-decoration: none !important;
     }
 
     .hero {
@@ -498,22 +497,23 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
-      gap: 34px;
+      grid-template-columns: minmax(0, .95fr) minmax(340px, .85fr);
+      gap: 58px;
       align-items: center;
     }
 
     .hero-copy {
       min-width: 0;
-      max-width: 100%;
+      max-width: 690px;
+      position: relative;
+      z-index: 2;
     }
 
     h1 {
       margin: 0 0 18px;
-      font-size: clamp(1.55rem, 3.2vw, 3rem);
-      line-height: 1.02;
-      font-weight: 900;
-      letter-spacing: .06em;
+      font-size: clamp(1.35rem, 2.5vw, 2.45rem);
+      line-height: .98;
+      letter-spacing: .025em;
       max-width: 100%;
       overflow-wrap: anywhere;
       word-break: normal;
@@ -526,23 +526,27 @@
     }
 
     body.lang-pl h1 {
-      font-size: clamp(1.45rem, 2.95vw, 2.8rem);
-      line-height: 1.03;
-      letter-spacing: .03em;
+      font-size: clamp(1.22rem, 2.25vw, 2.12rem);
+      line-height: .98;
+      letter-spacing: .018em;
+      max-width: 640px;
     }
 
-    body.lang-pl h1 .line:first-child {
+    body.lang-pl h1 .line:first-child,
+    body.lang-pl h1 .line:last-child {
       white-space: nowrap;
     }
 
     body.lang-en h1,
     body.lang-fr h1 {
-      font-size: clamp(1.45rem, 2.9vw, 2.85rem);
+      font-size: clamp(1.24rem, 2.28vw, 2.18rem);
+      max-width: 640px;
     }
 
     body.lang-ar h1 {
-      font-size: clamp(1.55rem, 3vw, 2.9rem);
-      line-height: 1.16;
+      font-size: clamp(1.45rem, 2.65vw, 2.55rem);
+      line-height: 1.14;
+      max-width: 670px;
     }
 
     [dir="rtl"] h1 {
@@ -550,7 +554,7 @@
     }
 
     .lead {
-      max-width: 760px;
+      max-width: 720px;
       font-size: 1.06rem;
       line-height: 1.82;
       color: #d3c7bb;
@@ -592,7 +596,7 @@
       margin-bottom: 7px;
       overflow-wrap: anywhere;
       line-height: 1;
-      letter-spacing: .06em;
+      letter-spacing: .03em;
     }
 
     .stat span {
@@ -605,6 +609,7 @@
 
     .hero-card {
       position: relative;
+      z-index: 1;
       background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
       border: 1px solid rgba(255,193,94,.16);
       border-radius: 32px;
@@ -666,7 +671,6 @@
       font-size: .82rem;
       line-height: 1;
       text-transform: uppercase;
-      font-weight: 900;
       margin-bottom: 10px;
       overflow-wrap: anywhere;
       display: inline-block;
@@ -1066,11 +1070,14 @@
       }
     }
 
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .split,
-      .cta-box {
+    @media (max-width: 1120px) {
+      .hero-grid {
         grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero-copy {
+        max-width: 100%;
       }
 
       .hero-card {
@@ -1091,11 +1098,17 @@
       body.lang-fr h1,
       body.lang-ar h1 {
         max-width: 100%;
-        font-size: clamp(1.6rem, 6vw, 2.7rem);
+        font-size: clamp(1.55rem, 5.6vw, 2.6rem);
       }
 
-      body.lang-pl h1 .line:first-child {
+      body.lang-pl h1 .line:first-child,
+      body.lang-pl h1 .line:last-child {
         white-space: normal;
+      }
+
+      .split,
+      .cta-box {
+        grid-template-columns: 1fr;
       }
 
       body {
@@ -1151,8 +1164,8 @@
       body.lang-en h1,
       body.lang-fr h1,
       body.lang-ar h1 {
-        font-size: clamp(1.45rem, 8vw, 2.35rem);
-        line-height: 1.12;
+        font-size: clamp(1.42rem, 7vw, 2.2rem);
+        line-height: 1.06;
       }
 
       .lead {
@@ -1761,7 +1774,7 @@
         nav_projects: "Realizacje",
         nav_contact: "Kontakt",
 
-        hero_title: "<span class='line'>Odnawialne Źródła Energii</span><span class='line'>Klasy Premium</span>",
+        hero_title: "<span class='line'>ODNAWIALNE ŹRÓDŁA ENERGII</span><span class='line'>KLASY PREMIUM</span>",
         hero_text: "Projektujemy i realizujemy instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla hoteli, magazynów, fabryk, gospodarstw rolnych oraz innych obiektów komercyjnych. Fotowoltaika i Magazyny Energii AMBER ATLAS to lokalna obsługa i realizacje dopasowane do realnych potrzeb biznesu.",
         hero_cta_1: "Bezpłatna wycena",
         hero_cta_2: "Zobacz realizacje",
