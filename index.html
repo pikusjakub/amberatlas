@@ -41,17 +41,14 @@
       --text: #f6f0e8;
       --muted: #c1b6aa;
 
-      --gold-top: #fff1bf;
-      --gold-mid-1: #ffd777;
-      --gold-mid-2: #f0b33f;
-      --gold-mid-3: #ca7c17;
-      --gold-deep: #8d4b09;
-      --gold-dark: #5b2d00;
+      --amber-highlight: #fff6c7;
+      --amber-light: #ffe27a;
+      --amber-mid: #ffbe2f;
+      --amber-deep: #f18d05;
+      --amber-burnt: #c76400;
+      --amber-shadow: #783300;
 
-      --gold-flat: #f4c46a;
-      --gold-flat-strong: #ffcf71;
-
-      --button-text-dark: #1e1204;
+      --button-text-dark: #221203;
 
       --card-border: rgba(255,193,94,.16);
       --card-border-strong: rgba(255,193,94,.26);
@@ -60,15 +57,17 @@
       --radius: 24px;
       --max: 1240px;
 
-      --gold-surface:
+      --amber-logo-surface:
         linear-gradient(
           180deg,
-          var(--gold-top) 0%,
-          var(--gold-mid-1) 22%,
-          var(--gold-mid-2) 48%,
-          var(--gold-mid-3) 72%,
-          var(--gold-deep) 88%,
-          var(--gold-dark) 100%
+          var(--amber-highlight) 0%,
+          #fff0a4 10%,
+          var(--amber-light) 24%,
+          #ffc943 40%,
+          var(--amber-mid) 56%,
+          var(--amber-deep) 74%,
+          var(--amber-burnt) 90%,
+          var(--amber-shadow) 100%
         );
 
       --font-system:
@@ -229,13 +228,37 @@
       display: inline-block;
       color: transparent;
       -webkit-text-fill-color: transparent;
-      background: var(--gold-surface);
+      background: var(--amber-logo-surface);
       -webkit-background-clip: text;
       background-clip: text;
       text-shadow:
         0 1px 0 rgba(255,255,255,.18),
-        0 2px 4px rgba(0,0,0,.28);
+        0 2px 0 rgba(255,208,92,.06),
+        0 3px 6px rgba(0,0,0,.34),
+        0 8px 18px rgba(0,0,0,.18);
       letter-spacing: .05em;
+    }
+
+    .brand-title::before,
+    h1::before,
+    .section-kicker::before,
+    .stat strong::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.32) 0%,
+          rgba(255,255,255,.18) 12%,
+          rgba(255,255,255,.08) 20%,
+          transparent 36%,
+          transparent 100%
+        );
+      -webkit-background-clip: text;
+      background-clip: text;
+      opacity: .95;
     }
 
     .brand-title {
@@ -378,7 +401,14 @@
 
     .lang-btn:hover,
     .lang-btn.active {
-      background: var(--gold-surface) !important;
+      background: linear-gradient(
+        180deg,
+        var(--amber-highlight) 0%,
+        var(--amber-light) 24%,
+        var(--amber-mid) 55%,
+        var(--amber-deep) 82%,
+        var(--amber-burnt) 100%
+      ) !important;
       color: var(--button-text-dark) !important;
       border: 1px solid rgba(255,221,170,.2) !important;
       box-shadow:
@@ -434,10 +464,19 @@
     }
 
     .btn-primary {
-      background: var(--gold-surface);
+      background: linear-gradient(
+        180deg,
+        var(--amber-highlight) 0%,
+        var(--amber-light) 22%,
+        var(--amber-mid) 52%,
+        var(--amber-deep) 82%,
+        var(--amber-burnt) 100%
+      );
       color: var(--button-text-dark) !important;
       border: 1px solid rgba(255,225,170,.16);
-      box-shadow: 0 10px 18px rgba(0,0,0,.22);
+      box-shadow:
+        0 10px 18px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(255,255,255,.16);
       text-shadow: 0 1px 0 rgba(255,255,255,.16);
       font-weight: 800;
       background-clip: padding-box;
@@ -743,12 +782,21 @@
       border-radius: 999px;
       display: grid;
       place-items: center;
-      background: linear-gradient(180deg, rgba(255,228,166,.18), rgba(255,181,30,.1));
-      color: #ffd069;
+      background: linear-gradient(
+        180deg,
+        var(--amber-highlight) 0%,
+        var(--amber-light) 25%,
+        var(--amber-mid) 58%,
+        var(--amber-deep) 85%,
+        var(--amber-burnt) 100%
+      );
+      color: #241203;
       font-weight: 800;
       margin-top: 2px;
       border: 1px solid rgba(255,193,94,.16);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 3px 8px rgba(0,0,0,.16);
     }
 
     .showcase {
