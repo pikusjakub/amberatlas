@@ -7,13 +7,11 @@
   <title>Amber Atlas — Modern energy for business</title>
   <meta name="description" content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco." />
 
-  <!-- Favicon / ikony -->
   <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/logo.png" />
   <link rel="apple-touch-icon" href="/logo.png" />
   <meta name="theme-color" content="#0d0b0d" />
 
-  <!-- Open Graph / preview linku -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Amber Atlas" />
   <meta property="og:title" content="Amber Atlas — Modern energy for business" />
@@ -26,7 +24,6 @@
   <meta property="og:image:height" content="1200" />
   <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter / część komunikatorów -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Amber Atlas — Modern energy for business" />
   <meta name="twitter:description" content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco." />
@@ -36,24 +33,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- CAPTCHA zawsze po angielsku -->
   <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
 
   <style>
     :root {
-      --bg: #0b0a0c;
-      --bg-2: #121014;
-      --bg-3: #1a1512;
-      --text: #f4efe8;
-      --muted: #b8ada2;
-      --amber-1: #ffe7b0;
-      --amber-2: #ffbf3f;
-      --amber-3: #ff9f1c;
-      --amber-4: #d67900;
-      --card-border: rgba(255,191,63,.16);
-      --card-bg: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      --bg: #09080a;
+      --bg-2: #100d10;
+      --bg-3: #171116;
+      --text: #f6f0e8;
+      --muted: #c1b6aa;
+
+      --amber-light: #fff2cf;
+      --amber-soft: #ffd992;
+      --amber-main: #f7b74c;
+      --amber-deep: #da8e1f;
+      --amber-dark: #8a4b00;
+
+      --gold-1: #fff5da;
+      --gold-2: #ffe1a1;
+      --gold-3: #ffc85b;
+      --gold-4: #e59223;
+      --gold-5: #8f4a06;
+
+      --card-border: rgba(255,193,94,.16);
+      --card-border-strong: rgba(255,193,94,.26);
+      --card-bg: linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.025));
+      --card-bg-strong: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
       --shadow: 0 24px 60px rgba(0,0,0,.45);
-      --radius: 22px;
+      --shadow-soft: 0 16px 36px rgba(0,0,0,.28);
+      --radius: 24px;
       --max: 1240px;
     }
 
@@ -72,9 +80,11 @@
       color: var(--text);
       font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background:
-        radial-gradient(circle at 50% 0%, rgba(255,196,83,.09), transparent 28%),
-        radial-gradient(circle at 85% 20%, rgba(255,150,25,.05), transparent 22%),
-        radial-gradient(circle at 15% 10%, rgba(255,150,25,.04), transparent 18%),
+        linear-gradient(180deg, rgba(8,7,9,.72), rgba(8,7,9,.9)),
+        radial-gradient(circle at 50% 0%, rgba(255,196,83,.08), transparent 28%),
+        radial-gradient(circle at 85% 16%, rgba(255,150,25,.08), transparent 18%),
+        radial-gradient(circle at 15% 10%, rgba(255,150,25,.05), transparent 16%),
+        url("premium-energy-amb.png") center top / cover no-repeat fixed,
         linear-gradient(180deg, #161316 0%, #0d0b0d 35%, #090809 100%);
       min-height: 100vh;
       letter-spacing: .01em;
@@ -88,8 +98,22 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: .18;
-      background-image: radial-gradient(rgba(255,255,255,.08) .5px, transparent .7px);
+      opacity: .2;
+      background:
+        radial-gradient(circle at 20% 12%, rgba(255,236,200,.08), transparent 14%),
+        radial-gradient(circle at 80% 18%, rgba(255,186,90,.08), transparent 18%),
+        radial-gradient(circle at 50% 0%, rgba(255,170,40,.1), transparent 30%),
+        linear-gradient(180deg, rgba(17,13,10,.15), rgba(8,8,10,.35));
+      mix-blend-mode: screen;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .1;
+      background-image: radial-gradient(rgba(255,255,255,.08) .5px, transparent .75px);
       background-size: 5px 5px;
       mix-blend-mode: soft-light;
     }
@@ -98,7 +122,10 @@
       font-family: 'Cairo', 'Montserrat', sans-serif;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     img {
       display: block;
@@ -109,16 +136,20 @@
     .container {
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     .nav-wrap {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      background: rgba(10,9,11,.75);
-      border-bottom: 1px solid rgba(255,191,63,.08);
+      z-index: 60;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background:
+        linear-gradient(180deg, rgba(10,9,11,.82), rgba(10,9,11,.66));
+      border-bottom: 1px solid rgba(255,193,94,.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
     }
 
     .nav {
@@ -139,14 +170,30 @@
     }
 
     .brand img {
-      width: 56px;
-      height: 56px;
+      width: 58px;
+      height: 58px;
       object-fit: cover;
       object-position: center;
-      border-radius: 14px;
-      box-shadow: 0 12px 32px rgba(0,0,0,.35);
+      border-radius: 16px;
+      box-shadow:
+        0 14px 30px rgba(0,0,0,.34),
+        inset 0 1px 0 rgba(255,255,255,.1);
       background: #111;
       flex: 0 0 auto;
+      border: 1px solid rgba(255,193,94,.12);
+    }
+
+    .brand-title,
+    .metal-text {
+      position: relative;
+      background:
+        linear-gradient(180deg, #fff8e5 0%, #ffeab8 12%, #ffd06f 30%, #ffbf4e 48%, #f39b28 65%, #b96506 86%, #7f4300 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      filter: drop-shadow(0 2px 0 rgba(92,46,0,.35)) drop-shadow(0 8px 18px rgba(255,175,37,.08));
     }
 
     .brand-title {
@@ -154,8 +201,6 @@
       font-weight: 800;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--amber-2);
-      text-shadow: 0 0 18px rgba(255,181,30,.14);
       min-width: 0;
       overflow-wrap: anywhere;
     }
@@ -181,11 +226,28 @@
     }
 
     .nav-links a {
+      position: relative;
       overflow-wrap: anywhere;
+      transition: color .22s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,198,90,.9), transparent);
+      transition: width .22s ease;
     }
 
     .nav-links a:hover {
       color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .lang-switcher {
@@ -196,8 +258,9 @@
     }
 
     .lang-btn {
-      border: 1px solid rgba(255,191,63,.16);
-      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,193,94,.16);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
       color: var(--text);
       border-radius: 999px;
       min-height: 40px;
@@ -207,13 +270,18 @@
       cursor: pointer;
       transition: .2s ease;
       flex: 0 0 auto;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
     }
 
     .lang-btn:hover,
     .lang-btn.active {
-      background: linear-gradient(180deg, var(--amber-1), var(--amber-2));
-      color: #241300;
-      border-color: transparent;
+      background:
+        linear-gradient(180deg, #fff7de 0%, #ffd98c 26%, #ffc356 52%, #e39021 78%, #8f4c06 100%);
+      color: #221100;
+      border-color: rgba(255,221,170,.2);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.35),
+        0 10px 22px rgba(255,169,45,.18);
     }
 
     .btn {
@@ -221,44 +289,64 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 52px;
+      min-height: 54px;
       padding: 0 24px;
       border-radius: 999px;
       font-weight: 700;
       transition: .22s ease;
       cursor: pointer;
       border: 1px solid transparent;
-      box-shadow: var(--shadow);
       font: inherit;
       max-width: 100%;
       text-align: center;
       white-space: normal;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: .6;
+      background: linear-gradient(180deg, rgba(255,255,255,.24), transparent 35%);
     }
 
     .btn-primary {
-      background: linear-gradient(180deg, var(--amber-1), var(--amber-2) 45%, var(--amber-3));
-      color: #211100;
+      background:
+        linear-gradient(180deg, #fff9e5 0%, #ffe4a5 16%, #ffc75a 38%, #ef9b23 63%, #9a5108 100%);
+      color: #241300;
+      box-shadow:
+        0 14px 30px rgba(0,0,0,.28),
+        0 10px 26px rgba(255,169,45,.18),
+        inset 0 1px 0 rgba(255,255,255,.4);
+      border-color: rgba(255,228,184,.18);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      filter: saturate(1.05) brightness(1.03);
+      filter: saturate(1.04) brightness(1.03);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,.03);
-      border-color: rgba(255,191,63,.18);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      border-color: rgba(255,193,94,.18);
       color: var(--text);
-      box-shadow: none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,.06);
-      border-color: rgba(255,191,63,.35);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
+      border-color: rgba(255,193,94,.32);
     }
 
     .hero {
-      padding: 78px 0 44px;
+      padding: 84px 0 52px;
+      position: relative;
     }
 
     .hero-grid {
@@ -274,27 +362,41 @@
     }
 
     h1 {
-      margin: 0 0 16px;
+      margin: 0 0 18px;
       font-size: clamp(1.55rem, 3.2vw, 3rem);
-      line-height: 1.05;
+      line-height: 1.04;
       font-weight: 800;
       letter-spacing: .005em;
       max-width: 100%;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.30) 0 4%, transparent 5%),
-        radial-gradient(circle at 35% 55%, rgba(255,230,180,.25) 0 5%, transparent 6%),
-        radial-gradient(circle at 60% 30%, rgba(255,220,160,.18) 0 4%, transparent 5%),
-        radial-gradient(circle at 72% 70%, rgba(255,210,130,.15) 0 4%, transparent 5%),
-        linear-gradient(180deg, #fff0c5 0%, #ffd98a 18%, #ffbf3f 42%, #ff9f1c 68%, #cc6e00 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      text-shadow: none;
+      position: relative;
       overflow-wrap: anywhere;
       word-break: normal;
-      position: relative;
-      z-index: 2;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255,255,255,.85) 0 2.5%, transparent 4%),
+        radial-gradient(circle at 38% 34%, rgba(255,244,214,.48) 0 3%, transparent 5%),
+        radial-gradient(circle at 62% 16%, rgba(255,235,186,.28) 0 3.2%, transparent 5.2%),
+        linear-gradient(180deg, #fffef8 0%, #fff0c5 12%, #ffd879 30%, #ffbf4a 46%, #f29d25 64%, #b86508 82%, #7a3e00 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      filter:
+        drop-shadow(0 1px 0 rgba(255,255,255,.12))
+        drop-shadow(0 4px 0 rgba(92,47,0,.22))
+        drop-shadow(0 18px 28px rgba(255,164,34,.08));
+    }
+
+    h1::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(115deg, transparent 18%, rgba(255,255,255,.35) 34%, rgba(255,255,255,.08) 42%, transparent 56%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      mix-blend-mode: screen;
+      opacity: .7;
     }
 
     h1 .line {
@@ -330,9 +432,10 @@
       max-width: 760px;
       font-size: 1.06rem;
       line-height: 1.82;
-      color: var(--muted);
+      color: #d3c7bb;
       margin-bottom: 28px;
       overflow-wrap: anywhere;
+      text-shadow: 0 1px 0 rgba(0,0,0,.25);
     }
 
     .hero-cta {
@@ -350,20 +453,31 @@
     }
 
     .stat {
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,191,63,.12);
-      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,193,94,.14);
+      border-radius: 20px;
       padding: 20px 18px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05),
+        0 18px 34px rgba(0,0,0,.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       min-width: 0;
     }
 
     .stat strong {
       display: block;
       font-size: 1.6rem;
-      color: var(--amber-2);
       margin-bottom: 7px;
       overflow-wrap: anywhere;
+      background:
+        linear-gradient(180deg, #fff7df 0%, #ffd889 28%, #ffbf4e 52%, #e28d1e 76%, #935006 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 0 rgba(84,42,0,.24));
     }
 
     .stat span {
@@ -376,17 +490,22 @@
 
     .hero-card {
       position: relative;
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,191,63,.12);
-      border-radius: 30px;
-      padding: 26px;
-      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+      border: 1px solid rgba(255,193,94,.16);
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow:
+        0 28px 60px rgba(0,0,0,.34),
+        inset 0 1px 0 rgba(255,255,255,.06);
       overflow: hidden;
-      min-height: 580px;
+      min-height: 590px;
       display: flex;
       align-items: center;
       justify-content: center;
       min-width: 0;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .hero-card::before {
@@ -394,9 +513,21 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 50% 25%, rgba(255,191,63,.16), transparent 25%),
-        linear-gradient(180deg, rgba(255,191,63,.05), transparent 45%);
+        radial-gradient(circle at 50% 18%, rgba(255,221,157,.16), transparent 22%),
+        radial-gradient(circle at 25% 85%, rgba(255,166,36,.08), transparent 20%),
+        linear-gradient(180deg, rgba(255,191,63,.06), transparent 45%);
       pointer-events: none;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      pointer-events: none;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,.16), transparent 18%, transparent 62%, rgba(255,191,63,.08));
+      opacity: .55;
     }
 
     .hero-logo {
@@ -408,22 +539,28 @@
     }
 
     section {
-      padding: 44px 0;
+      padding: 48px 0;
+      position: relative;
     }
 
     .section-head {
-      margin-bottom: 24px;
+      margin-bottom: 26px;
       min-width: 0;
     }
 
     .section-kicker {
-      color: #ffd788;
+      color: transparent;
+      background:
+        linear-gradient(180deg, #fff4d3 0%, #ffd98f 35%, #f1a734 72%, #955108 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
       text-transform: uppercase;
-      letter-spacing: .12em;
+      letter-spacing: .13em;
       font-size: .82rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 10px;
       overflow-wrap: anywhere;
+      filter: drop-shadow(0 2px 0 rgba(84,42,0,.22));
     }
 
     h2 {
@@ -431,6 +568,8 @@
       font-size: clamp(1.8rem, 3vw, 3rem);
       line-height: 1.1;
       overflow-wrap: anywhere;
+      color: #fbf4ea;
+      text-shadow: 0 1px 0 rgba(0,0,0,.18);
     }
 
     .single-line-title {
@@ -460,29 +599,51 @@
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
       padding: 24px;
-      box-shadow: var(--shadow);
+      box-shadow:
+        0 24px 44px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(255,255,255,.05);
       min-height: 100%;
-      transition: transform .25s ease, border-color .25s ease;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
       min-width: 0;
       overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.08), transparent 24%, transparent 72%, rgba(255,191,63,.04));
+      opacity: .7;
     }
 
     .card:hover {
       transform: translateY(-4px);
-      border-color: rgba(255,191,63,.28);
+      border-color: var(--card-border-strong);
+      box-shadow:
+        0 28px 50px rgba(0,0,0,.26),
+        inset 0 1px 0 rgba(255,255,255,.06);
     }
 
     .icon {
-      width: 52px;
-      height: 52px;
+      width: 54px;
+      height: 54px;
       border-radius: 16px;
       display: inline-grid;
       place-items: center;
       font-size: 1.35rem;
       margin-bottom: 16px;
-      background: linear-gradient(180deg, rgba(255,207,87,.18), rgba(255,181,30,.07));
-      border: 1px solid rgba(255,191,63,.16);
-      color: #ffca52;
+      background:
+        linear-gradient(180deg, rgba(255,236,196,.18), rgba(255,182,43,.08));
+      border: 1px solid rgba(255,193,94,.18);
+      color: #ffcb61;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 10px 24px rgba(0,0,0,.14);
     }
 
     .card h3 {
@@ -490,6 +651,7 @@
       font-size: 1.08rem;
       line-height: 1.35;
       overflow-wrap: anywhere;
+      color: #fff4e5;
     }
 
     .card p {
@@ -534,10 +696,13 @@
       border-radius: 999px;
       display: grid;
       place-items: center;
-      background: rgba(255,191,63,.12);
-      color: #ffca52;
+      background:
+        linear-gradient(180deg, rgba(255,228,166,.18), rgba(255,181,30,.1));
+      color: #ffd069;
       font-weight: 800;
       margin-top: 2px;
+      border: 1px solid rgba(255,193,94,.16);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
     }
 
     .showcase {
@@ -554,8 +719,18 @@
     .project-image-wrap {
       aspect-ratio: 4 / 3;
       overflow: hidden;
-      border-bottom: 1px solid rgba(255,191,63,.12);
+      border-bottom: 1px solid rgba(255,193,94,.12);
       background: linear-gradient(135deg, #201507, #0f0c0d 60%);
+      position: relative;
+    }
+
+    .project-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(255,191,63,.04), transparent 38%, rgba(0,0,0,.12));
     }
 
     .project-image {
@@ -563,11 +738,18 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform .45s ease;
+    }
+
+    .showcase-card:hover .project-image {
+      transform: scale(1.04);
     }
 
     .project-body {
       padding: 22px;
       min-width: 0;
+      position: relative;
+      z-index: 1;
     }
 
     .project-body h3 {
@@ -575,6 +757,7 @@
       line-height: 1.35;
       font-size: 1.06rem;
       overflow-wrap: anywhere;
+      color: #fff4e5;
     }
 
     .project-body p {
@@ -591,15 +774,28 @@
       overflow: hidden;
       background:
         radial-gradient(circle at 85% 10%, rgba(255,191,63,.2), transparent 24%),
-        linear-gradient(135deg, rgba(255,191,63,.11), rgba(255,255,255,.025));
-      border: 1px solid rgba(255,191,63,.18);
-      border-radius: 30px;
-      padding: 34px;
-      box-shadow: var(--shadow);
+        linear-gradient(135deg, rgba(255,191,63,.11), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,193,94,.18);
+      border-radius: 32px;
+      padding: 36px;
+      box-shadow:
+        0 30px 60px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.05);
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
       gap: 24px;
       align-items: center;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,.08), transparent 24%, transparent 68%, rgba(255,191,63,.08));
     }
 
     .cta-box h3 {
@@ -607,6 +803,7 @@
       font-size: clamp(1.35rem, 2.5vw, 2.2rem);
       line-height: 1.3;
       overflow-wrap: anywhere;
+      color: #fff6eb;
     }
 
     .cta-box p {
@@ -618,19 +815,35 @@
     }
 
     .contact-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,191,63,.16);
+      background: var(--card-bg-strong);
+      border: 1px solid rgba(255,193,94,.16);
       border-radius: 28px;
       padding: 28px;
-      box-shadow: var(--shadow);
+      box-shadow:
+        0 24px 48px rgba(0,0,0,.24),
+        inset 0 1px 0 rgba(255,255,255,.05);
       min-width: 0;
       overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.08), transparent 20%, transparent 72%, rgba(255,191,63,.04));
     }
 
     form {
       display: grid;
       gap: 14px;
       min-width: 0;
+      position: relative;
+      z-index: 1;
     }
 
     .form-grid {
@@ -643,8 +856,9 @@
     input, textarea, select {
       width: 100%;
       max-width: 100%;
-      border: 1px solid rgba(255,191,63,.14);
-      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,193,94,.16);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
       color: var(--text);
       border-radius: 16px;
       padding: 16px 18px;
@@ -652,11 +866,22 @@
       outline: none;
       transition: .2s ease;
       min-width: 0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #b9aea2;
+      opacity: 1;
     }
 
     input:focus, textarea:focus, select:focus {
-      border-color: rgba(255,191,63,.4);
-      box-shadow: 0 0 0 4px rgba(255,191,63,.08);
+      border-color: rgba(255,193,94,.42);
+      box-shadow:
+        0 0 0 4px rgba(255,193,94,.08),
+        inset 0 1px 0 rgba(255,255,255,.05);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
     }
 
     textarea {
@@ -693,11 +918,11 @@
     }
 
     .bottom-service-text-wrap {
-      padding: 10px 0 8px;
+      padding: 10px 0 4px;
     }
 
     .bottom-service-text {
-      color: var(--muted);
+      color: #b7ab9e;
       font-size: .92rem;
       line-height: 1.9;
       max-width: 980px;
@@ -707,7 +932,7 @@
     }
 
     footer {
-      padding: 20px 0 42px;
+      padding: 18px 0 30px;
       color: #9f9386;
       font-size: .92rem;
     }
@@ -716,7 +941,7 @@
       display: flex;
       justify-content: space-between;
       gap: 16px;
-      border-top: 1px solid rgba(255,191,63,.08);
+      border-top: 1px solid rgba(255,193,94,.08);
       padding-top: 22px;
       min-width: 0;
     }
@@ -758,6 +983,10 @@
 
       body.lang-pl h1 .line:first-child {
         white-space: normal;
+      }
+
+      body {
+        background-attachment: scroll;
       }
     }
 
@@ -1232,7 +1461,7 @@
 
         industries_kicker: "لمن",
         industries_title: "القطاعات التي نخدمها",
-        industries_text: "نطوّر حلولاً للشركات التي تحتاج إلى تكاليف طاقة مستقرة وجودة تنفيذ عالية وشريك يفهم استثمارات B2B. الطاقة الشمسية وتخزين الطاقة في المغرب حلول تستفيد إلى أقصى حد من إمكانات المنطقة حيث تصبح الطاقة الخضراء وقوداً مجانياً في شكل طاقة شمسية. إضافة إلى مدن مثل الرباط وأكادير ومراكش فإننا نخدم مختلف مناطق البلاد.",
+        industries_text: "نطوّر حلولاً للشركات التي تحتاج إلى تكاليف طاقة مستقرة وجودة تنفيذ عالية وشريك يفهم استثمارات B2B. الطاقة الشمسية وتخزين الطاقة في المغرب حلول تستفيد إلى أقصى حد من إمكانات المنطقة حيث تصبح الطاقة الخضراء وقوداً مجاناً في شكل طاقة شمسية. إضافة إلى مدن مثل الرباط وأكادير ومراكش فإننا نخدم مختلف مناطق البلاد.",
         industry_1: "<strong>الفنادق ومنشآت الضيافة</strong><br>خفض تكاليف الطاقة وضمان التشغيل الموثوق طوال الموسم.",
         industry_2: "<strong>المخازن واللوجستيات</strong><br>أسطح كبيرة واستهلاك مرتفع للطاقة وجدوى ممتازة للأنظمة الشمسية.",
         industry_3: "<strong>المصانع والصناعة</strong><br>مشاريع تراعي استمرارية العمل وأمان الاستثمار.",
@@ -1448,7 +1677,7 @@
 
         industries_kicker: "Dla kogo",
         industries_title: "Branże, które obsługujemy",
-        industries_text: "Tworzymy rozwiązania dla firm, które potrzebują stabilnych kosztów energii, wysokiej estetyki wykonania i partnera, który rozumie inwestycje B2B. Fotowoltaika i Magazyny energii w Maroko to rozwiązania wykorzystujące maksymalny potencjał regionu dzięki któremu zielona energia jest darmowym paliwem w postaci energii słonecznej. Oprócz takich miast jak Rabat, Agadir czy Marrakesz obsługujemy region całego kraju.",
+        industries_text: "Tworzymy rozwiązania dla firm, które potrzebują stabilnych kosztów energii, wysokiej estetyki wykonania i partnera, który rozumie inwestycje B2B. Fotowoltaika i Magazyny Energii w Maroku to rozwiązania wykorzystujące maksymalny potencjał regionu, dzięki któremu zielona energia staje się darmowym paliwem w postaci energii słonecznej. Oprócz takich miast jak Rabat, Agadir czy Marrakesz obsługujemy region całego kraju.",
         industry_1: "<strong>Hotele i obiekty noclegowe</strong><br>obniżenie kosztów energii i niezawodność działania przez cały sezon.",
         industry_2: "<strong>Magazyny i logistyka</strong><br>duże dachy, wysoka skala zużycia energii i opłacalność instalacji PV.",
         industry_3: "<strong>Fabryki i przemysł</strong><br>projekty uwzględniające ciągłość pracy zakładu i bezpieczeństwo inwestycji.",
@@ -1457,21 +1686,21 @@
         projects_kicker: "Realizacje",
         projects_title: "Przykładowe wdrożenia B2B",
         project_1_title: "Hotele & Resorty",
-        project_1_text: "Instalacja PV i System Magazynów Energii dla Hoteli i Resortów to nie tylko oszczędności ale także zabezpieczenie dostaw energii.",
+        project_1_text: "Instalacja PV i system magazynów energii dla hoteli i resortów to nie tylko oszczędności, ale także zabezpieczenie dostaw energii.",
         project_2_title: "Magazyny logistyczne",
-        project_2_text: "Rozwiązanie projektowane pod dużą powierzchnię dachu to przewidywalne koszty i szybki zwrot inwestycji z produkcji energii na własne potrzeby",
-        project_3_title: "Wiaty Parkingowe",
-        project_3_text: "System wiat to ochrona pojazdów przed promieniowaniem słonecznym które zamieniane jest w energię elektryczną możliwą do wykorzystania w firmie lub do ładowania aut elektrycznych",
-        project_4_title: "Instalacje na Gruncie",
+        project_2_text: "Rozwiązanie projektowane pod dużą powierzchnię dachu to przewidywalne koszty i szybki zwrot inwestycji z produkcji energii na własne potrzeby.",
+        project_3_title: "Wiaty parkingowe",
+        project_3_text: "System wiat to ochrona pojazdów przed promieniowaniem słonecznym, które zamieniane jest w energię elektryczną możliwą do wykorzystania w firmie lub do ładowania aut elektrycznych.",
+        project_4_title: "Instalacje na gruncie",
         project_4_text: "Instalacje gruntowe to rozwiązania dla gospodarstw rolnych i innych podmiotów, które nie mają możliwości budowy instalacji na dachach budynków.",
 
-        cta_title: "Wszystkie nasze instalacje wykonujemy w standardzie premium zachowując przy tym koszty inwestycji na poziomie gwarantującym najszybszą stopę zwrotu.",
-        cta_text: "Instalacje Fotowoltaiczne i Magazyny Energii od Amber Atlas to idealny stosunek zastosowanej technologii do kosztów inwestycji - dzięki temu nasze systemy fotowoltaiczne gwarantują stopę zwrotu od 10 do 20 procent rocznie.",
+        cta_title: "Wszystkie nasze instalacje wykonujemy w standardzie premium, zachowując przy tym koszty inwestycji na poziomie gwarantującym najszybszą stopę zwrotu.",
+        cta_text: "Instalacje fotowoltaiczne i magazyny energii od Amber Atlas to idealny stosunek zastosowanej technologii do kosztów inwestycji - dzięki temu nasze systemy fotowoltaiczne gwarantują stopę zwrotu od 10 do 20 procent rocznie.",
         cta_button: "Umów bezpłatną wycenę",
 
         contact_kicker: "Kontakt",
         contact_title: "Porozmawiajmy o Twojej inwestycji",
-        contact_text: "Opisz w kilku zdaniach do jakiego obiektu potrzebujesz rozwiązania a nasi specjaliści na pewno się z Tobą skontaktują!",
+        contact_text: "Opisz w kilku zdaniach, do jakiego obiektu potrzebujesz rozwiązania, a nasi specjaliści na pewno się z Tobą skontaktują.",
         contact_b1: "pełna obsługa procesu od początku do końca",
         contact_b2: "elastyczność na każdym etapie realizacji",
         contact_b3: "instalacje fotowoltaiczne i magazyny energii na miarę",
@@ -1484,7 +1713,7 @@
         form_submit: "Wyślij zapytanie",
         form_note: "Wszystkie pola są wymagane. Uzupełnij weryfikację przed wysłaniem.",
 
-        bottom_service_text: "Jako AMBER ATLAS kompleksowo dostarczamy usługi montażu Instalacji Fotowoltaicznych i Magazynów Energii w takich miastach jak: Agadir, Marrakesz, Casablanca, Rabat, Fez, Tanger oraz innych regionach w Maroku. Nasze systemy budowane są w oparciu o wieloletnie doświadczenie zdobyte na rynkach europejskich. Nasz zespół od 2012 roku zajmuje się odnawialnymi źródłami energii i z sukcesami buduje portfolio inwestycji w najwyższej jakości. Jesteśmy liderem w branży.",
+        bottom_service_text: "Jako AMBER ATLAS kompleksowo dostarczamy usługi montażu instalacji fotowoltaicznych i magazynów energii w takich miastach jak: Agadir, Marrakesz, Casablanca, Rabat, Fez, Tanger oraz innych regionach w Maroku. Nasze systemy budowane są w oparciu o wieloletnie doświadczenie zdobyte na rynkach europejskich. Nasz zespół od 2012 roku zajmuje się odnawialnymi źródłami energii i z sukcesami buduje portfolio inwestycji w najwyższej jakości. Jesteśmy liderem w branży.",
 
         footer_right: "copyright 2026"
       }
