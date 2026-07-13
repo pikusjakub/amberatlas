@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Amber Atlas — Modern energy for business</title>
-  <meta name="description" content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco." />
+  <meta
+    name="description"
+    content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco."
+  />
 
+  <link rel="canonical" href="https://amberatlas.solar/" />
   <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/logo.png" />
   <link rel="apple-touch-icon" href="/logo.png" />
@@ -15,79 +19,74 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Amber Atlas" />
   <meta property="og:title" content="Amber Atlas — Modern energy for business" />
-  <meta property="og:description" content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco." />
+  <meta
+    property="og:description"
+    content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco."
+  />
   <meta property="og:url" content="https://amberatlas.solar/" />
   <meta property="og:image" content="https://amberatlas.solar/logo.png" />
   <meta property="og:image:secure_url" content="https://amberatlas.solar/logo.png" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="1200" />
   <meta property="og:locale" content="en_US" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Amber Atlas — Modern energy for business" />
-  <meta name="twitter:description" content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco." />
+  <meta
+    name="twitter:description"
+    content="Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco."
+  />
   <meta name="twitter:image" content="https://amberatlas.solar/logo.png" />
 
   <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Amber Atlas",
+    "url": "https://amberatlas.solar/",
+    "logo": "https://amberatlas.solar/logo.png",
+    "description": "Photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco.",
+    "areaServed": "MA"
+  }
+  </script>
 
   <style>
     :root {
       --bg: #09080a;
+      --bg-soft: #111013;
       --text: #f6f0e8;
-      --muted: #c1b6aa;
-
+      --muted: #c4b9ad;
       --amber-highlight: #fff6c7;
       --amber-light: #ffe27a;
       --amber-mid: #ffbe2f;
       --amber-deep: #f18d05;
       --amber-burnt: #c76400;
-      --amber-shadow: #783300;
-
       --button-text-dark: #221203;
-
-      --card-border: rgba(255,193,94,.16);
-      --card-border-strong: rgba(255,193,94,.26);
-      --card-bg: linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.025));
-      --card-bg-strong: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      --card-border: rgba(255, 193, 94, 0.16);
+      --card-border-strong: rgba(255, 193, 94, 0.3);
+      --card-bg: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
       --radius: 24px;
       --max: 1240px;
-
-      --amber-logo-surface:
+      --shadow: 0 24px 48px rgba(0,0,0,.25);
+      --font: "Montserrat", "Segoe UI", Arial, sans-serif;
+      --font-ar: "Cairo", Tahoma, Arial, sans-serif;
+      --gold:
         linear-gradient(
           180deg,
           var(--amber-highlight) 0%,
-          #fff0a4 10%,
-          var(--amber-light) 24%,
-          #ffc943 40%,
-          var(--amber-mid) 56%,
-          var(--amber-deep) 74%,
-          var(--amber-burnt) 90%,
-          var(--amber-shadow) 100%
+          var(--amber-light) 25%,
+          var(--amber-mid) 55%,
+          var(--amber-deep) 78%,
+          var(--amber-burnt) 100%
         );
-
-      --font-system:
-        "Montserrat",
-        "Segoe UI",
-        "Segoe UI Variable",
-        Arial,
-        "Helvetica Neue",
-        Helvetica,
-        Tahoma,
-        Geneva,
-        Verdana,
-        sans-serif;
-
-      --font-system-ar:
-        "Cairo",
-        Tahoma,
-        "Segoe UI",
-        Arial,
-        sans-serif;
     }
 
     * {
@@ -102,37 +101,21 @@
 
     body {
       margin: 0;
-      color: var(--text);
-      font-family: var(--font-system);
-      background:
-        linear-gradient(180deg, rgba(8,7,9,.72), rgba(8,7,9,.9)),
-        radial-gradient(circle at 50% 0%, rgba(255,196,83,.08), transparent 28%),
-        radial-gradient(circle at 85% 16%, rgba(255,150,25,.08), transparent 18%),
-        radial-gradient(circle at 15% 10%, rgba(255,150,25,.05), transparent 16%),
-        url("premium-energy-amb.png") center top / cover no-repeat fixed,
-        linear-gradient(180deg, #161316 0%, #0d0b0d 35%, #090809 100%);
       min-height: 100vh;
-      letter-spacing: .01em;
+      color: var(--text);
+      font-family: var(--font);
+      background:
+        linear-gradient(180deg, rgba(8,7,9,.74), rgba(8,7,9,.92)),
+        radial-gradient(circle at 50% 0%, rgba(255,196,83,.1), transparent 28%),
+        url("/premium-energy-amb.png") center top / cover no-repeat fixed,
+        linear-gradient(180deg, #161316 0%, #090809 100%);
       overflow-x: clip;
-      position: relative;
-      width: 100%;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .22;
-      background:
-        radial-gradient(circle at 20% 12%, rgba(255,236,200,.08), transparent 14%),
-        radial-gradient(circle at 80% 18%, rgba(255,186,90,.08), transparent 18%),
-        radial-gradient(circle at 50% 0%, rgba(255,170,40,.1), transparent 30%),
-        linear-gradient(180deg, rgba(17,13,10,.15), rgba(8,8,10,.35));
-      mix-blend-mode: screen;
+    body.lang-ar {
+      font-family: var(--font-ar);
     }
 
     body::after {
@@ -141,26 +124,13 @@
       inset: 0;
       pointer-events: none;
       opacity: .08;
-      background-image: radial-gradient(rgba(255,255,255,.08) .5px, transparent .75px);
+      background-image: radial-gradient(rgba(255,255,255,.1) .5px, transparent .8px);
       background-size: 5px 5px;
-      mix-blend-mode: soft-light;
     }
 
-    body.lang-ar {
-      font-family: var(--font-system-ar);
-    }
-
-    a,
-    a:hover,
-    a:focus,
-    a:active,
-    a:visited {
+    a {
       color: inherit;
-      text-decoration: none !important;
-      border: 0 !important;
-      border-bottom: 0 !important;
-      box-shadow: none !important;
-      outline: none !important;
+      text-decoration: none;
     }
 
     img {
@@ -169,9 +139,15 @@
       height: auto;
     }
 
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
     .container {
       width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
+      margin-inline: auto;
       position: relative;
       z-index: 2;
     }
@@ -180,11 +156,10 @@
       position: sticky;
       top: 0;
       z-index: 60;
+      background: linear-gradient(180deg, rgba(10,9,11,.88), rgba(10,9,11,.72));
+      border-bottom: 1px solid rgba(255,193,94,.1);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      background: linear-gradient(180deg, rgba(10,9,11,.82), rgba(10,9,11,.66));
-      border-bottom: 1px solid rgba(255,193,94,.1);
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
     }
 
     .nav {
@@ -192,173 +167,74 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 14px 0;
-      width: 100%;
+      min-height: 82px;
+      padding-block: 12px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
-      min-width: 0;
-      max-width: 100%;
+      gap: 13px;
+      flex: 0 0 auto;
     }
 
     .brand img {
-      width: 58px;
-      height: 58px;
+      width: 56px;
+      height: 56px;
+      border-radius: 15px;
       object-fit: cover;
-      object-position: center;
-      border-radius: 16px;
-      box-shadow:
-        0 14px 30px rgba(0,0,0,.34),
-        inset 0 1px 0 rgba(255,255,255,.1);
-      background: #111;
-      flex: 0 0 auto;
-      border: 1px solid rgba(255,193,94,.12);
+      border: 1px solid rgba(255,193,94,.14);
+      box-shadow: 0 12px 28px rgba(0,0,0,.35);
     }
 
     .brand-title,
     h1,
     .section-kicker,
     .stat strong {
-      font-family: "Montserrat", sans-serif;
-      font-weight: 900;
-      position: relative;
-      display: inline-block;
       color: transparent;
+      background: var(--gold);
+      -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
-      background: var(--amber-logo-surface);
-      -webkit-background-clip: text;
-      background-clip: text;
-      text-shadow:
-        0 1px 0 rgba(255,255,255,.18),
-        0 2px 0 rgba(255,208,92,.06),
-        0 3px 6px rgba(0,0,0,.34),
-        0 8px 18px rgba(0,0,0,.18);
-      letter-spacing: .05em;
-    }
-
-    .brand-title::before,
-    h1::before,
-    .section-kicker::before,
-    .stat strong::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,.32) 0%,
-          rgba(255,255,255,.18) 12%,
-          rgba(255,255,255,.08) 20%,
-          transparent 36%,
-          transparent 100%
-        );
-      -webkit-background-clip: text;
-      background-clip: text;
-      opacity: .95;
+      font-weight: 900;
     }
 
     .brand-title {
-      font-size: 1.02rem;
-      line-height: 1;
+      font-size: 1rem;
       text-transform: uppercase;
-      min-width: 0;
-      overflow-wrap: anywhere;
+      letter-spacing: .08em;
       white-space: nowrap;
-    }
-
-    h1 {
-      margin: 0 0 18px;
-      font-size: clamp(1.8rem, 3.15vw, 3rem);
-      line-height: 1.04;
-      letter-spacing: .045em;
-      max-width: 700px;
-      overflow-wrap: anywhere;
-      word-break: normal;
-      text-transform: uppercase;
-    }
-
-    h1 .line {
-      display: block;
-      white-space: normal;
-    }
-
-    body.lang-pl h1 {
-      font-size: clamp(1.72rem, 2.8vw, 2.78rem);
-      line-height: 1.02;
-      letter-spacing: .04em;
-      max-width: 720px;
-    }
-
-    body.lang-pl h1 .line:first-child,
-    body.lang-pl h1 .line:last-child {
-      white-space: nowrap;
-    }
-
-    body.lang-en h1,
-    body.lang-fr h1 {
-      font-size: clamp(1.66rem, 2.55vw, 2.45rem);
-      max-width: 680px;
     }
 
     body.lang-ar .brand-title,
     body.lang-ar h1,
     body.lang-ar .section-kicker,
-    body.lang-ar .stat strong,
-    [dir="rtl"] .brand-title,
-    [dir="rtl"] h1,
-    [dir="rtl"] .section-kicker,
-    [dir="rtl"] .stat strong {
-      font-family: var(--font-system-ar);
-      font-weight: 900;
-      letter-spacing: .01em;
+    body.lang-ar .stat strong {
+      font-family: var(--font-ar);
       text-transform: none;
-    }
-
-    body.lang-ar h1 {
-      font-size: clamp(1.7rem, 2.8vw, 2.65rem);
-      line-height: 1.18;
-      max-width: 720px;
+      letter-spacing: .01em;
     }
 
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
       justify-content: flex-end;
-      min-width: 0;
-      max-width: 100%;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
-      color: var(--muted);
-      font-size: .95rem;
+      justify-content: center;
+      gap: 18px;
       flex-wrap: wrap;
-      min-width: 0;
+      color: var(--muted);
+      font-size: .92rem;
     }
 
     .nav-links a {
-      position: relative;
-      overflow-wrap: anywhere;
-      transition: color .22s ease, transform .22s ease;
-      background: none !important;
-      text-decoration: none !important;
-      border: 0 !important;
-      box-shadow: none !important;
-      outline: none !important;
-    }
-
-    .nav-links a::before,
-    .nav-links a::after {
-      content: none !important;
-      display: none !important;
+      transition: color .2s ease, transform .2s ease;
     }
 
     .nav-links a:hover {
@@ -366,232 +242,184 @@
       transform: translateY(-1px);
     }
 
+    .nav-links .calculator-link {
+      color: #ffd670;
+      font-weight: 800;
+    }
+
     .lang-switcher {
       display: flex;
-      gap: 8px;
+      gap: 7px;
       flex-wrap: wrap;
-      min-width: 0;
+      justify-content: center;
     }
 
     .lang-btn {
-      border: 1px solid rgba(255,193,94,.16) !important;
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)) !important;
-      color: var(--text);
+      min-height: 38px;
+      padding: 0 13px;
       border-radius: 999px;
-      min-height: 40px;
-      padding: 0 14px;
-      font: inherit;
-      font-weight: 700;
+      border: 1px solid rgba(255,193,94,.18);
+      background: rgba(255,255,255,.035);
+      color: var(--text);
       cursor: pointer;
+      font-weight: 800;
       transition: .2s ease;
-      flex: 0 0 auto;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.04) !important;
-      text-decoration: none !important;
-      outline: none !important;
-      -webkit-appearance: none;
-      appearance: none;
-      background-clip: padding-box;
-    }
-
-    .lang-btn::before,
-    .lang-btn::after {
-      content: none !important;
-      display: none !important;
     }
 
     .lang-btn:hover,
     .lang-btn.active {
-      background: linear-gradient(
-        180deg,
-        var(--amber-highlight) 0%,
-        var(--amber-light) 24%,
-        var(--amber-mid) 55%,
-        var(--amber-deep) 82%,
-        var(--amber-burnt) 100%
-      ) !important;
-      color: var(--button-text-dark) !important;
-      border: 1px solid rgba(255,221,170,.2) !important;
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.35),
-        0 8px 18px rgba(255,169,45,.18) !important;
-      text-shadow: 0 1px 0 rgba(255,255,255,.18);
-      font-weight: 800;
-      text-decoration: none !important;
-      border-bottom: 1px solid rgba(255,221,170,.2) !important;
+      color: var(--button-text-dark);
+      background: var(--gold);
+      border-color: rgba(255,228,174,.25);
+      box-shadow: 0 8px 18px rgba(255,169,45,.15);
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 54px;
-      padding: 0 24px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: .22s ease;
-      cursor: pointer;
-      border: 1px solid transparent;
-      font: inherit;
-      max-width: 100%;
-      text-align: center;
-      white-space: normal;
-      position: relative;
+    main {
       overflow: hidden;
-      text-decoration: none !important;
-      outline: none !important;
-      -webkit-appearance: none;
-      appearance: none;
     }
 
-    .btn,
-    .btn:hover,
-    .btn:focus,
-    .btn:active,
-    button.btn,
-    button.btn:hover,
-    button.btn:focus,
-    button.btn:active {
-      text-decoration: none !important;
-      border-bottom: 0 !important;
-      outline: none !important;
-    }
-
-    .btn::before,
-    .btn::after {
-      content: none !important;
-      display: none !important;
-    }
-
-    .btn-primary {
-      background: linear-gradient(
-        180deg,
-        var(--amber-highlight) 0%,
-        var(--amber-light) 22%,
-        var(--amber-mid) 52%,
-        var(--amber-deep) 82%,
-        var(--amber-burnt) 100%
-      );
-      color: var(--button-text-dark) !important;
-      border: 1px solid rgba(255,225,170,.16);
-      box-shadow:
-        0 10px 18px rgba(0,0,0,.22),
-        inset 0 1px 0 rgba(255,255,255,.16);
-      text-shadow: 0 1px 0 rgba(255,255,255,.16);
-      font-weight: 800;
-      background-clip: padding-box;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      filter: saturate(1.04) brightness(1.02);
-      color: var(--button-text-dark) !important;
-    }
-
-    .btn-secondary {
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
-      border-color: rgba(255,193,94,.18);
-      color: var(--text);
-      box-shadow: 0 8px 16px rgba(0,0,0,.12);
-    }
-
-    .btn-secondary:hover {
-      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
-      border-color: rgba(255,193,94,.32);
+    section {
+      padding: 50px 0;
+      position: relative;
     }
 
     .hero {
-      padding: 68px 0 52px;
-      position: relative;
+      padding: 70px 0 54px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, .96fr) minmax(320px, .84fr);
+      grid-template-columns: minmax(0, 1fr) minmax(340px, .86fr);
       gap: 42px;
-      align-items: start;
+      align-items: center;
     }
 
     .hero-copy {
-      min-width: 0;
       max-width: 720px;
-      position: relative;
-      z-index: 2;
-      padding-top: 14px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(1.85rem, 3.3vw, 3.15rem);
+      line-height: 1.05;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    h1 .line {
+      display: block;
+    }
+
+    body.lang-ar h1 {
+      font-size: clamp(1.8rem, 3.2vw, 2.9rem);
+      line-height: 1.2;
+      text-transform: none;
     }
 
     .lead {
-      max-width: 700px;
-      font-size: 1.06rem;
+      margin: 0 0 28px;
+      color: #d4c8bc;
+      font-size: 1.05rem;
       line-height: 1.82;
-      color: #d3c7bb;
-      margin-bottom: 28px;
-      overflow-wrap: anywhere;
-      text-shadow: 0 1px 0 rgba(0,0,0,.25);
     }
 
     .hero-cta {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 32px;
-      max-width: 100%;
+      gap: 13px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      min-height: 54px;
+      padding: 0 23px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      font-weight: 800;
+      text-align: center;
+      cursor: pointer;
+      transition: transform .2s ease, filter .2s ease, border-color .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: var(--button-text-dark);
+      background: var(--gold);
+      box-shadow: 0 10px 20px rgba(0,0,0,.23);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.045);
+      border-color: rgba(255,193,94,.2);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,193,94,.42);
+      background: rgba(255,255,255,.075);
+    }
+
+    .btn-calculator {
+      color: #241203;
+      background:
+        linear-gradient(180deg, #fff8d7, #ffd95d 34%, #ffad18 72%, #d87500);
+      box-shadow:
+        0 12px 24px rgba(236,143,12,.2),
+        inset 0 1px 0 rgba(255,255,255,.5);
     }
 
     .stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      gap: 13px;
+    }
+
+    .stat,
+    .card,
+    .hero-card,
+    .contact-card,
+    .cta-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .stat {
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,193,94,.14);
-      border-radius: 20px;
-      padding: 20px 18px;
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.05),
-        0 18px 34px rgba(0,0,0,.18);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      min-width: 0;
+      border-radius: 19px;
+      padding: 19px 17px;
     }
 
     .stat strong {
       display: block;
-      font-size: 1.45rem;
       margin-bottom: 7px;
-      overflow-wrap: anywhere;
-      line-height: 1.04;
-      letter-spacing: .04em;
+      font-size: 1.35rem;
+      line-height: 1.1;
     }
 
     .stat span {
-      color: var(--muted);
-      font-size: .93rem;
-      line-height: 1.55;
       display: block;
-      overflow-wrap: anywhere;
+      color: var(--muted);
+      font-size: .91rem;
+      line-height: 1.5;
     }
 
     .hero-card {
-      position: relative;
-      z-index: 1;
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
-      border: 1px solid rgba(255,193,94,.16);
+      min-height: 520px;
       border-radius: 32px;
       padding: 28px;
-      box-shadow:
-        0 28px 60px rgba(0,0,0,.34),
-        inset 0 1px 0 rgba(255,255,255,.06);
+      display: grid;
+      place-items: center;
       overflow: hidden;
-      min-height: 560px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 0;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      position: relative;
     }
 
     .hero-card::before {
@@ -599,153 +427,105 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 50% 18%, rgba(255,221,157,.16), transparent 22%),
-        radial-gradient(circle at 25% 85%, rgba(255,166,36,.08), transparent 20%),
-        linear-gradient(180deg, rgba(255,191,63,.06), transparent 45%);
-      pointer-events: none;
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: 1px;
-      border-radius: inherit;
-      pointer-events: none;
-      background: linear-gradient(120deg, rgba(255,255,255,.16), transparent 18%, transparent 62%, rgba(255,191,63,.08));
-      opacity: .55;
+        radial-gradient(circle at 50% 18%, rgba(255,222,157,.16), transparent 23%),
+        linear-gradient(180deg, rgba(255,191,63,.08), transparent 50%);
     }
 
     .hero-logo {
-      width: min(100%, 540px);
-      filter: drop-shadow(0 18px 38px rgba(0,0,0,.45));
-      border-radius: 28px;
+      width: min(100%, 520px);
+      border-radius: 26px;
       position: relative;
       z-index: 1;
-    }
-
-    section {
-      padding: 48px 0;
-      position: relative;
+      filter: drop-shadow(0 18px 38px rgba(0,0,0,.45));
     }
 
     .section-head {
       margin-bottom: 26px;
-      min-width: 0;
     }
 
     .section-kicker {
-      letter-spacing: .12em;
-      font-size: .82rem;
-      line-height: 1;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      overflow-wrap: anywhere;
       display: inline-block;
+      margin-bottom: 10px;
+      font-size: .83rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
     h2 {
-      margin: 0 0 10px;
-      font-size: clamp(1.8rem, 3vw, 3rem);
-      line-height: 1.1;
-      overflow-wrap: anywhere;
-      color: #fbf4ea;
-      text-shadow: 0 1px 0 rgba(0,0,0,.18);
-      font-family: var(--font-system);
+      margin: 0 0 11px;
+      color: #fff5e9;
+      font-size: clamp(1.7rem, 3vw, 2.85rem);
+      line-height: 1.12;
       font-weight: 800;
     }
 
-    body.lang-ar h2 {
-      font-family: var(--font-system-ar);
+    body.lang-ar h2,
+    body.lang-ar h3 {
+      font-family: var(--font-ar);
     }
 
     .single-line-title {
-      font-size: clamp(1.1rem, 2vw, 1.8rem);
-      white-space: nowrap;
-    }
-
-    [dir="rtl"] .single-line-title {
-      white-space: normal;
+      font-size: clamp(1.15rem, 2.05vw, 1.85rem);
     }
 
     .section-sub {
       max-width: 900px;
       color: var(--muted);
-      line-height: 1.85;
-      overflow-wrap: anywhere;
+      line-height: 1.82;
     }
 
-    .grid-4 {
+    .grid-4,
+    .showcase {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
     }
 
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
+    .card,
+    .contact-card {
       border-radius: var(--radius);
       padding: 24px;
-      box-shadow:
-        0 24px 44px rgba(0,0,0,.22),
-        inset 0 1px 0 rgba(255,255,255,.05);
-      min-height: 100%;
-      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-      min-width: 0;
-      overflow: hidden;
       position: relative;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      overflow: hidden;
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(135deg, rgba(255,255,255,.08), transparent 24%, transparent 72%, rgba(255,191,63,.04));
-      opacity: .7;
+    .card {
+      transition: transform .24s ease, border-color .24s ease;
     }
 
     .card:hover {
       transform: translateY(-4px);
       border-color: var(--card-border-strong);
-      box-shadow:
-        0 28px 50px rgba(0,0,0,.26),
-        inset 0 1px 0 rgba(255,255,255,.06);
     }
 
     .icon {
       width: 54px;
       height: 54px;
+      margin-bottom: 16px;
       border-radius: 16px;
-      display: inline-grid;
+      display: grid;
       place-items: center;
       font-size: 1.35rem;
-      margin-bottom: 16px;
-      background: linear-gradient(180deg, rgba(255,236,196,.18), rgba(255,182,43,.08));
-      border: 1px solid rgba(255,193,94,.18);
-      color: #ffcb61;
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.12),
-        0 10px 24px rgba(0,0,0,.14);
+      color: #ffce68;
+      border: 1px solid rgba(255,193,94,.2);
+      background: linear-gradient(180deg, rgba(255,236,196,.16), rgba(255,182,43,.07));
     }
 
-    .card h3 {
+    .card h3,
+    .project-body h3 {
       margin: 0 0 10px;
-      font-size: 1.08rem;
-      line-height: 1.35;
-      overflow-wrap: anywhere;
       color: #fff4e5;
-      font-family: var(--font-system);
+      font-size: 1.07rem;
+      line-height: 1.35;
       font-weight: 800;
     }
 
-    .card p {
+    .card p,
+    .project-body p {
       margin: 0;
       color: var(--muted);
       line-height: 1.75;
-      font-size: .96rem;
-      overflow-wrap: anywhere;
+      font-size: .95rem;
     }
 
     .split {
@@ -757,8 +537,7 @@
 
     .feature-list {
       display: grid;
-      gap: 14px;
-      min-width: 0;
+      gap: 15px;
     }
 
     .feature {
@@ -766,72 +545,38 @@
       align-items: flex-start;
       gap: 12px;
       color: var(--muted);
-      line-height: 1.8;
-      min-width: 0;
-    }
-
-    .feature > div:last-child {
-      min-width: 0;
-      overflow-wrap: anywhere;
+      line-height: 1.75;
     }
 
     .check {
       flex: 0 0 28px;
       width: 28px;
       height: 28px;
-      border-radius: 999px;
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      background: linear-gradient(
-        180deg,
-        var(--amber-highlight) 0%,
-        var(--amber-light) 25%,
-        var(--amber-mid) 58%,
-        var(--amber-deep) 85%,
-        var(--amber-burnt) 100%
-      );
-      color: #241203;
-      font-weight: 800;
+      color: #231203;
+      background: var(--gold);
+      font-weight: 900;
       margin-top: 2px;
-      border: 1px solid rgba(255,193,94,.16);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.12),
-        0 3px 8px rgba(0,0,0,.16);
-    }
-
-    .showcase {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
     }
 
     .showcase-card {
       padding: 0;
-      overflow: hidden;
     }
 
     .project-image-wrap {
       aspect-ratio: 4 / 3;
       overflow: hidden;
       border-bottom: 1px solid rgba(255,193,94,.12);
-      background: linear-gradient(135deg, #201507, #0f0c0d 60%);
-      position: relative;
-    }
-
-    .project-image-wrap::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(180deg, rgba(255,191,63,.04), transparent 38%, rgba(0,0,0,.12));
+      background: #141113;
     }
 
     .project-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      transition: transform .45s ease;
+      transition: transform .4s ease;
     }
 
     .showcase-card:hover .project-image {
@@ -840,141 +585,130 @@
 
     .project-body {
       padding: 22px;
-      min-width: 0;
+    }
+
+    .calculator-section {
+      padding-top: 34px;
+      padding-bottom: 34px;
+    }
+
+    .calculator-panel {
       position: relative;
-      z-index: 1;
+      overflow: hidden;
+      border-radius: 32px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      gap: 26px;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(255,190,74,.24), transparent 28%),
+        linear-gradient(135deg, rgba(255,191,63,.12), rgba(255,255,255,.035));
+      border: 1px solid rgba(255,193,94,.24);
+      box-shadow: 0 30px 62px rgba(0,0,0,.3);
     }
 
-    .project-body h3 {
-      margin: 0 0 10px;
-      line-height: 1.35;
-      font-size: 1.06rem;
-      overflow-wrap: anywhere;
-      color: #fff4e5;
-      font-family: var(--font-system);
-      font-weight: 800;
+    .calculator-panel::after {
+      content: "☀";
+      position: absolute;
+      inset-inline-end: 35px;
+      top: -45px;
+      font-size: 190px;
+      color: rgba(255,205,103,.055);
+      pointer-events: none;
     }
 
-    .project-body p {
-      color: var(--muted);
+    .calculator-panel h2 {
+      margin-bottom: 13px;
+    }
+
+    .calculator-panel p {
       margin: 0;
-      line-height: 1.78;
-      font-size: .95rem;
-      overflow-wrap: anywhere;
+      color: var(--muted);
+      line-height: 1.82;
+      max-width: 790px;
+    }
+
+    .calculator-actions {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 10px;
+    }
+
+    .calculator-actions .btn {
+      width: 100%;
+    }
+
+    .calculator-note {
+      color: #ad9f91;
+      font-size: .83rem;
+      line-height: 1.5;
+      text-align: center;
     }
 
     .cta-box {
-      margin-top: 8px;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 85% 10%, rgba(255,191,63,.2), transparent 24%),
-        linear-gradient(135deg, rgba(255,191,63,.11), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,193,94,.18);
       border-radius: 32px;
-      padding: 36px;
-      box-shadow:
-        0 30px 60px rgba(0,0,0,.28),
-        inset 0 1px 0 rgba(255,255,255,.05);
+      padding: 35px;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(250px, .8fr);
       gap: 24px;
       align-items: center;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .cta-box::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(120deg, rgba(255,255,255,.08), transparent 24%, transparent 68%, rgba(255,191,63,.08));
+      background:
+        radial-gradient(circle at 85% 10%, rgba(255,191,63,.18), transparent 25%),
+        linear-gradient(135deg, rgba(255,191,63,.1), rgba(255,255,255,.028));
     }
 
     .cta-box h3 {
       margin: 0 0 12px;
-      font-size: clamp(1.35rem, 2.5vw, 2.2rem);
-      line-height: 1.3;
-      overflow-wrap: anywhere;
-      color: #fff6eb;
-      font-family: var(--font-system);
-      font-weight: 800;
+      color: #fff5e9;
+      font-size: clamp(1.25rem, 2.3vw, 2rem);
+      line-height: 1.35;
     }
 
     .cta-box p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.85;
-      max-width: 760px;
-      overflow-wrap: anywhere;
+      line-height: 1.8;
     }
 
     .contact-card {
-      background: var(--card-bg-strong);
-      border: 1px solid rgba(255,193,94,.16);
-      border-radius: 28px;
       padding: 28px;
-      box-shadow:
-        0 24px 48px rgba(0,0,0,.24),
-        inset 0 1px 0 rgba(255,255,255,.05);
-      min-width: 0;
-      overflow: hidden;
-      position: relative;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .contact-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(135deg, rgba(255,255,255,.08), transparent 20%, transparent 72%, rgba(255,191,63,.04));
     }
 
     form {
       display: grid;
       gap: 14px;
-      min-width: 0;
-      position: relative;
-      z-index: 1;
     }
 
     .form-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
-      min-width: 0;
     }
 
-    input, textarea, select {
+    input,
+    textarea {
       width: 100%;
-      max-width: 100%;
-      border: 1px solid rgba(255,193,94,.16);
-      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,193,94,.18);
+      background: rgba(255,255,255,.035);
       color: var(--text);
       border-radius: 16px;
       padding: 16px 18px;
-      font: inherit;
       outline: none;
-      transition: .2s ease;
-      min-width: 0;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+      transition: border-color .2s ease, box-shadow .2s ease;
     }
 
     input::placeholder,
     textarea::placeholder {
-      color: #b9aea2;
+      color: #b8aca0;
       opacity: 1;
     }
 
-    input:focus, textarea:focus, select:focus {
-      border-color: rgba(255,193,94,.42);
-      box-shadow:
-        0 0 0 4px rgba(255,193,94,.08),
-        inset 0 1px 0 rgba(255,255,255,.05);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+    input:focus,
+    textarea:focus {
+      border-color: rgba(255,193,94,.48);
+      box-shadow: 0 0 0 4px rgba(255,193,94,.08);
     }
 
     textarea {
@@ -990,53 +724,39 @@
     }
 
     .captcha-wrap {
-      padding-top: 4px;
-      width: 100%;
-      max-width: 100%;
       overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
+      padding-top: 3px;
     }
 
-    .captcha-wrap > div {
-      width: 100%;
-      max-width: 304px;
-    }
-
-    .form-note {
+    .form-note,
+    .bottom-service-text {
       color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.6;
-      overflow-wrap: anywhere;
+      font-size: .9rem;
+      line-height: 1.7;
     }
 
     .bottom-service-text-wrap {
-      padding: 10px 0 4px;
+      padding: 12px 0 4px;
     }
 
     .bottom-service-text {
-      color: #b7ab9e;
-      font-size: .92rem;
-      line-height: 1.9;
       max-width: 980px;
-      margin: 0 auto;
+      margin-inline: auto;
       text-align: center;
-      overflow-wrap: anywhere;
     }
 
     footer {
       padding: 18px 0 30px;
       color: #9f9386;
-      font-size: .92rem;
+      font-size: .9rem;
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
       gap: 16px;
-      border-top: 1px solid rgba(255,193,94,.08);
+      border-top: 1px solid rgba(255,193,94,.09);
       padding-top: 22px;
-      min-width: 0;
     }
 
     @media (max-width: 1180px) {
@@ -1046,51 +766,20 @@
       }
     }
 
-    @media (max-width: 1120px) {
-      .hero-grid {
+    @media (max-width: 1050px) {
+      .nav {
+        flex-direction: column;
+      }
+
+      .hero-grid,
+      .split,
+      .cta-box,
+      .calculator-panel {
         grid-template-columns: 1fr;
-        gap: 28px;
       }
 
       .hero-copy {
         max-width: 100%;
-        text-align: center;
-        padding-top: 0;
-        margin: 0 auto;
-      }
-
-      .hero-card {
-        min-height: 420px;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .single-line-title {
-        white-space: normal;
-      }
-
-      h1,
-      body.lang-pl h1,
-      body.lang-en h1,
-      body.lang-fr h1,
-      body.lang-ar h1 {
-        max-width: 100%;
-        font-size: clamp(1.8rem, 5.6vw, 2.85rem);
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      body.lang-pl h1 .line:first-child,
-      body.lang-pl h1 .line:last-child {
-        white-space: normal;
-      }
-
-      .lead {
-        margin-left: auto;
-        margin-right: auto;
         text-align: center;
       }
 
@@ -1098,9 +787,18 @@
         justify-content: center;
       }
 
-      .split,
-      .cta-box {
+      .stats {
         grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 400px;
+      }
+
+      .calculator-actions {
+        max-width: 460px;
+        width: 100%;
+        margin-inline: auto;
       }
 
       body {
@@ -1109,32 +807,16 @@
     }
 
     @media (max-width: 760px) {
-      .nav {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .brand {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .nav-right {
-        justify-content: center;
+      .container {
+        width: min(var(--max), calc(100% - 24px));
       }
 
       .nav-links {
-        justify-content: center;
-        gap: 14px;
-        text-align: center;
-      }
-
-      .lang-switcher {
-        justify-content: center;
+        gap: 13px;
       }
 
       .hero {
-        padding-top: 38px;
+        padding-top: 42px;
       }
 
       .grid-4,
@@ -1147,192 +829,83 @@
         min-height: auto;
       }
 
-      .brand-title {
-        font-size: .94rem;
-        letter-spacing: .06em;
-      }
-
-      h1,
-      body.lang-pl h1,
-      body.lang-en h1,
-      body.lang-fr h1,
-      body.lang-ar h1 {
-        font-size: clamp(1.6rem, 7vw, 2.35rem);
-        line-height: 1.06;
-      }
-
-      .lead {
-        font-size: 1rem;
-        line-height: 1.72;
-      }
-
-      .cta-box {
-        padding: 26px;
-        text-align: center;
-      }
-
       .hero-cta .btn,
       .cta-box .btn {
         width: 100%;
       }
 
-      .stats,
-      .stat,
       .section-head,
       .card,
       .project-body,
       .contact-card,
-      .bottom-service-text,
-      .form-note,
       .cta-box,
-      .cta-box h3,
-      .cta-box p,
-      h2 {
+      .calculator-panel,
+      .stat {
         text-align: center;
-      }
-
-      .feature-list {
-        justify-items: center;
       }
 
       .feature {
         max-width: 560px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-inline: auto;
       }
 
       .footer-inner {
         flex-direction: column;
         text-align: center;
       }
-
-      .bottom-service-text {
-        text-align: center;
-      }
-
-      .contact-card,
-      .card,
-      .hero-card,
-      .cta-box {
-        border-radius: 22px;
-      }
-
-      body.lang-ar .nav-links,
-      body.lang-ar .hero-copy,
-      body.lang-ar .card,
-      body.lang-ar .contact-card,
-      body.lang-ar .project-body,
-      body.lang-ar .section-head,
-      body.lang-ar .cta-box,
-      body.lang-ar .bottom-service-text,
-      body.lang-ar .form-note,
-      body.lang-ar h2,
-      body.lang-ar .lead,
-      body.lang-ar .stats,
-      body.lang-ar .stat {
-        text-align: center;
-      }
     }
 
     @media (max-width: 520px) {
-      .container {
-        width: min(var(--max), calc(100% - 24px));
-      }
-
       .brand {
         flex-direction: column;
-        gap: 10px;
+        text-align: center;
       }
 
       .brand-title {
-        letter-spacing: .04em;
         white-space: normal;
       }
 
-      .nav-links a {
-        font-size: .92rem;
-      }
-
-      .section-kicker {
-        letter-spacing: .06em;
-      }
-
+      .calculator-panel,
       .cta-box,
-      .hero-card,
       .card,
-      .contact-card {
-        padding-left: 20px;
-        padding-right: 20px;
+      .contact-card,
+      .hero-card {
+        padding: 21px;
+        border-radius: 22px;
       }
 
       .feature {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 10px;
       }
 
-      .check {
-        margin-top: 0;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .container {
-        width: min(var(--max), calc(100% - 20px));
-      }
-
-      .nav {
-        padding: 12px 0;
-      }
-
-      .brand img {
-        width: 50px;
-        height: 50px;
-      }
-
-      .lang-btn {
-        min-height: 38px;
-        padding: 0 12px;
-      }
-
-      input, textarea {
-        padding: 15px 16px;
-      }
-
-      .card,
-      .contact-card {
-        padding: 20px;
-      }
-
-      h2 {
-        font-size: clamp(1.45rem, 7vw, 2rem);
-      }
-
-      .cta-box h3 {
-        font-size: clamp(1.2rem, 6vw, 1.7rem);
+      h1 {
+        font-size: clamp(1.55rem, 8vw, 2.25rem);
       }
     }
   </style>
 </head>
+
 <body class="lang-ar">
-  <div class="nav-wrap">
+  <header class="nav-wrap">
     <div class="container nav">
-      <a class="brand" href="#top">
-        <img src="logo.png" alt="Amber Atlas logo" />
+      <a class="brand" href="#top" aria-label="Amber Atlas">
+        <img src="/logo.png" alt="Amber Atlas logo" />
         <div class="brand-title">Amber Atlas</div>
       </a>
 
       <div class="nav-right">
-        <div class="nav-links">
+        <nav class="nav-links" aria-label="Main navigation">
           <a href="#top" data-i18n="nav_about">من نحن</a>
           <a href="#oferta" data-i18n="nav_offer">العرض</a>
           <a href="#branze" data-i18n="nav_industries">القطاعات</a>
           <a href="#realizacje" data-i18n="nav_projects">المشاريع</a>
+          <a class="calculator-link" href="/calculator/" data-i18n="nav_calculator">حاسبة التوفير</a>
           <a href="#kontakt" data-i18n="nav_contact">اتصل بنا</a>
-        </div>
+        </nav>
 
-        <div class="lang-switcher">
+        <div class="lang-switcher" aria-label="Language selection">
           <button class="lang-btn active" data-lang="ar" type="button">AR</button>
           <button class="lang-btn" data-lang="fr" type="button">FR</button>
           <button class="lang-btn" data-lang="en" type="button">EN</button>
@@ -1340,19 +913,25 @@
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <h1 data-i18n="hero_title"><span class="line">مصادر الطاقة المتجددة</span><span class="line">من الفئة المتميزة</span></h1>
+          <h1 data-i18n="hero_title">
+            <span class="line">مصادر الطاقة المتجددة</span>
+            <span class="line">من الفئة المتميزة</span>
+          </h1>
 
           <p class="lead" data-i18n="hero_text">
-            نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية. حلول الطاقة الشمسية وتخزين الطاقة من AMBER ATLAS تعني خدمة محلية ومشاريع مصممة وفق الاحتياجات الحقيقية للأعمال.
+            نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية.
           </p>
 
           <div class="hero-cta">
+            <a class="btn btn-calculator" href="/calculator/" data-i18n="hero_cta_calculator">
+              احسب التوفير
+            </a>
             <a class="btn btn-primary" href="#kontakt" data-i18n="hero_cta_1">عرض سعر مجاني</a>
             <a class="btn btn-secondary" href="#realizacje" data-i18n="hero_cta_2">عرض المشاريع</a>
           </div>
@@ -1363,18 +942,18 @@
               <span data-i18n="stat_1_text">من الخبرة في الأسواق الأوروبية</span>
             </div>
             <div class="stat">
-              <strong data-i18n="stat_2_title">+2000</strong>
-              <span data-i18n="stat_2_text">مشروع لعملاء الأعمال</span>
+              <strong data-i18n="stat_2_title">حوالي 50 MWp</strong>
+              <span data-i18n="stat_2_text">خبرة الفريق في المشاريع الكهروضوئية</span>
             </div>
             <div class="stat">
-              <strong data-i18n="stat_3_title">100%</strong>
-              <span data-i18n="stat_3_text">خدمة محلية ونهج فردي لكل عميل</span>
+              <strong data-i18n="stat_3_title">B2B</strong>
+              <span data-i18n="stat_3_text">حلول مصممة وفق استهلاك واحتياجات الشركة</span>
             </div>
           </div>
         </div>
 
         <div class="hero-card">
-          <img class="hero-logo" src="logo.png" alt="Amber Atlas" />
+          <img class="hero-logo" src="/logo.png" alt="Amber Atlas" />
         </div>
       </div>
     </section>
@@ -1383,34 +962,66 @@
       <div class="container">
         <div class="section-head">
           <div class="section-kicker" data-i18n="offer_kicker">العرض</div>
-          <h2 class="single-line-title" data-i18n="offer_title">حلول طاقة متكاملة - أنظمة شمسية وتخزين طاقة بمستوى فاخر</h2>
-          <div class="section-sub"></div>
+          <h2 class="single-line-title" data-i18n="offer_title">
+            حلول طاقة متكاملة - أنظمة شمسية وتخزين طاقة بمستوى فاخر
+          </h2>
         </div>
 
         <div class="grid-4">
           <article class="card">
             <div class="icon">☀</div>
             <h3 data-i18n="offer_1_title">الطاقة الشمسية للشركات</h3>
-            <p data-i18n="offer_1_text">تركيبات شمسية للفنادق والمخازن والمكاتب والمزارع والمنشآت الصناعية وغيرها.</p>
+            <p data-i18n="offer_1_text">
+              تركيبات شمسية للفنادق والمخازن والمكاتب والمزارع والمنشآت الصناعية وغيرها.
+            </p>
           </article>
 
           <article class="card">
             <div class="icon">🔋</div>
             <h3 data-i18n="offer_2_title">أنظمة تخزين الطاقة</h3>
-            <p data-i18n="offer_2_text">أنظمة حديثة تضمن الاستقلال الطاقي والحماية من انقطاع إمدادات الكهرباء.</p>
+            <p data-i18n="offer_2_text">
+              أنظمة حديثة لرفع الاستهلاك الذاتي ودعم استمرارية التشغيل.
+            </p>
           </article>
 
           <article class="card">
             <div class="icon">◌</div>
             <h3 data-i18n="offer_3_title">المجمّعات الشمسية</h3>
-            <p data-i18n="offer_3_text">أنظمة فعالة تساعد على خفض تكاليف الطاقة ورفع كفاءة المنشأة.</p>
+            <p data-i18n="offer_3_text">
+              أنظمة فعالة للمياه الساخنة ودعم خفض تكاليف الطاقة في المنشأة.
+            </p>
           </article>
 
           <article class="card">
             <div class="icon">⬢</div>
             <h3 data-i18n="offer_4_title">الاستشارات والتصميم</h3>
-            <p data-i18n="offer_4_text">تحليل الجدوى ووضع تصور الاستثمار واختيار الحل المناسب لنموذج عمل العميل.</p>
+            <p data-i18n="offer_4_text">
+              تحليل الجدوى ووضع تصور الاستثمار واختيار الحل المناسب لنموذج عمل العميل.
+            </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator-section" id="kalkulator">
+      <div class="container">
+        <div class="calculator-panel">
+          <div>
+            <div class="section-kicker" data-i18n="calculator_kicker">أداة مجانية</div>
+            <h2 data-i18n="calculator_title">احسب الإمكانات الشمسية لشركتك</h2>
+            <p data-i18n="calculator_text">
+              أدخل موقع المنشأة وبيانات استهلاك الطاقة للحصول على تقدير أولي لقدرة النظام والإنتاج السنوي والتوفير المحتمل.
+            </p>
+          </div>
+
+          <div class="calculator-actions">
+            <a class="btn btn-calculator" href="/calculator/" data-i18n="calculator_button">
+              افتح الحاسبة الشمسية
+            </a>
+            <div class="calculator-note" data-i18n="calculator_note">
+              النتيجة تقديرية ولا تشكل عرضاً تجارياً ملزماً.
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1421,7 +1032,7 @@
           <div class="section-kicker" data-i18n="industries_kicker">لمن</div>
           <h2 data-i18n="industries_title">القطاعات التي نخدمها</h2>
           <p class="section-sub" data-i18n="industries_text">
-            نطوّر حلولاً للشركات التي تحتاج إلى تكاليف طاقة مستقرة وجودة تنفيذ عالية وشريك يفهم استثمارات B2B. الطاقة الشمسية وتخزين الطاقة في المغرب حلول تستفيد إلى أقصى حد من إمكانات المنطقة حيث تصبح الطاقة الخضراء وقوداً مجاناً في شكل طاقة شمسية. إضافة إلى مدن مثل الرباط وأكادير ومراكش فإننا نخدم مختلف مناطق البلاد.
+            نطوّر حلولاً للشركات التي تحتاج إلى تكاليف طاقة أكثر قابلية للتنبؤ وجودة تنفيذ عالية وشريك يفهم استثمارات B2B في المغرب.
           </p>
         </div>
 
@@ -1429,19 +1040,34 @@
           <div class="feature-list">
             <div class="feature">
               <div class="check">✓</div>
-              <div data-i18n="industry_1"><strong>الفنادق ومنشآت الضيافة</strong><br>خفض تكاليف الطاقة وضمان التشغيل الموثوق طوال الموسم.</div>
+              <div data-i18n="industry_1">
+                <strong>الفنادق ومنشآت الضيافة</strong><br />
+                خفض تكاليف الطاقة ودعم التشغيل الموثوق طوال الموسم.
+              </div>
             </div>
+
             <div class="feature">
               <div class="check">✓</div>
-              <div data-i18n="industry_2"><strong>المخازن واللوجستيات</strong><br>أسطح كبيرة واستهلاك مرتفع للطاقة وجدوى ممتازة للأنظمة الشمسية.</div>
+              <div data-i18n="industry_2">
+                <strong>المخازن واللوجستيات</strong><br />
+                أسطح كبيرة واستهلاك مرتفع للطاقة وإمكانات جيدة للاستهلاك الذاتي.
+              </div>
             </div>
+
             <div class="feature">
               <div class="check">✓</div>
-              <div data-i18n="industry_3"><strong>المصانع والصناعة</strong><br>مشاريع تراعي استمرارية العمل وأمان الاستثمار.</div>
+              <div data-i18n="industry_3">
+                <strong>المصانع والصناعة</strong><br />
+                مشاريع تراعي استمرارية العمل وأمان الاستثمار.
+              </div>
             </div>
+
             <div class="feature">
               <div class="check">✓</div>
-              <div data-i18n="industry_4"><strong>المزارع والمنشآت التجارية</strong><br>حلول طاقية ملائمة للموسمية وطبيعة النشاط.</div>
+              <div data-i18n="industry_4">
+                <strong>المزارع والمنشآت التجارية</strong><br />
+                حلول طاقية ملائمة للموسمية وطبيعة النشاط.
+              </div>
             </div>
           </div>
         </div>
@@ -1452,47 +1078,55 @@
       <div class="container">
         <div class="section-head">
           <div class="section-kicker" data-i18n="projects_kicker">المشاريع</div>
-          <h2 data-i18n="projects_title">نماذج من مشاريع B2B</h2>
+          <h2 data-i18n="projects_title">نماذج من حلول B2B</h2>
         </div>
 
         <div class="showcase">
           <article class="card showcase-card">
             <div class="project-image-wrap">
-              <img class="project-image" src="hotel.jpg" alt="Hotele i resorty" />
+              <img class="project-image" src="/hotel.jpg" alt="Hotels and resorts" loading="lazy" />
             </div>
             <div class="project-body">
               <h3 data-i18n="project_1_title">فنادق ومنتجعات</h3>
-              <p data-i18n="project_1_text">تركيب نظام شمسي مع نظام تخزين طاقة للفنادق والمنتجعات لا يوفّر التكاليف فقط بل يضمن أيضاً استمرارية تزويد الطاقة.</p>
+              <p data-i18n="project_1_text">
+                أنظمة شمسية وتخزين طاقة مصممة لتقليل التكلفة ودعم استمرارية الخدمة.
+              </p>
             </div>
           </article>
 
           <article class="card showcase-card">
             <div class="project-image-wrap">
-              <img class="project-image" src="mag.jpg" alt="Magazyny logistyczne" />
+              <img class="project-image" src="/mag.jpg" alt="Logistics warehouses" loading="lazy" />
             </div>
             <div class="project-body">
               <h3 data-i18n="project_2_title">مخازن لوجستية</h3>
-              <p data-i18n="project_2_text">حل مصمم لمساحات أسطح كبيرة يوفّر تكاليف متوقعة وعائداً سريعاً من إنتاج الطاقة للاستهلاك الذاتي.</p>
+              <p data-i18n="project_2_text">
+                حلول للأسطح الكبيرة وإنتاج الطاقة للاستهلاك الذاتي خلال ساعات العمل.
+              </p>
             </div>
           </article>
 
           <article class="card showcase-card">
             <div class="project-image-wrap">
-              <img class="project-image" src="wiat.jpg" alt="Wiaty parkingowe" />
+              <img class="project-image" src="/wiat.jpg" alt="Solar parking canopies" loading="lazy" />
             </div>
             <div class="project-body">
               <h3 data-i18n="project_3_title">مظلات مواقف السيارات</h3>
-              <p data-i18n="project_3_text">أنظمة المظلات تحمي المركبات من أشعة الشمس وتحوّلها إلى طاقة كهربائية يمكن استخدامها في الشركة أو لشحن السيارات الكهربائية.</p>
+              <p data-i18n="project_3_text">
+                حماية المركبات وإنتاج الكهرباء للاستخدام في الموقع أو لشحن المركبات الكهربائية.
+              </p>
             </div>
           </article>
 
           <article class="card showcase-card">
             <div class="project-image-wrap">
-              <img class="project-image" src="grunt.jpg" alt="Instalacje na gruncie" />
+              <img class="project-image" src="/grunt.jpg" alt="Ground-mounted photovoltaic systems" loading="lazy" />
             </div>
             <div class="project-body">
               <h3 data-i18n="project_4_title">أنظمة أرضية</h3>
-              <p data-i18n="project_4_text">الأنظمة الأرضية مناسبة للمزارع والجهات الأخرى التي لا يمكنها إنشاء أنظمة على أسطح المباني.</p>
+              <p data-i18n="project_4_text">
+                حل للمزارع والمنشآت التي لا تملك مساحة سقف مناسبة.
+              </p>
             </div>
           </article>
         </div>
@@ -1502,12 +1136,18 @@
     <section>
       <div class="container cta-box">
         <div>
-          <h3 data-i18n="cta_title">ننفذ جميع منشآتنا بمعيار فاخر مع الحفاظ على تكاليف الاستثمار عند مستوى يضمن أسرع عائد ممكن.</h3>
-          <p data-i18n="cta_text">توفر أنظمة الطاقة الشمسية وتخزين الطاقة من Amber Atlas توازناً مثالياً بين التكنولوجيا المستخدمة وتكلفة الاستثمار، ولذلك يمكن لأنظمتنا الشمسية تحقيق عائد سنوي من 10 إلى 20 بالمئة.</p>
+          <h3 data-i18n="cta_title">
+            ننفذ المشاريع وفق معايير فنية عالية مع مراعاة الجدوى الاقتصادية واحتياجات العميل.
+          </h3>
+          <p data-i18n="cta_text">
+            يتم احتساب حجم النظام والتوفير وفترة الاسترداد لكل منشأة على حدة وفق استهلاكها وموقعها وظروف التشغيل.
+          </p>
         </div>
 
         <div>
-          <a class="btn btn-primary" href="#kontakt" style="width:100%;" data-i18n="cta_button">اطلب عرض سعر مجاني</a>
+          <a class="btn btn-primary" href="#kontakt" style="width:100%;" data-i18n="cta_button">
+            اطلب عرض سعر مجاني
+          </a>
         </div>
       </div>
     </section>
@@ -1518,13 +1158,22 @@
           <div class="section-kicker" data-i18n="contact_kicker">اتصل بنا</div>
           <h2 data-i18n="contact_title">لنتحدث عن استثمارك</h2>
           <p class="section-sub" data-i18n="contact_text">
-            اكتب في بضع جمل نوع المنشأة التي تحتاج إلى حل لها، وسيتواصل معك مختصونا بالتأكيد.
+            صف لنا المنشأة واستهلاك الطاقة، وسيتواصل معك فريق Amber Atlas لمناقشة التحليل الأولي.
           </p>
 
           <div class="feature-list" style="margin-top:22px;">
-            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b1">إدارة كاملة للعملية من البداية إلى النهاية</div></div>
-            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b2">مرونة في كل مرحلة من مراحل التنفيذ</div></div>
-            <div class="feature"><div class="check">✓</div><div data-i18n="contact_b3">أنظمة شمسية وتخزين طاقة مصممة حسب الحاجة</div></div>
+            <div class="feature">
+              <div class="check">✓</div>
+              <div data-i18n="contact_b1">إدارة كاملة للعملية من التحليل إلى التشغيل</div>
+            </div>
+            <div class="feature">
+              <div class="check">✓</div>
+              <div data-i18n="contact_b2">تصميم مخصص وفق الاستهلاك الفعلي</div>
+            </div>
+            <div class="feature">
+              <div class="check">✓</div>
+              <div data-i18n="contact_b3">الطاقة الشمسية والتخزين والمراقبة والخدمة</div>
+            </div>
           </div>
         </div>
 
@@ -1532,6 +1181,7 @@
           <form
             name="kontakt"
             method="POST"
+            action="/success.html"
             data-netlify="true"
             data-netlify-recaptcha="true"
             netlify-honeypot="bot-field"
@@ -1543,23 +1193,61 @@
             </p>
 
             <div class="form-grid">
-              <input type="text" name="imie_firma" data-i18n-placeholder="form_name" placeholder="الاسم / الشركة" required />
-              <input type="email" name="email" data-i18n-placeholder="form_email" placeholder="البريد الإلكتروني" required />
+              <input
+                type="text"
+                name="imie_firma"
+                data-i18n-placeholder="form_name"
+                placeholder="الاسم / الشركة"
+                autocomplete="organization"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                data-i18n-placeholder="form_email"
+                placeholder="البريد الإلكتروني"
+                autocomplete="email"
+                required
+              />
             </div>
 
             <div class="form-grid">
-              <input type="tel" name="telefon" data-i18n-placeholder="form_phone" placeholder="الهاتف" required />
-              <input type="text" name="miasto" data-i18n-placeholder="form_city" placeholder="المدينة / الموقع" required />
+              <input
+                type="tel"
+                name="telefon"
+                data-i18n-placeholder="form_phone"
+                placeholder="الهاتف"
+                autocomplete="tel"
+                required
+              />
+              <input
+                type="text"
+                name="miasto"
+                data-i18n-placeholder="form_city"
+                placeholder="المدينة / الموقع"
+                autocomplete="address-level2"
+                required
+              />
             </div>
 
-            <textarea name="wiadomosc" data-i18n-placeholder="form_message" placeholder="صف بإيجاز المشروع أو الاستفسار" required></textarea>
+            <textarea
+              name="wiadomosc"
+              data-i18n-placeholder="form_message"
+              placeholder="صف بإيجاز المشروع أو الاستفسار"
+              required
+            ></textarea>
 
             <div class="captcha-wrap">
               <div data-netlify-recaptcha="true"></div>
             </div>
 
-            <button class="btn btn-primary" type="submit" data-i18n="form_submit">إرسال الطلب</button>
-            <div class="form-note" data-i18n="form_note">جميع الحقول مطلوبة. أكمل التحقق قبل الإرسال.</div>
+            <button class="btn btn-primary" type="submit" data-i18n="form_submit">
+              إرسال الطلب
+            </button>
+
+            <div class="form-note" data-i18n="form_note">
+              جميع الحقول مطلوبة. أكمل التحقق قبل الإرسال.
+            </div>
           </form>
         </div>
       </div>
@@ -1568,7 +1256,7 @@
     <section class="bottom-service-text-wrap">
       <div class="container">
         <div class="bottom-service-text" data-i18n="bottom_service_text">
-          Jako AMBER ATLAS kompleksowo dostarczamy usługi montażu instalacji fotowoltaicznych i magazynów energii w takich miastach jak: Agadir, Marrakesz, Casablanca, Rabat, Fez, Tanger oraz innych regionach w Maroku. Nasze systemy budowane są w oparciu o wieloletnie doświadczenie zdobyte na rynkach europejskich. Nasz zespół od 2012 roku zajmuje się odnawialnymi źródłami energii i z sukcesami buduje portfolio inwestycji w najwyższej jakości. Jesteśmy liderem w branży.
+          تقدم AMBER ATLAS حلول الطاقة الشمسية وأنظمة تخزين الطاقة للشركات في أكادير ومراكش والدار البيضاء والرباط وفاس وطنجة ومناطق أخرى من المغرب. يستند نهجنا إلى خبرة طويلة اكتسبها الفريق في الأسواق الأوروبية، مع التركيز على الجودة الفنية والجدوى الاقتصادية وخدمة العميل.
         </div>
       </div>
     </section>
@@ -1588,60 +1276,68 @@
         nav_offer: "العرض",
         nav_industries: "القطاعات",
         nav_projects: "المشاريع",
+        nav_calculator: "حاسبة التوفير",
         nav_contact: "اتصل بنا",
 
         hero_title: "<span class='line'>مصادر الطاقة المتجددة</span><span class='line'>من الفئة المتميزة</span>",
-        hero_text: "نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية. حلول الطاقة الشمسية وتخزين الطاقة من AMBER ATLAS تعني خدمة محلية ومشاريع مصممة وفق الاحتياجات الحقيقية للأعمال.",
+        hero_text: "نقوم بتصميم وتنفيذ أنظمة الطاقة الشمسية الكهروضوئية وأنظمة تخزين الطاقة والحلول الطاقية للفنادق والمخازن والمصانع والمزارع وغيرها من المنشآت التجارية. تجمع AMBER ATLAS بين الخبرة الأوروبية والتنفيذ المحلي في المغرب.",
+        hero_cta_calculator: "احسب التوفير",
         hero_cta_1: "عرض سعر مجاني",
         hero_cta_2: "عرض المشاريع",
 
         stat_1_title: "أكثر من 15 سنة",
         stat_1_text: "من الخبرة في الأسواق الأوروبية",
-        stat_2_title: "+2000",
-        stat_2_text: "مشروع لعملاء الأعمال",
-        stat_3_title: "100%",
-        stat_3_text: "خدمة محلية ونهج فردي لكل عميل",
+        stat_2_title: "حوالي 50 MWp",
+        stat_2_text: "خبرة الفريق في المشاريع الكهروضوئية",
+        stat_3_title: "B2B",
+        stat_3_text: "حلول مصممة وفق استهلاك واحتياجات الشركة",
 
         offer_kicker: "العرض",
         offer_title: "حلول طاقة متكاملة - أنظمة شمسية وتخزين طاقة بمستوى فاخر",
         offer_1_title: "الطاقة الشمسية للشركات",
         offer_1_text: "تركيبات شمسية للفنادق والمخازن والمكاتب والمزارع والمنشآت الصناعية وغيرها.",
         offer_2_title: "أنظمة تخزين الطاقة",
-        offer_2_text: "أنظمة حديثة تضمن الاستقلال الطاقي والحماية من انقطاع إمدادات الكهرباء.",
+        offer_2_text: "أنظمة حديثة لرفع الاستهلاك الذاتي ودعم استمرارية التشغيل.",
         offer_3_title: "المجمّعات الشمسية",
-        offer_3_text: "أنظمة فعالة تساعد على خفض تكاليف الطاقة ورفع كفاءة المنشأة.",
+        offer_3_text: "أنظمة فعالة للمياه الساخنة ودعم خفض تكاليف الطاقة في المنشأة.",
         offer_4_title: "الاستشارات والتصميم",
         offer_4_text: "تحليل الجدوى ووضع تصور الاستثمار واختيار الحل المناسب لنموذج عمل العميل.",
 
+        calculator_kicker: "أداة مجانية",
+        calculator_title: "احسب الإمكانات الشمسية لشركتك",
+        calculator_text: "أدخل موقع المنشأة وبيانات استهلاك الطاقة للحصول على تقدير أولي لقدرة النظام والإنتاج السنوي والتوفير المحتمل.",
+        calculator_button: "افتح الحاسبة الشمسية",
+        calculator_note: "النتيجة تقديرية ولا تشكل عرضاً تجارياً ملزماً.",
+
         industries_kicker: "لمن",
         industries_title: "القطاعات التي نخدمها",
-        industries_text: "نطوّر حلولاً للشركات التي تحتاج إلى تكاليف طاقة مستقرة وجودة تنفيذ عالية وشريك يفهم استثمارات B2B. الطاقة الشمسية وتخزين الطاقة في المغرب حلول تستفيد إلى أقصى حد من إمكانات المنطقة حيث تصبح الطاقة الخضراء وقوداً مجاناً في شكل طاقة شمسية. إضافة إلى مدن مثل الرباط وأكادير ومراكش فإننا نخدم مختلف مناطق البلاد.",
-        industry_1: "<strong>الفنادق ومنشآت الضيافة</strong><br>خفض تكاليف الطاقة وضمان التشغيل الموثوق طوال الموسم.",
-        industry_2: "<strong>المخازن واللوجستيات</strong><br>أسطح كبيرة واستهلاك مرتفع للطاقة وجدوى ممتازة للأنظمة الشمسية.",
+        industries_text: "نطوّر حلولاً للشركات التي تحتاج إلى تكاليف طاقة أكثر قابلية للتنبؤ وجودة تنفيذ عالية وشريك يفهم استثمارات B2B في المغرب.",
+        industry_1: "<strong>الفنادق ومنشآت الضيافة</strong><br>خفض تكاليف الطاقة ودعم التشغيل الموثوق طوال الموسم.",
+        industry_2: "<strong>المخازن واللوجستيات</strong><br>أسطح كبيرة واستهلاك مرتفع للطاقة وإمكانات جيدة للاستهلاك الذاتي.",
         industry_3: "<strong>المصانع والصناعة</strong><br>مشاريع تراعي استمرارية العمل وأمان الاستثمار.",
         industry_4: "<strong>المزارع والمنشآت التجارية</strong><br>حلول طاقية ملائمة للموسمية وطبيعة النشاط.",
 
         projects_kicker: "المشاريع",
-        projects_title: "نماذج من مشاريع B2B",
+        projects_title: "نماذج من حلول B2B",
         project_1_title: "فنادق ومنتجعات",
-        project_1_text: "تركيب نظام شمسي مع نظام تخزين طاقة للفنادق والمنتجعات لا يوفّر التكاليف فقط بل يضمن أيضاً استمرارية تزويد الطاقة.",
+        project_1_text: "أنظمة شمسية وتخزين طاقة مصممة لتقليل التكلفة ودعم استمرارية الخدمة.",
         project_2_title: "مخازن لوجستية",
-        project_2_text: "حل مصمم لمساحات أسطح كبيرة يوفّر تكاليف متوقعة وعائداً سريعاً من إنتاج الطاقة للاستهلاك الذاتي.",
+        project_2_text: "حلول للأسطح الكبيرة وإنتاج الطاقة للاستهلاك الذاتي خلال ساعات العمل.",
         project_3_title: "مظلات مواقف السيارات",
-        project_3_text: "أنظمة المظلات تحمي المركبات من أشعة الشمس وتحوّلها إلى طاقة كهربائية يمكن استخدامها في الشركة أو لشحن السيارات الكهربائية.",
+        project_3_text: "حماية المركبات وإنتاج الكهرباء للاستخدام في الموقع أو لشحن المركبات الكهربائية.",
         project_4_title: "أنظمة أرضية",
-        project_4_text: "الأنظمة الأرضية مناسبة للمزارع والجهات الأخرى التي لا يمكنها إنشاء أنظمة على أسطح المباني.",
+        project_4_text: "حل للمزارع والمنشآت التي لا تملك مساحة سقف مناسبة.",
 
-        cta_title: "ننفذ جميع منشآتنا بمعيار فاخر مع الحفاظ على تكاليف الاستثمار عند مستوى يضمن أسرع عائد ممكن.",
-        cta_text: "توفر أنظمة الطاقة الشمسية وتخزين الطاقة من Amber Atlas توازناً مثالياً بين التكنولوجيا المستخدمة وتكلفة الاستثمار، ولذلك يمكن لأنظمتنا الشمسية تحقيق عائد سنوي من 10 إلى 20 بالمئة.",
+        cta_title: "ننفذ المشاريع وفق معايير فنية عالية مع مراعاة الجدوى الاقتصادية واحتياجات العميل.",
+        cta_text: "يتم احتساب حجم النظام والتوفير وفترة الاسترداد لكل منشأة على حدة وفق استهلاكها وموقعها وظروف التشغيل.",
         cta_button: "اطلب عرض سعر مجاني",
 
         contact_kicker: "اتصل بنا",
         contact_title: "لنتحدث عن استثمارك",
-        contact_text: "اكتب في بضع جمل نوع المنشأة التي تحتاج إلى حل لها، وسيتواصل معك مختصونا بالتأكيد.",
-        contact_b1: "إدارة كاملة للعملية من البداية إلى النهاية",
-        contact_b2: "مرونة في كل مرحلة من مراحل التنفيذ",
-        contact_b3: "أنظمة شمسية وتخزين طاقة مصممة حسب الحاجة",
+        contact_text: "صف لنا المنشأة واستهلاك الطاقة، وسيتواصل معك فريق Amber Atlas لمناقشة التحليل الأولي.",
+        contact_b1: "إدارة كاملة للعملية من التحليل إلى التشغيل",
+        contact_b2: "تصميم مخصص وفق الاستهلاك الفعلي",
+        contact_b3: "الطاقة الشمسية والتخزين والمراقبة والخدمة",
 
         form_name: "الاسم / الشركة",
         form_email: "البريد الإلكتروني",
@@ -1651,8 +1347,7 @@
         form_submit: "إرسال الطلب",
         form_note: "جميع الحقول مطلوبة. أكمل التحقق قبل الإرسال.",
 
-        bottom_service_text: "بصفتنا AMBER ATLAS نقدم بشكل شامل خدمات تركيب الأنظمة الكهروضوئية وأنظمة تخزين الطاقة في مدن مثل أكادير ومراكش والدار البيضاء والرباط وفاس وطنجة وكذلك في مناطق أخرى من المغرب. تُبنى أنظمتنا على أساس خبرة طويلة اكتسبناها في الأسواق الأوروبية. يعمل فريقنا منذ عام 2012 في قطاع مصادر الطاقة المتجددة ونجح في بناء محفظة من الاستثمارات عالية الجودة. نحن من رواد هذا القطاع.",
-
+        bottom_service_text: "تقدم AMBER ATLAS حلول الطاقة الشمسية وأنظمة تخزين الطاقة للشركات في أكادير ومراكش والدار البيضاء والرباط وفاس وطنجة ومناطق أخرى من المغرب. يستند نهجنا إلى خبرة طويلة اكتسبها الفريق في الأسواق الأوروبية، مع التركيز على الجودة الفنية والجدوى الاقتصادية وخدمة العميل.",
         footer_right: "حقوق النشر 2026"
       },
 
@@ -1660,61 +1355,69 @@
         nav_about: "À propos",
         nav_offer: "Offre",
         nav_industries: "Secteurs",
-        nav_projects: "Réalisations",
+        nav_projects: "Solutions",
+        nav_calculator: "Calculateur solaire",
         nav_contact: "Contact",
 
         hero_title: "<span class='line'>Énergies renouvelables</span><span class='line'>de classe premium</span>",
-        hero_text: "Nous concevons et réalisons des installations photovoltaïques, des systèmes de stockage d’énergie et des solutions énergétiques pour les hôtels, entrepôts, usines, exploitations agricoles et autres sites commerciaux. Les solutions photovoltaïques et de stockage d’énergie AMBER ATLAS signifient un service local et des réalisations adaptées aux besoins réels des entreprises.",
+        hero_text: "Nous concevons et réalisons des installations photovoltaïques, des systèmes de stockage d’énergie et des solutions énergétiques pour les hôtels, entrepôts, usines, exploitations agricoles et autres sites commerciaux. AMBER ATLAS associe l’expérience européenne à une exécution locale au Maroc.",
+        hero_cta_calculator: "Calculer les économies",
         hero_cta_1: "Devis gratuit",
-        hero_cta_2: "Voir les réalisations",
+        hero_cta_2: "Voir les solutions",
 
         stat_1_title: "15+ ans",
         stat_1_text: "d’expérience sur les marchés européens",
-        stat_2_title: "2000+",
-        stat_2_text: "réalisations pour des clients professionnels",
-        stat_3_title: "100%",
-        stat_3_text: "service client local et approche individuelle",
+        stat_2_title: "Environ 50 MWc",
+        stat_2_text: "d’expérience de l’équipe sur des projets photovoltaïques",
+        stat_3_title: "B2B",
+        stat_3_text: "solutions adaptées à la consommation et aux besoins de l’entreprise",
 
         offer_kicker: "Offre",
         offer_title: "Solutions énergétiques complètes - Photovoltaïque et stockage d’énergie premium",
         offer_1_title: "Photovoltaïque pour les entreprises",
-        offer_1_text: "Installations PV pour hôtels, entrepôts, immeubles de bureaux, exploitations agricoles et sites industriels, etc.",
+        offer_1_text: "Installations PV pour hôtels, entrepôts, bureaux, exploitations agricoles et sites industriels.",
         offer_2_title: "Stockage d’énergie",
-        offer_2_text: "Systèmes modernes garantissant l’indépendance énergétique et la protection contre les coupures d’électricité.",
+        offer_2_text: "Systèmes modernes destinés à augmenter l’autoconsommation et soutenir la continuité d’activité.",
         offer_3_title: "Capteurs solaires",
-        offer_3_text: "Systèmes efficaces permettant de réduire les coûts énergétiques et d’améliorer la performance du site.",
+        offer_3_text: "Solutions efficaces pour l’eau chaude et la réduction des coûts énergétiques du site.",
         offer_4_title: "Conseil et conception",
         offer_4_text: "Analyse de rentabilité, concept d’investissement et solution adaptée au modèle économique du client.",
 
+        calculator_kicker: "Outil gratuit",
+        calculator_title: "Estimez le potentiel solaire de votre entreprise",
+        calculator_text: "Indiquez la localisation du site et vos données de consommation pour obtenir une première estimation de la puissance, de la production annuelle et des économies potentielles.",
+        calculator_button: "Ouvrir le calculateur solaire",
+        calculator_note: "Le résultat est indicatif et ne constitue pas une offre commerciale ferme.",
+
         industries_kicker: "Pour qui",
         industries_title: "Secteurs que nous accompagnons",
-        industries_text: "Nous créons des solutions pour les entreprises qui ont besoin de coûts énergétiques stables, d’une exécution haut de gamme et d’un partenaire qui comprend les investissements B2B. Le photovoltaïque et le stockage d’énergie au Maroc exploitent au maximum le potentiel de la région, où l’énergie verte devient un carburant gratuit sous forme d’énergie solaire. Outre des villes comme Rabat, Agadir ou Marrakech, nous intervenons dans tout le pays.",
-        industry_1: "<strong>Hôtels et hébergements</strong><br>réduction des coûts énergétiques et fonctionnement fiable pendant toute la saison.",
-        industry_2: "<strong>Entrepôts et logistique</strong><br>grandes toitures, forte consommation d’énergie et rentabilité des installations PV.",
-        industry_3: "<strong>Usines et industrie</strong><br>projets conçus avec continuité d’activité et sécurité de l’investissement.",
-        industry_4: "<strong>Exploitations agricoles et bâtiments commerciaux</strong><br>solutions énergétiques adaptées à la saisonnalité et à l’activité.",
+        industries_text: "Nous développons des solutions pour les entreprises qui recherchent des coûts énergétiques plus prévisibles, une exécution de qualité et un partenaire qui comprend les investissements B2B au Maroc.",
+        industry_1: "<strong>Hôtels et hébergements</strong><br>réduction des coûts énergétiques et soutien à une exploitation fiable pendant toute la saison.",
+        industry_2: "<strong>Entrepôts et logistique</strong><br>grandes toitures, forte consommation et potentiel élevé d’autoconsommation.",
+        industry_3: "<strong>Usines et industrie</strong><br>projets conçus pour la continuité d’activité et la sécurité de l’investissement.",
+        industry_4: "<strong>Exploitations agricoles et bâtiments commerciaux</strong><br>solutions adaptées à la saisonnalité et aux besoins du site.",
 
-        projects_kicker: "Réalisations",
-        projects_title: "Exemples de réalisations B2B",
+        projects_kicker: "Solutions",
+        projects_title: "Exemples de solutions B2B",
         project_1_title: "Hôtels & Resorts",
-        project_1_text: "Une installation PV et un système de stockage d’énergie pour hôtels et resorts apportent non seulement des économies, mais aussi une sécurisation de l’alimentation électrique.",
+        project_1_text: "Solutions photovoltaïques et de stockage conçues pour réduire les coûts et soutenir la continuité de service.",
         project_2_title: "Entrepôts logistiques",
-        project_2_text: "Une solution conçue pour de grandes surfaces de toiture permet des coûts prévisibles et un retour sur investissement rapide grâce à l’autoproduction.",
+        project_2_text: "Solutions pour grandes toitures et production destinée à l’autoconsommation pendant les heures d’activité.",
         project_3_title: "Ombrières de parking",
-        project_3_text: "Les systèmes d’ombrières protègent les véhicules du rayonnement solaire tout en transformant le soleil en électricité pour l’entreprise ou la recharge des véhicules électriques.",
+        project_3_text: "Protection des véhicules et production d’électricité pour le site ou la recharge de véhicules électriques.",
         project_4_title: "Installations au sol",
-        project_4_text: "Les installations au sol sont idéales pour les exploitations agricoles et les autres structures qui ne peuvent pas construire sur les toitures.",
+        project_4_text: "Solution pour les exploitations et sites ne disposant pas d’une toiture adaptée.",
 
-        cta_title: "Toutes nos installations sont réalisées selon un standard premium tout en maintenant les coûts d’investissement à un niveau garantissant le retour le plus rapide.",
-        cta_text: "Les installations photovoltaïques et systèmes de stockage d’énergie Amber Atlas offrent un équilibre idéal entre technologie appliquée et coût d’investissement - grâce à cela, nos systèmes photovoltaïques peuvent garantir un rendement annuel de 10 à 20 pour cent.",
+        cta_title: "Nous réalisons les projets selon des standards techniques élevés, en tenant compte de la rentabilité et des besoins du client.",
+        cta_text: "La puissance, les économies et la période de retour sont calculées individuellement selon la consommation, la localisation et le profil d’exploitation.",
         cta_button: "Demander un devis gratuit",
 
         contact_kicker: "Contact",
         contact_title: "Parlons de votre investissement",
-        contact_text: "Décrivez en quelques phrases le type de site pour lequel vous avez besoin d’une solution et nos spécialistes vous contacteront rapidement.",
-        contact_b1: "prise en charge complète du processus du début à la fin",
-        contact_b2: "flexibilité à chaque étape de la réalisation",
-        contact_b3: "installations photovoltaïques et stockage d’énergie sur mesure",
+        contact_text: "Décrivez votre site et votre consommation d’énergie. L’équipe Amber Atlas vous contactera pour discuter d’une première analyse.",
+        contact_b1: "prise en charge complète de l’analyse à la mise en service",
+        contact_b2: "conception adaptée à la consommation réelle",
+        contact_b3: "photovoltaïque, stockage, suivi et maintenance",
 
         form_name: "Nom / entreprise",
         form_email: "Adresse e-mail",
@@ -1724,143 +1427,157 @@
         form_submit: "Envoyer la demande",
         form_note: "Tous les champs sont obligatoires. Complétez la vérification avant l’envoi.",
 
-        bottom_service_text: "En tant que AMBER ATLAS, nous fournissons de manière complète des services d’installation de systèmes photovoltaïques et de stockage d’énergie dans des villes telles qu’Agadir, Marrakech, Casablanca, Rabat, Fès, Tanger ainsi que dans d’autres régions du Maroc. Nos systèmes sont conçus sur la base d’une longue expérience acquise sur les marchés européens. Depuis 2012, notre équipe travaille dans le domaine des énergies renouvelables et construit avec succès un portefeuille d’investissements de la plus haute qualité. Nous sommes un leader du secteur.",
-
-        footer_right: "copyright 2026"
+        bottom_service_text: "AMBER ATLAS fournit des solutions photovoltaïques et de stockage d’énergie aux entreprises à Agadir, Marrakech, Casablanca, Rabat, Fès, Tanger et dans d’autres régions du Maroc. Notre approche s’appuie sur une expérience acquise sur les marchés européens, avec une attention particulière portée à la qualité technique, à la rentabilité et au service client.",
+        footer_right: "Copyright 2026"
       },
 
       en: {
         nav_about: "About",
         nav_offer: "Offer",
         nav_industries: "Industries",
-        nav_projects: "Projects",
+        nav_projects: "Solutions",
+        nav_calculator: "Solar calculator",
         nav_contact: "Contact",
 
         hero_title: "<span class='line'>Renewable Energy</span><span class='line'>Premium Class</span>",
-        hero_text: "We design and deliver photovoltaic installations, energy storage systems and energy solutions for hotels, warehouses, factories, farms and other commercial facilities. AMBER ATLAS photovoltaic and energy storage solutions mean local support and projects tailored to real business needs.",
+        hero_text: "We design and deliver photovoltaic installations, energy storage systems and energy solutions for hotels, warehouses, factories, farms and other commercial facilities. AMBER ATLAS combines European experience with local execution in Morocco.",
+        hero_cta_calculator: "Calculate savings",
         hero_cta_1: "Free quote",
-        hero_cta_2: "View projects",
+        hero_cta_2: "View solutions",
 
         stat_1_title: "15+ years",
-        stat_1_text: "of experience on European markets",
-        stat_2_title: "2000+",
-        stat_2_text: "projects for business clients",
-        stat_3_title: "100%",
-        stat_3_text: "local customer service and individual approach",
+        stat_1_text: "of experience in European markets",
+        stat_2_title: "Approx. 50 MWp",
+        stat_2_text: "of team experience in photovoltaic projects",
+        stat_3_title: "B2B",
+        stat_3_text: "solutions designed around real business consumption and needs",
 
         offer_kicker: "Offer",
         offer_title: "Comprehensive energy solutions - Premium photovoltaic and energy storage systems",
         offer_1_title: "Photovoltaics for companies",
-        offer_1_text: "PV installations for hotels, warehouses, office buildings, farms and industrial facilities, etc.",
-        offer_2_title: "Energy Storage",
-        offer_2_text: "Modern systems ensuring energy independence and protection against power supply shortages.",
-        offer_3_title: "Solar collectors",
-        offer_3_text: "Efficient systems supporting lower energy costs and improving facility performance.",
+        offer_1_text: "PV installations for hotels, warehouses, offices, farms and industrial facilities.",
+        offer_2_title: "Energy storage",
+        offer_2_text: "Modern systems designed to increase self-consumption and support business continuity.",
+        offer_3_title: "Solar thermal collectors",
+        offer_3_text: "Efficient hot-water solutions supporting lower facility energy costs.",
         offer_4_title: "Consulting and design",
-        offer_4_text: "Profitability analysis, investment concept and a solution tailored to the client's business model.",
+        offer_4_text: "Profitability analysis, investment concept and a solution tailored to the client’s business model.",
+
+        calculator_kicker: "Free tool",
+        calculator_title: "Estimate your company’s solar potential",
+        calculator_text: "Enter the facility location and energy-consumption data to receive an initial estimate of system size, annual production and potential savings.",
+        calculator_button: "Open the solar calculator",
+        calculator_note: "The result is indicative and does not constitute a binding commercial offer.",
 
         industries_kicker: "Who we serve",
         industries_title: "Industries we support",
-        industries_text: "We create solutions for businesses that need stable energy costs, high-quality execution and a partner who understands B2B investments. Photovoltaics and energy storage in Morocco make full use of the region’s potential, where green energy becomes free fuel in the form of solar power. In addition to cities such as Rabat, Agadir and Marrakech, we serve the entire country.",
-        industry_1: "<strong>Hotels and hospitality facilities</strong><br>lower energy costs and reliable operation throughout the season.",
-        industry_2: "<strong>Warehouses and logistics</strong><br>large roofs, high energy demand and profitable PV installations.",
-        industry_3: "<strong>Factories and industry</strong><br>projects designed with operational continuity and investment safety in mind.",
-        industry_4: "<strong>Farms and commercial properties</strong><br>energy solutions tailored to seasonality and business specifics.",
+        industries_text: "We develop solutions for companies seeking more predictable energy costs, high-quality execution and a partner that understands B2B investments in Morocco.",
+        industry_1: "<strong>Hotels and hospitality</strong><br>lower energy costs and support for reliable operation throughout the season.",
+        industry_2: "<strong>Warehouses and logistics</strong><br>large roofs, high demand and strong self-consumption potential.",
+        industry_3: "<strong>Factories and industry</strong><br>projects designed around operational continuity and investment security.",
+        industry_4: "<strong>Farms and commercial facilities</strong><br>solutions tailored to seasonality and site requirements.",
 
-        projects_kicker: "Projects",
-        projects_title: "Selected B2B implementations",
+        projects_kicker: "Solutions",
+        projects_title: "Examples of B2B solutions",
         project_1_title: "Hotels & Resorts",
-        project_1_text: "A PV installation and energy storage system for hotels and resorts means not only savings but also secured energy supply.",
+        project_1_text: "Photovoltaic and storage solutions designed to lower costs and support service continuity.",
         project_2_title: "Logistics warehouses",
-        project_2_text: "A solution designed for large roof areas means predictable costs and a fast return on investment through self-generated power.",
-        project_3_title: "Parking canopies",
-        project_3_text: "Canopy systems protect vehicles from solar radiation while converting sunlight into electricity for company use or EV charging.",
+        project_2_text: "Solutions for large roof areas and self-consumption during operating hours.",
+        project_3_title: "Solar parking canopies",
+        project_3_text: "Vehicle protection and electricity generation for on-site use or EV charging.",
         project_4_title: "Ground-mounted systems",
-        project_4_text: "Ground installations are ideal for farms and other entities that cannot build systems on rooftops.",
+        project_4_text: "A solution for farms and facilities without suitable roof space.",
 
-        cta_title: "All our installations are delivered in a premium standard while keeping investment costs at a level that ensures the fastest return.",
-        cta_text: "Amber Atlas photovoltaic installations and energy storage systems offer an ideal balance between applied technology and investment costs - thanks to this, our photovoltaic systems can provide an annual return of 10 to 20 percent.",
+        cta_title: "We deliver projects to high technical standards while considering profitability and each client’s operating needs.",
+        cta_text: "System size, savings and payback are calculated individually based on consumption, location and operating profile.",
         cta_button: "Request a free quote",
 
         contact_kicker: "Contact",
-        contact_title: "Let’s talk about your investment",
-        contact_text: "Describe in a few sentences what kind of facility needs a solution and our specialists will definitely get in touch with you.",
-        contact_b1: "full process support from start to finish",
-        contact_b2: "flexibility at every stage of implementation",
-        contact_b3: "tailor-made photovoltaic and energy storage systems",
+        contact_title: "Let’s discuss your investment",
+        contact_text: "Describe your facility and energy consumption. The Amber Atlas team will contact you to discuss an initial analysis.",
+        contact_b1: "complete support from analysis to commissioning",
+        contact_b2: "design based on real consumption",
+        contact_b3: "photovoltaics, storage, monitoring and service",
 
         form_name: "Name / company",
         form_email: "Email address",
         form_phone: "Phone",
         form_city: "City / location",
-        form_message: "Briefly describe the investment or inquiry",
+        form_message: "Briefly describe the project or inquiry",
         form_submit: "Send inquiry",
         form_note: "All fields are required. Complete the verification before submitting.",
 
-        bottom_service_text: "As AMBER ATLAS, we provide comprehensive photovoltaic installation and energy storage services in cities such as Agadir, Marrakech, Casablanca, Rabat, Fez, Tangier and other regions across Morocco. Our systems are built on many years of experience gained in European markets. Since 2012, our team has been active in renewable energy and has successfully built a portfolio of top-quality investments. We are a leader in the industry.",
-
-        footer_right: "copyright 2026"
+        bottom_service_text: "AMBER ATLAS provides photovoltaic and energy-storage solutions for businesses in Agadir, Marrakech, Casablanca, Rabat, Fez, Tangier and other regions of Morocco. Our approach is based on experience gained in European markets, with a strong focus on technical quality, profitability and customer service.",
+        footer_right: "Copyright 2026"
       },
 
       pl: {
         nav_about: "O nas",
         nav_offer: "Oferta",
         nav_industries: "Branże",
-        nav_projects: "Realizacje",
+        nav_projects: "Rozwiązania",
+        nav_calculator: "Kalkulator PV",
         nav_contact: "Kontakt",
 
         hero_title: "<span class='line'>ODNAWIALNE ŹRÓDŁA ENERGII</span><span class='line'>KLASY PREMIUM</span>",
-        hero_text: "Projektujemy i realizujemy instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla hoteli, magazynów, fabryk, gospodarstw rolnych oraz innych obiektów komercyjnych. Fotowoltaika i Magazyny Energii AMBER ATLAS to lokalna obsługa i realizacje dopasowane do realnych potrzeb biznesu.",
+        hero_text: "Projektujemy i realizujemy instalacje fotowoltaiczne, systemy magazynowania energii oraz rozwiązania energetyczne dla hoteli, magazynów, fabryk, gospodarstw rolnych i innych obiektów komercyjnych. AMBER ATLAS łączy europejskie doświadczenie z lokalną realizacją w Maroku.",
+        hero_cta_calculator: "Oblicz oszczędności",
         hero_cta_1: "Bezpłatna wycena",
-        hero_cta_2: "Zobacz realizacje",
+        hero_cta_2: "Zobacz rozwiązania",
 
         stat_1_title: "15+ lat",
         stat_1_text: "doświadczenia na rynkach europejskich",
-        stat_2_title: "2000+",
-        stat_2_text: "realizacji dla klientów biznesowych",
-        stat_3_title: "100%",
-        stat_3_text: "lokalnej obsługi klienta i indywidualnego podejścia",
+        stat_2_title: "Około 50 MWp",
+        stat_2_text: "doświadczenia zespołu w projektach fotowoltaicznych",
+        stat_3_title: "B2B",
+        stat_3_text: "rozwiązania dopasowane do realnego zużycia i potrzeb firmy",
 
         offer_kicker: "Oferta",
-        offer_title: "Kompleksowe rozwiązania energetyczne - Fotowoltaika i Magazyny Energii klasy premium",
+        offer_title: "Kompleksowe rozwiązania energetyczne - Fotowoltaika i magazyny energii klasy premium",
         offer_1_title: "Fotowoltaika dla firm",
-        offer_1_text: "Instalacje PV dla hoteli, magazynów, biurowców, gospodarstw i zakładów przemysłowych itp.",
-        offer_2_title: "Magazyny Energii",
-        offer_2_text: "Nowoczesne systemy gwarantujące niezależność energetyczną i zabezpieczenie przed brakami dostaw prądu.",
+        offer_1_text: "Instalacje PV dla hoteli, magazynów, biur, gospodarstw rolnych i zakładów przemysłowych.",
+        offer_2_title: "Magazyny energii",
+        offer_2_text: "Nowoczesne systemy zwiększające autokonsumpcję i wspierające ciągłość działania firmy.",
         offer_3_title: "Kolektory słoneczne",
-        offer_3_text: "Wydajne systemy wspierające redukcję kosztów energii i podnoszące efektywność obiektu.",
+        offer_3_text: "Wydajne rozwiązania do podgrzewania wody, wspierające ograniczenie kosztów energii.",
         offer_4_title: "Doradztwo i projektowanie",
-        offer_4_text: "Analiza opłacalności, koncepcja inwestycji i dobór rozwiązania szytego pod model biznesowy klienta.",
+        offer_4_text: "Analiza opłacalności, koncepcja inwestycji i dobór rozwiązania do modelu biznesowego klienta.",
+
+        calculator_kicker: "Bezpłatne narzędzie",
+        calculator_title: "Oszacuj potencjał fotowoltaiczny swojej firmy",
+        calculator_text: "Wprowadź lokalizację obiektu i dane o zużyciu energii, aby otrzymać wstępny szacunek mocy instalacji, rocznej produkcji i możliwych oszczędności.",
+        calculator_button: "Otwórz kalkulator fotowoltaiczny",
+        calculator_note: "Wynik ma charakter orientacyjny i nie stanowi wiążącej oferty handlowej.",
 
         industries_kicker: "Dla kogo",
         industries_title: "Branże, które obsługujemy",
-        industries_text: "Tworzymy rozwiązania dla firm, które potrzebują stabilnych kosztów energii, wysokiej estetyki wykonania i partnera, który rozumie inwestycje B2B. Fotowoltaika i Magazyny Energii w Maroku to rozwiązania wykorzystujące maksymalny potencjał regionu, dzięki któremu zielona energia staje się darmowym paliwem w postaci energii słonecznej. Oprócz takich miast jak Rabat, Agadir czy Marrakesz obsługujemy region całego kraju.",
-        industry_1: "<strong>Hotele i obiekty noclegowe</strong><br>obniżenie kosztów energii i niezawodność działania przez cały sezon.",
-        industry_2: "<strong>Magazyny i logistyka</strong><br>duże dachy, wysoka skala zużycia energii i opłacalność instalacji PV.",
-        industry_3: "<strong>Fabryki i przemysł</strong><br>projekty uwzględniające ciągłość pracy zakładu i bezpieczeństwo inwestycji.",
-        industry_4: "<strong>Gospodarstwa rolne i obiekty komercyjne</strong><br>energetyka dopasowana do sezonowości i specyfiki działalności.",
+        industries_text: "Tworzymy rozwiązania dla firm, które potrzebują bardziej przewidywalnych kosztów energii, wysokiej jakości wykonania i partnera rozumiejącego inwestycje B2B w Maroku.",
+        industry_1: "<strong>Hotele i obiekty noclegowe</strong><br>ograniczenie kosztów energii i wsparcie niezawodnej pracy przez cały sezon.",
+        industry_2: "<strong>Magazyny i logistyka</strong><br>duże dachy, wysokie zużycie i duży potencjał autokonsumpcji.",
+        industry_3: "<strong>Fabryki i przemysł</strong><br>projekty uwzględniające ciągłość pracy i bezpieczeństwo inwestycji.",
+        industry_4: "<strong>Gospodarstwa rolne i obiekty komercyjne</strong><br>rozwiązania dopasowane do sezonowości i charakteru działalności.",
 
-        projects_kicker: "Realizacje",
-        projects_title: "Przykładowe wdrożenia B2B",
+        projects_kicker: "Rozwiązania",
+        projects_title: "Przykładowe rozwiązania B2B",
         project_1_title: "Hotele & Resorty",
-        project_1_text: "Instalacja PV i system magazynów energii dla hoteli i resortów to nie tylko oszczędności, ale także zabezpieczenie dostaw energii.",
+        project_1_text: "Fotowoltaika i magazyny energii projektowane pod ograniczenie kosztów oraz ciągłość obsługi gości.",
         project_2_title: "Magazyny logistyczne",
-        project_2_text: "Rozwiązanie projektowane pod dużą powierzchnię dachu to przewidywalne koszty i szybki zwrot inwestycji z produkcji energii na własne potrzeby.",
+        project_2_text: "Rozwiązania dla dużych powierzchni dachowych i autokonsumpcji w godzinach pracy.",
         project_3_title: "Wiaty parkingowe",
-        project_3_text: "System wiat to ochrona pojazdów przed promieniowaniem słonecznym, które zamieniane jest w energię elektryczną możliwą do wykorzystania w firmie lub do ładowania aut elektrycznych.",
+        project_3_text: "Ochrona pojazdów i produkcja energii do wykorzystania w obiekcie lub ładowania samochodów elektrycznych.",
         project_4_title: "Instalacje na gruncie",
-        project_4_text: "Instalacje gruntowe to rozwiązania dla gospodarstw rolnych i innych podmiotów, które nie mają możliwości budowy instalacji na dachach budynków.",
+        project_4_text: "Rozwiązanie dla gospodarstw i obiektów bez odpowiedniej powierzchni dachowej.",
 
-        cta_title: "Wszystkie nasze instalacje wykonujemy w standardzie premium, zachowując przy tym koszty inwestycji na poziomie gwarantującym najszybszą stopę zwrotu.",
-        cta_text: "Instalacje fotowoltaiczne i magazyny energii od Amber Atlas to idealny stosunek zastosowanej technologii do kosztów inwestycji - dzięki temu nasze systemy fotowoltaiczne gwarantują stopę zwrotu od 10 do 20 procent rocznie.",
+        cta_title: "Realizujemy projekty według wysokich standardów technicznych, uwzględniając opłacalność oraz potrzeby operacyjne klienta.",
+        cta_text: "Moc instalacji, oszczędności i okres zwrotu wyliczamy indywidualnie na podstawie zużycia, lokalizacji i profilu pracy obiektu.",
         cta_button: "Umów bezpłatną wycenę",
 
         contact_kicker: "Kontakt",
         contact_title: "Porozmawiajmy o Twojej inwestycji",
-        contact_text: "Opisz w kilku zdaniach, do jakiego obiektu potrzebujesz rozwiązania, a nasi specjaliści na pewno się z Tobą skontaktują.",
-        contact_b1: "pełna obsługa procesu od początku do końca",
-        contact_b2: "elastyczność na każdym etapie realizacji",
-        contact_b3: "instalacje fotowoltaiczne i magazyny energii na miarę",
+        contact_text: "Opisz obiekt i zużycie energii. Zespół Amber Atlas skontaktuje się z Tobą, aby omówić wstępną analizę.",
+        contact_b1: "pełna obsługa od analizy do uruchomienia",
+        contact_b2: "projekt dopasowany do rzeczywistego zużycia",
+        contact_b3: "fotowoltaika, magazyny, monitoring i serwis",
 
         form_name: "Imię / firma",
         form_email: "Adres e-mail",
@@ -1870,97 +1587,105 @@
         form_submit: "Wyślij zapytanie",
         form_note: "Wszystkie pola są wymagane. Uzupełnij weryfikację przed wysłaniem.",
 
-        bottom_service_text: "Jako AMBER ATLAS kompleksowo dostarczamy usługi montażu instalacji fotowoltaicznych i magazynów energii w takich miastach jak: Agadir, Marrakesz, Casablanca, Rabat, Fez, Tanger oraz innych regionach w Maroku. Nasze systemy budowane są w oparciu o wieloletnie doświadczenie zdobyte na rynkach europejskich. Nasz zespół od 2012 roku zajmuje się odnawialnymi źródłami energii i z sukcesami buduje portfolio inwestycji w najwyższej jakości. Jesteśmy liderem w branży.",
-
-        footer_right: "copyright 2026"
+        bottom_service_text: "AMBER ATLAS dostarcza rozwiązania fotowoltaiczne i systemy magazynowania energii dla firm w Agadirze, Marrakeszu, Casablance, Rabacie, Fezie, Tangerze oraz innych regionach Maroka. Nasze podejście bazuje na doświadczeniu zdobytym na rynkach europejskich, z naciskiem na jakość techniczną, opłacalność i obsługę klienta.",
+        footer_right: "Copyright 2026"
       }
     };
 
     const metaContent = {
       ar: {
         title: "Amber Atlas — طاقة حديثة للأعمال",
-        description: "Amber Atlas projektuje i realizuje instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla sektora B2B.",
-        ogTitle: "Amber Atlas — طاقة حديثة للأعمال",
-        ogDescription: "حلول متميزة للطاقة الشمسية وأنظمة تخزين الطاقة للشركات في المغرب.",
-        locale: "ar_AR"
+        description: "حلول الطاقة الشمسية وأنظمة تخزين الطاقة للشركات في المغرب.",
+        locale: "ar_MA"
       },
       fr: {
         title: "Amber Atlas — Énergie moderne pour les entreprises",
-        description: "Amber Atlas conçoit et réalise des installations photovoltaïques, des systèmes de stockage d’énergie et des solutions énergétiques pour le secteur B2B.",
-        ogTitle: "Amber Atlas — Énergie moderne pour les entreprises",
-        ogDescription: "Solutions photovoltaïques premium et systèmes de stockage d’énergie pour les entreprises au Maroc.",
-        locale: "fr_FR"
+        description: "Solutions photovoltaïques et systèmes de stockage d’énergie pour les entreprises au Maroc.",
+        locale: "fr_MA"
       },
       en: {
         title: "Amber Atlas — Modern energy for business",
-        description: "Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco.",
-        ogTitle: "Amber Atlas — Modern energy for business",
-        ogDescription: "Premium photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco.",
+        description: "Photovoltaic installations, energy storage systems and renewable energy solutions for business in Morocco.",
         locale: "en_US"
       },
       pl: {
         title: "Amber Atlas — Nowoczesna energia dla biznesu",
-        description: "Amber Atlas projektuje i realizuje instalacje fotowoltaiczne, systemy magazynów energii i rozwiązania energetyczne dla sektora B2B.",
-        ogTitle: "Amber Atlas — Nowoczesna energia dla biznesu",
-        ogDescription: "Fotowoltaika i magazyny energii klasy premium dla biznesu w Maroku.",
+        description: "Fotowoltaika i magazyny energii dla biznesu w Maroku.",
         locale: "pl_PL"
       }
     };
 
     function updateMeta(lang) {
       const meta = metaContent[lang] || metaContent.en;
-
       document.title = meta.title;
 
-      const setMeta = (selector, value, attr = "content") => {
-        const el = document.querySelector(selector);
-        if (el) el.setAttribute(attr, value);
+      const setMeta = (selector, value) => {
+        const element = document.querySelector(selector);
+        if (element) element.setAttribute("content", value);
       };
 
       setMeta('meta[name="description"]', meta.description);
-      setMeta('meta[property="og:title"]', meta.ogTitle);
-      setMeta('meta[property="og:description"]', meta.ogDescription);
+      setMeta('meta[property="og:title"]', meta.title);
+      setMeta('meta[property="og:description"]', meta.description);
       setMeta('meta[property="og:locale"]', meta.locale);
-      setMeta('meta[name="twitter:title"]', meta.ogTitle);
-      setMeta('meta[name="twitter:description"]', meta.ogDescription);
+      setMeta('meta[name="twitter:title"]', meta.title);
+      setMeta('meta[name="twitter:description"]', meta.description);
     }
 
     function setLanguage(lang) {
-      const dict = translations[lang] || translations.ar;
+      const selectedLanguage = translations[lang] ? lang : "ar";
+      const dict = translations[selectedLanguage];
 
-      document.documentElement.lang = lang;
-      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-      document.body.classList.remove('lang-pl', 'lang-en', 'lang-fr', 'lang-ar');
-      document.body.classList.add(`lang-${lang}`);
+      document.documentElement.lang = selectedLanguage;
+      document.documentElement.dir = selectedLanguage === "ar" ? "rtl" : "ltr";
 
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dict[key] !== undefined) {
-          el.innerHTML = dict[key];
+      document.body.classList.remove("lang-pl", "lang-en", "lang-fr", "lang-ar");
+      document.body.classList.add(`lang-${selectedLanguage}`);
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (Object.prototype.hasOwnProperty.call(dict, key)) {
+          element.innerHTML = dict[key];
         }
       });
 
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (dict[key] !== undefined) {
-          el.placeholder = dict[key];
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (Object.prototype.hasOwnProperty.call(dict, key)) {
+          element.placeholder = dict[key];
         }
       });
 
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
+      document.querySelectorAll(".lang-btn").forEach((button) => {
+        button.classList.toggle("active", button.dataset.lang === selectedLanguage);
+        button.setAttribute(
+          "aria-pressed",
+          button.dataset.lang === selectedLanguage ? "true" : "false"
+        );
       });
 
-      updateMeta(lang);
-      localStorage.setItem('amberatlas_lang', lang);
+      updateMeta(selectedLanguage);
+
+      try {
+        localStorage.setItem("amberatlas_lang", selectedLanguage);
+      } catch (error) {
+        console.warn("Language preference could not be saved.", error);
+      }
     }
 
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    document.querySelectorAll(".lang-btn").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
     });
 
-    const savedLang = localStorage.getItem('amberatlas_lang') || 'ar';
-    setLanguage(savedLang);
+    let savedLanguage = "ar";
+
+    try {
+      savedLanguage = localStorage.getItem("amberatlas_lang") || "ar";
+    } catch (error) {
+      console.warn("Language preference could not be read.", error);
+    }
+
+    setLanguage(savedLanguage);
   </script>
 </body>
 </html>
