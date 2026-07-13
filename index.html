@@ -227,6 +227,74 @@
       font-weight: 800;
     }
 
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      cursor: pointer;
+      list-style: none;
+      transition: color .2s ease;
+      user-select: none;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-dropdown summary:hover,
+    .nav-dropdown[open] summary {
+      color: var(--text);
+    }
+
+    .nav-dropdown-arrow {
+      display: inline-block;
+      font-size: .78rem;
+      transition: transform .2s ease;
+    }
+
+    .nav-dropdown[open] .nav-dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .city-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(320px, 88vw);
+      padding: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 7px;
+      background: rgba(12, 10, 12, .98);
+      border: 1px solid rgba(255, 193, 94, .22);
+      border-radius: 18px;
+      box-shadow: 0 22px 45px rgba(0, 0, 0, .42);
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .city-menu a {
+      display: block;
+      padding: 10px 11px;
+      border-radius: 11px;
+      color: #d7cbbf;
+      line-height: 1.3;
+      font-size: .86rem;
+    }
+
+    .city-menu a:hover {
+      color: #241203;
+      background: linear-gradient(180deg, #fff6c7, #ffbe2f 58%, #e98505);
+      transform: none;
+    }
+
     .lang-switcher {
       display: flex;
       gap: 7px;
@@ -795,6 +863,23 @@
         gap: 13px;
       }
 
+      .nav-dropdown {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-dropdown summary {
+        justify-content: center;
+      }
+
+      .city-menu {
+        position: static;
+        transform: none;
+        width: min(100%, 420px);
+        margin: 10px auto 0;
+        grid-template-columns: 1fr;
+      }
+
       .hero {
         padding-top: 42px;
       }
@@ -882,6 +967,22 @@
 <a href="#oferta">Offre</a>
 <a href="#branze">Secteurs</a>
 <a href="#realizacje">Solutions</a>
+<details class="nav-dropdown">
+<summary>Villes <span aria-hidden="true" class="nav-dropdown-arrow">▼</span></summary>
+<div class="city-menu">
+<a href="/panneaux-solaires-agadir/">Agadir</a>
+<a href="/panneaux-solaires-marrakech/">Marrakech</a>
+<a href="/panneaux-solaires-taroudant/">Taroudant</a>
+<a href="/panneaux-solaires-fes/">Fès</a>
+<a href="/panneaux-solaires-casablanca/">Casablanca</a>
+<a href="/panneaux-solaires-rabat/">Rabat</a>
+<a href="/panneaux-solaires-oujda/">Oujda</a>
+<a href="/panneaux-solaires-essaouira/">Essaouira</a>
+<a href="/panneaux-solaires-errachidia/">Errachidia</a>
+<a href="/panneaux-solaires-zagora/">Zagora</a>
+<a href="/panneaux-solaires-beni-mellal/">Béni Mellal</a>
+</div>
+</details>
 <a class="calculator-link" href="/calculator/">Calculateur solaire</a>
 <a href="#kontakt">Contact</a>
 </nav>
