@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estimez le potentiel solaire de votre entreprise au Maroc avec Amber Atlas.">
+  <meta name="theme-color" content="#071b2b">
+  <title>Calculateur solaire B2B | Amber Atlas</title>
+  <link rel="canonical" href="https://amberatlas.solar/calculator/">
+  <link rel="stylesheet" href="./calculator.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Amber Atlas — accueil">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span>
+        <strong>AMBER ATLAS</strong>
+        <small>Renewable Energy Solutions</small>
+      </span>
+    </a>
+    <div class="language-switcher" aria-label="Language">
+      <button class="lang-button is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button class="lang-button" type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">Pré-estimation gratuite pour les entreprises au Maroc</p>
+        <h1 data-i18n="heroTitle">Combien votre entreprise peut-elle économiser grâce au solaire&nbsp;?</h1>
+        <p data-i18n="heroText">Obtenez en moins d’une minute une première estimation de la puissance, de la production annuelle, des économies et du temps de retour.</p>
+        <div class="hero-points" aria-label="Avantages">
+          <span data-i18n="point1">Résultat immédiat</span>
+          <span data-i18n="point2">Données solaires PVGIS</span>
+          <span data-i18n="point3">Sans engagement</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator-shell" aria-labelledby="calculator-title">
+      <div class="calculator-card">
+        <div class="section-heading">
+          <p class="step-label" data-i18n="step1">Étape 1</p>
+          <h2 id="calculator-title" data-i18n="calculatorTitle">Décrivez votre consommation</h2>
+          <p data-i18n="calculatorIntro">Les valeurs peuvent être modifiées. Le calcul reste une pré-estimation et ne remplace pas un audit énergétique.</p>
+        </div>
+
+        <form id="calculator-form" novalidate>
+          <div class="form-grid">
+            <label class="field">
+              <span data-i18n="cityLabel">Ville / région</span>
+              <select id="city" name="city" required>
+                <option value="agadir" data-fr="Agadir" data-en="Agadir">Agadir</option>
+                <option value="marrakech" data-fr="Marrakech" data-en="Marrakech">Marrakech</option>
+                <option value="casablanca" data-fr="Casablanca" data-en="Casablanca">Casablanca</option>
+                <option value="rabat" data-fr="Rabat" data-en="Rabat">Rabat</option>
+                <option value="fes" data-fr="Fès" data-en="Fez">Fès</option>
+                <option value="tanger" data-fr="Tanger" data-en="Tangier">Tanger</option>
+                <option value="ouarzazate" data-fr="Ouarzazate" data-en="Ouarzazate">Ouarzazate</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span data-i18n="sectorLabel">Type d’activité</span>
+              <select id="sector" name="sector" required>
+                <option value="hotel" data-fr="Hôtel / resort" data-en="Hotel / resort">Hôtel / resort</option>
+                <option value="manufacturing" data-fr="Industrie / fabrication" data-en="Industry / manufacturing">Industrie / fabrication</option>
+                <option value="agriculture" data-fr="Agriculture / agroalimentaire" data-en="Agriculture / food processing">Agriculture / agroalimentaire</option>
+                <option value="logistics" data-fr="Logistique / entrepôt" data-en="Logistics / warehouse">Logistique / entrepôt</option>
+                <option value="commercial" data-fr="Bâtiment commercial / bureaux" data-en="Commercial building / offices">Bâtiment commercial / bureaux</option>
+                <option value="clinic" data-fr="Clinique / établissement de santé" data-en="Clinic / healthcare">Clinique / établissement de santé</option>
+                <option value="other" data-fr="Autre" data-en="Other">Autre</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span data-i18n="billLabel">Facture mensuelle moyenne</span>
+              <div class="input-with-unit">
+                <input id="monthly-bill" name="monthlyBill" type="number" min="1000" max="10000000" step="500" value="30000" inputmode="decimal" required>
+                <span>MAD</span>
+              </div>
+            </label>
+
+            <label class="field">
+              <span data-i18n="tariffLabel">Prix moyen de l’électricité</span>
+              <div class="input-with-unit">
+                <input id="tariff" name="tariff" type="number" min="0.4" max="5" step="0.01" value="1.25" inputmode="decimal" required>
+                <span>MAD/kWh</span>
+              </div>
+              <small data-i18n="tariffHelp">Utilisez votre facture si le tarif réel est connu.</small>
+            </label>
+
+            <label class="field">
+              <span data-i18n="roofLabel">Surface exploitable du toit ou du terrain</span>
+              <div class="input-with-unit">
+                <input id="roof-area" name="roofArea" type="number" min="0" max="1000000" step="10" value="1000" inputmode="decimal">
+                <span>m²</span>
+              </div>
+              <small data-i18n="roofHelp">Laissez 0 si la surface n’est pas connue.</small>
+            </label>
+
+            <label class="field">
+              <span data-i18n="outageLabel">Coupures ou besoin d’alimentation de secours&nbsp;?</span>
+              <select id="outages" name="outages">
+                <option value="no" data-fr="Non / rarement" data-en="No / rarely">Non / rarement</option>
+                <option value="yes" data-fr="Oui / régulièrement" data-en="Yes / regularly">Oui / régulièrement</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="range-field">
+            <span>
+              <strong data-i18n="dayShareLabel">Part de la consommation entre 8h et 18h</strong>
+              <output id="day-share-output" for="day-share">55%</output>
+            </span>
+            <input id="day-share" name="dayShare" type="range" min="20" max="100" step="5" value="55">
+            <small data-i18n="dayShareHelp">Plus la consommation est diurne, plus l’autoconsommation solaire est avantageuse.</small>
+          </label>
+
+          <div id="form-error" class="form-error" role="alert" hidden></div>
+          <button class="primary-button" type="submit">
+            <span data-i18n="calculateButton">Calculer mon potentiel solaire</span>
+          </button>
+        </form>
+      </div>
+
+      <aside id="results" class="results-card" aria-live="polite" aria-busy="false">
+        <div class="results-placeholder" id="results-placeholder">
+          <span class="sun-icon" aria-hidden="true">☀</span>
+          <h2 data-i18n="placeholderTitle">Votre estimation apparaîtra ici</h2>
+          <p data-i18n="placeholderText">Renseignez les informations à gauche, puis lancez le calcul.</p>
+        </div>
+
+        <div id="results-content" hidden>
+          <div class="section-heading compact">
+            <p class="step-label" data-i18n="step2">Étape 2</p>
+            <h2 data-i18n="resultsTitle">Votre potentiel solaire estimé</h2>
+            <p id="data-source-label"></p>
+          </div>
+
+          <div class="result-grid">
+            <article class="result-item featured">
+              <span data-i18n="capacityResult">Puissance recommandée</span>
+              <strong id="result-capacity">—</strong>
+            </article>
+            <article class="result-item">
+              <span data-i18n="productionResult">Production annuelle</span>
+              <strong id="result-production">—</strong>
+            </article>
+            <article class="result-item">
+              <span data-i18n="savingsResult">Économies annuelles</span>
+              <strong id="result-savings">—</strong>
+            </article>
+            <article class="result-item">
+              <span data-i18n="paybackResult">Retour simple estimé</span>
+              <strong id="result-payback">—</strong>
+            </article>
+            <article class="result-item">
+              <span data-i18n="roofResult">Surface nécessaire</span>
+              <strong id="result-roof">—</strong>
+            </article>
+            <article class="result-item">
+              <span data-i18n="co2Result">CO₂ évité par an</span>
+              <strong id="result-co2">—</strong>
+            </article>
+          </div>
+
+          <div class="recommendation" id="recommendation"></div>
+          <p class="disclaimer" data-i18n="disclaimer">Pré-estimation non contractuelle, hors TVA, financement, renforcement éventuel de toiture et travaux de raccordement. Les économies sont calculées sur l’autoconsommation, sans revenu de vente d’un éventuel surplus au réseau.</p>
+
+          <div class="lead-box">
+            <h3 data-i18n="leadTitle">Recevez une analyse personnalisée</h3>
+            <p data-i18n="leadText">Laissez vos coordonnées. Un expert Amber Atlas vérifiera votre facture, votre profil de consommation et la surface disponible.</p>
+
+            <form id="lead-form" name="solar-calculator-lead" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="solar-calculator-lead">
+              <p class="hidden-field">
+                <label>Ne pas remplir&nbsp;: <input name="bot-field"></label>
+              </p>
+              <input type="hidden" id="lead-language" name="language" value="fr">
+              <input type="hidden" id="lead-city" name="calculator_city">
+              <input type="hidden" id="lead-sector" name="calculator_sector">
+              <input type="hidden" id="lead-capacity" name="estimated_capacity_kwp">
+              <input type="hidden" id="lead-production" name="estimated_production_kwh">
+              <input type="hidden" id="lead-savings" name="estimated_savings_mad">
+              <input type="hidden" id="lead-payback" name="estimated_payback_years">
+
+              <div class="lead-grid">
+                <label class="field">
+                  <span data-i18n="nameLabel">Nom et prénom</span>
+                  <input name="name" type="text" autocomplete="name" required>
+                </label>
+                <label class="field">
+                  <span data-i18n="companyLabel">Entreprise</span>
+                  <input name="company" type="text" autocomplete="organization" required>
+                </label>
+                <label class="field">
+                  <span data-i18n="emailLabel">E-mail</span>
+                  <input name="email" type="email" autocomplete="email" required>
+                </label>
+                <label class="field">
+                  <span data-i18n="phoneLabel">Téléphone</span>
+                  <input name="phone" type="tel" autocomplete="tel" required>
+                </label>
+              </div>
+
+              <label class="consent-row">
+                <input name="contact_consent" type="checkbox" value="yes" required>
+                <span data-i18n="consentText">J’accepte d’être contacté par Amber Atlas au sujet de cette estimation et d’un éventuel audit énergétique.</span>
+              </label>
+
+              <button class="secondary-button" type="submit" data-i18n="sendButton">Demander mon audit gratuit</button>
+              <p id="lead-status" class="lead-status" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="trust-section">
+      <p class="eyebrow" data-i18n="trustEyebrow">Pourquoi Amber Atlas</p>
+      <h2 data-i18n="trustTitle">Un partenaire unique, de l’analyse au service après-vente</h2>
+      <div class="trust-grid">
+        <article>
+          <strong>15+</strong>
+          <span data-i18n="trust1">années d’expérience sur les marchés européens</span>
+        </article>
+        <article>
+          <strong>50 MWp</strong>
+          <span data-i18n="trust2">de projets auxquels notre expertise technique a contribué</span>
+        </article>
+        <article>
+          <strong>360°</strong>
+          <span data-i18n="trust3">audit, ingénierie, solaire, stockage, monitoring et maintenance</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Amber Atlas</span>
+    <a href="/" data-i18n="backHome">Retour au site principal</a>
+  </footer>
+
+  <script src="./calculator.js" defer></script>
+</body>
+</html>
