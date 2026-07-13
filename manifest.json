@@ -1,0 +1,32 @@
+{
+  "home_pages": [
+    "index.html",
+    "ar/index.html",
+    "en/index.html",
+    "pl/index.html"
+  ],
+  "calculator_pages": [
+    "calculator/index.html",
+    "ar/calculator/index.html",
+    "en/calculator/index.html",
+    "pl/calculator/index.html"
+  ],
+  "city_pages": [
+    "panneaux-solaires-agadir",
+    "panneaux-solaires-beni-mellal",
+    "panneaux-solaires-casablanca",
+    "panneaux-solaires-errachidia",
+    "panneaux-solaires-essaouira",
+    "panneaux-solaires-fes",
+    "panneaux-solaires-marrakech",
+    "panneaux-solaires-oujda",
+    "panneaux-solaires-rabat",
+    "panneaux-solaires-taroudant",
+    "panneaux-solaires-zagora"
+  ],
+  "styles": [
+    "assets/css/amber-atlas-premium.css",
+    "calculator/calculator.css"
+  ],
+  "visible_text_changed": false
+}
