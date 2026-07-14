@@ -1,119 +1,87 @@
-<?xml version='1.0' encoding='utf-8'?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://amberatlas.solar/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://amberatlas.solar/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://amberatlas.solar/ar/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://amberatlas.solar/en/" />
-    <xhtml:link rel="alternate" hreflang="pl" href="https://amberatlas.solar/pl/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://amberatlas.solar/" />
-    <lastmod>2026-07-13</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://amberatlas.solar/ar/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://amberatlas.solar/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://amberatlas.solar/ar/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://amberatlas.solar/en/" />
-    <xhtml:link rel="alternate" hreflang="pl" href="https://amberatlas.solar/pl/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://amberatlas.solar/" />
-    <lastmod>2026-07-13</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://amberatlas.solar/en/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://amberatlas.solar/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://amberatlas.solar/ar/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://amberatlas.solar/en/" />
-    <xhtml:link rel="alternate" hreflang="pl" href="https://amberatlas.solar/pl/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://amberatlas.solar/" />
-    <lastmod>2026-07-13</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://amberatlas.solar/pl/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://amberatlas.solar/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://amberatlas.solar/ar/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://amberatlas.solar/en/" />
-    <xhtml:link rel="alternate" hreflang="pl" href="https://amberatlas.solar/pl/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://amberatlas.solar/" />
-    <lastmod>2026-07-13</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://amberatlas.solar/calculator/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://amberatlas.solar/calculator/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://amberatlas.solar/ar/calculator/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://amberatlas.solar/en/calculator/" />
-    <xhtml:link rel="alternate" hreflang="pl" href="https://amberatlas.solar/pl/calculator/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://amberatlas.solar/calculator/" />
-    <lastmod>2026-07-13</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://amberatlas.solar/ar/calculator/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://amberatlas.solar/calculator/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://amberatlas.solar/ar/calculator/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://amberatlas.solar/en/calculator/" />
-    <xhtml:link rel="alternate" hreflang="pl" href="https://amberatlas.solar/pl/calculator/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://amberatlas.solar/calculator/" />
-    <lastmod>2026-07-13</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://amberatlas.solar/en/calculator/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://amberatlas.solar/calculator/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://amberatlas.solar/ar/calculator/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://amberatlas.solar/en/calculator/" />
-    <xhtml:link rel="alternate" hreflang="pl" href="https://amberatlas.solar/pl/calculator/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://amberatlas.solar/calculator/" />
-    <lastmod>2026-07-13</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://amberatlas.solar/pl/calculator/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://amberatlas.solar/calculator/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://amberatlas.solar/ar/calculator/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://amberatlas.solar/en/calculator/" />
-    <xhtml:link rel="alternate" hreflang="pl" href="https://amberatlas.solar/pl/calculator/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://amberatlas.solar/calculator/" />
-    <lastmod>2026-07-13</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://amberatlas.solar/panneaux-solaires-agadir/</loc>
-    <lastmod>2026-07-13</lastmod>
-  </url>
-  <url>
-    <loc>https://amberatlas.solar/panneaux-solaires-marrakech/</loc>
-    <lastmod>2026-07-13</lastmod>
-  </url>
-  <url>
-    <loc>https://amberatlas.solar/panneaux-solaires-taroudant/</loc>
-    <lastmod>2026-07-13</lastmod>
-  </url>
-  <url>
-    <loc>https://amberatlas.solar/panneaux-solaires-fes/</loc>
-    <lastmod>2026-07-13</lastmod>
-  </url>
-  <url>
-    <loc>https://amberatlas.solar/panneaux-solaires-casablanca/</loc>
-    <lastmod>2026-07-13</lastmod>
-  </url>
-  <url>
-    <loc>https://amberatlas.solar/panneaux-solaires-rabat/</loc>
-    <lastmod>2026-07-13</lastmod>
-  </url>
-  <url>
-    <loc>https://amberatlas.solar/panneaux-solaires-oujda/</loc>
-    <lastmod>2026-07-13</lastmod>
-  </url>
-  <url>
-    <loc>https://amberatlas.solar/panneaux-solaires-essaouira/</loc>
-    <lastmod>2026-07-13</lastmod>
-  </url>
-  <url>
-    <loc>https://amberatlas.solar/panneaux-solaires-errachidia/</loc>
-    <lastmod>2026-07-13</lastmod>
-  </url>
-  <url>
-    <loc>https://amberatlas.solar/panneaux-solaires-zagora/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://amberatlas.solar/panneaux-solaires-beni-mellal/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/panneaux-solaires-casablanca/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/panneaux-solaires-errachidia/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/panneaux-solaires-essaouira/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/panneaux-solaires-fes/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/panneaux-solaires-marrakech/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/panneaux-solaires-oujda/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/panneaux-solaires-rabat/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/panneaux-solaires-taroudant/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/panneaux-solaires-zagora/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/conseils/</loc>
+    <lastmod>2026-07-13</lastmod>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/faq-photovoltaique-maroc/</loc>
     <lastmod>2026-07-13</lastmod>
   </url>
 </urlset>

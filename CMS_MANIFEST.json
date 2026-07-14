@@ -1,0 +1,16 @@
+{
+  "package": "Amber Atlas Conseils + FAQ + CMS",
+  "version": "1.0.0",
+  "generated": "2026-07-13",
+  "public_pages": [
+    "/conseils/",
+    "/faq-photovoltaique-maroc/"
+  ],
+  "admin": "/admin/",
+  "storage": "Netlify Blobs",
+  "required_environment_variables": [
+    "CMS_ADMIN_PASSWORD"
+  ],
+  "default_username": "AmberAtlas",
+  "password_in_source": false
+}

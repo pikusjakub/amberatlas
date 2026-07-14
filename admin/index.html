@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amber Atlas — panel treści</title>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#0d1726">
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/amber-atlas-premium.css">
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin-page">
+<header class="admin-topbar">
+  <a class="admin-brand" href="/">
+    <img src="/logo.png" alt="Amber Atlas">
+    <span>Amber Atlas CMS</span>
+  </a>
+  <div class="admin-top-actions">
+    <a class="admin-link" href="/conseils/" target="_blank" rel="noopener">Conseils</a>
+    <a class="admin-link" href="/faq-photovoltaique-maroc/" target="_blank" rel="noopener">FAQ</a>
+    <button id="logoutBtn" class="admin-btn ghost hidden" type="button">Wyloguj</button>
+  </div>
+</header>
+
+<main class="admin-main">
+  <section id="loginView" class="login-wrap">
+    <div class="login-card">
+      <div class="login-kicker">Panel administracyjny</div>
+      <h1>Logowanie</h1>
+      <p>Po zalogowaniu możesz dodawać, edytować i usuwać artykuły oraz pytania FAQ.</p>
+      <form id="loginForm">
+        <label>Login<input id="loginUser" name="username" autocomplete="username" value="AmberAtlas" required></label>
+        <label>Hasło<input id="loginPassword" name="password" type="password" autocomplete="current-password" required></label>
+        <button class="admin-btn primary" type="submit">Zaloguj</button>
+        <div id="loginMessage" class="form-message" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <section id="editorView" class="editor-view hidden">
+    <div class="dashboard-head">
+      <div>
+        <div class="login-kicker">Zarządzanie treścią</div>
+        <h1>Conseils i FAQ</h1>
+        <p>Publikacja działa od razu — bez ponownego wdrażania strony w Netlify.</p>
+      </div>
+      <div id="globalMessage" class="form-message" aria-live="polite"></div>
+    </div>
+
+    <div class="admin-tabs" role="tablist">
+      <button class="admin-tab active" data-tab="articles" type="button">Artykuły</button>
+      <button class="admin-tab" data-tab="faq" type="button">FAQ</button>
+    </div>
+
+    <div id="articlesPanel" class="tab-panel">
+      <div class="admin-layout">
+        <aside class="content-list-card">
+          <div class="list-head"><h2>Artykuły</h2><button id="newArticleBtn" class="admin-btn small" type="button">+ Nowy</button></div>
+          <div id="articleList" class="content-list"></div>
+        </aside>
+        <section class="editor-card">
+          <form id="articleForm">
+            <input id="articleOriginalSlug" type="hidden">
+            <div class="editor-heading"><div><h2>Edytor artykułu</h2><p>Treść publiczna będzie w języku francuskim.</p></div><span id="articleSaveState" class="save-state"></span></div>
+            <div class="field-grid two">
+              <label>Titre de l’article<input id="articleTitle" required maxlength="140"></label>
+              <label>Adres URL / slug<input id="articleSlug" required maxlength="120" placeholder="prix-photovoltaique-maroc"></label>
+            </div>
+            <label>Résumé / meta description<textarea id="articleExcerpt" maxlength="320" rows="3" placeholder="Krótki opis artykułu po francusku"></textarea></label>
+            <div class="field-grid three">
+              <label>Auteur<input id="articleAuthor" value="Jakub Pikus" maxlength="80"></label>
+              <label>Date de publication<input id="articleDate" type="date"></label>
+              <label>Statut<select id="articleStatus"><option value="draft">Brouillon</option><option value="published">Publié</option></select></label>
+            </div>
+            <div class="upload-box">
+              <div><strong>Grafika główna</strong><span>JPG, PNG lub WEBP, maksymalnie 5 MB.</span></div>
+              <input id="articleImageFile" type="file" accept="image/jpeg,image/png,image/webp">
+              <button id="uploadArticleImageBtn" class="admin-btn small" type="button">Załącz grafikę</button>
+              <input id="articleImageUrl" type="hidden">
+              <img id="articleImagePreview" class="image-preview hidden" alt="Podgląd grafiki">
+            </div>
+            <label>Tekst alternatywny grafiki<input id="articleImageAlt" maxlength="180" placeholder="Opis grafiki po francusku"></label>
+            <label>Treść artykułu</label>
+            <div class="editor-toolbar" data-editor="articleContent">
+              <button type="button" data-command="formatBlock" data-value="p">P</button>
+              <button type="button" data-command="formatBlock" data-value="h2">H2</button>
+              <button type="button" data-command="formatBlock" data-value="h3">H3</button>
+              <button type="button" data-command="bold"><b>B</b></button>
+              <button type="button" data-command="italic"><i>I</i></button>
+              <button type="button" data-command="insertUnorderedList">• Lista</button>
+              <button type="button" data-command="insertOrderedList">1. Lista</button>
+              <button type="button" data-command="createLink">Link</button>
+              <button type="button" data-command="removeFormat">Wyczyść format</button>
+            </div>
+            <div id="articleContent" class="rich-editor" contenteditable="true" data-placeholder="Wpisz treść artykułu po francusku..."></div>
+            <div class="form-actions">
+              <button class="admin-btn primary" type="submit">Zapisz artykuł</button>
+              <button id="deleteArticleBtn" class="admin-btn danger hidden" type="button">Usuń artykuł</button>
+              <a id="previewArticleBtn" class="admin-btn ghost hidden" href="#" target="_blank" rel="noopener">Podgląd</a>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <div id="faqPanel" class="tab-panel hidden">
+      <div class="admin-layout">
+        <aside class="content-list-card">
+          <div class="list-head"><h2>FAQ</h2><button id="newFaqBtn" class="admin-btn small" type="button">+ Nowe</button></div>
+          <div id="faqList" class="content-list"></div>
+        </aside>
+        <section class="editor-card">
+          <form id="faqForm">
+            <input id="faqId" type="hidden">
+            <div class="editor-heading"><div><h2>Edytor FAQ</h2><p>Pytanie i odpowiedź będą widoczne na podstronie FAQ.</p></div><span id="faqSaveState" class="save-state"></span></div>
+            <label>Question<input id="faqQuestion" required maxlength="220" placeholder="Quel est le prix d’une installation photovoltaïque au Maroc ?"></label>
+            <div class="field-grid two">
+              <label>Kolejność<input id="faqOrder" type="number" min="0" value="0"></label>
+              <label>Status<select id="faqStatus"><option value="published">Publié</option><option value="draft">Brouillon</option></select></label>
+            </div>
+            <div class="upload-box">
+              <div><strong>Grafika opcjonalna</strong><span>JPG, PNG lub WEBP, maksymalnie 5 MB.</span></div>
+              <input id="faqImageFile" type="file" accept="image/jpeg,image/png,image/webp">
+              <button id="uploadFaqImageBtn" class="admin-btn small" type="button">Załącz grafikę</button>
+              <input id="faqImageUrl" type="hidden">
+              <img id="faqImagePreview" class="image-preview hidden" alt="Podgląd grafiki">
+            </div>
+            <label>Tekst alternatywny grafiki<input id="faqImageAlt" maxlength="180" placeholder="Opis grafiki po francusku"></label>
+            <label>Réponse</label>
+            <div class="editor-toolbar" data-editor="faqAnswer">
+              <button type="button" data-command="formatBlock" data-value="p">P</button>
+              <button type="button" data-command="bold"><b>B</b></button>
+              <button type="button" data-command="italic"><i>I</i></button>
+              <button type="button" data-command="insertUnorderedList">• Lista</button>
+              <button type="button" data-command="createLink">Link</button>
+              <button type="button" data-command="removeFormat">Wyczyść format</button>
+            </div>
+            <div id="faqAnswer" class="rich-editor compact" contenteditable="true" data-placeholder="Wpisz odpowiedź po francusku..."></div>
+            <div class="form-actions">
+              <button class="admin-btn primary" type="submit">Zapisz FAQ</button>
+              <button id="deleteFaqBtn" class="admin-btn danger hidden" type="button">Usuń FAQ</button>
+              <a class="admin-btn ghost" href="/faq-photovoltaique-maroc/" target="_blank" rel="noopener">Podgląd strony</a>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="/admin/admin.js" defer></script>
+</body>
+</html>
