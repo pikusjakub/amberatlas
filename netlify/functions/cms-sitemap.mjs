@@ -2,7 +2,7 @@ import { contentStore, readJson, escapeHtml } from "./_cms-utils.mjs";
 const base="https://amberatlas.solar";
 const home=[["fr",`${base}/`],["ar",`${base}/ar/`],["en",`${base}/en/`],["pl",`${base}/pl/`]];
 const calc=[["fr",`${base}/calculator/`],["ar",`${base}/ar/calculator/`],["en",`${base}/en/calculator/`],["pl",`${base}/pl/calculator/`]];
-const industries=["solaire-hotels-maroc","photovoltaique-industriel-maroc","pompage-solaire-agricole-maroc","chambres-froides-solaires-maroc","stockage-energie-entreprises-maroc","solaire-entrepots-logistique-maroc"].map(x=>`${base}/solutions/${x}/`);
+const industries=["solaire-hotels-maroc","photovoltaique-industriel-maroc","pompage-solaire-agricole-maroc","chambres-froides-solaires-maroc","stockage-energie-entreprises-maroc","solaire-entrepots-logistique-maroc","photovoltaique-maisons-maroc"].map(x=>`${base}/solutions/${x}/`);
 const cities=["agadir","marrakech","taroudant","fes","casablanca","rabat","oujda","essaouira","errachidia","zagora","beni-mellal"].map(x=>`${base}/panneaux-solaires-${x}/`);
 function u(loc,lastmod,alts=[]){return `<url><loc>${escapeHtml(loc)}</loc>${alts.map(([lang,href])=>`<xhtml:link rel="alternate" hreflang="${lang}" href="${escapeHtml(href)}"/>`).join("")}${lastmod?`<lastmod>${lastmod}</lastmod>`:""}</url>`}
 export default async()=>{
