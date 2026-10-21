@@ -9,7 +9,9 @@ layout: "city-landing"
 
 Casablanca concentre une part majeure de l’activité industrielle, logistique et tertiaire du Maroc. Dans un contexte de consommation élevée et de pression sur les coûts d’exploitation, le photovoltaïque permet aux entreprises de produire une partie de leur énergie directement sur site.
 
-Amber Atlas accompagne les entreprises depuis l’analyse du profil de consommation jusqu’à la mise en service, au suivi et à la maintenance de l’installation. Chaque projet est étudié en fonction des usages du site, de la surface disponible et des objectifs économiques du client.
+À Casablanca, nous étudions les profils de consommation des usines, centres logistiques et entrepôts frigorifiques, dont les besoins électriques peuvent rester élevés tout au long de la journée. La production photovoltaïque doit être ajustée aux horaires d’activité.
+
+Pour les bâtiments professionnels de Casablanca, nous examinons la surface et la structure de toiture, les équipements frigorifiques, les contraintes d’exploitation et l’environnement côtier afin de préparer un projet fiable.
 
 ## Entrepôts frigorifiques
 

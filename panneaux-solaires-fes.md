@@ -9,7 +9,9 @@ layout: "city-landing"
 
 À Fès et dans la région Fès-Meknès, l’agriculture, l’artisanat, les services et l’industrie disposent d’un potentiel important pour l’autoconsommation photovoltaïque. Une installation adaptée au profil réel du site peut réduire les charges énergétiques et soutenir la compétitivité de l’entreprise.
 
-Amber Atlas accompagne les entreprises depuis l’analyse du profil de consommation jusqu’à la mise en service, au suivi et à la maintenance de l’installation. Chaque projet est étudié en fonction des usages du site, de la surface disponible et des objectifs économiques du client.
+À Fès, les ateliers, entreprises de transformation et exploitations agricoles présentent des besoins électriques très différents. Nous rapprochons les horaires de travail et les cycles de pompage des périodes de production solaire.
+
+Dans la région Fès-Meknès, le choix de la puissance et des équipements dépend de l’usage du bâtiment, des surfaces de toiture et de la saisonnalité de l’activité. L’étude vise une autoconsommation adaptée au site.
 
 ## Exploitations agricoles
 

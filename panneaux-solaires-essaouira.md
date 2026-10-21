@@ -9,7 +9,9 @@ layout: "city-landing"
 
 Essaouira bénéficie d’un bon potentiel solaire et d’une économie portée par l’hôtellerie, les services et les activités commerciales. Une installation photovoltaïque correctement conçue permet de réduire la facture d’électricité tout en tenant compte des conditions marines et venteuses.
 
-Amber Atlas accompagne les entreprises depuis l’analyse du profil de consommation jusqu’à la mise en service, au suivi et à la maintenance de l’installation. Chaque projet est étudié en fonction des usages du site, de la surface disponible et des objectifs économiques du client.
+Pour les riads, hôtels et commerces d’Essaouira, nous étudions la consommation liée à l’accueil des visiteurs, au froid et aux activités de journée. La configuration des panneaux tient compte des espaces réellement disponibles.
+
+À Essaouira, les contraintes de vent et d’air marin nécessitent une attention particulière aux structures, à la fixation et à la protection des composants. Notre étude examine ces paramètres avant le dimensionnement.
 
 ## Hôtels, riads et hébergements
 

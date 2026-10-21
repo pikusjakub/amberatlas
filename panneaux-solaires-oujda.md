@@ -9,7 +9,9 @@ layout: "city-landing"
 
 Oujda et la région de l’Oriental disposent d’un fort potentiel solaire et d’activités agricoles, commerciales et industrielles adaptées à l’autoconsommation photovoltaïque. Une production locale bien dimensionnée contribue à réduire les dépenses énergétiques et la dépendance aux variations tarifaires.
 
-Amber Atlas accompagne les entreprises depuis l’analyse du profil de consommation jusqu’à la mise en service, au suivi et à la maintenance de l’installation. Chaque projet est étudié en fonction des usages du site, de la surface disponible et des objectifs économiques du client.
+À Oujda et dans l’Oriental, les besoins en électricité des exploitations agricoles et des ateliers peuvent varier avec les saisons. Nous analysons les pompes, les équipements de production et les périodes de fonctionnement.
+
+Pour les entreprises d’Oujda, nous examinons les consommations réelles, les contraintes du réseau et les surfaces exploitables avant de proposer la puissance et l’orientation des panneaux.
 
 ## Exploitations agricoles
 

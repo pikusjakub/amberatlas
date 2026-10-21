@@ -9,7 +9,9 @@ layout: "city-landing"
 
 Marrakech combine une activité hôtelière dynamique, de nombreux sites commerciaux et un environnement solaire très favorable. Pour les entreprises, le photovoltaïque constitue un levier concret de réduction des charges, particulièrement lorsque la consommation est élevée pendant les heures chaudes de la journée.
 
-Amber Atlas accompagne les entreprises depuis l’analyse du profil de consommation jusqu’à la mise en service, au suivi et à la maintenance de l’installation. Chaque projet est étudié en fonction des usages du site, de la surface disponible et des objectifs économiques du client.
+Les hôtels, riads et resorts de Marrakech ont des besoins électriques variables selon les saisons : climatisation, piscines, cuisines et équipements de confort. Nous étudions ces usages pour déterminer quelle part de l’énergie solaire pourra être consommée directement.
+
+Pour chaque projet à Marrakech, l’étude prend en compte les fortes chaleurs, la surface disponible et les pics de consommation liés à l’activité touristique. Nous comparons les orientations des panneaux et les options de stockage avant de proposer une installation dimensionnée.
 
 ## Hôtels, resorts et riads
 

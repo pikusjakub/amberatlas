@@ -9,7 +9,9 @@ layout: "city-landing"
 
 Béni Mellal et la région Béni Mellal-Khénifra constituent un bassin agricole et agroalimentaire majeur. Les besoins en irrigation, froid, conditionnement et transformation rendent le photovoltaïque particulièrement pertinent pour réduire les coûts de production.
 
-Amber Atlas accompagne les entreprises depuis l’analyse du profil de consommation jusqu’à la mise en service, au suivi et à la maintenance de l’installation. Chaque projet est étudié en fonction des usages du site, de la surface disponible et des objectifs économiques du client.
+Dans la région Béni Mellal-Khénifra, les besoins en pompage, irrigation et conservation frigorifique varient selon les campagnes agricoles. Nous étudions la consommation des équipements pendant la journée pour choisir une puissance solaire cohérente avec ces cycles.
+
+Pour les exploitations et unités agroalimentaires de Béni Mellal, nous analysons les factures, les moteurs électriques, les périodes de production et les surfaces disponibles avant d’évaluer les économies possibles.
 
 ## Exploitations agricoles
 
