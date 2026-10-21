@@ -9,7 +9,9 @@ layout: "city-landing"
 
 À Agadir et dans la région Souss-Massa, l’ensoleillement élevé et la forte activité touristique, agricole et agroalimentaire créent des conditions particulièrement favorables à l’autoconsommation photovoltaïque. Une installation bien dimensionnée permet de réduire les dépenses énergétiques, de sécuriser les marges et d’améliorer la prévisibilité des coûts d’exploitation.
 
-Amber Atlas accompagne les entreprises depuis l’analyse du profil de consommation jusqu’à la mise en service, au suivi et à la maintenance de l’installation. Chaque projet est étudié en fonction des usages du site, de la surface disponible et des objectifs économiques du client.
+Pour les hôtels du littoral et les entreprises agricoles du Souss-Massa, nous étudions les besoins de climatisation, de pompage et de réfrigération. Le projet vise à couvrir en priorité les consommations de journée, au moment où la production solaire est disponible.
+
+À Agadir, nous tenons compte de l’environnement côtier, de la poussière et des contraintes de toiture pour sélectionner les équipements et protections. Le dimensionnement est fondé sur les factures et les horaires d’activité, puis complété par un suivi technique adapté au site.
 
 ## Hôtels et établissements touristiques
 
