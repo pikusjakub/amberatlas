@@ -759,3 +759,8 @@ html[dir="rtl"] h3 { font-family: var(--aa-font-ar); letter-spacing: 0; }
   .feature { flex-direction: column; align-items: center; text-align: center; }
   html[dir="rtl"] .feature { text-align: center; }
 }
+
+/* Clickable sector rows: retain existing card layout and keyboard focus */
+.site-page .feature-sector-link { display:flex; width:100%; padding:8px; margin:-8px; border-radius:12px; color:var(--aa-text); text-decoration:none; transition:background .2s ease,box-shadow .2s ease; }
+.site-page .feature-sector-link:hover, .site-page .feature-sector-link:focus-visible { background:var(--aa-amber-soft); color:var(--aa-ink); box-shadow:inset 0 0 0 1px rgba(199,137,45,.2); }
+.site-page .feature-sector-link strong { color:var(--aa-ink); }
