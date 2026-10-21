@@ -77,11 +77,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://amberatlas.solar/solutions/</loc>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/solutions/solaire-hotels-maroc/</loc>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/solutions/photovoltaique-industriel-maroc/</loc>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/solutions/pompage-solaire-agricole-maroc/</loc>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/solutions/chambres-froides-solaires-maroc/</loc>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/solutions/stockage-energie-entreprises-maroc/</loc>
+  </url>
+  <url>
+    <loc>https://amberatlas.solar/solutions/solaire-entrepots-logistique-maroc/</loc>
+  </url>
+  <url>
     <loc>https://amberatlas.solar/conseils/</loc>
-    <lastmod>2026-07-13</lastmod>
   </url>
   <url>
     <loc>https://amberatlas.solar/faq-photovoltaique-maroc/</loc>
-    <lastmod>2026-07-13</lastmod>
   </url>
 </urlset>

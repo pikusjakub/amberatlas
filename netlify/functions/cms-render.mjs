@@ -3,7 +3,7 @@ import { contentStore, readJson, escapeHtml, safeJson, stripHtml, formatDateFr, 
 const base = "https://amberatlas.solar";
 
 function header(active = "") {
-  return `<header class="nav-wrap"><div class="container nav"><a class="brand" href="/" aria-label="Amber Atlas"><img alt="Amber Atlas logo" src="/logo.png"><div class="brand-title">Amber Atlas</div></a><div class="nav-right"><nav class="nav-links" aria-label="Navigation principale"><a href="/#top">À propos</a><a href="/#oferta">Offre</a><a href="/#branze">Secteurs</a><a href="/#realizacje">Solutions</a><a class="${active === "conseils" ? "calculator-link" : ""}" href="/conseils/">Conseils</a><a class="${active === "faq" ? "calculator-link" : ""}" href="/faq-photovoltaique-maroc/">FAQ</a><a class="calculator-link" href="/calculator/">Calculateur solaire</a><a href="/#kontakt">Contact</a></nav><div class="lang-switcher"><a class="lang-btn active" href="/" lang="fr">FR</a><a class="lang-btn" href="/ar/" lang="ar">AR</a><a class="lang-btn" href="/en/" lang="en">EN</a><a class="lang-btn" href="/pl/" lang="pl">PL</a></div></div></div></header>`;
+  return `<header class="nav-wrap"><div class="container nav"><a class="brand" href="/" aria-label="Amber Atlas"><img alt="Amber Atlas logo" src="/logo.png"><div class="brand-title">Amber Atlas</div></a><div class="nav-right"><nav class="nav-links" aria-label="Navigation principale"><a href="/#top">À propos</a><a href="/#oferta">Offre</a><a href="/#branze">Secteurs</a><a href="/#realizacje">Solutions</a><a href="/solutions/">Solutions B2B</a><a class="${active === "conseils" ? "calculator-link" : ""}" href="/conseils/">Conseils</a><a class="${active === "faq" ? "calculator-link" : ""}" href="/faq-photovoltaique-maroc/">FAQ</a><a class="calculator-link" href="/calculator/">Calculateur solaire</a><a href="/#kontakt">Contact</a></nav><div class="lang-switcher"><a class="lang-btn active" href="/" lang="fr">FR</a><a class="lang-btn" href="/ar/" lang="ar">AR</a><a class="lang-btn" href="/en/" lang="en">EN</a><a class="lang-btn" href="/pl/" lang="pl">PL</a></div></div></div></header>`;
 }
 
 function footer() {
@@ -208,7 +208,7 @@ async function articlePage(store, slug) {
     ...(item.imageUrl ? { image: absoluteUrl(item.imageUrl) } : {})
   };
 
-  const body = `<main><section class="content-main"><article class="article-shell"><div class="breadcrumbs"><a href="/">Accueil</a> / <a href="/conseils/">Conseils</a> / ${escapeHtml(item.title)}</div><header class="article-header"><div class="kicker">Conseils Amber Atlas</div><h1>${escapeHtml(item.title)}</h1><div class="article-meta"><span>${escapeHtml(formatDateFr(item.date))}</span><span>·</span><span>${escapeHtml(item.author || "Amber Atlas")}</span></div>${description ? `<p class="article-lead">${escapeHtml(description)}</p>` : ""}</header>${item.imageUrl ? `<img class="article-cover" src="${escapeHtml(item.imageUrl)}" alt="${escapeHtml(item.imageAlt || item.title)}">` : ""}<div class="article-content">${item.content}</div>${sharePanel(canonical)}<div class="article-actions"><a class="btn btn-secondary" href="/conseils/">Tous les conseils</a><a class="btn btn-primary" href="/#kontakt">Parler de votre projet</a></div></article></section></main>`;
+  const body = `<main><section class="content-main"><article class="article-shell"><div class="breadcrumbs"><a href="/">Accueil</a> / <a href="/conseils/">Conseils</a> / ${escapeHtml(item.title)}</div><header class="article-header"><div class="kicker">Conseils Amber Atlas</div><h1>${escapeHtml(item.title)}</h1><div class="article-meta"><span>${escapeHtml(formatDateFr(item.date))}</span><span>·</span><span>${escapeHtml(item.author || "Amber Atlas")}</span></div>${description ? `<p class="article-lead">${escapeHtml(description)}</p>` : ""}</header>${item.imageUrl ? `<img class="article-cover" src="${escapeHtml(item.imageUrl)}" alt="${escapeHtml(item.imageAlt || item.title)}">` : ""}<div class="article-content">${item.content}</div><section class="card why"><h2>Solutions professionnelles associées</h2><p><a href="/solutions/solaire-hotels-maroc/">Photovoltaïque pour hôtels</a> · <a href="/solutions/photovoltaique-industriel-maroc/">Installations industrielles</a> · <a href="/solutions/pompage-solaire-agricole-maroc/">Pompage solaire</a> · <a href="/solutions/stockage-energie-entreprises-maroc/">Stockage d’énergie</a> · <a href="/solutions/">Toutes les solutions B2B</a></p></section>${sharePanel(canonical)}<div class="article-actions"><a class="btn btn-secondary" href="/solutions/">Solutions pour entreprises</a><a class="btn btn-secondary" href="/conseils/">Tous les conseils</a><a class="btn btn-primary" href="/#kontakt">Parler de votre projet</a></div></article></section></main>`;
 
   return page({
     title: `${item.title} | Amber Atlas`,
@@ -225,13 +225,51 @@ async function articlePage(store, slug) {
   });
 }
 
+// FAQ is intentionally concise; the complete source answer remains in Netlify Blobs.
+// Keep the HTML and FAQPage JSON-LD based on the same visible summary.
+function faqShortAnswer(html, maxWords = 105) {
+  const cleaned = stripHtml(String(html || "")).replace(/\s+/g, " ").trim();
+  if (!cleaned) return "";
+  const sentences = cleaned.match(/[^.!?]+(?:[.!?]+|$)/g) || [cleaned];
+  const selected = [];
+  let words = 0;
+  for (const sentence of sentences) {
+    const value = sentence.trim();
+    if (!value) continue;
+    const count = value.split(/\s+/).length;
+    if (words && words + count > maxWords) break;
+    if (!words && count > maxWords) {
+      // Avoid displaying a half sentence: use a shorter word limit at a natural boundary.
+      const limited = value.split(/\s+/).slice(0, maxWords).join(" ");
+      const pause = Math.max(limited.lastIndexOf(";"), limited.lastIndexOf(","));
+      selected.push(pause > limited.length * 0.55 ? limited.slice(0, pause) + "." : limited + "…");
+      break;
+    }
+    selected.push(value);
+    words += count;
+    if (words >= 55) break;
+  }
+  return selected.join(" ").trim() || cleaned;
+}
+
+function faqTopicLink(question) {
+  const q = String(question || "").toLocaleLowerCase("fr");
+  if (/h[oô]tel|riad|marrakech|agadir/.test(q)) return ["/solutions/solaire-hotels-maroc/", "Solaire pour hôtels"];
+  if (/pompage|irrigat|agricol/.test(q)) return ["/solutions/pompage-solaire-agricole-maroc/", "Pompage solaire"];
+  if (/batter|stockage|coupure|autonomie/.test(q)) return ["/solutions/stockage-energie-entreprises-maroc/", "Stockage d’énergie"];
+  if (/chambre froide|froid/.test(q)) return ["/solutions/chambres-froides-solaires-maroc/", "Solutions de froid"];
+  if (/entrep[oô]t|logist/.test(q)) return ["/solutions/solaire-entrepots-logistique-maroc/", "Solaire logistique"];
+  if (/industr|usine|entreprise/.test(q)) return ["/solutions/photovoltaique-industriel-maroc/", "Photovoltaïque industriel"];
+  return ["/conseils/", "Articles et conseils détaillés"];
+}
+
 async function faqPage(store) {
   const items = (await readJson(store, "faq/index.json", []))
     .filter(x => x.status === "published")
     .sort((a, b) => (a.order || 0) - (b.order || 0));
 
   const list = items.length
-    ? `<div class="faq-list">${items.map((x, i) => `<details class="faq-item"${i === 0 ? " open" : ""}><summary>${escapeHtml(x.question)}</summary><div class="faq-answer">${x.answer}${x.imageUrl ? `<img class="faq-image" src="${escapeHtml(x.imageUrl)}" alt="${escapeHtml(x.imageAlt || x.question)}" loading="lazy">` : ""}</div></details>`).join("")}</div>`
+    ? `<div class="faq-list">${items.map((x, i) => { const [href, label] = faqTopicLink(x.question); return `<details class="faq-item"${i === 0 ? " open" : ""}><summary>${escapeHtml(x.question)}</summary><div class="faq-answer"><p>${escapeHtml(faqShortAnswer(x.answer))}</p><p><a href="${href}">${escapeHtml(label)} →</a></p></div></details>`; }).join("")}</div>`
     : `<div class="empty-state"><h2>La FAQ est en préparation</h2><p>Les réponses aux questions les plus fréquentes sur les installations photovoltaïques au Maroc seront publiées prochainement.</p></div>`;
 
   const schema = items.length
@@ -241,12 +279,12 @@ async function faqPage(store) {
         mainEntity: items.map(x => ({
           "@type": "Question",
           name: x.question,
-          acceptedAnswer: { "@type": "Answer", text: stripHtml(x.answer) }
+          acceptedAnswer: { "@type": "Answer", text: faqShortAnswer(x.answer) }
         }))
       }
     : null;
 
-  const body = `<main><section class="content-hero"><div class="container"><div class="kicker">Questions fréquentes</div><h1>FAQ sur le photovoltaïque au Maroc</h1><p>Des réponses claires aux questions des entreprises, hôtels, exploitations agricoles et sites industriels qui étudient un projet solaire.</p></div></section><section class="content-main"><div class="container">${list}<div class="cta-box content-cta"><div><h3>Vous n’avez pas trouvé votre réponse ?</h3><p>Décrivez votre projet à l’équipe Amber Atlas ou utilisez le calculateur solaire.</p></div><div><a class="btn btn-primary" href="/#kontakt">Nous contacter</a></div></div></div></section></main>`;
+  const body = `<main><section class="content-hero"><div class="container"><div class="kicker">Questions fréquentes</div><h1>FAQ sur le photovoltaïque au Maroc</h1><p>Des réponses claires aux questions des entreprises, hôtels, exploitations agricoles et sites industriels qui étudient un projet solaire.</p></div></section><section class="content-main"><div class="container">${list}<section class="card why"><h2>Solutions professionnelles associées</h2><p><a href="/solutions/solaire-hotels-maroc/">Photovoltaïque pour hôtels</a> · <a href="/solutions/photovoltaique-industriel-maroc/">Installations industrielles</a> · <a href="/solutions/pompage-solaire-agricole-maroc/">Pompage solaire</a> · <a href="/solutions/stockage-energie-entreprises-maroc/">Stockage d’énergie</a> · <a href="/solutions/">Toutes les solutions B2B</a></p></section><div class="cta-box content-cta"><div><h3>Vous n’avez pas trouvé votre réponse ?</h3><p>Décrivez votre projet à l’équipe Amber Atlas ou utilisez le calculateur solaire.</p></div><div><a class="btn btn-primary" href="/#kontakt">Nous contacter</a></div></div></div></section></main>`;
 
   return page({
     title: "FAQ photovoltaïque au Maroc | Amber Atlas",
