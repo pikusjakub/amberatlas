@@ -9,7 +9,9 @@ layout: "city-landing"
 
 Errachidia dispose d’un ensoleillement particulièrement favorable et de besoins énergétiques importants dans l’agriculture, le pompage de l’eau et l’hébergement touristique. Le photovoltaïque permet de valoriser cette ressource locale et de réduire le coût d’exploitation des sites.
 
-Amber Atlas accompagne les entreprises depuis l’analyse du profil de consommation jusqu’à la mise en service, au suivi et à la maintenance de l’installation. Chaque projet est étudié en fonction des usages du site, de la surface disponible et des objectifs économiques du client.
+À Errachidia, les systèmes de pompage et les activités agricoles peuvent bénéficier d’une production solaire importante en journée. Nous analysons les cycles d’irrigation, les horaires de fonctionnement et les besoins des hébergements locaux.
+
+Le climat chaud et poussiéreux de la région impose une attention particulière au choix des modules, à leur coefficient de température et à l’entretien. L’étude relie ces contraintes à la consommation réelle du site.
 
 ## Exploitations agricoles
 
