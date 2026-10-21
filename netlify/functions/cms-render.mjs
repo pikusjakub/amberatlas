@@ -228,7 +228,7 @@ async function articlePage(store, slug) {
 // FAQ is intentionally concise; the complete source answer remains in Netlify Blobs.
 // Keep the HTML and FAQPage JSON-LD based on the same visible summary.
 function faqShortAnswer(html, maxWords = 105) {
-  const cleaned = stripHtml(String(html || "")).replace(/\\s+/g, " ").trim();
+  const cleaned = stripHtml(String(html || "")).replace(/\s+/g, " ").trim();
   if (!cleaned) return "";
   const sentences = cleaned.match(/[^.!?]+(?:[.!?]+|$)/g) || [cleaned];
   const selected = [];
