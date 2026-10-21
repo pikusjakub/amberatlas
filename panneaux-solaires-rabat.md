@@ -9,29 +9,17 @@ layout: "city-landing"
 
 À Rabat, les bâtiments de bureaux et de services ont souvent une consommation électrique significative pendant leurs horaires d’occupation. La conception d’une installation solaire doit intégrer la climatisation, l’informatique, les contraintes des toitures urbaines et les surfaces de parking.
 
-## B
+## Bureaux et établissements de services
 
-u
+Dans l’agglomération de Rabat-Salé-Kénitra, les bureaux, cliniques et établissements de services utilisent de l’électricité pour l’informatique, la ventilation et la climatisation. Nous analysons les horaires d’occupation afin de dimensionner l’autoconsommation en fonction des besoins réels.
 
-## L
+## Les ombrières photovoltaïques sur les parkings
 
-a
+Lorsque la toiture d’un bâtiment ne présente pas une surface suffisante, les parkings peuvent constituer une solution à étudier. Le projet nécessite une analyse des fondations, de la circulation, de l’ombrage et du raccordement électrique, en plus du choix des panneaux.
 
-## P
+## Prendre en compte les contraintes urbaines
 
-a
-
-## L
-
-o
-
-## C
-
-o
-
-## L
-
-e
+À Rabat, les bâtiments voisins, les équipements techniques en toiture et les accès de maintenance influencent l’implantation photovoltaïque. Une étude locale permet de comparer plusieurs configurations sans supposer que toute la toiture est exploitable.
 
 ## Éléments de l’étude technique
 
