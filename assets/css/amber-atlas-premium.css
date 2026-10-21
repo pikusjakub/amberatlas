@@ -771,7 +771,7 @@ html[dir="rtl"] h3 { font-family: var(--aa-font-ar); letter-spacing: 0; }
 @media (min-width: 1180px) {
   .nav-wrap .container.nav { width: calc(100% - 32px); max-width: none; gap: 14px; }
   .nav-wrap .nav-right { flex: 1 1 auto; min-width: 0; flex-wrap: nowrap; gap: 10px; }
-  .nav-wrap .nav-links { flex-wrap: nowrap; white-space: nowrap; justify-content: flex-end; gap: clamp(6px, .65vw, 11px); font-size: clamp(.67rem, .72vw, .82rem); }
+  .nav-wrap .nav-links { flex-wrap: nowrap; white-space: nowrap; justify-content: flex-end; gap: clamp(5px, .46vw, 8px); font-size: clamp(.78rem, .82vw, .91rem); }
   .nav-wrap .nav-links > a, .nav-wrap .nav-links summary { white-space: nowrap; }
   .nav-wrap .lang-switcher { flex-wrap: nowrap; gap: 4px; }
   .nav-wrap .lang-btn { min-width: 34px; padding-inline: 6px; }
@@ -786,7 +786,7 @@ html[dir="rtl"] h3 { font-family: var(--aa-font-ar); letter-spacing: 0; }
 @media (min-width:1280px) {
  .nav-wrap--collapsible .container.nav { width:calc(100% - 32px); max-width:none; gap:14px; }
  .nav-wrap--collapsible .nav-right { flex:1 1 auto; min-width:0; flex-wrap:nowrap; gap:10px; }
- .nav-wrap--collapsible .nav-links { flex-wrap:nowrap; white-space:nowrap; justify-content:flex-end; gap:clamp(6px,.65vw,11px); font-size:clamp(.67rem,.72vw,.82rem); }
+ .nav-wrap--collapsible .nav-links { flex-wrap:nowrap; white-space:nowrap; justify-content:flex-end; gap:clamp(5px,.46vw,8px); font-size:clamp(.78rem,.82vw,.91rem); }
  .nav-wrap--collapsible .nav-links > a, .nav-wrap--collapsible .nav-links summary {white-space:nowrap;}
  .nav-wrap--collapsible .lang-switcher { flex-wrap:nowrap; gap:4px; }
 }
