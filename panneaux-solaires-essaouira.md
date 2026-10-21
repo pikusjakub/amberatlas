@@ -9,29 +9,17 @@ layout: "city-landing"
 
 À Essaouira, la qualité d’un système photovoltaïque se joue autant dans sa conception mécanique que dans ses performances électriques. Pour les riads, hôtels et commerces, nous étudions la consommation de journée sans négliger l’exposition au vent et à l’air marin.
 
-## D
+## Dimensionner les fixations pour le vent côtier
 
-i
+À Essaouira, l’exposition au vent impose un examen rigoureux de la toiture, de la structure de support et des systèmes de fixation. Les charges mécaniques et la sécurité de l’installation doivent être prises en compte avant de définir l’emplacement des panneaux.
 
-## U
+## Choisir les équipements pour l’air marin
 
-n
+La proximité de l’océan peut accroître le risque de corrosion. Le choix des structures, des fixations, des coffrets et des protections électriques dépend de leur exposition. Une installation adaptée au littoral doit aussi rester accessible pour l’inspection et la maintenance.
 
-## P
+## Réduire les factures des riads et des hôtels
 
-r
-
-## L
-
-e
-
-## A
-
-d
-
-## L
-
-e
+Les riads, hôtels et commerces d’Essaouira consomment notamment pour les cuisines, la climatisation, l’éclairage et la réfrigération. Nous étudions les horaires d’activité et la saisonnalité touristique afin d’évaluer la part d’électricité solaire qui pourra être utilisée sur place.
 
 ## Les informations utiles pour préparer le projet
 
