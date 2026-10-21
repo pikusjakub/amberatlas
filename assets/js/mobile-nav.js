@@ -1,0 +1,2 @@
+/* Close the compact navigation after selection or Escape. */
+(()=>{const header=document.querySelector(".nav-wrap--collapsible");if(!header)return;const check=header.querySelector(".mobile-nav-check");if(!check)return;header.querySelectorAll(".nav-links a,.lang-switcher a").forEach(link=>link.addEventListener("click",()=>{check.checked=false}));document.addEventListener("keydown",e=>{if(e.key==="Escape"&&check.checked){check.checked=false;check.focus()}});window.addEventListener("resize",()=>{if(window.innerWidth>=1280)check.checked=false})})();
