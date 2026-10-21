@@ -9,7 +9,9 @@ layout: "city-landing"
 
 Taroudant se distingue par son activité agricole, ses unités de conditionnement et ses besoins importants en pompage, froid et transformation. Le photovoltaïque permet d’exploiter une ressource solaire locale abondante pour réduire durablement le coût de production.
 
-Amber Atlas accompagne les entreprises depuis l’analyse du profil de consommation jusqu’à la mise en service, au suivi et à la maintenance de l’installation. Chaque projet est étudié en fonction des usages du site, de la surface disponible et des objectifs économiques du client.
+Autour de Taroudant, le pompage agricole, le conditionnement des récoltes et la conservation au froid structurent une grande partie des besoins électriques. Nous analysons les périodes d’irrigation et les horaires des équipements.
+
+Pour les sites agricoles de Taroudant, nous recherchons une puissance solaire adaptée aux consommations de journée, à la saisonnalité et aux contraintes de chaleur et de poussière.
 
 ## Exploitations agricoles
 
