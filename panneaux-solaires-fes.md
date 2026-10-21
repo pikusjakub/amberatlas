@@ -9,29 +9,17 @@ layout: "city-landing"
 
 À Fès, un atelier de production, une entreprise agroalimentaire et une exploitation agricole n’ont pas les mêmes usages de l’électricité. Amber Atlas étudie les horaires de travail, les machines et les équipements auxiliaires pour proposer une puissance solaire adaptée.
 
-## A
+## Étudier les horaires des ateliers et entreprises
 
-t
+À Fès, les activités artisanales, les ateliers et les entreprises de transformation présentent des profils électriques très différents. Nous analysons les machines en fonctionnement, les horaires de travail et les arrêts hebdomadaires avant de dimensionner l’installation solaire.
 
-## L
+## Photovoltaïque pour la transformation agroalimentaire
 
-’
+Les besoins en réfrigération, ventilation et transformation peuvent rendre l’autoconsommation intéressante. L’étude évalue les consommations réellement présentes durant les heures d’ensoleillement et les équipements prioritaires.
 
-## A
+## Pompage et production agricole en Fès-Meknès
 
-g
-
-## L
-
-e
-
-## A
-
-g
-
-## L
-
-e
+Pour les exploitations agricoles de la région, la pertinence du solaire dépend des cycles d’irrigation, de la puissance des pompes et de la saisonnalité. Ces paramètres sont intégrés au calcul avant de choisir les modules et les onduleurs.
 
 ## Les informations utiles pour préparer le projet
 

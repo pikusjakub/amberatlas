@@ -9,29 +9,17 @@ layout: "city-landing"
 
 À Zagora, les usages du solaire varient entre irrigation des exploitations oasiennes et besoins des hébergements touristiques. Le dimensionnement doit intégrer la chaleur, la poussière et le fonctionnement réel des équipements.
 
-## P
+## Pompage de l’eau dans les exploitations oasiennes
 
-o
+À Zagora et dans la vallée du Drâa, les installations solaires destinées à l’agriculture doivent être calculées à partir du débit d’eau recherché, de la hauteur de pompage et des périodes d’irrigation, plutôt que de la seule surface du terrain.
 
-## L
+## Énergie solaire pour maisons d’hôtes et bivouacs
 
-a
+Les hébergements touristiques utilisent l’électricité pour l’éclairage, la ventilation, le refroidissement et les services aux visiteurs. Les besoins nocturnes doivent être pris en compte lorsque l’on envisage une batterie ou un système autonome.
 
-## M
+## Chaleur, poussière et suivi des équipements
 
-a
-
-## L
-
-e
-
-## C
-
-h
-
-## L
-
-e
+Les températures élevées et les dépôts de poussière peuvent réduire la production des modules photovoltaïques. Nous privilégions une étude du coefficient de température, de la ventilation des panneaux et de leur accès pour les opérations de nettoyage.
 
 ## Éléments de l’étude technique
 
