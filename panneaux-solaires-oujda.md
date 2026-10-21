@@ -9,29 +9,17 @@ layout: "city-landing"
 
 À Oujda et dans la région de l’Oriental, les profils de consommation peuvent être très différents entre un commerce, un atelier ou une exploitation agricole. La première étape consiste à identifier la consommation de journée et les contraintes du site.
 
-## L
+## Autoconsommation des commerces et PME
 
-e
+À Oujda, les commerces, bureaux et petites entreprises utilisent l’électricité selon leurs horaires d’ouverture et leurs équipements. Nous distinguons les consommations permanentes des pointes pour éviter de surdimensionner la puissance photovoltaïque.
 
-## D
+## Ateliers et équipements de production
 
-a
+Les machines, moteurs et installations de ventilation doivent être évalués en fonction de leur temps réel de fonctionnement. Une production solaire adaptée peut couvrir une partie des besoins pendant la journée, sans remplacer automatiquement le réseau.
 
-## I
+## Agriculture et irrigation dans l’Oriental
 
-r
-
-## L
-
-e
-
-## É
-
-v
-
-## U
-
-n
+Les besoins de pompage évoluent avec les campagnes agricoles et la disponibilité de l’eau. Nous analysons les données hydrauliques, la puissance des équipements et les contraintes du site pour étudier une solution photovoltaïque cohérente.
 
 ## Les informations utiles pour préparer le projet
 
