@@ -225,13 +225,51 @@ async function articlePage(store, slug) {
   });
 }
 
+// FAQ is intentionally concise; the complete source answer remains in Netlify Blobs.
+// Keep the HTML and FAQPage JSON-LD based on the same visible summary.
+function faqShortAnswer(html, maxWords = 105) {
+  const cleaned = stripHtml(String(html || "")).replace(/\\s+/g, " ").trim();
+  if (!cleaned) return "";
+  const sentences = cleaned.match(/[^.!?]+(?:[.!?]+|$)/g) || [cleaned];
+  const selected = [];
+  let words = 0;
+  for (const sentence of sentences) {
+    const value = sentence.trim();
+    if (!value) continue;
+    const count = value.split(/\\s+/).length;
+    if (words && words + count > maxWords) break;
+    if (!words && count > maxWords) {
+      // Avoid displaying a half sentence: use a shorter word limit at a natural boundary.
+      const limited = value.split(/\\s+/).slice(0, maxWords).join(" ");
+      const pause = Math.max(limited.lastIndexOf(";"), limited.lastIndexOf(","));
+      selected.push(pause > limited.length * 0.55 ? limited.slice(0, pause) + "." : limited + "…");
+      break;
+    }
+    selected.push(value);
+    words += count;
+    if (words >= 55) break;
+  }
+  return selected.join(" ").trim() || cleaned;
+}
+
+function faqTopicLink(question) {
+  const q = String(question || "").toLocaleLowerCase("fr");
+  if (/h[oô]tel|riad|marrakech|agadir/.test(q)) return ["/solutions/solaire-hotels-maroc/", "Solaire pour hôtels"];
+  if (/pompage|irrigat|agricol/.test(q)) return ["/solutions/pompage-solaire-agricole-maroc/", "Pompage solaire"];
+  if (/batter|stockage|coupure|autonomie/.test(q)) return ["/solutions/stockage-energie-entreprises-maroc/", "Stockage d’énergie"];
+  if (/chambre froide|froid/.test(q)) return ["/solutions/chambres-froides-solaires-maroc/", "Solutions de froid"];
+  if (/entrep[oô]t|logist/.test(q)) return ["/solutions/solaire-entrepots-logistique-maroc/", "Solaire logistique"];
+  if (/industr|usine|entreprise/.test(q)) return ["/solutions/photovoltaique-industriel-maroc/", "Photovoltaïque industriel"];
+  return ["/conseils/", "Articles et conseils détaillés"];
+}
+
 async function faqPage(store) {
   const items = (await readJson(store, "faq/index.json", []))
     .filter(x => x.status === "published")
     .sort((a, b) => (a.order || 0) - (b.order || 0));
 
   const list = items.length
-    ? `<div class="faq-list">${items.map((x, i) => `<details class="faq-item"${i === 0 ? " open" : ""}><summary>${escapeHtml(x.question)}</summary><div class="faq-answer">${x.answer}${x.imageUrl ? `<img class="faq-image" src="${escapeHtml(x.imageUrl)}" alt="${escapeHtml(x.imageAlt || x.question)}" loading="lazy">` : ""}</div></details>`).join("")}</div>`
+    ? `<div class="faq-list">${items.map((x, i) => { const [href, label] = faqTopicLink(x.question); return `<details class="faq-item"${i === 0 ? " open" : ""}><summary>${escapeHtml(x.question)}</summary><div class="faq-answer"><p>${escapeHtml(faqShortAnswer(x.answer))}</p><p><a href="${href}">${escapeHtml(label)} →</a></p></div></details>`; }).join("")}</div>`
     : `<div class="empty-state"><h2>La FAQ est en préparation</h2><p>Les réponses aux questions les plus fréquentes sur les installations photovoltaïques au Maroc seront publiées prochainement.</p></div>`;
 
   const schema = items.length
@@ -241,7 +279,7 @@ async function faqPage(store) {
         mainEntity: items.map(x => ({
           "@type": "Question",
           name: x.question,
-          acceptedAnswer: { "@type": "Answer", text: stripHtml(x.answer) }
+          acceptedAnswer: { "@type": "Answer", text: faqShortAnswer(x.answer) }
         }))
       }
     : null;
