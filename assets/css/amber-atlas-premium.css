@@ -369,6 +369,8 @@ h3 { font-size: 1.12rem; line-height: 1.35; font-weight: 750; }
   line-height: 1.12;
 }
 .stat span { color: rgba(255,255,255,.67); font-size: .9rem; line-height: 1.5; }
+/* Keep the complete 50 MWc figure on one line, without changing the other stats. */
+.stat--solar-volume strong { white-space: nowrap; font-size: clamp(1.05rem, 1.25vw, 1.36rem); letter-spacing: -.025em; }
 .hero-card {
   position: relative;
   min-height: 510px;
