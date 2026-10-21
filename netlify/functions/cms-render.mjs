@@ -236,11 +236,11 @@ function faqShortAnswer(html, maxWords = 105) {
   for (const sentence of sentences) {
     const value = sentence.trim();
     if (!value) continue;
-    const count = value.split(/\\s+/).length;
+    const count = value.split(/\s+/).length;
     if (words && words + count > maxWords) break;
     if (!words && count > maxWords) {
       // Avoid displaying a half sentence: use a shorter word limit at a natural boundary.
-      const limited = value.split(/\\s+/).slice(0, maxWords).join(" ");
+      const limited = value.split(/\s+/).slice(0, maxWords).join(" ");
       const pause = Math.max(limited.lastIndexOf(";"), limited.lastIndexOf(","));
       selected.push(pause > limited.length * 0.55 ? limited.slice(0, pause) + "." : limited + "…");
       break;
