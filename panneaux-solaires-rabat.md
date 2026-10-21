@@ -9,7 +9,9 @@ layout: "city-landing"
 
 À Rabat et dans l’agglomération Rabat-Salé-Kénitra, les entreprises recherchent des solutions fiables pour maîtriser leurs dépenses énergétiques et améliorer leur performance environnementale. Le photovoltaïque permet de transformer les toitures et parkings en sources locales d’électricité.
 
-Amber Atlas accompagne les entreprises depuis l’analyse du profil de consommation jusqu’à la mise en service, au suivi et à la maintenance de l’installation. Chaque projet est étudié en fonction des usages du site, de la surface disponible et des objectifs économiques du client.
+À Rabat et dans l’agglomération Rabat-Salé-Kénitra, les bureaux, commerces et établissements de services consomment notamment en journée. Nous étudions les possibilités d’autoconsommation sur les toitures et les parkings professionnels.
+
+L’étude d’un projet à Rabat intègre les horaires d’ouverture, les équipements de climatisation et les contraintes des bâtiments urbains. Nous comparons les configurations de panneaux adaptées aux surfaces disponibles.
 
 ## Entreprises et bâtiments professionnels
 
