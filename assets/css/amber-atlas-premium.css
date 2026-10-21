@@ -766,3 +766,16 @@ html[dir="rtl"] h3 { font-family: var(--aa-font-ar); letter-spacing: 0; }
 .site-page .feature-sector-link { display:flex; width:100%; padding:8px; margin:-8px; border-radius:12px; color:var(--aa-text); text-decoration:none; transition:background .2s ease,box-shadow .2s ease; }
 .site-page .feature-sector-link:hover, .site-page .feature-sector-link:focus-visible { background:var(--aa-amber-soft); color:var(--aa-ink); box-shadow:inset 0 0 0 1px rgba(199,137,45,.2); }
 .site-page .feature-sector-link strong { color:var(--aa-ink); }
+
+/* Desktop navigation: one line, maintaining responsive layout below 1180px. */
+@media (min-width: 1180px) {
+  .nav-wrap .container.nav { width: calc(100% - 32px); max-width: none; gap: 14px; }
+  .nav-wrap .nav-right { flex: 1 1 auto; min-width: 0; flex-wrap: nowrap; gap: 10px; }
+  .nav-wrap .nav-links { flex-wrap: nowrap; white-space: nowrap; justify-content: flex-end; gap: clamp(6px, .65vw, 11px); font-size: clamp(.67rem, .72vw, .82rem); }
+  .nav-wrap .nav-links > a, .nav-wrap .nav-links summary { white-space: nowrap; }
+  .nav-wrap .lang-switcher { flex-wrap: nowrap; gap: 4px; }
+  .nav-wrap .lang-btn { min-width: 34px; padding-inline: 6px; }
+  .nav-wrap .brand { gap: 8px; }
+  .nav-wrap .brand img { width: 44px; height: 44px; }
+  .nav-wrap .brand-title, .nav-wrap .brand span:not(.brand-title) { font-size: .83rem; letter-spacing: .025em; }
+}
