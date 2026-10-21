@@ -766,3 +766,44 @@ html[dir="rtl"] h3 { font-family: var(--aa-font-ar); letter-spacing: 0; }
 .site-page .feature-sector-link { display:flex; width:100%; padding:8px; margin:-8px; border-radius:12px; color:var(--aa-text); text-decoration:none; transition:background .2s ease,box-shadow .2s ease; }
 .site-page .feature-sector-link:hover, .site-page .feature-sector-link:focus-visible { background:var(--aa-amber-soft); color:var(--aa-ink); box-shadow:inset 0 0 0 1px rgba(199,137,45,.2); }
 .site-page .feature-sector-link strong { color:var(--aa-ink); }
+
+/* Desktop navigation: one line, maintaining responsive layout below 1180px. */
+@media (min-width: 1180px) {
+  .nav-wrap .container.nav { width: calc(100% - 32px); max-width: none; gap: 14px; }
+  .nav-wrap .nav-right { flex: 1 1 auto; min-width: 0; flex-wrap: nowrap; gap: 10px; }
+  .nav-wrap .nav-links { flex-wrap: nowrap; white-space: nowrap; justify-content: flex-end; gap: clamp(6px, .65vw, 11px); font-size: clamp(.67rem, .72vw, .82rem); }
+  .nav-wrap .nav-links > a, .nav-wrap .nav-links summary { white-space: nowrap; }
+  .nav-wrap .lang-switcher { flex-wrap: nowrap; gap: 4px; }
+  .nav-wrap .lang-btn { min-width: 34px; padding-inline: 6px; }
+  .nav-wrap .brand { gap: 8px; }
+  .nav-wrap .brand img { width: 44px; height: 44px; }
+  .nav-wrap .brand-title, .nav-wrap .brand span:not(.brand-title) { font-size: .83rem; letter-spacing: .025em; }
+}
+
+/* Collapsible navigation for phones, tablets and narrow laptop windows. */
+.nav-wrap--collapsible .mobile-nav-check { position:absolute; width:1px; height:1px; opacity:0; overflow:hidden; }
+.nav-wrap--collapsible .mobile-nav-toggle { display:none; }
+@media (min-width:1280px) {
+ .nav-wrap--collapsible .container.nav { width:calc(100% - 32px); max-width:none; gap:14px; }
+ .nav-wrap--collapsible .nav-right { flex:1 1 auto; min-width:0; flex-wrap:nowrap; gap:10px; }
+ .nav-wrap--collapsible .nav-links { flex-wrap:nowrap; white-space:nowrap; justify-content:flex-end; gap:clamp(6px,.65vw,11px); font-size:clamp(.67rem,.72vw,.82rem); }
+ .nav-wrap--collapsible .nav-links > a, .nav-wrap--collapsible .nav-links summary {white-space:nowrap;}
+ .nav-wrap--collapsible .lang-switcher { flex-wrap:nowrap; gap:4px; }
+}
+@media (max-width:1279px) {
+ .nav-wrap--collapsible .container.nav { flex-direction:row; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; }
+ .nav-wrap--collapsible .brand { flex-direction:row; gap:9px; }
+ .nav-wrap--collapsible .brand img { width:42px; height:42px; }
+ .nav-wrap--collapsible .brand-title { white-space:nowrap; font-size:clamp(.73rem,2.5vw,.9rem); }
+ .nav-wrap--collapsible .mobile-nav-toggle { display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border:1px solid rgba(255,255,255,.24); border-radius:11px; background:rgba(255,255,255,.08); color:#fff; font-size:.95rem; font-weight:700; cursor:pointer; }
+ .nav-wrap--collapsible .mobile-nav-check:focus-visible + .mobile-nav-toggle { outline:3px solid var(--aa-amber); outline-offset:3px; }
+ .nav-wrap--collapsible .mobile-nav-check:checked + .mobile-nav-toggle { color:var(--aa-ink); background:#f3d194; }
+ .nav-wrap--collapsible .nav-right { display:none; flex:0 0 100%; width:100%; padding:12px 0 8px; max-height:calc(100dvh - 95px); overflow-y:auto; overscroll-behavior:contain; }
+ .nav-wrap--collapsible .mobile-nav-check:checked ~ .nav-right { display:flex; flex-direction:column; align-items:stretch; gap:12px; }
+ .nav-wrap--collapsible .nav-links { display:flex; flex-direction:column; align-items:stretch; width:100%; gap:0; font-size:.95rem; }
+ .nav-wrap--collapsible .nav-links > a { display:block; padding:11px 14px; border-bottom:1px solid rgba(255,255,255,.08); }
+ .nav-wrap--collapsible .nav-dropdown, .nav-wrap--collapsible .city-dd { width:100%; text-align:start; }
+ .nav-wrap--collapsible .nav-dropdown summary, .nav-wrap--collapsible .city-dd summary { justify-content:flex-start; padding:11px 14px; }
+ .nav-wrap--collapsible .city-menu { position:static; transform:none; width:100%; margin:6px 0 10px; max-height:38dvh; overflow-y:auto; grid-template-columns:1fr; }
+ .nav-wrap--collapsible .lang-switcher { justify-content:center; padding:5px 0; }
+}

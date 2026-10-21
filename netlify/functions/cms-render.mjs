@@ -2,12 +2,13 @@ import { contentStore, readJson, escapeHtml, safeJson, stripHtml, formatDateFr, 
 
 const base = "https://amberatlas.solar";
 
-function header(active = "") { return `<header class="nav-wrap">
+function header(active = "") { return `<header class="nav-wrap nav-wrap--collapsible">
 <div class="container nav">
 <a aria-label="Amber Atlas" class="brand" href="/#top">
 <img alt="Amber Atlas logo" src="/logo.png"/>
 <div class="brand-title">Amber Atlas</div>
 </a>
+<input type="checkbox" class="mobile-nav-check" id="aa-mobile-menu" aria-label="Afficher le menu de navigation"><label class="mobile-nav-toggle" for="aa-mobile-menu"><span aria-hidden="true">☰</span> Menu</label>
 <div class="nav-right">
 <nav aria-label="Main navigation" class="nav-links">
 <a href="/#top">À propos</a>
@@ -30,13 +31,13 @@ function header(active = "") { return `<header class="nav-wrap">
 <a href="/panneaux-solaires-beni-mellal/">Béni Mellal</a>
 </div>
 </details>
-<a href="/solutions/">Solutions Professionnelles</a><a href="/conseils/">Conseils</a><a href="/faq-photovoltaique-maroc/">FAQ</a><a class="calculator-link" href="/calculator/">Calculateur solaire</a>
+<a href="/solutions/">Solutions Professionnelles</a><a href="/conseils/">Conseils</a><a href="/faq-photovoltaique-maroc/">FAQ</a><a class="calculator-link" href="/calculator/">Calculateur</a>
 <a href="/#kontakt">Contact</a>
 </nav>
 <div aria-label="Language selection" class="lang-switcher"><a aria-current="page" class="lang-btn active" href="/" hreflang="fr-MA" lang="fr">FR</a><a class="lang-btn" href="/ar/" hreflang="ar-MA" lang="ar">AR</a><a class="lang-btn" href="/en/" hreflang="en" lang="en">EN</a><a class="lang-btn" href="/pl/" hreflang="pl" lang="pl">PL</a></div>
 </div>
 </div>
-</header>`; }
+<script src="/assets/js/mobile-nav.js" defer></script></header>`; }
 
 function footer() {
   return `<footer><div class="container footer-inner"><div class="footer-copy">© Amber Atlas · Copyright 2026</div><div class="footer-links"><a href="/conseils/">Conseils</a><a href="/faq-photovoltaique-maroc/">FAQ</a></div><a class="footer-login" href="/admin/">Connexion</a></div></footer>`;
