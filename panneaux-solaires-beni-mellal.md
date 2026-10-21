@@ -9,29 +9,17 @@ layout: "city-landing"
 
 À Béni Mellal, le besoin électrique d’une exploitation change avec les cultures, l’irrigation et les périodes de conditionnement. Une installation photovoltaïque pertinente doit suivre ce calendrier plutôt que se limiter à la superficie de l’exploitation.
 
-## A
+## Adapter le solaire aux campagnes d’irrigation
 
-n
+Dans la région Béni Mellal-Khénifra, les besoins électriques des pompes suivent les saisons et les cultures. Nous étudions le débit, la hauteur de pompage et les horaires d’irrigation afin de définir une puissance photovoltaïque en accord avec les besoins hydrauliques.
 
-## L
+## Réduire l’énergie du conditionnement agricole
 
-e
+Les unités de tri, de conditionnement et de transformation peuvent consommer beaucoup d’électricité pendant les périodes de récolte. Une étude de consommation permet de rapprocher leur activité des heures de production solaire et de vérifier la rentabilité.
 
-## V
+## Étudier les besoins des chambres froides
 
-a
-
-## L
-
-e
-
-## C
-
-h
-
-## U
-
-n
+La réfrigération peut fonctionner jour et nuit, contrairement à la production photovoltaïque. Nous évaluons la part consommée pendant la journée, les équipements sensibles et l’éventuel intérêt d’un stockage ou d’une alimentation de secours.
 
 ## Les informations utiles pour préparer le projet
 
