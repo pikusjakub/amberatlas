@@ -202,7 +202,7 @@ async function conseilsIndex(store) {
     .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
 
   const cards = items.length
-    ? `<div class="content-grid">${items.map(x => `<article class="article-card">${x.imageUrl ? `<a class="article-card-media" href="/conseils/${encodeURIComponent(x.slug)}/"><img src="${escapeHtml(x.imageUrl)}" alt="${escapeHtml(x.imageAlt || x.title)}" loading="lazy"></a>` : ""}<div class="article-card-body"><div class="article-meta"><span>${escapeHtml(formatDateFr(x.date))}</span><span>·</span><span>${escapeHtml(x.author || "Amber Atlas")}</span></div><h2><a href="/conseils/${encodeURIComponent(x.slug)}/">${escapeHtml(x.title)}</a></h2><p>${escapeHtml(x.slug === "quel-est-le-prix-d-un-panneau-solaire-de-700w-ou-800w-au-maroc" ? "Prix panneau solaire au Maroc : comment comparer les modules 450 à 800 W, les tarifs par watt-crête et le coût d’une installation complète ?" : x.excerpt || "")}</p><a class="article-card-link" href="/conseils/${encodeURIComponent(x.slug)}/">Lire l’article →</a></div></article>`).join("")}</div>`
+    ? `<div class="content-grid">${items.map(x => `<article class="article-card">${x.imageUrl ? `<a class="article-card-media" href="/conseils/${encodeURIComponent(x.slug)}/"><img src="${escapeHtml(x.imageUrl)}" alt="${escapeHtml(x.imageAlt || x.title)}" loading="lazy"></a>` : ""}<div class="article-card-body"><div class="article-meta"><span>${escapeHtml(formatDateFr(x.date))}</span><span>·</span><span>${escapeHtml(x.author || "Amber Atlas")}</span></div><h2><a href="/conseils/${encodeURIComponent(x.slug)}/">${escapeHtml(x.title)}</a></h2><p>${escapeHtml(x.excerpt || "")}</p><a class="article-card-link" href="/conseils/${encodeURIComponent(x.slug)}/">Lire l’article →</a></div></article>`).join("")}</div>`
     : `<div class="empty-state"><h2>Les premiers articles arrivent bientôt</h2><p>Nous préparons des analyses pratiques sur le photovoltaïque, le stockage d’énergie et la rentabilité des projets pour les entreprises au Maroc.</p></div>`;
 
   const body = `<main><section class="content-hero"><div class="container"><div class="kicker">Expertise Amber Atlas</div><h1>Conseils photovoltaïques pour les entreprises au Maroc</h1><p>Analyses, guides et réponses pratiques pour préparer un investissement solaire adapté à votre activité, votre consommation et votre localisation.</p></div></section><section class="content-main"><div class="container">${cards}<div class="cta-box content-cta"><div><h3>Vous préparez un projet photovoltaïque ?</h3><p>Utilisez notre calculateur ou contactez l’équipe Amber Atlas pour une première analyse de votre site.</p></div><div><a class="btn btn-primary" href="/calculator/">Calculateur solaire</a></div></div></div></section></main>`;
@@ -224,28 +224,20 @@ async function articlePage(store, slug) {
   const description = item.excerpt || stripHtml(item.content).slice(0, 230);
   const ogImage = item.imageUrl ? absoluteUrl(item.imageUrl) : `${base}/logo.png`;
   // SEO enhancements preserve CMS article bodies and the published slugs.
-  const solarPanelGuide = item.slug === "quel-est-le-prix-d-un-panneau-solaire-de-700w-ou-800w-au-maroc";
   const installationCostGuide = item.slug === "cout-installation-photovoltaique-entreprise-maroc";
-  const seoTitle = solarPanelGuide
-    ? "Prix panneau solaire Maroc en 2026 : 450W, 500W, 700W et 800W"
-    : installationCostGuide
-      ? "Prix installation solaire au Maroc : coûts et devis pour entreprises"
-      : item.title;
-  const seoDescription = solarPanelGuide
-    ? "Prix des panneaux solaires au Maroc : comparez 450W, 500W, 550W, 700W et 800W, le prix par Wc et le coût d'une installation complète."
-    : installationCostGuide
-      ? "Prix d'une installation solaire au Maroc : comprendre le coût selon la puissance, la toiture, le stockage et demander un devis gratuit pour entreprise."
-      : description;
-  const panelGuideExtra = solarPanelGuide
-    ? `<section class="card why"><h2>Prix panneau solaire au Maroc : comparer les puissances</h2><p>Les modules de 450 W, 500 W, 550 W, 700 W et 800 W n'ont pas le même prix ni le même rendement surfacique. Pour comparer des offres, calculez le prix par watt-crête (MAD/Wc), vérifiez la garantie et le type de module. Les prix dépendent du fournisseur et de la disponibilité : demandez un tarif actualisé plutôt que de vous fier à une moyenne non vérifiée.</p><p>Le panneau seul ne représente qu'une partie du budget. Pour une installation complète, consultez <a href="/conseils/cout-installation-photovoltaique-entreprise-maroc/">notre guide du prix d'une installation solaire au Maroc</a>, utilisez <a href="/calculator/">le calculateur</a> ou <a href="/#kontakt">demandez un devis gratuit</a>.</p></section>`
-    : "";
+  const seoTitle = installationCostGuide
+    ? "Prix installation solaire au Maroc : coûts et devis pour entreprises"
+    : item.title;
+  const seoDescription = installationCostGuide
+    ? "Prix d'une installation solaire au Maroc : comprendre le coût selon la puissance, la toiture, le stockage et demander un devis gratuit pour entreprise."
+    : description;
   const costGuideExtra = installationCostGuide
     ? `<section class="card why"><h2>Quel est le prix d'une installation solaire au Maroc en 2026 ?</h2><p>Le coût d'un projet photovoltaïque dépend de la puissance, de la complexité du montage, des consommations, des protections électriques et du stockage éventuel. Comparez un projet de 10, 30, 50 ou 100 kWc sur la base d'un même périmètre : modules, onduleur, structure, pose, mise en service et maintenance. Sans ces éléments, un tarif au kWc peut induire en erreur.</p><p>Pour une estimation liée à votre site, <a href="/calculator/">ouvrez le calculateur solaire</a> puis <a href="/#kontakt">demandez un devis gratuit</a>. Précisez votre ville, vos consommations en kWh, le type de toiture et l'intérêt éventuel d'un <a href="/solutions/stockage-energie-entreprises-maroc/">stockage par batteries</a>.</p><h2>Installation photovoltaïque avec ou sans batterie ?</h2><p>Le stockage peut augmenter l'autoconsommation dans certains profils de consommation, mais son prix, sa durée de vie, les pertes et les fonctions de secours doivent être pris en compte dans la rentabilité.</p></section>`
     : "";
-  const seoExtra = panelGuideExtra || costGuideExtra;
+  const seoExtra = costGuideExtra;
   // The 700 W / 800 W guide already provides its own introduction in CMS content.
   // Do not repeat its CMS excerpt above the article body.
-  const showArticleExcerpt = !solarPanelGuide;
+  const showArticleExcerpt = item.slug !== "quel-est-le-prix-d-un-panneau-solaire-de-700w-ou-800w-au-maroc";
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
